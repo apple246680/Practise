@@ -1,15 +1,10 @@
-﻿using System.Data;
-try
+﻿try
 {
-    List<string> file = new List<string>() { @".\in1.txt", @".\in2.txt" };
     string outstring = "";
-    foreach (string path in file)
+    foreach (var path in new List<string> { @".\in1.txt", @".\in2.txt" })
     {
-        foreach (string line in File.ReadLines(path))
-        {
-            var leftright = line.Split("==").ToList();
-            outstring += (match(leftright.First()) == match(leftright.Last())) + Environment.NewLine;
-        }
+        foreach (var line in File.ReadAllLines(path))
+            outstring += (EvaluateExpression(line.Split("==")[0]) == EvaluateExpression(line.Split("==")[1])) + Environment.NewLine;
         outstring += Environment.NewLine;
     }
     File.WriteAllText(@".\out.txt", outstring);
@@ -20,11 +15,23 @@ catch
 {
     Console.WriteLine("error");
 }
-double match(string expression)
+static int EvaluateExpression(string expression)
 {
-    DataTable tb = new DataTable();
-    tb.Columns.Add("expression", typeof(string), expression);
-    DataRow row = tb.NewRow();
-    tb.Rows.Add(row);
-    return double.Parse((string)row["expression"]);
+    var terms = Regex.Split(expression, @"([-\+\*])");
+    var symbol = terms.Where(x => Regex.IsMatch(x, @"[-\+\*]")).ToList();
+    var values = terms.Where(x => !Regex.IsMatch(x, @"[-\+\*]")).Select(int.Parse).ToList();
+    for (int i = 0; i < symbol.Count; i++)
+        if (symbol[i] == "*")
+        {
+            values[i] *= values[i + 1];
+            values.RemoveAt(i + 1);
+            symbol.RemoveAt(i);
+            i--;
+        }
+    for (int i = 0; i < symbol.Count; i++)
+        if (symbol[i] == "+")
+            values[0] += values[i + 1];
+        else if (symbol[i] == "-")
+            values[0] -= values[i + 1];
+    return values.First();
 }
