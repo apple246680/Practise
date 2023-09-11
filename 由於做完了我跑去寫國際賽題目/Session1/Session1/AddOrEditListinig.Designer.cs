@@ -29,32 +29,32 @@
         private void InitializeComponent()
         {
             this.label17 = new System.Windows.Forms.Label();
-            this.dgv_distance = new System.Windows.Forms.DataGridView();
+            this.DistanceDataGridView = new System.Windows.Forms.DataGridView();
             this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tb_title = new System.Windows.Forms.TextBox();
-            this.cbo_type = new System.Windows.Forms.ComboBox();
-            this.tb_hostRules = new System.Windows.Forms.TextBox();
-            this.tb_descr = new System.Windows.Forms.TextBox();
-            this.tb_exactAddress = new System.Windows.Forms.TextBox();
-            this.tb_appAddress = new System.Windows.Forms.TextBox();
-            this.num_bathroom = new System.Windows.Forms.NumericUpDown();
-            this.num_bedroom = new System.Windows.Forms.NumericUpDown();
-            this.num_cap = new System.Windows.Forms.NumericUpDown();
+            this.TitleTextBox = new System.Windows.Forms.TextBox();
+            this.TypeComboBox = new System.Windows.Forms.ComboBox();
+            this.HostRulesTextBox = new System.Windows.Forms.TextBox();
+            this.DescriptionTextBox = new System.Windows.Forms.TextBox();
+            this.ExactAddressTextBox = new System.Windows.Forms.TextBox();
+            this.ApproximateAddressTextBox = new System.Windows.Forms.TextBox();
+            this.BathroomNum = new System.Windows.Forms.NumericUpDown();
+            this.BedroomNum = new System.Windows.Forms.NumericUpDown();
+            this.CapacityyNum = new System.Windows.Forms.NumericUpDown();
             this.label16 = new System.Windows.Forms.Label();
-            this.num_beds = new System.Windows.Forms.NumericUpDown();
-            this.num_max = new System.Windows.Forms.NumericUpDown();
-            this.num_min = new System.Windows.Forms.NumericUpDown();
+            this.BedsNum = new System.Windows.Forms.NumericUpDown();
+            this.MaxNum = new System.Windows.Forms.NumericUpDown();
+            this.MinNum = new System.Windows.Forms.NumericUpDown();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.cbo_attraction = new System.Windows.Forms.ComboBox();
+            this.AttractionComboBox = new System.Windows.Forms.ComboBox();
             this.label13 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
@@ -65,35 +65,35 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label19 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
-            this.btn_close = new System.Windows.Forms.Button();
+            this.CloseBtn = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.btn_addAttraction = new System.Windows.Forms.Button();
+            this.AddAttractionBtn = new System.Windows.Forms.Button();
             this.label20 = new System.Windows.Forms.Label();
-            this.num_onfoot = new System.Windows.Forms.NumericUpDown();
-            this.num_bycar = new System.Windows.Forms.NumericUpDown();
+            this.OnfootNum = new System.Windows.Forms.NumericUpDown();
+            this.BycarNum = new System.Windows.Forms.NumericUpDown();
             this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.num_distance = new System.Windows.Forms.NumericUpDown();
+            this.DistanceNum = new System.Windows.Forms.NumericUpDown();
             this.Column3 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label14 = new System.Windows.Forms.Label();
-            this.dgv_Amenities = new System.Windows.Forms.DataGridView();
+            this.AmenitiesDataGridView = new System.Windows.Forms.DataGridView();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.btn_next = new System.Windows.Forms.Button();
+            this.NextBtn = new System.Windows.Forms.Button();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.tabControl1 = new System.Windows.Forms.TabControl();
-            ((System.ComponentModel.ISupportInitialize)(this.dgv_distance)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.num_bathroom)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.num_bedroom)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.num_cap)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.num_beds)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.num_max)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.num_min)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.num_onfoot)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.num_bycar)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DistanceDataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.BathroomNum)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.BedroomNum)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.CapacityyNum)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.BedsNum)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.MaxNum)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.MinNum)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.OnfootNum)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.BycarNum)).BeginInit();
             this.tabPage3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.num_distance)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgv_Amenities)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DistanceNum)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.AmenitiesDataGridView)).BeginInit();
             this.tabPage2.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabControl1.SuspendLayout();
@@ -108,31 +108,31 @@
             this.label17.TabIndex = 9;
             this.label17.Text = "Distance:";
             // 
-            // dgv_distance
+            // DistanceDataGridView
             // 
-            this.dgv_distance.AllowUserToAddRows = false;
-            this.dgv_distance.AllowUserToDeleteRows = false;
-            this.dgv_distance.AllowUserToResizeColumns = false;
-            this.dgv_distance.AllowUserToResizeRows = false;
-            this.dgv_distance.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
-            this.dgv_distance.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv_distance.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.DistanceDataGridView.AllowUserToAddRows = false;
+            this.DistanceDataGridView.AllowUserToDeleteRows = false;
+            this.DistanceDataGridView.AllowUserToResizeColumns = false;
+            this.DistanceDataGridView.AllowUserToResizeRows = false;
+            this.DistanceDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.DistanceDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.DistanceDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column7,
             this.dataGridViewTextBoxColumn2,
             this.dataGridViewTextBoxColumn3,
             this.Column4,
             this.Column5,
             this.Column6});
-            this.dgv_distance.Location = new System.Drawing.Point(73, 236);
-            this.dgv_distance.MultiSelect = false;
-            this.dgv_distance.Name = "dgv_distance";
-            this.dgv_distance.ReadOnly = true;
-            this.dgv_distance.RowHeadersVisible = false;
-            this.dgv_distance.RowHeadersWidth = 51;
-            this.dgv_distance.RowTemplate.Height = 27;
-            this.dgv_distance.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgv_distance.Size = new System.Drawing.Size(891, 237);
-            this.dgv_distance.TabIndex = 8;
+            this.DistanceDataGridView.Location = new System.Drawing.Point(73, 236);
+            this.DistanceDataGridView.MultiSelect = false;
+            this.DistanceDataGridView.Name = "DistanceDataGridView";
+            this.DistanceDataGridView.ReadOnly = true;
+            this.DistanceDataGridView.RowHeadersVisible = false;
+            this.DistanceDataGridView.RowHeadersWidth = 51;
+            this.DistanceDataGridView.RowTemplate.Height = 27;
+            this.DistanceDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.DistanceDataGridView.Size = new System.Drawing.Size(891, 237);
+            this.DistanceDataGridView.TabIndex = 8;
             // 
             // Column7
             // 
@@ -183,107 +183,107 @@
             this.Column6.ReadOnly = true;
             this.Column6.Width = 123;
             // 
-            // tb_title
+            // TitleTextBox
             // 
-            this.tb_title.Location = new System.Drawing.Point(603, 16);
-            this.tb_title.MaxLength = 50;
-            this.tb_title.Name = "tb_title";
-            this.tb_title.Size = new System.Drawing.Size(369, 25);
-            this.tb_title.TabIndex = 7;
+            this.TitleTextBox.Location = new System.Drawing.Point(603, 16);
+            this.TitleTextBox.MaxLength = 50;
+            this.TitleTextBox.Name = "TitleTextBox";
+            this.TitleTextBox.Size = new System.Drawing.Size(369, 25);
+            this.TitleTextBox.TabIndex = 7;
             // 
-            // cbo_type
+            // TypeComboBox
             // 
-            this.cbo_type.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbo_type.FormattingEnabled = true;
-            this.cbo_type.Location = new System.Drawing.Point(93, 16);
-            this.cbo_type.Name = "cbo_type";
-            this.cbo_type.Size = new System.Drawing.Size(414, 23);
-            this.cbo_type.TabIndex = 6;
+            this.TypeComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.TypeComboBox.FormattingEnabled = true;
+            this.TypeComboBox.Location = new System.Drawing.Point(93, 16);
+            this.TypeComboBox.Name = "TypeComboBox";
+            this.TypeComboBox.Size = new System.Drawing.Size(414, 23);
+            this.TypeComboBox.TabIndex = 6;
             // 
-            // tb_hostRules
+            // HostRulesTextBox
             // 
-            this.tb_hostRules.Location = new System.Drawing.Point(253, 332);
-            this.tb_hostRules.MaxLength = 2000;
-            this.tb_hostRules.Multiline = true;
-            this.tb_hostRules.Name = "tb_hostRules";
-            this.tb_hostRules.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.tb_hostRules.Size = new System.Drawing.Size(772, 64);
-            this.tb_hostRules.TabIndex = 5;
+            this.HostRulesTextBox.Location = new System.Drawing.Point(253, 332);
+            this.HostRulesTextBox.MaxLength = 2000;
+            this.HostRulesTextBox.Multiline = true;
+            this.HostRulesTextBox.Name = "HostRulesTextBox";
+            this.HostRulesTextBox.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.HostRulesTextBox.Size = new System.Drawing.Size(772, 64);
+            this.HostRulesTextBox.TabIndex = 5;
             // 
-            // tb_descr
+            // DescriptionTextBox
             // 
-            this.tb_descr.Location = new System.Drawing.Point(253, 262);
-            this.tb_descr.MaxLength = 2000;
-            this.tb_descr.Multiline = true;
-            this.tb_descr.Name = "tb_descr";
-            this.tb_descr.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.tb_descr.Size = new System.Drawing.Size(772, 64);
-            this.tb_descr.TabIndex = 5;
+            this.DescriptionTextBox.Location = new System.Drawing.Point(253, 262);
+            this.DescriptionTextBox.MaxLength = 2000;
+            this.DescriptionTextBox.Multiline = true;
+            this.DescriptionTextBox.Name = "DescriptionTextBox";
+            this.DescriptionTextBox.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.DescriptionTextBox.Size = new System.Drawing.Size(772, 64);
+            this.DescriptionTextBox.TabIndex = 5;
             // 
-            // tb_exactAddress
+            // ExactAddressTextBox
             // 
-            this.tb_exactAddress.Location = new System.Drawing.Point(253, 192);
-            this.tb_exactAddress.MaxLength = 500;
-            this.tb_exactAddress.Multiline = true;
-            this.tb_exactAddress.Name = "tb_exactAddress";
-            this.tb_exactAddress.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.tb_exactAddress.Size = new System.Drawing.Size(772, 64);
-            this.tb_exactAddress.TabIndex = 5;
+            this.ExactAddressTextBox.Location = new System.Drawing.Point(253, 192);
+            this.ExactAddressTextBox.MaxLength = 500;
+            this.ExactAddressTextBox.Multiline = true;
+            this.ExactAddressTextBox.Name = "ExactAddressTextBox";
+            this.ExactAddressTextBox.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.ExactAddressTextBox.Size = new System.Drawing.Size(772, 64);
+            this.ExactAddressTextBox.TabIndex = 5;
             // 
-            // tb_appAddress
+            // ApproximateAddressTextBox
             // 
-            this.tb_appAddress.Location = new System.Drawing.Point(253, 125);
-            this.tb_appAddress.MaxLength = 250;
-            this.tb_appAddress.Name = "tb_appAddress";
-            this.tb_appAddress.Size = new System.Drawing.Size(772, 25);
-            this.tb_appAddress.TabIndex = 4;
+            this.ApproximateAddressTextBox.Location = new System.Drawing.Point(253, 125);
+            this.ApproximateAddressTextBox.MaxLength = 250;
+            this.ApproximateAddressTextBox.Name = "ApproximateAddressTextBox";
+            this.ApproximateAddressTextBox.Size = new System.Drawing.Size(772, 25);
+            this.ApproximateAddressTextBox.TabIndex = 4;
             // 
-            // num_bathroom
+            // BathroomNum
             // 
-            this.num_bathroom.Location = new System.Drawing.Point(958, 69);
-            this.num_bathroom.Minimum = new decimal(new int[] {
+            this.BathroomNum.Location = new System.Drawing.Point(958, 69);
+            this.BathroomNum.Minimum = new decimal(new int[] {
             1,
             0,
             0,
             0});
-            this.num_bathroom.Name = "num_bathroom";
-            this.num_bathroom.Size = new System.Drawing.Size(83, 25);
-            this.num_bathroom.TabIndex = 3;
-            this.num_bathroom.Value = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            // 
-            // num_bedroom
-            // 
-            this.num_bedroom.Location = new System.Drawing.Point(662, 69);
-            this.num_bedroom.Minimum = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            this.num_bedroom.Name = "num_bedroom";
-            this.num_bedroom.Size = new System.Drawing.Size(83, 25);
-            this.num_bedroom.TabIndex = 3;
-            this.num_bedroom.Value = new decimal(new int[] {
+            this.BathroomNum.Name = "BathroomNum";
+            this.BathroomNum.Size = new System.Drawing.Size(83, 25);
+            this.BathroomNum.TabIndex = 3;
+            this.BathroomNum.Value = new decimal(new int[] {
             1,
             0,
             0,
             0});
             // 
-            // num_cap
+            // BedroomNum
             // 
-            this.num_cap.Location = new System.Drawing.Point(124, 69);
-            this.num_cap.Minimum = new decimal(new int[] {
+            this.BedroomNum.Location = new System.Drawing.Point(662, 69);
+            this.BedroomNum.Minimum = new decimal(new int[] {
             1,
             0,
             0,
             0});
-            this.num_cap.Name = "num_cap";
-            this.num_cap.Size = new System.Drawing.Size(83, 25);
-            this.num_cap.TabIndex = 3;
-            this.num_cap.Value = new decimal(new int[] {
+            this.BedroomNum.Name = "BedroomNum";
+            this.BedroomNum.Size = new System.Drawing.Size(83, 25);
+            this.BedroomNum.TabIndex = 3;
+            this.BedroomNum.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            // 
+            // CapacityyNum
+            // 
+            this.CapacityyNum.Location = new System.Drawing.Point(124, 69);
+            this.CapacityyNum.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.CapacityyNum.Name = "CapacityyNum";
+            this.CapacityyNum.Size = new System.Drawing.Size(83, 25);
+            this.CapacityyNum.TabIndex = 3;
+            this.CapacityyNum.Value = new decimal(new int[] {
             1,
             0,
             0,
@@ -298,62 +298,62 @@
             this.label16.TabIndex = 9;
             this.label16.Text = "Attraction - Area:";
             // 
-            // num_beds
+            // BedsNum
             // 
-            this.num_beds.Location = new System.Drawing.Point(371, 69);
-            this.num_beds.Minimum = new decimal(new int[] {
+            this.BedsNum.Location = new System.Drawing.Point(371, 69);
+            this.BedsNum.Minimum = new decimal(new int[] {
             1,
             0,
             0,
             0});
-            this.num_beds.Name = "num_beds";
-            this.num_beds.Size = new System.Drawing.Size(83, 25);
-            this.num_beds.TabIndex = 3;
-            this.num_beds.Value = new decimal(new int[] {
+            this.BedsNum.Name = "BedsNum";
+            this.BedsNum.Size = new System.Drawing.Size(83, 25);
+            this.BedsNum.TabIndex = 3;
+            this.BedsNum.Value = new decimal(new int[] {
             1,
             0,
             0,
             0});
             // 
-            // num_max
+            // MaxNum
             // 
-            this.num_max.Location = new System.Drawing.Point(782, 432);
-            this.num_max.Maximum = new decimal(new int[] {
+            this.MaxNum.Location = new System.Drawing.Point(782, 432);
+            this.MaxNum.Maximum = new decimal(new int[] {
             100000,
             0,
             0,
             0});
-            this.num_max.Minimum = new decimal(new int[] {
+            this.MaxNum.Minimum = new decimal(new int[] {
             1,
             0,
             0,
             0});
-            this.num_max.Name = "num_max";
-            this.num_max.Size = new System.Drawing.Size(120, 25);
-            this.num_max.TabIndex = 2;
-            this.num_max.Value = new decimal(new int[] {
+            this.MaxNum.Name = "MaxNum";
+            this.MaxNum.Size = new System.Drawing.Size(120, 25);
+            this.MaxNum.TabIndex = 2;
+            this.MaxNum.Value = new decimal(new int[] {
             1,
             0,
             0,
             0});
             // 
-            // num_min
+            // MinNum
             // 
-            this.num_min.Location = new System.Drawing.Point(457, 432);
-            this.num_min.Maximum = new decimal(new int[] {
+            this.MinNum.Location = new System.Drawing.Point(457, 432);
+            this.MinNum.Maximum = new decimal(new int[] {
             100000,
             0,
             0,
             0});
-            this.num_min.Minimum = new decimal(new int[] {
+            this.MinNum.Minimum = new decimal(new int[] {
             1,
             0,
             0,
             0});
-            this.num_min.Name = "num_min";
-            this.num_min.Size = new System.Drawing.Size(120, 25);
-            this.num_min.TabIndex = 2;
-            this.num_min.Value = new decimal(new int[] {
+            this.MinNum.Name = "MinNum";
+            this.MinNum.Size = new System.Drawing.Size(120, 25);
+            this.MinNum.TabIndex = 2;
+            this.MinNum.Value = new decimal(new int[] {
             1,
             0,
             0,
@@ -404,14 +404,14 @@
             this.label3.TabIndex = 1;
             this.label3.Text = "Number of Beds:";
             // 
-            // cbo_attraction
+            // AttractionComboBox
             // 
-            this.cbo_attraction.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbo_attraction.FormattingEnabled = true;
-            this.cbo_attraction.Location = new System.Drawing.Point(94, 80);
-            this.cbo_attraction.Name = "cbo_attraction";
-            this.cbo_attraction.Size = new System.Drawing.Size(395, 23);
-            this.cbo_attraction.TabIndex = 10;
+            this.AttractionComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.AttractionComboBox.FormattingEnabled = true;
+            this.AttractionComboBox.Location = new System.Drawing.Point(94, 80);
+            this.AttractionComboBox.Name = "AttractionComboBox";
+            this.AttractionComboBox.Size = new System.Drawing.Size(395, 23);
+            this.AttractionComboBox.TabIndex = 10;
             // 
             // label13
             // 
@@ -504,15 +504,16 @@
             this.label15.Text = "Specify the distance from each close by attraction and the time it takes to get t" +
     "o them:";
             // 
-            // btn_close
+            // CloseBtn
             // 
-            this.btn_close.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_close.Location = new System.Drawing.Point(914, 576);
-            this.btn_close.Name = "btn_close";
-            this.btn_close.Size = new System.Drawing.Size(152, 37);
-            this.btn_close.TabIndex = 7;
-            this.btn_close.Text = "Close / Finish";
-            this.btn_close.UseVisualStyleBackColor = true;
+            this.CloseBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CloseBtn.Location = new System.Drawing.Point(914, 576);
+            this.CloseBtn.Name = "CloseBtn";
+            this.CloseBtn.Size = new System.Drawing.Size(152, 37);
+            this.CloseBtn.TabIndex = 7;
+            this.CloseBtn.Text = "Close / Finish";
+            this.CloseBtn.UseVisualStyleBackColor = true;
+            this.CloseBtn.Click += new System.EventHandler(this.CloseBtn_Click);
             // 
             // label1
             // 
@@ -523,15 +524,16 @@
             this.label1.TabIndex = 1;
             this.label1.Text = "Type:";
             // 
-            // btn_addAttraction
+            // AddAttractionBtn
             // 
-            this.btn_addAttraction.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_addAttraction.Location = new System.Drawing.Point(873, 129);
-            this.btn_addAttraction.Name = "btn_addAttraction";
-            this.btn_addAttraction.Size = new System.Drawing.Size(152, 37);
-            this.btn_addAttraction.TabIndex = 5;
-            this.btn_addAttraction.Text = "Add Attraction";
-            this.btn_addAttraction.UseVisualStyleBackColor = true;
+            this.AddAttractionBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.AddAttractionBtn.Location = new System.Drawing.Point(873, 129);
+            this.AddAttractionBtn.Name = "AddAttractionBtn";
+            this.AddAttractionBtn.Size = new System.Drawing.Size(152, 37);
+            this.AddAttractionBtn.TabIndex = 5;
+            this.AddAttractionBtn.Text = "Add Attraction";
+            this.AddAttractionBtn.UseVisualStyleBackColor = true;
+            this.AddAttractionBtn.Click += new System.EventHandler(this.AddAttractionBtn_Click);
             // 
             // label20
             // 
@@ -544,33 +546,33 @@
             this.label20.TabIndex = 12;
             this.label20.Text = "If On Foot And By Car Value are zero,\r\nRepresent that is empty.\r\n";
             // 
-            // num_onfoot
+            // OnfootNum
             // 
-            this.num_onfoot.Location = new System.Drawing.Point(540, 82);
-            this.num_onfoot.Name = "num_onfoot";
-            this.num_onfoot.Size = new System.Drawing.Size(304, 25);
-            this.num_onfoot.TabIndex = 11;
+            this.OnfootNum.Location = new System.Drawing.Point(540, 82);
+            this.OnfootNum.Name = "OnfootNum";
+            this.OnfootNum.Size = new System.Drawing.Size(304, 25);
+            this.OnfootNum.TabIndex = 11;
             // 
-            // num_bycar
+            // BycarNum
             // 
-            this.num_bycar.Location = new System.Drawing.Point(540, 172);
-            this.num_bycar.Name = "num_bycar";
-            this.num_bycar.Size = new System.Drawing.Size(304, 25);
-            this.num_bycar.TabIndex = 11;
+            this.BycarNum.Location = new System.Drawing.Point(540, 172);
+            this.BycarNum.Name = "BycarNum";
+            this.BycarNum.Size = new System.Drawing.Size(304, 25);
+            this.BycarNum.TabIndex = 11;
             // 
             // tabPage3
             // 
-            this.tabPage3.Controls.Add(this.btn_addAttraction);
+            this.tabPage3.Controls.Add(this.AddAttractionBtn);
             this.tabPage3.Controls.Add(this.label20);
-            this.tabPage3.Controls.Add(this.num_onfoot);
-            this.tabPage3.Controls.Add(this.num_bycar);
-            this.tabPage3.Controls.Add(this.num_distance);
-            this.tabPage3.Controls.Add(this.cbo_attraction);
+            this.tabPage3.Controls.Add(this.OnfootNum);
+            this.tabPage3.Controls.Add(this.BycarNum);
+            this.tabPage3.Controls.Add(this.DistanceNum);
+            this.tabPage3.Controls.Add(this.AttractionComboBox);
             this.tabPage3.Controls.Add(this.label19);
             this.tabPage3.Controls.Add(this.label18);
             this.tabPage3.Controls.Add(this.label17);
             this.tabPage3.Controls.Add(this.label16);
-            this.tabPage3.Controls.Add(this.dgv_distance);
+            this.tabPage3.Controls.Add(this.DistanceDataGridView);
             this.tabPage3.Controls.Add(this.label15);
             this.tabPage3.Location = new System.Drawing.Point(4, 25);
             this.tabPage3.Name = "tabPage3";
@@ -579,13 +581,13 @@
             this.tabPage3.Text = "Distance to Attraction";
             this.tabPage3.UseVisualStyleBackColor = true;
             // 
-            // num_distance
+            // DistanceNum
             // 
-            this.num_distance.DecimalPlaces = 1;
-            this.num_distance.Location = new System.Drawing.Point(104, 172);
-            this.num_distance.Name = "num_distance";
-            this.num_distance.Size = new System.Drawing.Size(304, 25);
-            this.num_distance.TabIndex = 11;
+            this.DistanceNum.DecimalPlaces = 1;
+            this.DistanceNum.Location = new System.Drawing.Point(104, 172);
+            this.DistanceNum.Name = "DistanceNum";
+            this.DistanceNum.Size = new System.Drawing.Size(304, 25);
+            this.DistanceNum.TabIndex = 11;
             // 
             // Column3
             // 
@@ -621,32 +623,32 @@
             this.label14.TabIndex = 5;
             this.label14.Text = "Choose Available Amenities:";
             // 
-            // dgv_Amenities
+            // AmenitiesDataGridView
             // 
-            this.dgv_Amenities.AllowUserToAddRows = false;
-            this.dgv_Amenities.AllowUserToDeleteRows = false;
-            this.dgv_Amenities.AllowUserToResizeColumns = false;
-            this.dgv_Amenities.AllowUserToResizeRows = false;
-            this.dgv_Amenities.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
-            this.dgv_Amenities.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv_Amenities.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.AmenitiesDataGridView.AllowUserToAddRows = false;
+            this.AmenitiesDataGridView.AllowUserToDeleteRows = false;
+            this.AmenitiesDataGridView.AllowUserToResizeColumns = false;
+            this.AmenitiesDataGridView.AllowUserToResizeRows = false;
+            this.AmenitiesDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.AmenitiesDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.AmenitiesDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column1,
             this.Column2,
             this.Column3});
-            this.dgv_Amenities.Location = new System.Drawing.Point(88, 96);
-            this.dgv_Amenities.MultiSelect = false;
-            this.dgv_Amenities.Name = "dgv_Amenities";
-            this.dgv_Amenities.RowHeadersVisible = false;
-            this.dgv_Amenities.RowHeadersWidth = 51;
-            this.dgv_Amenities.RowTemplate.Height = 27;
-            this.dgv_Amenities.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgv_Amenities.Size = new System.Drawing.Size(830, 350);
-            this.dgv_Amenities.TabIndex = 7;
+            this.AmenitiesDataGridView.Location = new System.Drawing.Point(88, 96);
+            this.AmenitiesDataGridView.MultiSelect = false;
+            this.AmenitiesDataGridView.Name = "AmenitiesDataGridView";
+            this.AmenitiesDataGridView.RowHeadersVisible = false;
+            this.AmenitiesDataGridView.RowHeadersWidth = 51;
+            this.AmenitiesDataGridView.RowTemplate.Height = 27;
+            this.AmenitiesDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.AmenitiesDataGridView.Size = new System.Drawing.Size(830, 350);
+            this.AmenitiesDataGridView.TabIndex = 7;
             // 
             // tabPage2
             // 
             this.tabPage2.Controls.Add(this.label14);
-            this.tabPage2.Controls.Add(this.dgv_Amenities);
+            this.tabPage2.Controls.Add(this.AmenitiesDataGridView);
             this.tabPage2.Location = new System.Drawing.Point(4, 25);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
@@ -655,31 +657,32 @@
             this.tabPage2.Text = "Amenities";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
-            // btn_next
+            // NextBtn
             // 
-            this.btn_next.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_next.Location = new System.Drawing.Point(747, 576);
-            this.btn_next.Name = "btn_next";
-            this.btn_next.Size = new System.Drawing.Size(152, 37);
-            this.btn_next.TabIndex = 6;
-            this.btn_next.Text = "Next";
-            this.btn_next.UseVisualStyleBackColor = true;
-            this.btn_next.Visible = false;
+            this.NextBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.NextBtn.Location = new System.Drawing.Point(747, 576);
+            this.NextBtn.Name = "NextBtn";
+            this.NextBtn.Size = new System.Drawing.Size(152, 37);
+            this.NextBtn.TabIndex = 6;
+            this.NextBtn.Text = "Next";
+            this.NextBtn.UseVisualStyleBackColor = true;
+            this.NextBtn.Visible = false;
+            this.NextBtn.Click += new System.EventHandler(this.NextBtn_Click);
             // 
             // tabPage1
             // 
-            this.tabPage1.Controls.Add(this.tb_title);
-            this.tabPage1.Controls.Add(this.cbo_type);
-            this.tabPage1.Controls.Add(this.tb_hostRules);
-            this.tabPage1.Controls.Add(this.tb_descr);
-            this.tabPage1.Controls.Add(this.tb_exactAddress);
-            this.tabPage1.Controls.Add(this.tb_appAddress);
-            this.tabPage1.Controls.Add(this.num_bathroom);
-            this.tabPage1.Controls.Add(this.num_bedroom);
-            this.tabPage1.Controls.Add(this.num_beds);
-            this.tabPage1.Controls.Add(this.num_cap);
-            this.tabPage1.Controls.Add(this.num_max);
-            this.tabPage1.Controls.Add(this.num_min);
+            this.tabPage1.Controls.Add(this.TitleTextBox);
+            this.tabPage1.Controls.Add(this.TypeComboBox);
+            this.tabPage1.Controls.Add(this.HostRulesTextBox);
+            this.tabPage1.Controls.Add(this.DescriptionTextBox);
+            this.tabPage1.Controls.Add(this.ExactAddressTextBox);
+            this.tabPage1.Controls.Add(this.ApproximateAddressTextBox);
+            this.tabPage1.Controls.Add(this.BathroomNum);
+            this.tabPage1.Controls.Add(this.BedroomNum);
+            this.tabPage1.Controls.Add(this.BedsNum);
+            this.tabPage1.Controls.Add(this.CapacityyNum);
+            this.tabPage1.Controls.Add(this.MaxNum);
+            this.tabPage1.Controls.Add(this.MinNum);
             this.tabPage1.Controls.Add(this.label5);
             this.tabPage1.Controls.Add(this.label4);
             this.tabPage1.Controls.Add(this.label6);
@@ -711,30 +714,32 @@
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(1057, 536);
             this.tabControl1.TabIndex = 5;
+            this.tabControl1.SelectedIndexChanged += new System.EventHandler(this.tabControl1_SelectedIndexChanged);
             // 
             // AddOrEditListinig
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1131, 646);
-            this.Controls.Add(this.btn_close);
-            this.Controls.Add(this.btn_next);
+            this.Controls.Add(this.CloseBtn);
+            this.Controls.Add(this.NextBtn);
             this.Controls.Add(this.tabControl1);
             this.Name = "AddOrEditListinig";
             this.Text = "Seoul Stay - Add/Edit Listing";
-            ((System.ComponentModel.ISupportInitialize)(this.dgv_distance)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.num_bathroom)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.num_bedroom)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.num_cap)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.num_beds)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.num_max)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.num_min)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.num_onfoot)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.num_bycar)).EndInit();
+            this.Load += new System.EventHandler(this.AddOrEditListinig_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.DistanceDataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.BathroomNum)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.BedroomNum)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.CapacityyNum)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.BedsNum)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.MaxNum)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.MinNum)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.OnfootNum)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.BycarNum)).EndInit();
             this.tabPage3.ResumeLayout(false);
             this.tabPage3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.num_distance)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgv_Amenities)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DistanceNum)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.AmenitiesDataGridView)).EndInit();
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
             this.tabPage1.ResumeLayout(false);
@@ -747,32 +752,32 @@
         #endregion
 
         private System.Windows.Forms.Label label17;
-        private System.Windows.Forms.DataGridView dgv_distance;
+        private System.Windows.Forms.DataGridView DistanceDataGridView;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
-        private System.Windows.Forms.TextBox tb_title;
-        private System.Windows.Forms.ComboBox cbo_type;
-        private System.Windows.Forms.TextBox tb_hostRules;
-        private System.Windows.Forms.TextBox tb_descr;
-        private System.Windows.Forms.TextBox tb_exactAddress;
-        private System.Windows.Forms.TextBox tb_appAddress;
-        private System.Windows.Forms.NumericUpDown num_bathroom;
-        private System.Windows.Forms.NumericUpDown num_bedroom;
-        private System.Windows.Forms.NumericUpDown num_cap;
+        private System.Windows.Forms.TextBox TitleTextBox;
+        private System.Windows.Forms.ComboBox TypeComboBox;
+        private System.Windows.Forms.TextBox HostRulesTextBox;
+        private System.Windows.Forms.TextBox DescriptionTextBox;
+        private System.Windows.Forms.TextBox ExactAddressTextBox;
+        private System.Windows.Forms.TextBox ApproximateAddressTextBox;
+        private System.Windows.Forms.NumericUpDown BathroomNum;
+        private System.Windows.Forms.NumericUpDown BedroomNum;
+        private System.Windows.Forms.NumericUpDown CapacityyNum;
         private System.Windows.Forms.Label label16;
-        private System.Windows.Forms.NumericUpDown num_beds;
-        private System.Windows.Forms.NumericUpDown num_max;
-        private System.Windows.Forms.NumericUpDown num_min;
+        private System.Windows.Forms.NumericUpDown BedsNum;
+        private System.Windows.Forms.NumericUpDown MaxNum;
+        private System.Windows.Forms.NumericUpDown MinNum;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.ComboBox cbo_attraction;
+        private System.Windows.Forms.ComboBox AttractionComboBox;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label11;
@@ -783,21 +788,21 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.Button btn_close;
+        private System.Windows.Forms.Button CloseBtn;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button btn_addAttraction;
+        private System.Windows.Forms.Button AddAttractionBtn;
         private System.Windows.Forms.Label label20;
-        private System.Windows.Forms.NumericUpDown num_onfoot;
-        private System.Windows.Forms.NumericUpDown num_bycar;
+        private System.Windows.Forms.NumericUpDown OnfootNum;
+        private System.Windows.Forms.NumericUpDown BycarNum;
         private System.Windows.Forms.TabPage tabPage3;
-        private System.Windows.Forms.NumericUpDown num_distance;
+        private System.Windows.Forms.NumericUpDown DistanceNum;
         private System.Windows.Forms.DataGridViewCheckBoxColumn Column3;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.DataGridView dgv_Amenities;
+        private System.Windows.Forms.DataGridView AmenitiesDataGridView;
         private System.Windows.Forms.TabPage tabPage2;
-        private System.Windows.Forms.Button btn_next;
+        private System.Windows.Forms.Button NextBtn;
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.TabControl tabControl1;
     }

@@ -84,7 +84,27 @@ namespace Session1
         }
         private void AddListingBtn_Click(object sender, EventArgs e)
         {
+            AddOrEditListinig addOrEditListinig = new AddOrEditListinig(null);
+            addOrEditListinig.ShowDialog();
             Management_Load(sender, e);
+        }
+
+        private void ManageDataGridView_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex < 0 || e.ColumnIndex != 5)
+                return;
+            long id = (long)this.ManageDataGridView.Rows[e.RowIndex].Cells[0].Value;
+            AddOrEditListinig form = new AddOrEditListinig(id);
+            form.ShowDialog();
+            this.ManageDataGridView.Rows.Clear();
+            Session1Entities entities = new Session1Entities();
+                var data = entities.Items.Where(x => x.UserID == Global.accountID).ToList();
+                data.ForEach(x =>
+                {
+                    this.ManageDataGridView.Rows.Add(x.ID, x.Title, x.Capacity, x.Area.Name, x.ItemType.Name, "Edit Details");
+                });
+                this.CurrentNum[1] = data.Count();
+                this.CountLabel.Text = $"{data.Count()} items found.";
         }
     }
 }
