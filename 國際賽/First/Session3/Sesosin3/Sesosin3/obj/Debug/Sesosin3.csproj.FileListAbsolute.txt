@@ -50,3 +50,4 @@ C:\Users\USER\Desktop\Resources\Sesosin3\Sesosin3\obj\Debug\Sesosin3.csproj.Core
 C:\Users\USER\Desktop\Resources\Sesosin3\Sesosin3\obj\Debug\Sesosin3.csproj.CopyComplete
 C:\Users\USER\Desktop\Resources\Sesosin3\Sesosin3\obj\Debug\Sesosin3.exe
 C:\Users\USER\Desktop\Resources\Sesosin3\Sesosin3\obj\Debug\Sesosin3.pdb
+C:\Users\USER\Desktop\Resources\Sesosin3\Sesosin3\obj\Debug\Sesosin3.AdvancedSearch.resources

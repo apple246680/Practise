@@ -55,6 +55,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AdvancedSearch.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdvancedSearch.Designer.cs">
+      <DependentUpon>AdvancedSearch.cs</DependentUpon>
+    </Compile>
     <Compile Include="Amenity.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
@@ -144,6 +150,9 @@
     <Compile Include="UserType.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="AdvancedSearch.resx">
+      <DependentUpon>AdvancedSearch.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Main.resx">
       <DependentUpon>Main.cs</DependentUpon>
     </EmbeddedResource>

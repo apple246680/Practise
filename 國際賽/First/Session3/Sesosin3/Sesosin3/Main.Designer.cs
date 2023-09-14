@@ -96,6 +96,7 @@
             this.AdvanedBtn.TabIndex = 7;
             this.AdvanedBtn.Text = "Advanced Search";
             this.AdvanedBtn.UseVisualStyleBackColor = true;
+            this.AdvanedBtn.Click += new System.EventHandler(this.AdvanedBtn_Click);
             // 
             // SearchBtn
             // 
@@ -305,7 +306,7 @@
             // Main
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
-            this.ClientSize = new System.Drawing.Size(1187, 751);
+            this.ClientSize = new System.Drawing.Size(1232, 753);
             this.Controls.Add(this.ResultGroupBox);
             this.Controls.Add(this.TopGroupBox);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));

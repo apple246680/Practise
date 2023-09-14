@@ -27,16 +27,12 @@ namespace Sesosin3
             {
                 var items = entities.Items.ToList();
                 if (!String.IsNullOrEmpty(SearchTextBox.Text))
-                    items = items.Where(x => x.Area.Name == SearchTextBox.Text
-                        || x.Title == SearchTextBox.Text
-                        || x.ItemAttractions.Any(y => y.Attraction.Name == SearchTextBox.Text)
-                        || x.ItemType.Name == SearchTextBox.Text
-                        || x.ItemAmenities.Any(y => y.Amenity.Name == SearchTextBox.Text)).ToList();
+                    items = items.Where(x => x.Area.Name == SearchTextBox.Text || x.Title == SearchTextBox.Text || x.ItemAttractions.Any(y => y.Attraction.Name == SearchTextBox.Text) || x.ItemType.Name == SearchTextBox.Text || x.ItemAmenities.Any(y => y.Amenity.Name == SearchTextBox.Text)).ToList();
                 int nights = (int)NightsNumber.Value;
                 int people = (int)PeopleNumber.Value;
                 DateTime from = FromDateTimePicker.Value;
                 DateTime to = from.AddDays(nights);
-                items = items.Where(x=> x.ItemPrices.Any(y => y.Date >= from && y.Date <= to)
+                items = items.Where(x => x.ItemPrices.Any(y => y.Date >= from && y.Date <= to)
                     && x.Capacity >= people).OrderBy(x => x.Title).ToList();
                 ResultDataGridView.Rows.Clear();
                 items.ForEach(x =>
@@ -103,6 +99,12 @@ namespace Sesosin3
         {
             ListBoxHint.Visible = false;
             SearchTextBox.Text = ListBoxHint.Text.Replace("      ", "@").Split('@')[0];
+        }
+
+        private void AdvanedBtn_Click(object sender, EventArgs e)
+        {
+            AdvancedSearch advancedSearch = new AdvancedSearch();
+            advancedSearch.Show();
         }
     }
 }
