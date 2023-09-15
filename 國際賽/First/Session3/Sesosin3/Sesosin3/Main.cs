@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Data;
+using System.Diagnostics;
 using System.Linq;
 using System.Windows.Forms;
 namespace Sesosin3
@@ -89,7 +90,6 @@ namespace Sesosin3
                     ListBoxHint.Visible = false;
             }
         }
-
         private void ListBoxHint_KeyDown(object sender, KeyEventArgs e)
         {
             ListBoxHint.Visible = false;
@@ -100,11 +100,13 @@ namespace Sesosin3
             ListBoxHint.Visible = false;
             SearchTextBox.Text = ListBoxHint.Text.Replace("      ", "@").Split('@')[0];
         }
-
         private void AdvanedBtn_Click(object sender, EventArgs e)
         {
             AdvancedSearch advancedSearch = new AdvancedSearch();
-            advancedSearch.Show();
+            Visible = false;
+            advancedSearch.ShowDialog();
+            Visible = true;
+            Debug.WriteLine("123");
         }
     }
 }
