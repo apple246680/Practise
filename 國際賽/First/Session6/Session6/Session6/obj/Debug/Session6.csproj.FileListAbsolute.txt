@@ -1,0 +1,15 @@
+C:\Users\USER\Desktop\Resources\WSC2022SE_TP09_Session6_actual_en\Session6\Session6\bin\Debug\Session6.exe.config
+C:\Users\USER\Desktop\Resources\WSC2022SE_TP09_Session6_actual_en\Session6\Session6\bin\Debug\Session6.exe
+C:\Users\USER\Desktop\Resources\WSC2022SE_TP09_Session6_actual_en\Session6\Session6\bin\Debug\Session6.pdb
+C:\Users\USER\Desktop\Resources\WSC2022SE_TP09_Session6_actual_en\Session6\Session6\obj\Debug\Session6.csproj.AssemblyReference.cache
+C:\Users\USER\Desktop\Resources\WSC2022SE_TP09_Session6_actual_en\Session6\Session6\obj\Debug\Session6.Main.resources
+C:\Users\USER\Desktop\Resources\WSC2022SE_TP09_Session6_actual_en\Session6\Session6\obj\Debug\Session6.Properties.Resources.resources
+C:\Users\USER\Desktop\Resources\WSC2022SE_TP09_Session6_actual_en\Session6\Session6\obj\Debug\Session6.csproj.GenerateResource.cache
+C:\Users\USER\Desktop\Resources\WSC2022SE_TP09_Session6_actual_en\Session6\Session6\obj\Debug\Session6.csproj.CoreCompileInputs.cache
+C:\Users\USER\Desktop\Resources\WSC2022SE_TP09_Session6_actual_en\Session6\Session6\obj\Debug\Session6.exe
+C:\Users\USER\Desktop\Resources\WSC2022SE_TP09_Session6_actual_en\Session6\Session6\obj\Debug\Session6.pdb
+C:\Users\USER\Desktop\Resources\WSC2022SE_TP09_Session6_actual_en\Session6\Session6\bin\Debug\EntityFramework.dll
+C:\Users\USER\Desktop\Resources\WSC2022SE_TP09_Session6_actual_en\Session6\Session6\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\USER\Desktop\Resources\WSC2022SE_TP09_Session6_actual_en\Session6\Session6\bin\Debug\EntityFramework.xml
+C:\Users\USER\Desktop\Resources\WSC2022SE_TP09_Session6_actual_en\Session6\Session6\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\USER\Desktop\Resources\WSC2022SE_TP09_Session6_actual_en\Session6\Session6\obj\Debug\Session6.csproj.CopyComplete
