@@ -9,7 +9,7 @@
             for (int i = 0; i < 10; i++)
             {
                 Random a=new Random();
-                double b=a.Next(100);
+                double b=a.NextDouble()*100;
                 if (b>=0&&b<=100)
                 {
                     list.Add(b);
