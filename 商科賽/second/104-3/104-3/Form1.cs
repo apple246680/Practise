@@ -4,6 +4,18 @@
     {
         public Form1()
         {
+            Enumerable.Range(0,100).OrderBy(x=>Guid.NewGuid()).Take(10).Average();
+            List<double> list = new List<double>();
+            for (int i = 0; i < 10; i++)
+            {
+                Random a=new Random();
+                double b=a.Next(100);
+                if (b>=0&&b<=100)
+                {
+                    list.Add(b);
+                }
+            }
+            double n= list.Average();
             InitializeComponent();
         }
         string imagePath = "";

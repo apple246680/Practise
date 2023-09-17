@@ -24,7 +24,6 @@ static int EvaluateExpression(string expression)
         {
             values[i] *= values[i + 1];
             values.RemoveAt(i + 1);
-
             symbol.RemoveAt(i);
             i--;
         }

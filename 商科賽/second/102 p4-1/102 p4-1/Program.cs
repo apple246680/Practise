@@ -11,7 +11,9 @@
                 for (int i = 10; i >= 2; i--)
                     S += int.Parse(line[10 - i].ToString()) * i;
                 var Smod11 = 11 - (S % 11);
-                if ((Smod11 == 10 && line.Last() == 'X') || (Smod11 == 11 && line.Last() == '0') || Smod11.ToString() == line.Last().ToString())
+                if ((Smod11 == 10 && line.Last() == 'X') || 
+                    (Smod11 == 11 && line.Last() == '0') || 
+                     Smod11.ToString() == line.Last().ToString())
                     TF = "T\r\n";
                 else
                     TF = "F\r\n";
@@ -24,7 +26,8 @@
                     else
                         S += int.Parse(line[i].ToString()) * 3;
                 var Smod10 = 10 - (S % 10);
-                if ((Smod10 == 10 && line.Last() == 0) || (Smod10.ToString() == line.Last().ToString()))
+                if ((Smod10 == 10 && line.Last() == 0) || 
+                    (Smod10.ToString() == line.Last().ToString()))
                     TF = "T\r\n";
                 else
                     TF = "F\r\n";

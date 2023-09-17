@@ -9,6 +9,7 @@
             foreach (var perchat in Convert.ToString(int.Parse(line), 2))
                 if (perchat == '1')
                     Count++;
+            Convert.ToString(int.Parse(line), 2).Count(x=>x=='1');
             outstring += Count + "\r\n";
         }
         outstring += "\r\n";
