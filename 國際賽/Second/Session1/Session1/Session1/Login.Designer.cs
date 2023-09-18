@@ -182,6 +182,7 @@
             this.Create.TabIndex = 11;
             this.Create.TabStop = true;
             this.Create.Text = "Create one";
+            this.Create.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.Create_LinkClicked);
             // 
             // Login
             // 

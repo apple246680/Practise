@@ -8,7 +8,6 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Windows.Forms.VisualStyles;
-
 namespace Session1
 {
     public partial class Login : Form
@@ -64,6 +63,14 @@ namespace Session1
                 Global.accountID = Convert.ToInt32(Properties.Settings.Default.KeepLogin);
                 LoginBtn_Click(sender, e);
             }
+        }
+
+        private void Create_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            CreateAccount createAccount = new CreateAccount();
+            Visible=false;
+            createAccount.ShowDialog();
+            Visible = true;
         }
     }
 }
