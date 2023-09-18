@@ -1,14 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Windows.Forms.VisualStyles;
-
 namespace Session1
 {
     public partial class Login : Form
@@ -18,7 +10,6 @@ namespace Session1
             Global.login = this;
             InitializeComponent();
         }
-
         private void LoginBtn_Click(object sender, EventArgs e)
         {
             Management management = new Management();
@@ -62,12 +53,10 @@ namespace Session1
         {
             PasswordTextBox.UseSystemPasswordChar=!ShowPassword.Checked;
         }
-
         private void ExitBtn_Click(object sender, EventArgs e)
         {
             Close();
         }
-
         private void Login_Load(object sender, EventArgs e)
         {
             if (!String.IsNullOrEmpty(Properties.Settings.Default.KeepLogin))
@@ -76,7 +65,6 @@ namespace Session1
                 LoginBtn_Click(sender, e);
             }
         }
-
         private void Create_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             Visible= false;
