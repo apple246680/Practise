@@ -19,7 +19,14 @@ namespace Session1
         }
         private void LoginBtn_Click(object sender, EventArgs e)
         {
+            Management management = new Management();
             Session1Entities entities = new Session1Entities();
+            if (Global.accountID.HasValue)
+            {
+                Visible = false;
+                management.ShowDialog();
+                return;
+            }
             if (!string.IsNullOrEmpty(EmpTextBox.Text))
             {
                 var user = entities.Users.SingleOrDefault(x=>x.Username==EmpTextBox.Text&&x.Password==PasswordTextBox.Text&&x.UserTypeID==1);
@@ -47,6 +54,7 @@ namespace Session1
             Properties.Settings.Default.Save();
             Visible = false;
             MessageBox.Show("Success!");
+            management.ShowDialog();
         }
         private void ShowPassword_CheckedChanged(object sender, EventArgs e)
         {
