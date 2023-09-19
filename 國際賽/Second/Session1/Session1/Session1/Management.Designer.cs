@@ -201,6 +201,7 @@
             this.ManageDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
             this.ManageDataGridView.Size = new System.Drawing.Size(799, 253);
             this.ManageDataGridView.TabIndex = 7;
+            this.ManageDataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.ManageDataGridView_CellContentClick);
             // 
             // Column6
             // 

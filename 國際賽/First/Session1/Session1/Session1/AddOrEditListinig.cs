@@ -151,7 +151,6 @@ namespace Session1
                 items.MinimumNights = (int)MinNum.Value;
                 items.MaximumNights = (int)MaxNum.Value;
                 entities.Items.AddOrUpdate(items);
-
                 foreach (DataGridViewRow row in AmenitiesDataGridView.Rows)
                 {
                     if ((bool)row.Cells[2].Value)

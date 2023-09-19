@@ -427,6 +427,7 @@
             this.CloseBtn.TabIndex = 10;
             this.CloseBtn.Text = "Close / Finish";
             this.CloseBtn.UseVisualStyleBackColor = true;
+            this.CloseBtn.Click += new System.EventHandler(this.CloseBtn_Click);
             // 
             // AddAttractionBtn
             // 
@@ -437,6 +438,7 @@
             this.AddAttractionBtn.TabIndex = 5;
             this.AddAttractionBtn.Text = "Add Attraction";
             this.AddAttractionBtn.UseVisualStyleBackColor = true;
+            this.AddAttractionBtn.Click += new System.EventHandler(this.AddAttractionBtn_Click);
             // 
             // label20
             // 
@@ -693,13 +695,14 @@
             // NextBtn
             // 
             this.NextBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.NextBtn.Location = new System.Drawing.Point(727, 558);
+            this.NextBtn.Location = new System.Drawing.Point(736, 558);
             this.NextBtn.Name = "NextBtn";
             this.NextBtn.Size = new System.Drawing.Size(152, 37);
             this.NextBtn.TabIndex = 9;
             this.NextBtn.Text = "Next";
             this.NextBtn.UseVisualStyleBackColor = true;
             this.NextBtn.Visible = false;
+            this.NextBtn.Click += new System.EventHandler(this.NextBtn_Click);
             // 
             // tabControl1
             // 
@@ -711,6 +714,7 @@
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(1057, 536);
             this.tabControl1.TabIndex = 8;
+            this.tabControl1.SelectedIndexChanged += new System.EventHandler(this.tabControl1_SelectedIndexChanged);
             // 
             // AddOrEditListinig
             // 
@@ -722,6 +726,7 @@
             this.Controls.Add(this.tabControl1);
             this.Name = "AddOrEditListinig";
             this.Text = "AddOrEditListinig";
+            this.Load += new System.EventHandler(this.AddOrEditListinig_Load);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.BathroomNum)).EndInit();
