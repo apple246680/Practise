@@ -25,6 +25,13 @@ namespace Session1
             {
                 Visible = false;
                 management.ShowDialog();
+                try
+                {
+                    Visible = true;
+                }
+                catch
+                {
+                }
                 return;
             }
             if (!string.IsNullOrEmpty(EmpTextBox.Text))
@@ -55,6 +62,13 @@ namespace Session1
             Visible = false;
             MessageBox.Show("Success!");
             management.ShowDialog();
+            try
+            {
+                Visible = true;
+            }
+            catch
+            {
+            }
         }
         private void ShowPassword_CheckedChanged(object sender, EventArgs e)
         {

@@ -174,6 +174,7 @@
             this.AddListingBtn.TabIndex = 6;
             this.AddListingBtn.Text = "Add Listing";
             this.AddListingBtn.UseVisualStyleBackColor = true;
+            this.AddListingBtn.Click += new System.EventHandler(this.AddListingBtn_Click);
             // 
             // ManageDataGridView
             // 
@@ -231,6 +232,7 @@
             this.hint.Size = new System.Drawing.Size(719, 22);
             this.hint.TabIndex = 1;
             this.hint.Text = "Search destination or Listing Title or Attraction";
+            this.hint.Click += new System.EventHandler(this.hint_Click);
             // 
             // search
             // 
@@ -238,6 +240,8 @@
             this.search.Name = "search";
             this.search.Size = new System.Drawing.Size(716, 25);
             this.search.TabIndex = 0;
+            this.search.KeyDown += new System.Windows.Forms.KeyEventHandler(this.search_KeyDown);
+            this.search.Leave += new System.EventHandler(this.search_Leave);
             // 
             // tabPage1
             // 
@@ -261,6 +265,7 @@
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(1005, 405);
             this.tabControl1.TabIndex = 10;
+            this.tabControl1.SelectedIndexChanged += new System.EventHandler(this.tabControl1_SelectedIndexChanged);
             // 
             // pictureBox1
             // 
@@ -280,6 +285,7 @@
             this.ExitBtn.TabIndex = 8;
             this.ExitBtn.Text = "Exit";
             this.ExitBtn.UseVisualStyleBackColor = true;
+            this.ExitBtn.Click += new System.EventHandler(this.ExitBtn_Click);
             // 
             // LououtBtn
             // 
@@ -289,6 +295,7 @@
             this.LououtBtn.TabIndex = 7;
             this.LououtBtn.Text = "Logout";
             this.LououtBtn.UseVisualStyleBackColor = true;
+            this.LououtBtn.Click += new System.EventHandler(this.LououtBtn_Click);
             // 
             // Management
             // 
@@ -302,6 +309,7 @@
             this.Controls.Add(this.LououtBtn);
             this.Name = "Management";
             this.Text = "Management";
+            this.Load += new System.EventHandler(this.Management_Load);
             ((System.ComponentModel.ISupportInitialize)(this.TravelerDataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ManageDataGridView)).EndInit();
             this.tabPage2.ResumeLayout(false);

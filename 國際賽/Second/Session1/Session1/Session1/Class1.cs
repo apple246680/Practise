@@ -17,7 +17,7 @@ namespace Session1
                 throw new ArgumentException("password<=5");
             if (entities.Users.Any(x => x.Username == username))
                 throw new ArgumentException("have account");
-            entities.Users.Add(new User
+            var user=entities.Users.Add(new User
             {
                 GUID=Guid.NewGuid(),
                 UserTypeID=2,
@@ -29,6 +29,7 @@ namespace Session1
                 FamilyCount=count
             });
             entities.SaveChanges();
+            return user;
         }
     }
 }
