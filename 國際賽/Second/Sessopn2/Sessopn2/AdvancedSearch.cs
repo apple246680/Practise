@@ -16,5 +16,9 @@ namespace Sessopn2
         {
             InitializeComponent();
         }
+        private void SimpleSearchBtn_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
     }
 }

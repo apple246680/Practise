@@ -16,5 +16,13 @@ namespace Sessopn2
         {
             InitializeComponent();
         }
+
+        private void AdvancedSearchBtn_Click(object sender, EventArgs e)
+        {
+            AdvancedSearch advancedSearch = new AdvancedSearch();
+            Visible = false;
+            advancedSearch.ShowDialog();
+            Visible = true;
+        }
     }
 }

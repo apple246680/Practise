@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.button2 = new System.Windows.Forms.Button();
+            this.AdvancedSearchBtn = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -58,7 +58,7 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.button2);
+            this.groupBox1.Controls.Add(this.AdvancedSearchBtn);
             this.groupBox1.Controls.Add(this.button1);
             this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.label4);
@@ -77,14 +77,15 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Simple search";
             // 
-            // button2
+            // AdvancedSearchBtn
             // 
-            this.button2.Location = new System.Drawing.Point(748, 61);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(204, 23);
-            this.button2.TabIndex = 6;
-            this.button2.Text = "Advanced Search";
-            this.button2.UseVisualStyleBackColor = true;
+            this.AdvancedSearchBtn.Location = new System.Drawing.Point(748, 61);
+            this.AdvancedSearchBtn.Name = "AdvancedSearchBtn";
+            this.AdvancedSearchBtn.Size = new System.Drawing.Size(204, 23);
+            this.AdvancedSearchBtn.TabIndex = 6;
+            this.AdvancedSearchBtn.Text = "Advanced Search";
+            this.AdvancedSearchBtn.UseVisualStyleBackColor = true;
+            this.AdvancedSearchBtn.Click += new System.EventHandler(this.AdvancedSearchBtn_Click);
             // 
             // button1
             // 
@@ -291,7 +292,7 @@
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ListBox listBox1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button AdvancedSearchBtn;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.DataGridView dataGridView1;
