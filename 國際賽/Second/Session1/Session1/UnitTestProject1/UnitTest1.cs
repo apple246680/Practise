@@ -12,9 +12,30 @@ namespace UnitTestProject1
         {
             Session1Entities entities = new Session1Entities();
             if (!entities.Users.Any(x=>x.Username=="test"))
+                new AccessViolationException("username is exit");
+            var user=entities.Users.Add(new Users
             {
-
-            }
+                GUID = Guid.NewGuid(),
+                Username = "test",
+                Password = "test123",
+                BirthDate = DateTime.Now.Date,
+                FullName = "test test",
+                FamilyCount = 0,
+                Gender = true,
+                UserTypeID = 2
+            });
+            entities.SaveChanges();
+            entities = new Session1Entities();
+            var users = entities.Users.SingleOrDefault(t => t.ID == user.ID);
+            Assert.IsTrue(users != null, "Register user is not found.");
+            Assert.IsTrue(users.Username == "test", "Register user Username value different.");
+            Assert.IsTrue(users.Password == "test123", "Register Password value different.");
+            Assert.IsTrue(users.FullName == "test test", "Register FullName value different.");
+            Assert.IsTrue(users.Gender == true, "Register Gender value different.");
+            Assert.IsTrue(users.BirthDate == DateTime.Now.Date, "Register BirthDate value different.");
+            Assert.IsTrue(users.FamilyCount == 0, "Register FamilyCount value different.");
+            entities.Users.Remove(entities.Users.SingleOrDefault(t => t.ID == users.ID));
+            entities.SaveChanges();
         }
     }
 }
