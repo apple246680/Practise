@@ -1,0 +1,11 @@
+C:\Users\USER\Documents\GitHub\Practise\國際賽\Second\Sessopn3\Sessopn3\bin\Debug\Sessopn2.exe.config
+C:\Users\USER\Documents\GitHub\Practise\國際賽\Second\Sessopn3\Sessopn3\bin\Debug\Sessopn2.exe
+C:\Users\USER\Documents\GitHub\Practise\國際賽\Second\Sessopn3\Sessopn3\bin\Debug\Sessopn2.pdb
+C:\Users\USER\Documents\GitHub\Practise\國際賽\Second\Sessopn3\Sessopn3\obj\Debug\Sessopn3.csproj.AssemblyReference.cache
+C:\Users\USER\Documents\GitHub\Practise\國際賽\Second\Sessopn3\Sessopn3\obj\Debug\Sessopn2.AdvancedSearch.resources
+C:\Users\USER\Documents\GitHub\Practise\國際賽\Second\Sessopn3\Sessopn3\obj\Debug\Sessopn2.Main.resources
+C:\Users\USER\Documents\GitHub\Practise\國際賽\Second\Sessopn3\Sessopn3\obj\Debug\Sessopn2.Properties.Resources.resources
+C:\Users\USER\Documents\GitHub\Practise\國際賽\Second\Sessopn3\Sessopn3\obj\Debug\Sessopn3.csproj.GenerateResource.cache
+C:\Users\USER\Documents\GitHub\Practise\國際賽\Second\Sessopn3\Sessopn3\obj\Debug\Sessopn3.csproj.CoreCompileInputs.cache
+C:\Users\USER\Documents\GitHub\Practise\國際賽\Second\Sessopn3\Sessopn3\obj\Debug\Sessopn2.exe
+C:\Users\USER\Documents\GitHub\Practise\國際賽\Second\Sessopn3\Sessopn3\obj\Debug\Sessopn2.pdb
