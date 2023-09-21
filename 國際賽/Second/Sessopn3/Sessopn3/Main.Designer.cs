@@ -39,7 +39,7 @@
             this.FromDateTImePicker = new System.Windows.Forms.DateTimePicker();
             this.label2 = new System.Windows.Forms.Label();
             this.SearchListBox = new System.Windows.Forms.ListBox();
-            this.label1 = new System.Windows.Forms.Label();
+            this.PromptWordLabel = new System.Windows.Forms.Label();
             this.SearchTextBox = new System.Windows.Forms.TextBox();
             this.SearchResultsGroupBox = new System.Windows.Forms.GroupBox();
             this.ResultsDataGridView = new System.Windows.Forms.DataGridView();
@@ -68,7 +68,7 @@
             this.groupBox1.Controls.Add(this.FromDateTImePicker);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.SearchListBox);
-            this.groupBox1.Controls.Add(this.label1);
+            this.groupBox1.Controls.Add(this.PromptWordLabel);
             this.groupBox1.Controls.Add(this.SearchTextBox);
             this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
@@ -95,6 +95,7 @@
             this.SearchBtn.TabIndex = 5;
             this.SearchBtn.Text = "Search properties...";
             this.SearchBtn.UseVisualStyleBackColor = true;
+            this.SearchBtn.Click += new System.EventHandler(this.SearchBtn_Click);
             // 
             // label5
             // 
@@ -166,13 +167,13 @@
             this.SearchListBox.Size = new System.Drawing.Size(456, 94);
             this.SearchListBox.TabIndex = 1;
             // 
-            // label1
+            // PromptWordLabel
             // 
-            this.label1.Location = new System.Drawing.Point(14, 26);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(695, 23);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Enter area name,attraction,property type,amenities...";
+            this.PromptWordLabel.Location = new System.Drawing.Point(14, 26);
+            this.PromptWordLabel.Name = "PromptWordLabel";
+            this.PromptWordLabel.Size = new System.Drawing.Size(695, 23);
+            this.PromptWordLabel.TabIndex = 1;
+            this.PromptWordLabel.Text = "Enter area name,attraction,property type,amenities...";
             // 
             // SearchTextBox
             // 
@@ -180,6 +181,7 @@
             this.SearchTextBox.Name = "SearchTextBox";
             this.SearchTextBox.Size = new System.Drawing.Size(692, 25);
             this.SearchTextBox.TabIndex = 0;
+            this.SearchTextBox.TextChanged += new System.EventHandler(this.SearchTextBox_TextChanged);
             // 
             // SearchResultsGroupBox
             // 
@@ -285,7 +287,7 @@
 
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.TextBox SearchTextBox;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label PromptWordLabel;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.NumericUpDown PeopleNum;

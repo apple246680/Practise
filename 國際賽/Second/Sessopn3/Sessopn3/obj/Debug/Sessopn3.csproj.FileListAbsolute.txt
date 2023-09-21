@@ -9,3 +9,8 @@ C:\Users\USER\Documents\GitHub\Practise\國際賽\Second\Sessopn3\Sessopn3\obj\D
 C:\Users\USER\Documents\GitHub\Practise\國際賽\Second\Sessopn3\Sessopn3\obj\Debug\Sessopn3.csproj.CoreCompileInputs.cache
 C:\Users\USER\Documents\GitHub\Practise\國際賽\Second\Sessopn3\Sessopn3\obj\Debug\Sessopn2.exe
 C:\Users\USER\Documents\GitHub\Practise\國際賽\Second\Sessopn3\Sessopn3\obj\Debug\Sessopn2.pdb
+C:\Users\USER\Documents\GitHub\Practise\國際賽\Second\Sessopn3\Sessopn3\bin\Debug\EntityFramework.dll
+C:\Users\USER\Documents\GitHub\Practise\國際賽\Second\Sessopn3\Sessopn3\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\USER\Documents\GitHub\Practise\國際賽\Second\Sessopn3\Sessopn3\bin\Debug\EntityFramework.xml
+C:\Users\USER\Documents\GitHub\Practise\國際賽\Second\Sessopn3\Sessopn3\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\USER\Documents\GitHub\Practise\國際賽\Second\Sessopn3\Sessopn3\obj\Debug\Sessopn3.csproj.CopyComplete
