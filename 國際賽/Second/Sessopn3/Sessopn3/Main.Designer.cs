@@ -174,6 +174,7 @@
             this.PromptWordLabel.Size = new System.Drawing.Size(695, 23);
             this.PromptWordLabel.TabIndex = 1;
             this.PromptWordLabel.Text = "Enter area name,attraction,property type,amenities...";
+            this.PromptWordLabel.Click += new System.EventHandler(this.PromptWordLabel_Click);
             // 
             // SearchTextBox
             // 
@@ -182,6 +183,7 @@
             this.SearchTextBox.Size = new System.Drawing.Size(692, 25);
             this.SearchTextBox.TabIndex = 0;
             this.SearchTextBox.TextChanged += new System.EventHandler(this.SearchTextBox_TextChanged);
+            this.SearchTextBox.Leave += new System.EventHandler(this.SearchTextBox_Leave);
             // 
             // SearchResultsGroupBox
             // 

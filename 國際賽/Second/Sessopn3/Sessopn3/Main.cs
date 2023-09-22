@@ -15,6 +15,7 @@ namespace Sessopn2
         public Main()
         {
             InitializeComponent();
+            SearchListBox.Visible = false;
         }
 
         private void AdvancedSearchBtn_Click(object sender, EventArgs e)
@@ -32,6 +33,7 @@ namespace Sessopn2
 
         private void SearchTextBox_TextChanged(object sender, EventArgs e)
         {
+            SearchListBox.Visible = false;
             SearchListBox.Items.Clear();
             if (SearchTextBox.Text.Length >= 3)
             {
@@ -54,6 +56,20 @@ namespace Sessopn2
                 .ToList();
                 foreach (var result in searchResults)
                     SearchListBox.Items.Add($"{result.Name}      {result.Type}");
+                SearchListBox.Visible=true;
+            }
+        }
+        private void PromptWordLabel_Click(object sender, EventArgs e)
+        {
+            PromptWordLabel.SendToBack();
+        }
+
+        private void SearchTextBox_Leave(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(SearchTextBox.Text))
+            {
+                PromptWordLabel.BringToFront();
+                SearchListBox.Visible=false;
             }
         }
     }
