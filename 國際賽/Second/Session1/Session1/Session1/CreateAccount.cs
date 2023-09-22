@@ -67,7 +67,6 @@ namespace Session1
                 Close();
                 Global.login.Visible = false;
                 management.Show();
-
             }
             else
             {
