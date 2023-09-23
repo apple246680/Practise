@@ -28,7 +28,30 @@ namespace Sessopn2
 
         private void SearchBtn_Click(object sender, EventArgs e)
         {
-
+            using (Session3Entities entities = new Session3Entities())
+            {
+                var items = entities.Items.ToList();
+                if (!String.IsNullOrEmpty(SearchTextBox.Text))
+                    items = items.Where(x => x.Areas.Name == SearchTextBox.Text || x.Title == SearchTextBox.Text || x.ItemAttractions.Any(y => y.Attractions.Name == SearchTextBox.Text) || x.ItemTypes.Name == SearchTextBox.Text || x.ItemAmenities.Any(y => y.Amenities.Name == SearchTextBox.Text)).ToList();
+                int nights = (int)NightNum.Value;
+                int people = (int)PeopleNum.Value;
+                DateTime from = FromDateTImePicker.Value;
+                DateTime to = from.AddDays(nights);
+                items = items.Where(x => x.ItemPrices.Any(y => y.Date >= from && y.Date <= to)
+                    && x.Capacity >= people).OrderBy(x => x.Title).ToList();
+                ResultsDataGridView.Rows.Clear();
+                items.ForEach(x =>
+                {
+                    var score = x.ItemScores.Any() ? Math.Round(x.ItemScores.Average(y => y.Value), 2).ToString() : "";
+                    var totalComplate = x.ItemPrices.Any() ?
+                        x.ItemPrices.Count(y => y.BookingDetails.Any(z => !z.isRefund)) : 0;
+                    var amount = x.ItemPrices.Any(y => y.Date >= from && y.Date < to)
+                        ? x.ItemPrices.Where(y => y.Date >= from && y.Date <= to).Sum(y => y.Price).ToString() + "$" : "Price data not found.";
+                    ResultsDataGridView.Rows.Add(x.Title, x.Areas.Name, score, totalComplate, amount);
+                });
+                CountLabel.Text = $"Displaying {items.Count()} options";
+                Text = "Seoul Stay - Search Results";
+            }
         }
 
         private void SearchTextBox_TextChanged(object sender, EventArgs e)
@@ -71,6 +94,12 @@ namespace Sessopn2
                 PromptWordLabel.BringToFront();
                 SearchListBox.Visible=false;
             }
+        }
+
+        private void SearchListBox_MouseClick(object sender, MouseEventArgs e)
+        {
+            SearchListBox.Visible = false;
+            SearchTextBox.Text = SearchListBox.Text.Replace("      ", "@").Split('@')[0];
         }
     }
 }

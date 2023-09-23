@@ -166,6 +166,7 @@
             this.SearchListBox.Name = "SearchListBox";
             this.SearchListBox.Size = new System.Drawing.Size(456, 94);
             this.SearchListBox.TabIndex = 1;
+            this.SearchListBox.MouseClick += new System.Windows.Forms.MouseEventHandler(this.SearchListBox_MouseClick);
             // 
             // PromptWordLabel
             // 
