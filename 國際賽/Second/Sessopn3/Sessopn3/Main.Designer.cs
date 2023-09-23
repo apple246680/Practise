@@ -274,7 +274,7 @@
             this.Controls.Add(this.SearchResultsGroupBox);
             this.Controls.Add(this.groupBox1);
             this.Name = "Main";
-            this.Text = "Seoul Stay-Search Properties or Listings";
+            this.Text = " ";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PeopleNum)).EndInit();

@@ -67,7 +67,7 @@
             this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.label15 = new System.Windows.Forms.Label();
+            this.CountLabel = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.MaximumPriceNum)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.StartingPriceNum)).BeginInit();
@@ -124,6 +124,7 @@
             this.SearchBtn.TabIndex = 29;
             this.SearchBtn.Text = "Search properties...";
             this.SearchBtn.UseVisualStyleBackColor = true;
+            this.SearchBtn.Click += new System.EventHandler(this.SearchBtn_Click);
             // 
             // ClearFormBtn
             // 
@@ -133,6 +134,7 @@
             this.ClearFormBtn.TabIndex = 28;
             this.ClearFormBtn.Text = "Clear form";
             this.ClearFormBtn.UseVisualStyleBackColor = true;
+            this.ClearFormBtn.Click += new System.EventHandler(this.ClearFormBtn_Click);
             // 
             // SimpleSearchBtn
             // 
@@ -458,21 +460,21 @@
             this.Column6.ReadOnly = true;
             this.Column6.Width = 125;
             // 
-            // label15
+            // CountLabel
             // 
-            this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(61, 532);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(213, 15);
-            this.label15.TabIndex = 9;
-            this.label15.Text = "Displaying  options from  properties";
+            this.CountLabel.AutoSize = true;
+            this.CountLabel.Location = new System.Drawing.Point(61, 532);
+            this.CountLabel.Name = "CountLabel";
+            this.CountLabel.Size = new System.Drawing.Size(213, 15);
+            this.CountLabel.TabIndex = 9;
+            this.CountLabel.Text = "Displaying  options from  properties";
             // 
             // AdvancedSearch
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(982, 553);
-            this.Controls.Add(this.label15);
+            this.Controls.Add(this.CountLabel);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Name = "AdvancedSearch";
@@ -531,6 +533,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
-        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.Label CountLabel;
     }
 }
