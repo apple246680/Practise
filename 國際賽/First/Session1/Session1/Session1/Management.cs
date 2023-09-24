@@ -57,7 +57,6 @@ namespace Session1
         {
             hint.Visible = false;
         }
-
         private void Management_FormClosing(object sender, FormClosingEventArgs e)
         {
             if (this.IsClose)
