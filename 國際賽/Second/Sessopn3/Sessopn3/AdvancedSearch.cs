@@ -141,7 +141,6 @@ namespace Sessopn2
             }
             CountLabel.Text = $"Displaying {onoptions} optionns from {ResultsDataGridView.Rows.Count} properties";
         }
-
         private void ClearFormBtn_Click(object sender, EventArgs e)
         {
             init();
