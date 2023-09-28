@@ -29,7 +29,12 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Main));
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.ResetBtn = new System.Windows.Forms.Button();
+            this.ApplyBtn = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -40,21 +45,13 @@
             this.AreaComboBox = new System.Windows.Forms.ComboBox();
             this.ToDateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.FormDataTimePicker = new System.Windows.Forms.DateTimePicker();
-            this.ApplyBtn = new System.Windows.Forms.Button();
-            this.ResetBtn = new System.Windows.Forms.Button();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.PropertyOrListingsSummaryGroupBox = new System.Windows.Forms.GroupBox();
+            this.FinancialSummaryGroupBox = new System.Windows.Forms.GroupBox();
+            this.ScoresSummaryGroupBox = new System.Windows.Forms.GroupBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.groupBox5 = new System.Windows.Forms.GroupBox();
-            this.groupBox6 = new System.Windows.Forms.GroupBox();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
+            this.PropertyOrListingsSummaryGroupBox = new System.Windows.Forms.GroupBox();
+            this.tabPage2 = new System.Windows.Forms.TabPage();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -68,29 +65,38 @@
             this.Column10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
-            this.dataGridView3 = new System.Windows.Forms.DataGridView();
+            this.groupBox6 = new System.Windows.Forms.GroupBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.tabPage3 = new System.Windows.Forms.TabPage();
             this.label9 = new System.Windows.Forms.Label();
+            this.dataGridView3 = new System.Windows.Forms.DataGridView();
+            this.Column19 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column20 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column21 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column22 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.Column13 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column14 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column15 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column16 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column17 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column18 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column19 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column20 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column21 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column22 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.groupBox1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
+            this.groupBox3.SuspendLayout();
             this.tabPage2.SuspendLayout();
-            this.tabPage3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            this.groupBox6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
+            this.groupBox6.SuspendLayout();
+            this.tabPage3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -113,6 +119,28 @@
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Filters";
+            // 
+            // ResetBtn
+            // 
+            this.ResetBtn.Font = new System.Drawing.Font("Open Sans SemiBold", 15F, System.Drawing.FontStyle.Bold);
+            this.ResetBtn.Location = new System.Drawing.Point(38, 551);
+            this.ResetBtn.Name = "ResetBtn";
+            this.ResetBtn.Size = new System.Drawing.Size(221, 45);
+            this.ResetBtn.TabIndex = 10;
+            this.ResetBtn.Text = "Reset";
+            this.ResetBtn.UseVisualStyleBackColor = true;
+            this.ResetBtn.Click += new System.EventHandler(this.ResetBtn_Click);
+            // 
+            // ApplyBtn
+            // 
+            this.ApplyBtn.Font = new System.Drawing.Font("Open Sans SemiBold", 15F, System.Drawing.FontStyle.Bold);
+            this.ApplyBtn.Location = new System.Drawing.Point(38, 500);
+            this.ApplyBtn.Name = "ApplyBtn";
+            this.ApplyBtn.Size = new System.Drawing.Size(221, 45);
+            this.ApplyBtn.TabIndex = 1;
+            this.ApplyBtn.Text = "Apply";
+            this.ApplyBtn.UseVisualStyleBackColor = true;
+            this.ApplyBtn.Click += new System.EventHandler(this.ApplyBtn_Click);
             // 
             // label5
             // 
@@ -216,28 +244,6 @@
             this.FormDataTimePicker.TabIndex = 0;
             this.FormDataTimePicker.ValueChanged += new System.EventHandler(this.DataTimePicker_ValueChanged);
             // 
-            // ApplyBtn
-            // 
-            this.ApplyBtn.Font = new System.Drawing.Font("Open Sans SemiBold", 15F, System.Drawing.FontStyle.Bold);
-            this.ApplyBtn.Location = new System.Drawing.Point(38, 500);
-            this.ApplyBtn.Name = "ApplyBtn";
-            this.ApplyBtn.Size = new System.Drawing.Size(221, 45);
-            this.ApplyBtn.TabIndex = 1;
-            this.ApplyBtn.Text = "Apply";
-            this.ApplyBtn.UseVisualStyleBackColor = true;
-            this.ApplyBtn.Click += new System.EventHandler(this.ApplyBtn_Click);
-            // 
-            // ResetBtn
-            // 
-            this.ResetBtn.Font = new System.Drawing.Font("Open Sans SemiBold", 15F, System.Drawing.FontStyle.Bold);
-            this.ResetBtn.Location = new System.Drawing.Point(38, 551);
-            this.ResetBtn.Name = "ResetBtn";
-            this.ResetBtn.Size = new System.Drawing.Size(221, 45);
-            this.ResetBtn.TabIndex = 10;
-            this.ResetBtn.Text = "Reset";
-            this.ResetBtn.UseVisualStyleBackColor = true;
-            this.ResetBtn.Click += new System.EventHandler(this.ResetBtn_Click);
-            // 
             // tabControl1
             // 
             this.tabControl1.Controls.Add(this.tabPage1);
@@ -251,8 +257,8 @@
             // 
             // tabPage1
             // 
-            this.tabPage1.Controls.Add(this.groupBox5);
-            this.tabPage1.Controls.Add(this.groupBox4);
+            this.tabPage1.Controls.Add(this.FinancialSummaryGroupBox);
+            this.tabPage1.Controls.Add(this.ScoresSummaryGroupBox);
             this.tabPage1.Controls.Add(this.groupBox3);
             this.tabPage1.Controls.Add(this.PropertyOrListingsSummaryGroupBox);
             this.tabPage1.Location = new System.Drawing.Point(4, 31);
@@ -261,6 +267,43 @@
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Unuversal Report";
             this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // FinancialSummaryGroupBox
+            // 
+            this.FinancialSummaryGroupBox.Location = new System.Drawing.Point(585, 486);
+            this.FinancialSummaryGroupBox.Name = "FinancialSummaryGroupBox";
+            this.FinancialSummaryGroupBox.Size = new System.Drawing.Size(496, 437);
+            this.FinancialSummaryGroupBox.TabIndex = 3;
+            this.FinancialSummaryGroupBox.TabStop = false;
+            this.FinancialSummaryGroupBox.Text = "Financial Summary";
+            // 
+            // ScoresSummaryGroupBox
+            // 
+            this.ScoresSummaryGroupBox.Location = new System.Drawing.Point(17, 486);
+            this.ScoresSummaryGroupBox.Name = "ScoresSummaryGroupBox";
+            this.ScoresSummaryGroupBox.Size = new System.Drawing.Size(551, 428);
+            this.ScoresSummaryGroupBox.TabIndex = 2;
+            this.ScoresSummaryGroupBox.TabStop = false;
+            this.ScoresSummaryGroupBox.Text = "Scores Summary";
+            // 
+            // groupBox3
+            // 
+            this.groupBox3.Controls.Add(this.chart1);
+            this.groupBox3.Location = new System.Drawing.Point(585, 14);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(496, 466);
+            this.groupBox3.TabIndex = 1;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "Monthly Vancancy Ratio";
+            // 
+            // PropertyOrListingsSummaryGroupBox
+            // 
+            this.PropertyOrListingsSummaryGroupBox.Location = new System.Drawing.Point(17, 14);
+            this.PropertyOrListingsSummaryGroupBox.Name = "PropertyOrListingsSummaryGroupBox";
+            this.PropertyOrListingsSummaryGroupBox.Size = new System.Drawing.Size(551, 466);
+            this.PropertyOrListingsSummaryGroupBox.TabIndex = 0;
+            this.PropertyOrListingsSummaryGroupBox.TabStop = false;
+            this.PropertyOrListingsSummaryGroupBox.Text = "Property or Listings Summary";
             // 
             // tabPage2
             // 
@@ -272,103 +315,6 @@
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Service Report";
             this.tabPage2.UseVisualStyleBackColor = true;
-            // 
-            // tabPage3
-            // 
-            this.tabPage3.Controls.Add(this.label9);
-            this.tabPage3.Controls.Add(this.dataGridView3);
-            this.tabPage3.Controls.Add(this.dataGridView2);
-            this.tabPage3.Location = new System.Drawing.Point(4, 31);
-            this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Size = new System.Drawing.Size(1084, 929);
-            this.tabPage3.TabIndex = 2;
-            this.tabPage3.Text = "Host Analysis";
-            this.tabPage3.UseVisualStyleBackColor = true;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(25, 57);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(284, 172);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 2;
-            this.pictureBox1.TabStop = false;
-            // 
-            // PropertyOrListingsSummaryGroupBox
-            // 
-            this.PropertyOrListingsSummaryGroupBox.Location = new System.Drawing.Point(17, 14);
-            this.PropertyOrListingsSummaryGroupBox.Name = "PropertyOrListingsSummaryGroupBox";
-            this.PropertyOrListingsSummaryGroupBox.Size = new System.Drawing.Size(551, 466);
-            this.PropertyOrListingsSummaryGroupBox.TabIndex = 0;
-            this.PropertyOrListingsSummaryGroupBox.TabStop = false;
-            this.PropertyOrListingsSummaryGroupBox.Text = "Property or Listings Summary";
-            // 
-            // groupBox3
-            // 
-            this.groupBox3.Location = new System.Drawing.Point(585, 14);
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(496, 466);
-            this.groupBox3.TabIndex = 1;
-            this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "Monthly Vancancy Ratio";
-            // 
-            // groupBox4
-            // 
-            this.groupBox4.Location = new System.Drawing.Point(17, 486);
-            this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(551, 428);
-            this.groupBox4.TabIndex = 2;
-            this.groupBox4.TabStop = false;
-            this.groupBox4.Text = "Scores Summary";
-            // 
-            // groupBox5
-            // 
-            this.groupBox5.Location = new System.Drawing.Point(585, 486);
-            this.groupBox5.Name = "groupBox5";
-            this.groupBox5.Size = new System.Drawing.Size(496, 437);
-            this.groupBox5.TabIndex = 3;
-            this.groupBox5.TabStop = false;
-            this.groupBox5.Text = "Financial Summary";
-            // 
-            // groupBox6
-            // 
-            this.groupBox6.Controls.Add(this.label8);
-            this.groupBox6.Controls.Add(this.label7);
-            this.groupBox6.Controls.Add(this.label6);
-            this.groupBox6.Location = new System.Drawing.Point(19, 14);
-            this.groupBox6.Name = "groupBox6";
-            this.groupBox6.Size = new System.Drawing.Size(1062, 126);
-            this.groupBox6.TabIndex = 0;
-            this.groupBox6.TabStop = false;
-            this.groupBox6.Text = "Addon Services";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(58, 81);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(301, 22);
-            this.label7.TabIndex = 1;
-            this.label7.Text = "Total revenue from service reservations:";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(58, 35);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(233, 22);
-            this.label6.TabIndex = 0;
-            this.label6.Text = "Number of purchased services:";
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(558, 35);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(162, 22);
-            this.label8.TabIndex = 2;
-            this.label8.Text = "Most booked service:";
             // 
             // dataGridView1
             // 
@@ -493,25 +439,65 @@
             this.Column12.ReadOnly = true;
             this.Column12.Width = 125;
             // 
-            // dataGridView2
+            // groupBox6
             // 
-            this.dataGridView2.AllowUserToAddRows = false;
-            this.dataGridView2.AllowUserToDeleteRows = false;
-            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Column13,
-            this.Column14,
-            this.Column15,
-            this.Column16,
-            this.Column17,
-            this.Column18});
-            this.dataGridView2.Location = new System.Drawing.Point(3, 3);
-            this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.ReadOnly = true;
-            this.dataGridView2.RowHeadersWidth = 51;
-            this.dataGridView2.RowTemplate.Height = 27;
-            this.dataGridView2.Size = new System.Drawing.Size(1078, 442);
-            this.dataGridView2.TabIndex = 0;
+            this.groupBox6.Controls.Add(this.label8);
+            this.groupBox6.Controls.Add(this.label7);
+            this.groupBox6.Controls.Add(this.label6);
+            this.groupBox6.Location = new System.Drawing.Point(19, 14);
+            this.groupBox6.Name = "groupBox6";
+            this.groupBox6.Size = new System.Drawing.Size(1062, 126);
+            this.groupBox6.TabIndex = 0;
+            this.groupBox6.TabStop = false;
+            this.groupBox6.Text = "Addon Services";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(558, 35);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(162, 22);
+            this.label8.TabIndex = 2;
+            this.label8.Text = "Most booked service:";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(58, 81);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(301, 22);
+            this.label7.TabIndex = 1;
+            this.label7.Text = "Total revenue from service reservations:";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(58, 35);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(233, 22);
+            this.label6.TabIndex = 0;
+            this.label6.Text = "Number of purchased services:";
+            // 
+            // tabPage3
+            // 
+            this.tabPage3.Controls.Add(this.label9);
+            this.tabPage3.Controls.Add(this.dataGridView3);
+            this.tabPage3.Controls.Add(this.dataGridView2);
+            this.tabPage3.Location = new System.Drawing.Point(4, 31);
+            this.tabPage3.Name = "tabPage3";
+            this.tabPage3.Size = new System.Drawing.Size(1084, 929);
+            this.tabPage3.TabIndex = 2;
+            this.tabPage3.Text = "Host Analysis";
+            this.tabPage3.UseVisualStyleBackColor = true;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(4, 467);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(168, 22);
+            this.label9.TabIndex = 2;
+            this.label9.Text = "Transcation detail for ";
             // 
             // dataGridView3
             // 
@@ -531,14 +517,57 @@
             this.dataGridView3.Size = new System.Drawing.Size(1078, 420);
             this.dataGridView3.TabIndex = 1;
             // 
-            // label9
+            // Column19
             // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(4, 467);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(168, 22);
-            this.label9.TabIndex = 2;
-            this.label9.Text = "Transcation detail for ";
+            this.Column19.HeaderText = "Date";
+            this.Column19.MinimumWidth = 6;
+            this.Column19.Name = "Column19";
+            this.Column19.ReadOnly = true;
+            this.Column19.Width = 125;
+            // 
+            // Column20
+            // 
+            this.Column20.HeaderText = "Amount";
+            this.Column20.MinimumWidth = 6;
+            this.Column20.Name = "Column20";
+            this.Column20.ReadOnly = true;
+            this.Column20.Width = 125;
+            // 
+            // Column21
+            // 
+            this.Column21.HeaderText = "Commission";
+            this.Column21.MinimumWidth = 6;
+            this.Column21.Name = "Column21";
+            this.Column21.ReadOnly = true;
+            this.Column21.Width = 125;
+            // 
+            // Column22
+            // 
+            this.Column22.HeaderText = "Description";
+            this.Column22.MinimumWidth = 6;
+            this.Column22.Name = "Column22";
+            this.Column22.ReadOnly = true;
+            this.Column22.Width = 125;
+            // 
+            // dataGridView2
+            // 
+            this.dataGridView2.AllowUserToAddRows = false;
+            this.dataGridView2.AllowUserToDeleteRows = false;
+            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Column13,
+            this.Column14,
+            this.Column15,
+            this.Column16,
+            this.Column17,
+            this.Column18});
+            this.dataGridView2.Location = new System.Drawing.Point(3, 3);
+            this.dataGridView2.Name = "dataGridView2";
+            this.dataGridView2.ReadOnly = true;
+            this.dataGridView2.RowHeadersWidth = 51;
+            this.dataGridView2.RowTemplate.Height = 27;
+            this.dataGridView2.Size = new System.Drawing.Size(1078, 442);
+            this.dataGridView2.TabIndex = 0;
             // 
             // Column13
             // 
@@ -588,37 +617,31 @@
             this.Column18.ReadOnly = true;
             this.Column18.Width = 125;
             // 
-            // Column19
+            // pictureBox1
             // 
-            this.Column19.HeaderText = "Date";
-            this.Column19.MinimumWidth = 6;
-            this.Column19.Name = "Column19";
-            this.Column19.ReadOnly = true;
-            this.Column19.Width = 125;
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(25, 57);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(284, 172);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 2;
+            this.pictureBox1.TabStop = false;
             // 
-            // Column20
+            // chart1
             // 
-            this.Column20.HeaderText = "Amount";
-            this.Column20.MinimumWidth = 6;
-            this.Column20.Name = "Column20";
-            this.Column20.ReadOnly = true;
-            this.Column20.Width = 125;
-            // 
-            // Column21
-            // 
-            this.Column21.HeaderText = "Commission";
-            this.Column21.MinimumWidth = 6;
-            this.Column21.Name = "Column21";
-            this.Column21.ReadOnly = true;
-            this.Column21.Width = 125;
-            // 
-            // Column22
-            // 
-            this.Column22.HeaderText = "Description";
-            this.Column22.MinimumWidth = 6;
-            this.Column22.Name = "Column22";
-            this.Column22.ReadOnly = true;
-            this.Column22.Width = 125;
+            chartArea1.Name = "ChartArea1";
+            this.chart1.ChartAreas.Add(chartArea1);
+            legend1.Name = "Legend1";
+            this.chart1.Legends.Add(legend1);
+            this.chart1.Location = new System.Drawing.Point(16, 44);
+            this.chart1.Name = "chart1";
+            series1.ChartArea = "ChartArea1";
+            series1.Legend = "Legend1";
+            series1.Name = "Series1";
+            this.chart1.Series.Add(series1);
+            this.chart1.Size = new System.Drawing.Size(474, 416);
+            this.chart1.TabIndex = 0;
+            this.chart1.Text = "chart1";
             // 
             // Main
             // 
@@ -636,15 +659,17 @@
             this.groupBox1.PerformLayout();
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
+            this.groupBox3.ResumeLayout(false);
             this.tabPage2.ResumeLayout(false);
-            this.tabPage3.ResumeLayout(false);
-            this.tabPage3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.groupBox6.ResumeLayout(false);
             this.groupBox6.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
+            this.tabPage3.ResumeLayout(false);
+            this.tabPage3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -670,8 +695,8 @@
         private System.Windows.Forms.TabPage tabPage3;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.GroupBox PropertyOrListingsSummaryGroupBox;
-        private System.Windows.Forms.GroupBox groupBox5;
-        private System.Windows.Forms.GroupBox groupBox4;
+        private System.Windows.Forms.GroupBox FinancialSummaryGroupBox;
+        private System.Windows.Forms.GroupBox ScoresSummaryGroupBox;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
@@ -703,6 +728,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column20;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column21;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column22;
+        private System.Windows.Forms.DataVisualization.Charting.Chart chart1;
     }
 }
 

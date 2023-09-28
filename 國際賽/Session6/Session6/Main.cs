@@ -71,7 +71,7 @@ namespace Session6
             {
                 Text = text,
                 AutoSize = true,
-                Location = new Point(10, index * 20),
+                Location = new Point(10, index * 50),
                 Font=base.Font
             };
             control.Controls.Add(label);
@@ -86,7 +86,25 @@ namespace Session6
                 booking.Where(x=>x.ID==(long)QuestComboBox.SelectedValue);
             }
             #region PropertyOrListingsSummary
-            CreateLabel(, PropertyOrListingsSummaryGroupBox, 1);
+            CreateLabel($"Secured post bookings:", PropertyOrListingsSummaryGroupBox, 1);
+            CreateLabel($"Upcoming bookings(reservations):", PropertyOrListingsSummaryGroupBox, 2);
+            CreateLabel($"Most booked day of week:", PropertyOrListingsSummaryGroupBox, 3);
+            CreateLabel($"Inactive listings or properties:", PropertyOrListingsSummaryGroupBox, 4);
+            CreateLabel($"Camcelled reservations:", PropertyOrListingsSummaryGroupBox, 5);
+            CreateLabel($"Most used coupon:", PropertyOrListingsSummaryGroupBox, 6);
+            CreateLabel($"Vacancy ratio:", PropertyOrListingsSummaryGroupBox, 7);
+            #endregion
+            #region Scores Summary
+            CreateLabel("Average score for listings:",ScoresSummaryGroupBox,1);
+            CreateLabel("Name of listing with highest score:", ScoresSummaryGroupBox, 2);
+            CreateLabel("Top ownew/manager by average score:", ScoresSummaryGroupBox, 3);
+            CreateLabel("The least clean owner/manager:", ScoresSummaryGroupBox, 4);
+            #endregion
+            #region Financial Summary
+            CreateLabel("Average net revenue of all owners/managers:", FinancialSummaryGroupBox, 1);
+            CreateLabel("Highest net revenue for an owner/manager:", FinancialSummaryGroupBox, 2);
+            CreateLabel("Our total revenue from cancellations:",FinancialSummaryGroupBox,3);
+            CreateLabel("Total discounts from coupons:",FinancialSummaryGroupBox,4);
             #endregion
         }
         public void ServiceReport()
