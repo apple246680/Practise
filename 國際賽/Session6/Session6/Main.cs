@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Windows.Forms.DataVisualization.Charting;
+
 namespace Session6
 {
     public partial class Main : Form
@@ -78,21 +80,58 @@ namespace Session6
         }
         public void UnuversalReport()
         {
-            PropertyOrListingsSummaryGroupBox.Controls.Clear();
             Session6Entities entities = new Session6Entities();
-            var booking=entities.BookingDetails.ToList();
-            if ( !string.IsNullOrEmpty(QuestComboBox.Text))
+            PropertyOrListingsSummaryGroupBox.Controls.Clear();
+            ScoresSummaryGroupBox.Controls.Clear();
+            FinancialSummaryGroupBox.Controls.Clear();
+            chart.Series[0].Points.Clear();
+            chart.Series[1].Points.Clear();
+            var items = entities.Items.ToList();
+            var itemPrices = entities.ItemPrices.ToList();
+            var transactions = entities.Transactions.ToList();
+            var bookingDetails = entities.BookingDetails.ToList();
+            if (!String.IsNullOrWhiteSpace(FormDataTimePicker.Text))
             {
-                booking.Where(x=>x.ID==(long)QuestComboBox.SelectedValue);
+                itemPrices = itemPrices.Where(t => t.Date.Date >= FormDataTimePicker.Value.Date).ToList();
+                transactions = transactions.Where(t => t.TransactionDate.Date >= FormDataTimePicker.Value.Date).ToList();
+            }
+            if (!String.IsNullOrWhiteSpace(ToDateTimePicker.Text))
+            {
+                itemPrices = itemPrices.Where(t => t.Date.Date <= ToDateTimePicker.Value.Date).ToList();
+                transactions = transactions.Where(t => t.TransactionDate.Date <= ToDateTimePicker.Value.Date).ToList();
+            }
+            if (!String.IsNullOrWhiteSpace(AreaComboBox.Text))
+            {
+                var areaId = (long)AreaComboBox.SelectedValue;
+                items = items.Where(t => t.AreaID == areaId).ToList();
+                itemPrices = itemPrices.Where(t => t.Items.AreaID == areaId).ToList();
+            }
+            if (!String.IsNullOrWhiteSpace(HostComboBox.Text))
+            {
+                var hostId = (long)HostComboBox.SelectedValue;
+                items = items.Where(t => t.UserID == hostId).ToList();
+                itemPrices = itemPrices.Where(t => t.Items.UserID == hostId).ToList();
+                transactions = transactions.Where(t => t.UserID == hostId).ToList();
+            }
+            if (!String.IsNullOrWhiteSpace(QuestComboBox.Text))
+            {
+                var guestId = (long)QuestComboBox.SelectedValue;
+                transactions = transactions.Where(t => t.UserID == guestId).ToList();
+                bookingDetails = bookingDetails.Where(t => t.Bookings.UserID == guestId).ToList();
             }
             #region PropertyOrListingsSummary
-            CreateLabel($"Secured post bookings:", PropertyOrListingsSummaryGroupBox, 1);
-            CreateLabel($"Upcoming bookings(reservations):", PropertyOrListingsSummaryGroupBox, 2);
-            CreateLabel($"Most booked day of week:", PropertyOrListingsSummaryGroupBox, 3);
-            CreateLabel($"Inactive listings or properties:", PropertyOrListingsSummaryGroupBox, 4);
+            var completeBooked = bookingDetails.Where(t => !t.isRefund && t.ItemPrices.Date.Date < DateTime.Now.Date);
+            CreateLabel($"Secured post bookings:{completeBooked.Count()}", PropertyOrListingsSummaryGroupBox, 1);
+            var aa = bookingDetails
+                .Where(t => !t.isRefund && t.ItemPrices.Date.Date >= DateTime.Now.Date);
+            CreateLabel($"Upcoming bookings(reservations):{aa.Count()}", PropertyOrListingsSummaryGroupBox, 2);
+            var mostBookedDate = completeBooked.GroupBy(t => t.ItemPrices.Date.DayOfWeek).OrderByDescending(t => t.Count()).FirstOrDefault();
+            CreateLabel($"Most booked day of week:{(mostBookedDate != null ? mostBookedDate.Key.ToString() : "N/A")}", PropertyOrListingsSummaryGroupBox, 3);
+            CreateLabel($"Inactive listings or properties:{items.Where(t => !t.ItemPrices.Any()).Count()}", PropertyOrListingsSummaryGroupBox, 4);
+            var coupons = bookingDetails.Where(t => t.Bookings.CouponID.HasValue).GroupBy(t => t.Bookings.Coupons).Select(t => new { Name = t.Key.CouponCode, Count = t.Count() }).GroupBy(t => t.Count).OrderByDescending(t => t.Key).FirstOrDefault();
             CreateLabel($"Camcelled reservations:", PropertyOrListingsSummaryGroupBox, 5);
-            CreateLabel($"Most used coupon:", PropertyOrListingsSummaryGroupBox, 6);
-            CreateLabel($"Vacancy ratio:", PropertyOrListingsSummaryGroupBox, 7);
+            CreateLabel($"Most used coupon:{(coupons == null ? "N/A" : String.Join(",", coupons.Select(t => t.Name)))}", PropertyOrListingsSummaryGroupBox, 6);
+            CreateLabel($"Vacancy ratio:{itemPrices.Where(t => !t.BookingDetails.Any() || t.BookingDetails.All(x => x.isRefund)).Count()}/{itemPrices.Count()}", PropertyOrListingsSummaryGroupBox, 7);
             #endregion
             #region Scores Summary
             CreateLabel("Average score for listings:",ScoresSummaryGroupBox,1);
