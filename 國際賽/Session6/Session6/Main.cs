@@ -1,14 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Windows.Forms.DataVisualization.Charting;
-
 namespace Session6
 {
     public partial class Main : Form
@@ -29,8 +25,8 @@ namespace Session6
             QuestComboBox.Items.Clear();
             QuestComboBox.DisplayMember = "FullName";
             QuestComboBox.ValueMember = "ID";
-            FormDataTimePicker.CustomFormat = "/ / /";
-            ToDateTimePicker.CustomFormat = "/ / /";
+            FormDataTimePicker.CustomFormat = " ";
+            ToDateTimePicker.CustomFormat = " ";
             using (Session6Entities entities = new Session6Entities())
             {
                 AreaComboBox.Items.AddRange(entities.Areas.Select(x => new { x.ID, x.Name }).ToArray());
@@ -48,7 +44,7 @@ namespace Session6
         private void DataTimePicker_ValueChanged(object sender, EventArgs e)=>((DateTimePicker)sender).CustomFormat= "yyyy/MM/dd";
         private void ApplyBtn_Click(object sender, EventArgs e)
         {
-            if (FormDataTimePicker.Text!="/ / /"&& ToDateTimePicker.Text != "/ / /")
+            if (FormDataTimePicker.Text!=" "&& ToDateTimePicker.Text != " ")
                 if (FormDataTimePicker.Value >= ToDateTimePicker.Value)
                 {
                     MessageBox.Show("Please select a valid date range");
@@ -129,15 +125,32 @@ namespace Session6
             CreateLabel($"Most booked day of week:{(mostBookedDate != null ? mostBookedDate.Key.ToString() : "N/A")}", PropertyOrListingsSummaryGroupBox, 3);
             CreateLabel($"Inactive listings or properties:{items.Where(t => !t.ItemPrices.Any()).Count()}", PropertyOrListingsSummaryGroupBox, 4);
             var coupons = bookingDetails.Where(t => t.Bookings.CouponID.HasValue).GroupBy(t => t.Bookings.Coupons).Select(t => new { Name = t.Key.CouponCode, Count = t.Count() }).GroupBy(t => t.Count).OrderByDescending(t => t.Key).FirstOrDefault();
-            CreateLabel($"Camcelled reservations:", PropertyOrListingsSummaryGroupBox, 5);
+            CreateLabel($"Camcelled reservations:{bookingDetails.Select(x=>x.ItemPrices.CancellationPolicies).Count()}", PropertyOrListingsSummaryGroupBox, 5);
             CreateLabel($"Most used coupon:{(coupons == null ? "N/A" : String.Join(",", coupons.Select(t => t.Name)))}", PropertyOrListingsSummaryGroupBox, 6);
-            CreateLabel($"Vacancy ratio:{itemPrices.Where(t => !t.BookingDetails.Any() || t.BookingDetails.All(x => x.isRefund)).Count()}/{itemPrices.Count()}", PropertyOrListingsSummaryGroupBox, 7);
+            var vacancy = itemPrices
+                    .Where(t => !t.BookingDetails.Any()
+                        || t.BookingDetails.All(x => x.isRefund)).ToList();
+            CreateLabel($"Vacancy ratio:{vacancy.Count()}/{itemPrices.Count()}", PropertyOrListingsSummaryGroupBox, 7);
             #endregion
             #region Scores Summary
-            CreateLabel("Average score for listings:",ScoresSummaryGroupBox,1);
-            CreateLabel("Name of listing with highest score:", ScoresSummaryGroupBox, 2);
-            CreateLabel("Top ownew/manager by average score:", ScoresSummaryGroupBox, 3);
-            CreateLabel("The least clean owner/manager:", ScoresSummaryGroupBox, 4);
+            var averagescore = items.Where(x => x.ItemScores.Any()).SelectMany(X => X.ItemScores);
+            CreateLabel($"Average score for listings:{(averagescore.Any() ? averagescore.Average(t => t.Value).ToString("#.##") : "N/A")}",ScoresSummaryGroupBox,1);
+            var heightScore = items.Where(x => x.ItemScores.Any()).Select(X => new {name=X.Title,value=X.ItemScores.Average(x=>x.Value)}).OrderByDescending(t => t.value).FirstOrDefault();
+            CreateLabel($"Name of listing with highest score:{(heightScore == null ? "N/A" : heightScore.name)}", ScoresSummaryGroupBox, 2);
+            var topScoreUser = items
+                   .Where(t => t.ItemScores.Any())
+                   .Select(t => new { Name = t.Users.FullName, Score = t.ItemScores.Average(x => x.Value) })
+                   .GroupBy(t => t.Score)
+                   .OrderByDescending(t => t.Key)
+                   .FirstOrDefault();
+            CreateLabel($"Top ownew/manager by average score:{(topScoreUser == null ? "N/A" : String.Join(",", topScoreUser.Select(t => t.Name)))}", ScoresSummaryGroupBox, 3);
+            var leastScoreUser = items
+                    .Where(t => t.ItemScores.Any())
+                    .Select(t => new { Name = t.Users.FullName, Score = t.ItemScores.Average(x => x.Value) })
+                    .GroupBy(t => t.Score)
+                    .OrderBy(t => t.Key)
+                    .FirstOrDefault();
+            CreateLabel($"The least clean owner/manager:{(leastScoreUser == null ? "N/A" : String.Join(",", leastScoreUser.Select(t => t.Name)))}", ScoresSummaryGroupBox, 4);
             #endregion
             #region Financial Summary
             CreateLabel("Average net revenue of all owners/managers:", FinancialSummaryGroupBox, 1);
@@ -148,7 +161,121 @@ namespace Session6
         }
         public void ServiceReport()
         {
+            this.dataGridView1.DataSource = null;
+            using (Session6Entities entities = new Session6Entities())
+            {
+                var addonServiceDetails = entities.AddonServiceDetails.ToList();
+                if (!String.IsNullOrWhiteSpace(this.FormDataTimePicker.Text))
+                {
+                    addonServiceDetails = addonServiceDetails.Where(t => t.FromDate.Date >= this.FormDataTimePicker.Value.Date).ToList();
+                }
+                if (!String.IsNullOrWhiteSpace(this.ToDateTimePicker.Text))
+                {
+                    addonServiceDetails = addonServiceDetails.Where(t => t.FromDate.Date <= this.ToDateTimePicker.Value.Date).ToList();
+                }
+                label6.Text = $"Number of purchased services: {addonServiceDetails.Where(t => t.FromDate.Date <= DateTime.Today.Date && !t.isRefund).Count()}";
 
+                decimal totalRevenue = addonServiceDetails.Sum(t =>
+                {
+                    if (t.isRefund)
+                    {
+                        return 0;
+                    }
+                    var amount = t.NumberOfPeople * t.Services.Price;
+                    if (t.AddonServices.CouponID.HasValue)
+                    {
+                        var discount = amount * (t.AddonServices.Coupons.DiscountPercent / 100);
+                        if (discount > t.AddonServices.Coupons.MaximimDiscountAmount)
+                        {
+                            discount = t.AddonServices.Coupons.MaximimDiscountAmount;
+                        }
+                        amount -= discount;
+                    }
+                    return amount;
+                });
+                label7.Text=$"Total revenue from service reservations: {totalRevenue.ToString("#.##")}";
+                var mostBookedService = addonServiceDetails
+                    .GroupBy(t => t.Services)
+                    .GroupBy(t => t.Count())
+                    .OrderByDescending(t => t.Key)
+                    .FirstOrDefault();
+                label8.Text = $"Most booked service: {(mostBookedService == null ? "N/A" : String.Join(",", mostBookedService.Select(t => t.Key.Name)))}";
+                List<object> dataSource = new List<object>();
+                var yearFilter = !String.IsNullOrWhiteSpace(this.ToDateTimePicker.Text) ? this.ToDateTimePicker.Value.Year : DateTime.Now.Year;
+                var fromMonth = !String.IsNullOrWhiteSpace(this.FormDataTimePicker.Text) ? this.FormDataTimePicker.Value.Month : 1;
+                var toMonth = !String.IsNullOrWhiteSpace(this.ToDateTimePicker.Text) ? this.ToDateTimePicker.Value.Month : 12;
+                foreach (var serviceType in entities.ServiceTypes.ToList())
+                {
+                    List<int> serviceMonthlyAvaiable = new List<int>() { 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2 };
+                    for (int month = fromMonth; month <= toMonth; month++)
+                    {
+                        bool avaiable = false;
+                        foreach (var service in serviceType.Services)
+                        {
+                            List<int> timeRange = new List<int>();
+                            if (service.DayOfMonth == "*" || service.DayOfWeek == "*")
+                            {
+                                timeRange.AddRange(Enumerable.Range(1, DateTime.DaysInMonth(yearFilter, month)));
+                            }
+                            if (!timeRange.Any())
+                            {
+                                var source = String.IsNullOrWhiteSpace(service.DayOfMonth) ? service.DayOfWeek : service.DayOfMonth;
+                                timeRange.AddRange(source.Split(',')
+                                    .Select(t => t.Split('-'))
+                                    .SelectMany(t => Enumerable.Range(Convert.ToInt32(t.First()), (Convert.ToInt32(t.Last()) - Convert.ToInt32(t.First())) + 1))
+                                    .OrderBy(t => t)
+                                    .ToList());
+                            }
+
+                            var details = service.AddonServiceDetails
+                                .Where(t => t.FromDate.Year == yearFilter && t.FromDate.Month == month && !t.isRefund)
+                                .ToList();
+                            if (!String.IsNullOrWhiteSpace(service.DayOfWeek))
+                            {
+                                avaiable |= timeRange.Any(t =>
+                                {
+                                    var data = details.Where(x => x.FromDate.DayOfWeek == (DayOfWeek)t).ToList();
+                                    if (data.Count() == 0)
+                                    {
+                                        return true;
+                                    }
+                                    return data.Sum(x => x.NumberOfPeople) <= service.DailyCap;
+                                });
+                            }
+                            if (!String.IsNullOrWhiteSpace(service.DayOfMonth))
+                            {
+                                avaiable |= timeRange.Any(t =>
+                                {
+                                    var data = details.Where(x => x.FromDate.Day == t).ToList();
+                                    if (data.Count() == 0)
+                                    {
+                                        return true;
+                                    }
+                                    return data.Sum(x => x.NumberOfPeople) <= service.DailyCap;
+                                });
+                            }
+                        }
+                        serviceMonthlyAvaiable[month - 1] = Convert.ToInt32(avaiable);
+                    }
+                    dataSource.Add(new
+                    {
+                        serviceType.Name,
+                        Jan = serviceMonthlyAvaiable[0].ToString(),
+                        Feb = serviceMonthlyAvaiable[1].ToString(),
+                        Mar = serviceMonthlyAvaiable[2].ToString(),
+                        Apr = serviceMonthlyAvaiable[3].ToString(),
+                        May = serviceMonthlyAvaiable[4].ToString(),
+                        Jun = serviceMonthlyAvaiable[5].ToString(),
+                        Jul = serviceMonthlyAvaiable[6].ToString(),
+                        Aug = serviceMonthlyAvaiable[7].ToString(),
+                        Sep = serviceMonthlyAvaiable[8].ToString(),
+                        Oct = serviceMonthlyAvaiable[9].ToString(),
+                        Nov = serviceMonthlyAvaiable[10].ToString(),
+                        Dec = serviceMonthlyAvaiable[11].ToString()
+                    });
+                }
+                dataGridView1.DataSource = dataSource;
+            }
         }
         public void HostAnalysis()
         {
