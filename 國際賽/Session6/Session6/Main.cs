@@ -1,9 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
 using System.Text;
+using System.Text.Json;
 using System.Windows.Forms;
 namespace Session6
 {
@@ -16,6 +19,17 @@ namespace Session6
         }
         public void init()
         {
+            PropertyOrListingsSummaryGroupBox.Controls.Clear();
+            ScoresSummaryGroupBox.Controls.Clear();
+            FinancialSummaryGroupBox.Controls.Clear();
+            chart.Series[0].Points.Clear();
+            chart.Series[1].Points.Clear();
+            dataGridView1.DataSource=null;
+            dataGridView2.Rows.Clear();
+            dataGridView3.Rows.Clear();
+            label6.Text = "Number of purchased services:";
+            label7.Text="Total revenue from service reservations:";
+            label8.Text = "Most booked service:";
             AreaComboBox.Items.Clear();
             AreaComboBox.DisplayMember = "Name";
             AreaComboBox.ValueMember = "ID";
@@ -158,6 +172,18 @@ namespace Session6
             CreateLabel("Our total revenue from cancellations:",FinancialSummaryGroupBox,3);
             CreateLabel("Total discounts from coupons:",FinancialSummaryGroupBox,4);
             #endregion
+            #region Chart
+            var timefiler = !String.IsNullOrWhiteSpace(ToDateTimePicker.Text) ? ToDateTimePicker.Value : DateTime.Now;
+            var start=new DateTime(timefiler.AddMonths(-2).Year, timefiler.AddMonths(-2).Month, 1);
+            var end = new DateTime(timefiler.Year, timefiler.Month, DateTime.DaysInMonth(timefiler.Year, timefiler.Month));
+            for (var temp = start; temp < end; temp = temp.AddMonths(1))
+            {
+                DateTime nextMonth = temp.AddMonths(1);
+                var data = itemPrices.Where(t => t.Date >= temp && t.Date < nextMonth).ToList();
+                chart.Series[0].Points.AddXY(temp.Date.ToString("MMM", new CultureInfo("en-US")), data.Count(t => !t.BookingDetails.Any() || t.BookingDetails.All(x => x.isRefund)));
+                chart.Series[1].Points.AddXY(temp.Date.ToString("MMM", new CultureInfo("en-US")), data.Count(t => t.BookingDetails.Any(x => !x.isRefund)));
+            }
+            #endregion
         }
         public void ServiceReport()
         {
@@ -279,7 +305,17 @@ namespace Session6
         }
         public void HostAnalysis()
         {
-
+            Session6Entities entities = new Session6Entities();
+            
+        }
+        private void dataGridView1_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            if (e.ColumnIndex < 1)
+                return;
+            int value = Convert.ToInt32(e.Value);
+            e.Value = "";
+            if (value == 1)
+                e.CellStyle.BackColor = Color.FromArgb(229, 26, 46);
         }
     }
 }
