@@ -306,7 +306,16 @@ namespace Session6
         public void HostAnalysis()
         {
             Session6Entities entities = new Session6Entities();
-            
+            dataGridView2.Rows.Clear();
+            dataGridView3.Rows.Clear();
+            var tansactions = entities.Transactions.ToList();
+            var hosts = entities.Users.Where(t => t.Items.Any()).ToList();
+
+
+
+
+
+
         }
         private void dataGridView1_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
         {
