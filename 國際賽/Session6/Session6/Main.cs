@@ -394,7 +394,9 @@ namespace Session6
                 var refundDetaills = new List<BookingDetails>();
                 foreach (var bookingDetailGropping in itemprice.BookingDetails.GroupBy(x=>x.ItemPrices.Items))
                 {
-
+                    var amount = 0;
+                    var commission = 0;
+                    
                 }
 
 
