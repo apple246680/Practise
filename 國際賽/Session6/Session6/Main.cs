@@ -8,6 +8,9 @@ using System.Linq;
 using System.Text;
 using System.Text.Json;
 using System.Windows.Forms;
+using System.Numerics;
+using System.Windows.Forms.DataVisualization.Charting;
+
 namespace Session6
 {
     public partial class Main : Form
@@ -310,12 +313,71 @@ namespace Session6
             dataGridView3.Rows.Clear();
             var tansactions = entities.Transactions.ToList();
             var hosts = entities.Users.Where(t => t.Items.Any()).ToList();
-
-
-
-
-
-
+            if (!string.IsNullOrWhiteSpace(FormDataTimePicker.Text))
+            {
+                tansactions = tansactions.Where(x => x.TransactionDate.Date >= FormDataTimePicker.Value.Date).ToList();
+            }
+            if (!string.IsNullOrWhiteSpace(ToDateTimePicker.Text))
+            {
+                tansactions = tansactions.Where(x => x.TransactionDate.Date <= ToDateTimePicker.Value.Date).ToList();
+            }
+            if (!string.IsNullOrWhiteSpace(HostComboBox.Text))
+            {
+                tansactions = tansactions.Where(x=>x.ID== (long)HostComboBox.SelectedValue).ToList();
+            }
+            var userRevenue= new List<Tuple<Users, decimal, decimal>>();
+            foreach (var tansaction in tansactions)
+            {
+                foreach (var bookings in tansaction.Bookings)
+                {
+                    foreach (var bookingDetail in bookings.BookingDetails)
+                    {
+                        if (!String.IsNullOrWhiteSpace(this.HostComboBox.Text)
+                                && bookingDetail.ItemPrices.Items.UserID == (long)this.HostComboBox.SelectedValue)
+                        {
+                            continue;
+                        }
+                        if (!String.IsNullOrWhiteSpace(this.QuestComboBox.Text)
+                            && bookings.UserID == (long)this.QuestComboBox.SelectedValue)
+                        {
+                            continue;
+                        }
+                        decimal commission = bookingDetail.ItemPrices.Price * (bookingDetail.ItemPrices.CancellationPolicies.Commission / 100);
+                        decimal total = bookingDetail.ItemPrices.Price;
+                        if (bookings.CouponID.HasValue)
+                        {
+                            decimal discount = bookingDetail.ItemPrices.Price * (bookings.Coupons.DiscountPercent / 100);
+                            if (discount > bookings.Coupons.MaximimDiscountAmount)
+                            {
+                                discount = bookings.Coupons.MaximimDiscountAmount;
+                            }
+                            total -= discount;
+                        }
+                        if (bookingDetail.isRefund)
+                        {
+                            total = 0;
+                            var dayLeft = (bookingDetail.ItemPrices.Date - bookingDetail.RefundDate.Value).Days;
+                            var fee = entities.CancellationRefundFees
+                                .FirstOrDefault(t => t.CancellationPolicyID == bookingDetail.RefundCancellationPoliciyID
+                                    && t.DaysLeft == dayLeft);
+                            if (fee != null)
+                            {
+                                var refundAmount = bookingDetail.ItemPrices.Price * (fee.PenaltyPercentage / 100) / 2;
+                                total = refundAmount;
+                            }
+                        }
+                        userRevenue.Add(new Tuple<Users, decimal, decimal>(bookingDetail.ItemPrices.Items.Users, total, commission));
+                    }
+                }
+            }
+                hosts.ForEach(t =>
+                {
+                    var total = userRevenue.Where(x => x.Item1.ID == t.ID).Sum(x => x.Item2);
+                    var commission = userRevenue.Where(x => x.Item1.ID == t.ID).Sum(x => x.Item3);
+                    var net = total - commission;
+                    var withdrawData = tansactions.Where(x => x.UserID == t.ID && x.TransactionTypeID == 2).ToList();
+                    dataGridView2.Rows.Add(t.ID, t.FullName, "$" + total, "$" + net, "$" + (total - withdrawData.Sum(x => x.Amount)), withdrawData.LastOrDefault()?.TransactionDate.ToString("yyyy-MM-dd") ?? "");
+                });
         }
         private void dataGridView1_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
         {
@@ -325,6 +387,12 @@ namespace Session6
             e.Value = "";
             if (value == 1)
                 e.CellStyle.BackColor = Color.FromArgb(229, 26, 46);
+        }
+        private void dataGridView2_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex < 0)
+                return;
+            label9.Text = $"Total revenue from service reservations:{dataGridView2.Rows[e.RowIndex].Cells[1].Value}";
         }
     }
 }
