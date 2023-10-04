@@ -35,14 +35,8 @@ namespace Session6
             label7.Text = "Total revenue from service reservations:";
             label8.Text = "Most booked service:";
             AreaComboBox.Items.Clear();
-            AreaComboBox.DisplayMember = "Name";
-            AreaComboBox.ValueMember = "ID";
             HostComboBox.Items.Clear();
-            HostComboBox.DisplayMember = "FullName";
-            HostComboBox.ValueMember = "ID";
             QuestComboBox.Items.Clear();
-            QuestComboBox.DisplayMember = "FullName";
-            QuestComboBox.ValueMember = "ID";
             FormDataTimePicker.CustomFormat = " ";
             ToDateTimePicker.CustomFormat = " ";
             using (Session6Entities entities = new Session6Entities())
@@ -54,6 +48,12 @@ namespace Session6
                 QuestComboBox.Items.AddRange(entities.Users.Where(x => x.Bookings.Any()).Select(x => new { x.ID, x.FullName }).ToArray());
                 QuestComboBox.Items.Insert(0, new { ID = -1, FullName = "" });
             }
+            AreaComboBox.DisplayMember = "Name";
+            AreaComboBox.ValueMember = "ID";
+            HostComboBox.DisplayMember = "FullName";
+            HostComboBox.ValueMember = "ID";
+            QuestComboBox.DisplayMember = "FullName";
+            QuestComboBox.ValueMember = "ID";
             AreaComboBox.SelectedIndex = 0;
             HostComboBox.SelectedIndex = 0;
             QuestComboBox.SelectedIndex = 0;

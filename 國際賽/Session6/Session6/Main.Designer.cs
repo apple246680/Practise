@@ -28,10 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Series series4 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Main));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.ResetBtn = new System.Windows.Forms.Button();
@@ -183,6 +183,7 @@
             // 
             // QuestComboBox
             // 
+            this.QuestComboBox.DisplayMember = "ID";
             this.QuestComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.QuestComboBox.Font = new System.Drawing.Font("Open Sans SemiBold", 15F, System.Drawing.FontStyle.Bold);
             this.QuestComboBox.FormattingEnabled = true;
@@ -190,9 +191,11 @@
             this.QuestComboBox.Name = "QuestComboBox";
             this.QuestComboBox.Size = new System.Drawing.Size(227, 44);
             this.QuestComboBox.TabIndex = 4;
+            this.QuestComboBox.ValueMember = "ID";
             // 
             // HostComboBox
             // 
+            this.HostComboBox.DisplayMember = "ID";
             this.HostComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.HostComboBox.Font = new System.Drawing.Font("Open Sans SemiBold", 15F, System.Drawing.FontStyle.Bold);
             this.HostComboBox.FormattingEnabled = true;
@@ -200,9 +203,11 @@
             this.HostComboBox.Name = "HostComboBox";
             this.HostComboBox.Size = new System.Drawing.Size(227, 44);
             this.HostComboBox.TabIndex = 3;
+            this.HostComboBox.ValueMember = "ID";
             // 
             // AreaComboBox
             // 
+            this.AreaComboBox.DisplayMember = "ID";
             this.AreaComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.AreaComboBox.Font = new System.Drawing.Font("Open Sans SemiBold", 15F, System.Drawing.FontStyle.Bold);
             this.AreaComboBox.FormattingEnabled = true;
@@ -210,6 +215,7 @@
             this.AreaComboBox.Name = "AreaComboBox";
             this.AreaComboBox.Size = new System.Drawing.Size(227, 44);
             this.AreaComboBox.TabIndex = 2;
+            this.AreaComboBox.ValueMember = "ID";
             // 
             // ToDateTimePicker
             // 
@@ -287,28 +293,28 @@
             // 
             // chart
             // 
-            chartArea2.AlignmentStyle = System.Windows.Forms.DataVisualization.Charting.AreaAlignmentStyles.None;
-            chartArea2.AxisX.MajorGrid.Enabled = false;
-            chartArea2.AxisY.Enabled = System.Windows.Forms.DataVisualization.Charting.AxisEnabled.False;
-            chartArea2.Name = "ChartArea1";
-            this.chart.ChartAreas.Add(chartArea2);
-            legend2.Alignment = System.Drawing.StringAlignment.Center;
-            legend2.BorderWidth = 0;
-            legend2.Docking = System.Windows.Forms.DataVisualization.Charting.Docking.Bottom;
-            legend2.Name = "Legend1";
-            this.chart.Legends.Add(legend2);
+            chartArea1.AlignmentStyle = System.Windows.Forms.DataVisualization.Charting.AreaAlignmentStyles.None;
+            chartArea1.AxisX.MajorGrid.Enabled = false;
+            chartArea1.AxisY.Enabled = System.Windows.Forms.DataVisualization.Charting.AxisEnabled.False;
+            chartArea1.Name = "ChartArea1";
+            this.chart.ChartAreas.Add(chartArea1);
+            legend1.Alignment = System.Drawing.StringAlignment.Center;
+            legend1.BorderWidth = 0;
+            legend1.Docking = System.Windows.Forms.DataVisualization.Charting.Docking.Bottom;
+            legend1.Name = "Legend1";
+            this.chart.Legends.Add(legend1);
             this.chart.Location = new System.Drawing.Point(16, 44);
             this.chart.Name = "chart";
-            series3.ChartArea = "ChartArea1";
-            series3.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.StackedColumn100;
-            series3.Legend = "Legend1";
-            series3.Name = "Vancant";
-            series4.ChartArea = "ChartArea1";
-            series4.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.StackedColumn;
-            series4.Legend = "Legend1";
-            series4.Name = "Reserved";
-            this.chart.Series.Add(series3);
-            this.chart.Series.Add(series4);
+            series1.ChartArea = "ChartArea1";
+            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.StackedColumn100;
+            series1.Legend = "Legend1";
+            series1.Name = "Vancant";
+            series2.ChartArea = "ChartArea1";
+            series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.StackedColumn;
+            series2.Legend = "Legend1";
+            series2.Name = "Reserved";
+            this.chart.Series.Add(series1);
+            this.chart.Series.Add(series2);
             this.chart.Size = new System.Drawing.Size(474, 416);
             this.chart.TabIndex = 0;
             this.chart.Text = "chart1";
