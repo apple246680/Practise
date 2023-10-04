@@ -10,7 +10,6 @@ using System.Text.Json;
 using System.Windows.Forms;
 using System.Numerics;
 using System.Windows.Forms.DataVisualization.Charting;
-
 namespace Session6
 {
     public partial class Main : Form
