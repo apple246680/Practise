@@ -43,20 +43,14 @@ namespace Session1
             if (KeepSign.Checked)
                 Properties.Settings.Default.KeepLogin = Global.accountID.ToString();
             else
-                Properties.Settings.Default.KeepLogin = "";
+                Properties.Settings.Default.KeepLogin = null;
             Properties.Settings.Default.Save();
             Visible = false;
             MessageBox.Show("Success!");
             management.ShowDialog();
         }
-        private void ShowPassword_CheckedChanged(object sender, EventArgs e)
-        {
-            PasswordTextBox.UseSystemPasswordChar=!ShowPassword.Checked;
-        }
-        private void ExitBtn_Click(object sender, EventArgs e)
-        {
-            Close();
-        }
+        private void ShowPassword_CheckedChanged(object sender, EventArgs e)=>PasswordTextBox.UseSystemPasswordChar=!ShowPassword.Checked;
+        public void ExitBtn_Click(object sender, EventArgs e)=>Close();
         private void Login_Load(object sender, EventArgs e)
         {
             if (!String.IsNullOrEmpty(Properties.Settings.Default.KeepLogin))
@@ -69,7 +63,9 @@ namespace Session1
         {
             Visible= false;
             CreateAccount createAccount = new CreateAccount();
+            Visible = false;
             createAccount.ShowDialog();
+            Visible = true;
         }
     }
 }

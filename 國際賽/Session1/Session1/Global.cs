@@ -11,13 +11,9 @@ namespace Session1
             Session1Entities entities = new Session1Entities();
             var user = entities.Users.SingleOrDefault(x=>x.Username==username);
             if (user != null)
-            {
                 throw new ArgumentException("Username is exists.");
-            }
             if (password.Length<5)
-            {
                 throw new ArgumentException("Password length need least five.");
-            }
             user = entities.Users.Add(new User 
             { 
                 GUID=Guid.NewGuid(),
