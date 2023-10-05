@@ -10,7 +10,7 @@ namespace Session1
             InitializeComponent();
             thisclose = true;
         }
-        bool thisclose;
+        bool thisclose;  
         private void View_Click(object sender, EventArgs e)
         {
             ViewForm viewForm = new ViewForm();
