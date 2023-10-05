@@ -1,14 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Net.WebSockets;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-
 namespace Session1
 {
     public partial class CreateAccount : Form
@@ -95,6 +87,14 @@ namespace Session1
             });
             entities.SaveChanges();
             return user;
+        }
+        private void View_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            ViewForm viewForm = new ViewForm();
+            Visible = false;
+            viewForm.ShowDialog();
+            Visible = true;
+            Agree.Enabled = true;
         }
     }
 }

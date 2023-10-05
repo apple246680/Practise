@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.Back = new System.Windows.Forms.Button();
-            this.View = new System.Windows.Forms.Label();
             this.Agree = new System.Windows.Forms.CheckBox();
             this.Family = new System.Windows.Forms.NumericUpDown();
             this.label6 = new System.Windows.Forms.Label();
@@ -47,6 +46,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.Register = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.View = new System.Windows.Forms.LinkLabel();
             ((System.ComponentModel.ISupportInitialize)(this.Family)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -61,17 +61,6 @@
             this.Back.Text = "Return login form";
             this.Back.UseVisualStyleBackColor = true;
             this.Back.Click += new System.EventHandler(this.Back_Click);
-            // 
-            // View
-            // 
-            this.View.AutoSize = true;
-            this.View.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.View.Location = new System.Drawing.Point(632, 374);
-            this.View.Name = "View";
-            this.View.Size = new System.Drawing.Size(223, 22);
-            this.View.TabIndex = 10;
-            this.View.Text = "View terms and Conditions";
-            this.View.Click += new System.EventHandler(this.View_Click);
             // 
             // Agree
             // 
@@ -244,6 +233,18 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Login";
             // 
+            // View
+            // 
+            this.View.AutoSize = true;
+            this.View.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Underline);
+            this.View.Location = new System.Drawing.Point(619, 369);
+            this.View.Name = "View";
+            this.View.Size = new System.Drawing.Size(223, 22);
+            this.View.TabIndex = 11;
+            this.View.TabStop = true;
+            this.View.Text = "View terms and Conditions";
+            this.View.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.View_LinkClicked);
+            // 
             // CreateAccount
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
@@ -253,6 +254,7 @@
             this.Controls.Add(this.Register);
             this.Controls.Add(this.groupBox1);
             this.Name = "CreateAccount";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Seoul Stay-CreateAccount";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.CreateAccount_FormClosing);
             ((System.ComponentModel.ISupportInitialize)(this.Family)).EndInit();
@@ -265,7 +267,6 @@
         #endregion
 
         private System.Windows.Forms.Button Back;
-        private System.Windows.Forms.Label View;
         private System.Windows.Forms.CheckBox Agree;
         private System.Windows.Forms.NumericUpDown Family;
         private System.Windows.Forms.Label label6;
@@ -283,5 +284,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button Register;
         private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.LinkLabel View;
     }
 }

@@ -725,6 +725,7 @@
             this.Controls.Add(this.NextBtn);
             this.Controls.Add(this.tabControl1);
             this.Name = "AddOrEditListinig";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Seoul Stay - Add/Edit Listing";
             this.Load += new System.EventHandler(this.AddOrEditListinig_Load);
             ((System.ComponentModel.ISupportInitialize)(this.DistanceDataGridView)).EndInit();

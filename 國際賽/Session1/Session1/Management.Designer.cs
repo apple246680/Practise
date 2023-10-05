@@ -310,6 +310,7 @@
             this.Controls.Add(this.ExitBtn);
             this.Controls.Add(this.LououtBtn);
             this.Name = "Management";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Seoul Stay-Management";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Management_FormClosing);
             this.Load += new System.EventHandler(this.Management_Load);

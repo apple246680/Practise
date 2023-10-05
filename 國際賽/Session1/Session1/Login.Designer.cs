@@ -30,15 +30,15 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Login));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.EmpTextBox = new System.Windows.Forms.TextBox();
-            this.UserTextBox = new System.Windows.Forms.TextBox();
-            this.PasswordTextBox = new System.Windows.Forms.TextBox();
-            this.KeepSign = new System.Windows.Forms.CheckBox();
             this.ShowPassword = new System.Windows.Forms.CheckBox();
+            this.KeepSign = new System.Windows.Forms.CheckBox();
+            this.PasswordTextBox = new System.Windows.Forms.TextBox();
+            this.UserTextBox = new System.Windows.Forms.TextBox();
+            this.EmpTextBox = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.LoginBtn = new System.Windows.Forms.Button();
             this.ExitBtn = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
@@ -64,64 +64,16 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Login";
             // 
-            // pictureBox1
+            // ShowPassword
             // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(249, 13);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(209, 90);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 1;
-            this.pictureBox1.TabStop = false;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(72, 30);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(68, 15);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Employee:";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(72, 67);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(37, 15);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "User:";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(72, 100);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(64, 15);
-            this.label3.TabIndex = 2;
-            this.label3.Text = "Password:";
-            // 
-            // EmpTextBox
-            // 
-            this.EmpTextBox.Location = new System.Drawing.Point(155, 30);
-            this.EmpTextBox.Name = "EmpTextBox";
-            this.EmpTextBox.Size = new System.Drawing.Size(249, 25);
-            this.EmpTextBox.TabIndex = 3;
-            // 
-            // UserTextBox
-            // 
-            this.UserTextBox.Location = new System.Drawing.Point(155, 64);
-            this.UserTextBox.Name = "UserTextBox";
-            this.UserTextBox.Size = new System.Drawing.Size(249, 25);
-            this.UserTextBox.TabIndex = 4;
-            // 
-            // PasswordTextBox
-            // 
-            this.PasswordTextBox.Location = new System.Drawing.Point(155, 95);
-            this.PasswordTextBox.Name = "PasswordTextBox";
-            this.PasswordTextBox.Size = new System.Drawing.Size(249, 25);
-            this.PasswordTextBox.TabIndex = 5;
-            this.PasswordTextBox.UseSystemPasswordChar = true;
+            this.ShowPassword.AutoSize = true;
+            this.ShowPassword.Location = new System.Drawing.Point(442, 64);
+            this.ShowPassword.Name = "ShowPassword";
+            this.ShowPassword.Size = new System.Drawing.Size(118, 19);
+            this.ShowPassword.TabIndex = 7;
+            this.ShowPassword.Text = "Show Password";
+            this.ShowPassword.UseVisualStyleBackColor = true;
+            this.ShowPassword.CheckedChanged += new System.EventHandler(this.ShowPassword_CheckedChanged);
             // 
             // KeepSign
             // 
@@ -133,16 +85,64 @@
             this.KeepSign.Text = "Keep me signed in";
             this.KeepSign.UseVisualStyleBackColor = true;
             // 
-            // ShowPassword
+            // PasswordTextBox
             // 
-            this.ShowPassword.AutoSize = true;
-            this.ShowPassword.Location = new System.Drawing.Point(442, 64);
-            this.ShowPassword.Name = "ShowPassword";
-            this.ShowPassword.Size = new System.Drawing.Size(118, 19);
-            this.ShowPassword.TabIndex = 7;
-            this.ShowPassword.Text = "Show Password";
-            this.ShowPassword.UseVisualStyleBackColor = true;
-            this.ShowPassword.CheckedChanged += new System.EventHandler(this.ShowPassword_CheckedChanged);
+            this.PasswordTextBox.Location = new System.Drawing.Point(155, 95);
+            this.PasswordTextBox.Name = "PasswordTextBox";
+            this.PasswordTextBox.Size = new System.Drawing.Size(249, 25);
+            this.PasswordTextBox.TabIndex = 5;
+            this.PasswordTextBox.UseSystemPasswordChar = true;
+            // 
+            // UserTextBox
+            // 
+            this.UserTextBox.Location = new System.Drawing.Point(155, 64);
+            this.UserTextBox.Name = "UserTextBox";
+            this.UserTextBox.Size = new System.Drawing.Size(249, 25);
+            this.UserTextBox.TabIndex = 4;
+            // 
+            // EmpTextBox
+            // 
+            this.EmpTextBox.Location = new System.Drawing.Point(155, 30);
+            this.EmpTextBox.Name = "EmpTextBox";
+            this.EmpTextBox.Size = new System.Drawing.Size(249, 25);
+            this.EmpTextBox.TabIndex = 3;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(72, 100);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(64, 15);
+            this.label3.TabIndex = 2;
+            this.label3.Text = "Password:";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(72, 67);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(37, 15);
+            this.label2.TabIndex = 1;
+            this.label2.Text = "User:";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(72, 30);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(68, 15);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Employee:";
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(249, 13);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(209, 90);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 1;
+            this.pictureBox1.TabStop = false;
             // 
             // LoginBtn
             // 
@@ -196,6 +196,7 @@
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.groupBox1);
             this.Name = "Login";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Seoul Stay-Welcome";
             this.Load += new System.EventHandler(this.Login_Load);
             this.groupBox1.ResumeLayout(false);
