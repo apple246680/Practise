@@ -2,12 +2,13 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
 namespace Session1
 {
     public partial class Management : Form
@@ -48,6 +49,7 @@ namespace Session1
                 Type=x.ItemType.Name,
             }).ToList();
             TravelerDataGridView.DataSource = data;
+            datacount[tabControl1.SelectedIndex] = data.Count;
             CountLabel.Text = $"{data.Count} items found.";
         }
         private void search_Leave(object sender, EventArgs e)
