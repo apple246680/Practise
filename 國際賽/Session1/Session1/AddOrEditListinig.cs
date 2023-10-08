@@ -259,7 +259,7 @@ namespace Session1
                     DistanceNum.Value.ToString(),
                     OnfootNum.Value == 0 ? "" : OnfootNum.Value.ToString(),
                     BycarNum.Value == 0 ? "" : BycarNum.Value.ToString());
-            }
+            }   
         }
     }
 }
