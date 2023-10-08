@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Data;
+using System.Diagnostics;
 using System.Linq;
 using System.Windows.Forms;
 namespace Sesosin3
@@ -101,6 +102,11 @@ namespace Sesosin3
         }
         private void AdvanedBtn_Click(object sender, EventArgs e)
         {
+            AdvancedSearch advancedSearch = new AdvancedSearch();
+            Visible = false;
+            advancedSearch.ShowDialog();
+            Visible = true;
+            Debug.WriteLine("123");
         }
     }
 }
