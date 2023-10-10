@@ -46,7 +46,6 @@ namespace Session6
         public virtual DbSet<Scores> Scores { get; set; }
         public virtual DbSet<Services> Services { get; set; }
         public virtual DbSet<ServiceTypes> ServiceTypes { get; set; }
-        public virtual DbSet<sysdiagrams> sysdiagrams { get; set; }
         public virtual DbSet<Transactions> Transactions { get; set; }
         public virtual DbSet<TransactionTypes> TransactionTypes { get; set; }
         public virtual DbSet<Users> Users { get; set; }

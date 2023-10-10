@@ -28,12 +28,39 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Main));
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea4 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend4 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series7 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series8 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            this.TabControlMain = new System.Windows.Forms.TabControl();
+            this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.FinancialSummaryPanel = new System.Windows.Forms.Panel();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.ScoresSummaryPanel = new System.Windows.Forms.Panel();
+            this.ListingGroupBox = new System.Windows.Forms.GroupBox();
+            this.ListingsSummaryPanel = new System.Windows.Forms.Panel();
+            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.ServiceDataGridView = new System.Windows.Forms.DataGridView();
+            this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.AddonServicesPanel = new System.Windows.Forms.Panel();
+            this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.TransactionTitleLabel = new System.Windows.Forms.Label();
+            this.TransactionDataGridView = new System.Windows.Forms.DataGridView();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.HostDataGridView = new System.Windows.Forms.DataGridView();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.GuestComboBox = new System.Windows.Forms.ComboBox();
+            this.HostComboBox = new System.Windows.Forms.ComboBox();
+            this.AreaComboBox = new System.Windows.Forms.ComboBox();
+            this.ToDateTimePicker = new System.Windows.Forms.DateTimePicker();
+            this.FromDateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.ResetBtn = new System.Windows.Forms.Button();
             this.ApplyBtn = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
@@ -41,55 +68,285 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.QuestComboBox = new System.Windows.Forms.ComboBox();
-            this.HostComboBox = new System.Windows.Forms.ComboBox();
-            this.AreaComboBox = new System.Windows.Forms.ComboBox();
-            this.ToDateTimePicker = new System.Windows.Forms.DateTimePicker();
-            this.FormDataTimePicker = new System.Windows.Forms.DateTimePicker();
-            this.tabControl1 = new System.Windows.Forms.TabControl();
-            this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.FinancialSummaryGroupBox = new System.Windows.Forms.GroupBox();
-            this.ScoresSummaryGroupBox = new System.Windows.Forms.GroupBox();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.chart = new System.Windows.Forms.DataVisualization.Charting.Chart();
-            this.PropertyOrListingsSummaryGroupBox = new System.Windows.Forms.GroupBox();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.groupBox6 = new System.Windows.Forms.GroupBox();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.label9 = new System.Windows.Forms.Label();
-            this.dataGridView3 = new System.Windows.Forms.DataGridView();
-            this.Column19 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column20 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column21 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column22 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
-            this.Column13 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column14 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column15 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column16 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column17 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column18 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.groupBox1.SuspendLayout();
-            this.tabControl1.SuspendLayout();
+            this.chart = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.TabControlMain.SuspendLayout();
             this.tabPage1.SuspendLayout();
+            this.groupBox5.SuspendLayout();
             this.groupBox3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.chart)).BeginInit();
+            this.groupBox2.SuspendLayout();
+            this.ListingGroupBox.SuspendLayout();
             this.tabPage2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            this.groupBox6.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ServiceDataGridView)).BeginInit();
+            this.groupBox4.SuspendLayout();
             this.tabPage3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TransactionDataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.HostDataGridView)).BeginInit();
+            this.panel1.SuspendLayout();
+            this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chart)).BeginInit();
             this.SuspendLayout();
+            // 
+            // TabControlMain
+            // 
+            this.TabControlMain.Alignment = System.Windows.Forms.TabAlignment.Left;
+            this.TabControlMain.Controls.Add(this.tabPage1);
+            this.TabControlMain.Controls.Add(this.tabPage2);
+            this.TabControlMain.Controls.Add(this.tabPage3);
+            this.TabControlMain.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.TabControlMain.Location = new System.Drawing.Point(318, 0);
+            this.TabControlMain.Multiline = true;
+            this.TabControlMain.Name = "TabControlMain";
+            this.TabControlMain.SelectedIndex = 0;
+            this.TabControlMain.Size = new System.Drawing.Size(969, 732);
+            this.TabControlMain.TabIndex = 3;
+            // 
+            // tabPage1
+            // 
+            this.tabPage1.Controls.Add(this.groupBox5);
+            this.tabPage1.Controls.Add(this.groupBox3);
+            this.tabPage1.Controls.Add(this.groupBox2);
+            this.tabPage1.Controls.Add(this.ListingGroupBox);
+            this.tabPage1.Location = new System.Drawing.Point(29, 4);
+            this.tabPage1.Name = "tabPage1";
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage1.Size = new System.Drawing.Size(936, 724);
+            this.tabPage1.TabIndex = 0;
+            this.tabPage1.Text = "Universal Report";
+            this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // groupBox5
+            // 
+            this.groupBox5.Controls.Add(this.chart);
+            this.groupBox5.Location = new System.Drawing.Point(467, 8);
+            this.groupBox5.Name = "groupBox5";
+            this.groupBox5.Size = new System.Drawing.Size(428, 343);
+            this.groupBox5.TabIndex = 4;
+            this.groupBox5.TabStop = false;
+            this.groupBox5.Text = "Monthly Vacancy Ratio";
+            // 
+            // groupBox3
+            // 
+            this.groupBox3.Controls.Add(this.FinancialSummaryPanel);
+            this.groupBox3.Location = new System.Drawing.Point(481, 368);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(406, 316);
+            this.groupBox3.TabIndex = 1;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "Financial Summary";
+            // 
+            // FinancialSummaryPanel
+            // 
+            this.FinancialSummaryPanel.AutoScroll = true;
+            this.FinancialSummaryPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.FinancialSummaryPanel.Location = new System.Drawing.Point(3, 23);
+            this.FinancialSummaryPanel.Name = "FinancialSummaryPanel";
+            this.FinancialSummaryPanel.Size = new System.Drawing.Size(400, 290);
+            this.FinancialSummaryPanel.TabIndex = 0;
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.ScoresSummaryPanel);
+            this.groupBox2.Location = new System.Drawing.Point(22, 368);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(406, 316);
+            this.groupBox2.TabIndex = 1;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Scores Summary";
+            // 
+            // ScoresSummaryPanel
+            // 
+            this.ScoresSummaryPanel.AutoScroll = true;
+            this.ScoresSummaryPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ScoresSummaryPanel.Location = new System.Drawing.Point(3, 23);
+            this.ScoresSummaryPanel.Name = "ScoresSummaryPanel";
+            this.ScoresSummaryPanel.Size = new System.Drawing.Size(400, 290);
+            this.ScoresSummaryPanel.TabIndex = 0;
+            // 
+            // ListingGroupBox
+            // 
+            this.ListingGroupBox.Controls.Add(this.ListingsSummaryPanel);
+            this.ListingGroupBox.Location = new System.Drawing.Point(19, 26);
+            this.ListingGroupBox.Name = "ListingGroupBox";
+            this.ListingGroupBox.Size = new System.Drawing.Size(406, 316);
+            this.ListingGroupBox.TabIndex = 0;
+            this.ListingGroupBox.TabStop = false;
+            this.ListingGroupBox.Text = "Property or Listings Summary";
+            // 
+            // ListingsSummaryPanel
+            // 
+            this.ListingsSummaryPanel.AutoScroll = true;
+            this.ListingsSummaryPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ListingsSummaryPanel.Location = new System.Drawing.Point(3, 23);
+            this.ListingsSummaryPanel.Name = "ListingsSummaryPanel";
+            this.ListingsSummaryPanel.Size = new System.Drawing.Size(400, 290);
+            this.ListingsSummaryPanel.TabIndex = 0;
+            // 
+            // tabPage2
+            // 
+            this.tabPage2.Controls.Add(this.ServiceDataGridView);
+            this.tabPage2.Controls.Add(this.groupBox4);
+            this.tabPage2.Location = new System.Drawing.Point(29, 4);
+            this.tabPage2.Name = "tabPage2";
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage2.Size = new System.Drawing.Size(936, 724);
+            this.tabPage2.TabIndex = 1;
+            this.tabPage2.Text = "Service Report";
+            this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // ServiceDataGridView
+            // 
+            this.ServiceDataGridView.AllowUserToAddRows = false;
+            this.ServiceDataGridView.AllowUserToDeleteRows = false;
+            this.ServiceDataGridView.AllowUserToResizeColumns = false;
+            this.ServiceDataGridView.AllowUserToResizeRows = false;
+            this.ServiceDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.ServiceDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.ServiceDataGridView.Location = new System.Drawing.Point(42, 293);
+            this.ServiceDataGridView.MultiSelect = false;
+            this.ServiceDataGridView.Name = "ServiceDataGridView";
+            this.ServiceDataGridView.ReadOnly = true;
+            this.ServiceDataGridView.RowHeadersVisible = false;
+            this.ServiceDataGridView.RowHeadersWidth = 51;
+            this.ServiceDataGridView.RowTemplate.Height = 27;
+            this.ServiceDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.ServiceDataGridView.Size = new System.Drawing.Size(835, 364);
+            this.ServiceDataGridView.TabIndex = 2;
+            this.ServiceDataGridView.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.ServiceDataGridView_CellFormatting);
+            // 
+            // groupBox4
+            // 
+            this.groupBox4.Controls.Add(this.AddonServicesPanel);
+            this.groupBox4.Location = new System.Drawing.Point(39, 26);
+            this.groupBox4.Name = "groupBox4";
+            this.groupBox4.Size = new System.Drawing.Size(838, 229);
+            this.groupBox4.TabIndex = 1;
+            this.groupBox4.TabStop = false;
+            this.groupBox4.Text = "Addon Services";
+            // 
+            // AddonServicesPanel
+            // 
+            this.AddonServicesPanel.AutoScroll = true;
+            this.AddonServicesPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.AddonServicesPanel.Location = new System.Drawing.Point(3, 23);
+            this.AddonServicesPanel.Name = "AddonServicesPanel";
+            this.AddonServicesPanel.Size = new System.Drawing.Size(832, 203);
+            this.AddonServicesPanel.TabIndex = 0;
+            // 
+            // tabPage3
+            // 
+            this.tabPage3.Controls.Add(this.TransactionTitleLabel);
+            this.tabPage3.Controls.Add(this.TransactionDataGridView);
+            this.tabPage3.Controls.Add(this.HostDataGridView);
+            this.tabPage3.Location = new System.Drawing.Point(29, 4);
+            this.tabPage3.Name = "tabPage3";
+            this.tabPage3.Size = new System.Drawing.Size(936, 724);
+            this.tabPage3.TabIndex = 2;
+            this.tabPage3.Text = "Host Analysis";
+            this.tabPage3.UseVisualStyleBackColor = true;
+            // 
+            // TransactionTitleLabel
+            // 
+            this.TransactionTitleLabel.AutoSize = true;
+            this.TransactionTitleLabel.Location = new System.Drawing.Point(49, 357);
+            this.TransactionTitleLabel.Name = "TransactionTitleLabel";
+            this.TransactionTitleLabel.Size = new System.Drawing.Size(0, 20);
+            this.TransactionTitleLabel.TabIndex = 4;
+            // 
+            // TransactionDataGridView
+            // 
+            this.TransactionDataGridView.AllowUserToAddRows = false;
+            this.TransactionDataGridView.AllowUserToDeleteRows = false;
+            this.TransactionDataGridView.AllowUserToResizeColumns = false;
+            this.TransactionDataGridView.AllowUserToResizeRows = false;
+            this.TransactionDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.TransactionDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.TransactionDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Column1,
+            this.Column2,
+            this.Column3,
+            this.Column4});
+            this.TransactionDataGridView.Location = new System.Drawing.Point(41, 395);
+            this.TransactionDataGridView.MultiSelect = false;
+            this.TransactionDataGridView.Name = "TransactionDataGridView";
+            this.TransactionDataGridView.ReadOnly = true;
+            this.TransactionDataGridView.RowHeadersVisible = false;
+            this.TransactionDataGridView.RowHeadersWidth = 51;
+            this.TransactionDataGridView.RowTemplate.Height = 27;
+            this.TransactionDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.TransactionDataGridView.Size = new System.Drawing.Size(835, 267);
+            this.TransactionDataGridView.TabIndex = 3;
+            // 
+            // Column1
+            // 
+            this.Column1.HeaderText = "Date";
+            this.Column1.MinimumWidth = 6;
+            this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
+            this.Column1.Width = 74;
+            // 
+            // Column2
+            // 
+            this.Column2.HeaderText = "Amount";
+            this.Column2.MinimumWidth = 6;
+            this.Column2.Name = "Column2";
+            this.Column2.ReadOnly = true;
+            this.Column2.Width = 95;
+            // 
+            // Column3
+            // 
+            this.Column3.HeaderText = "Commission";
+            this.Column3.MinimumWidth = 6;
+            this.Column3.Name = "Column3";
+            this.Column3.ReadOnly = true;
+            this.Column3.Width = 131;
+            // 
+            // Column4
+            // 
+            this.Column4.HeaderText = "Description";
+            this.Column4.MinimumWidth = 6;
+            this.Column4.Name = "Column4";
+            this.Column4.ReadOnly = true;
+            this.Column4.Width = 124;
+            // 
+            // HostDataGridView
+            // 
+            this.HostDataGridView.AllowUserToAddRows = false;
+            this.HostDataGridView.AllowUserToDeleteRows = false;
+            this.HostDataGridView.AllowUserToResizeColumns = false;
+            this.HostDataGridView.AllowUserToResizeRows = false;
+            this.HostDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.HostDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.HostDataGridView.Location = new System.Drawing.Point(41, 26);
+            this.HostDataGridView.MultiSelect = false;
+            this.HostDataGridView.Name = "HostDataGridView";
+            this.HostDataGridView.ReadOnly = true;
+            this.HostDataGridView.RowHeadersVisible = false;
+            this.HostDataGridView.RowHeadersWidth = 51;
+            this.HostDataGridView.RowTemplate.Height = 27;
+            this.HostDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.HostDataGridView.Size = new System.Drawing.Size(835, 245);
+            this.HostDataGridView.TabIndex = 3;
+            this.HostDataGridView.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.HostDataGridView_CellClick);
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.groupBox1);
+            this.panel1.Controls.Add(this.pictureBox1);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(318, 732);
+            this.panel1.TabIndex = 2;
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.GuestComboBox);
+            this.groupBox1.Controls.Add(this.HostComboBox);
+            this.groupBox1.Controls.Add(this.AreaComboBox);
+            this.groupBox1.Controls.Add(this.ToDateTimePicker);
+            this.groupBox1.Controls.Add(this.FromDateTimePicker);
             this.groupBox1.Controls.Add(this.ResetBtn);
             this.groupBox1.Controls.Add(this.ApplyBtn);
             this.groupBox1.Controls.Add(this.label5);
@@ -97,35 +354,77 @@
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Controls.Add(this.QuestComboBox);
-            this.groupBox1.Controls.Add(this.HostComboBox);
-            this.groupBox1.Controls.Add(this.AreaComboBox);
-            this.groupBox1.Controls.Add(this.ToDateTimePicker);
-            this.groupBox1.Controls.Add(this.FormDataTimePicker);
-            this.groupBox1.Location = new System.Drawing.Point(25, 235);
+            this.groupBox1.Location = new System.Drawing.Point(12, 179);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(286, 731);
-            this.groupBox1.TabIndex = 0;
+            this.groupBox1.Size = new System.Drawing.Size(284, 532);
+            this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Filters";
             // 
+            // GuestComboBox
+            // 
+            this.GuestComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.GuestComboBox.FormattingEnabled = true;
+            this.GuestComboBox.Location = new System.Drawing.Point(32, 350);
+            this.GuestComboBox.Name = "GuestComboBox";
+            this.GuestComboBox.Size = new System.Drawing.Size(224, 28);
+            this.GuestComboBox.TabIndex = 1;
+            // 
+            // HostComboBox
+            // 
+            this.HostComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.HostComboBox.FormattingEnabled = true;
+            this.HostComboBox.Location = new System.Drawing.Point(31, 283);
+            this.HostComboBox.Name = "HostComboBox";
+            this.HostComboBox.Size = new System.Drawing.Size(224, 28);
+            this.HostComboBox.TabIndex = 1;
+            // 
+            // AreaComboBox
+            // 
+            this.AreaComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.AreaComboBox.FormattingEnabled = true;
+            this.AreaComboBox.Location = new System.Drawing.Point(31, 220);
+            this.AreaComboBox.Name = "AreaComboBox";
+            this.AreaComboBox.Size = new System.Drawing.Size(224, 28);
+            this.AreaComboBox.TabIndex = 1;
+            // 
+            // ToDateTimePicker
+            // 
+            this.ToDateTimePicker.CustomFormat = " ";
+            this.ToDateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.ToDateTimePicker.Location = new System.Drawing.Point(31, 145);
+            this.ToDateTimePicker.Name = "ToDateTimePicker";
+            this.ToDateTimePicker.Size = new System.Drawing.Size(224, 27);
+            this.ToDateTimePicker.TabIndex = 1;
+            this.ToDateTimePicker.ValueChanged += new System.EventHandler(this.FromDateTimePicker_ValueChanged);
+            // 
+            // FromDateTimePicker
+            // 
+            this.FromDateTimePicker.CustomFormat = " ";
+            this.FromDateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.FromDateTimePicker.Location = new System.Drawing.Point(31, 84);
+            this.FromDateTimePicker.Name = "FromDateTimePicker";
+            this.FromDateTimePicker.Size = new System.Drawing.Size(224, 27);
+            this.FromDateTimePicker.TabIndex = 1;
+            this.FromDateTimePicker.ValueChanged += new System.EventHandler(this.FromDateTimePicker_ValueChanged);
+            // 
             // ResetBtn
             // 
-            this.ResetBtn.Font = new System.Drawing.Font("Open Sans SemiBold", 15F, System.Drawing.FontStyle.Bold);
-            this.ResetBtn.Location = new System.Drawing.Point(38, 551);
+            this.ResetBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ResetBtn.Location = new System.Drawing.Point(31, 462);
             this.ResetBtn.Name = "ResetBtn";
-            this.ResetBtn.Size = new System.Drawing.Size(221, 45);
-            this.ResetBtn.TabIndex = 10;
+            this.ResetBtn.Size = new System.Drawing.Size(224, 43);
+            this.ResetBtn.TabIndex = 1;
             this.ResetBtn.Text = "Reset";
             this.ResetBtn.UseVisualStyleBackColor = true;
             this.ResetBtn.Click += new System.EventHandler(this.ResetBtn_Click);
             // 
             // ApplyBtn
             // 
-            this.ApplyBtn.Font = new System.Drawing.Font("Open Sans SemiBold", 15F, System.Drawing.FontStyle.Bold);
-            this.ApplyBtn.Location = new System.Drawing.Point(38, 500);
+            this.ApplyBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ApplyBtn.Location = new System.Drawing.Point(31, 413);
             this.ApplyBtn.Name = "ApplyBtn";
-            this.ApplyBtn.Size = new System.Drawing.Size(221, 45);
+            this.ApplyBtn.Size = new System.Drawing.Size(224, 43);
             this.ApplyBtn.TabIndex = 1;
             this.ApplyBtn.Text = "Apply";
             this.ApplyBtn.UseVisualStyleBackColor = true;
@@ -134,492 +433,158 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Open Sans SemiBold", 15F, System.Drawing.FontStyle.Bold);
-            this.label5.Location = new System.Drawing.Point(32, 355);
+            this.label5.Location = new System.Drawing.Point(27, 323);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(94, 36);
-            this.label5.TabIndex = 9;
-            this.label5.Text = "Quest:";
+            this.label5.Size = new System.Drawing.Size(59, 20);
+            this.label5.TabIndex = 1;
+            this.label5.Text = "Guest:";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Open Sans SemiBold", 15F, System.Drawing.FontStyle.Bold);
-            this.label4.Location = new System.Drawing.Point(32, 275);
+            this.label4.Location = new System.Drawing.Point(27, 256);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(78, 36);
-            this.label4.TabIndex = 8;
+            this.label4.Size = new System.Drawing.Size(50, 20);
+            this.label4.TabIndex = 1;
             this.label4.Text = "Host:";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Open Sans SemiBold", 15F, System.Drawing.FontStyle.Bold);
-            this.label3.Location = new System.Drawing.Point(32, 195);
+            this.label3.Location = new System.Drawing.Point(28, 193);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(79, 36);
-            this.label3.TabIndex = 7;
+            this.label3.Size = new System.Drawing.Size(49, 20);
+            this.label3.TabIndex = 1;
             this.label3.Text = "Area:";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Open Sans SemiBold", 15F, System.Drawing.FontStyle.Bold);
-            this.label2.Location = new System.Drawing.Point(32, 117);
+            this.label2.Location = new System.Drawing.Point(27, 118);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(51, 36);
-            this.label2.TabIndex = 6;
+            this.label2.Size = new System.Drawing.Size(33, 20);
+            this.label2.TabIndex = 1;
             this.label2.Text = "To:";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Open Sans SemiBold", 15F, System.Drawing.FontStyle.Bold);
-            this.label1.Location = new System.Drawing.Point(32, 39);
+            this.label1.Location = new System.Drawing.Point(27, 57);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(85, 36);
-            this.label1.TabIndex = 5;
-            this.label1.Text = "Form:";
-            // 
-            // QuestComboBox
-            // 
-            this.QuestComboBox.DisplayMember = "ID";
-            this.QuestComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.QuestComboBox.Font = new System.Drawing.Font("Open Sans SemiBold", 15F, System.Drawing.FontStyle.Bold);
-            this.QuestComboBox.FormattingEnabled = true;
-            this.QuestComboBox.Location = new System.Drawing.Point(32, 391);
-            this.QuestComboBox.Name = "QuestComboBox";
-            this.QuestComboBox.Size = new System.Drawing.Size(227, 44);
-            this.QuestComboBox.TabIndex = 4;
-            this.QuestComboBox.ValueMember = "ID";
-            // 
-            // HostComboBox
-            // 
-            this.HostComboBox.DisplayMember = "ID";
-            this.HostComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.HostComboBox.Font = new System.Drawing.Font("Open Sans SemiBold", 15F, System.Drawing.FontStyle.Bold);
-            this.HostComboBox.FormattingEnabled = true;
-            this.HostComboBox.Location = new System.Drawing.Point(32, 311);
-            this.HostComboBox.Name = "HostComboBox";
-            this.HostComboBox.Size = new System.Drawing.Size(227, 44);
-            this.HostComboBox.TabIndex = 3;
-            this.HostComboBox.ValueMember = "ID";
-            // 
-            // AreaComboBox
-            // 
-            this.AreaComboBox.DisplayMember = "ID";
-            this.AreaComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.AreaComboBox.Font = new System.Drawing.Font("Open Sans SemiBold", 15F, System.Drawing.FontStyle.Bold);
-            this.AreaComboBox.FormattingEnabled = true;
-            this.AreaComboBox.Location = new System.Drawing.Point(32, 231);
-            this.AreaComboBox.Name = "AreaComboBox";
-            this.AreaComboBox.Size = new System.Drawing.Size(227, 44);
-            this.AreaComboBox.TabIndex = 2;
-            this.AreaComboBox.ValueMember = "ID";
-            // 
-            // ToDateTimePicker
-            // 
-            this.ToDateTimePicker.CustomFormat = " ";
-            this.ToDateTimePicker.Font = new System.Drawing.Font("Open Sans SemiBold", 15F, System.Drawing.FontStyle.Bold);
-            this.ToDateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.ToDateTimePicker.Location = new System.Drawing.Point(32, 153);
-            this.ToDateTimePicker.Name = "ToDateTimePicker";
-            this.ToDateTimePicker.Size = new System.Drawing.Size(227, 42);
-            this.ToDateTimePicker.TabIndex = 1;
-            this.ToDateTimePicker.ValueChanged += new System.EventHandler(this.DataTimePicker_ValueChanged);
-            // 
-            // FormDataTimePicker
-            // 
-            this.FormDataTimePicker.CustomFormat = " ";
-            this.FormDataTimePicker.Font = new System.Drawing.Font("Open Sans SemiBold", 15F, System.Drawing.FontStyle.Bold);
-            this.FormDataTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.FormDataTimePicker.Location = new System.Drawing.Point(32, 75);
-            this.FormDataTimePicker.Name = "FormDataTimePicker";
-            this.FormDataTimePicker.Size = new System.Drawing.Size(227, 42);
-            this.FormDataTimePicker.TabIndex = 0;
-            this.FormDataTimePicker.ValueChanged += new System.EventHandler(this.DataTimePicker_ValueChanged);
-            // 
-            // tabControl1
-            // 
-            this.tabControl1.Controls.Add(this.tabPage1);
-            this.tabControl1.Controls.Add(this.tabPage2);
-            this.tabControl1.Controls.Add(this.tabPage3);
-            this.tabControl1.Location = new System.Drawing.Point(315, 12);
-            this.tabControl1.Name = "tabControl1";
-            this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(1092, 964);
-            this.tabControl1.TabIndex = 1;
-            // 
-            // tabPage1
-            // 
-            this.tabPage1.Controls.Add(this.FinancialSummaryGroupBox);
-            this.tabPage1.Controls.Add(this.ScoresSummaryGroupBox);
-            this.tabPage1.Controls.Add(this.groupBox3);
-            this.tabPage1.Controls.Add(this.PropertyOrListingsSummaryGroupBox);
-            this.tabPage1.Location = new System.Drawing.Point(4, 31);
-            this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Size = new System.Drawing.Size(1084, 929);
-            this.tabPage1.TabIndex = 0;
-            this.tabPage1.Text = "Unuversal Report";
-            this.tabPage1.UseVisualStyleBackColor = true;
-            // 
-            // FinancialSummaryGroupBox
-            // 
-            this.FinancialSummaryGroupBox.Location = new System.Drawing.Point(585, 486);
-            this.FinancialSummaryGroupBox.Name = "FinancialSummaryGroupBox";
-            this.FinancialSummaryGroupBox.Size = new System.Drawing.Size(496, 437);
-            this.FinancialSummaryGroupBox.TabIndex = 3;
-            this.FinancialSummaryGroupBox.TabStop = false;
-            this.FinancialSummaryGroupBox.Text = "Financial Summary";
-            // 
-            // ScoresSummaryGroupBox
-            // 
-            this.ScoresSummaryGroupBox.Location = new System.Drawing.Point(17, 486);
-            this.ScoresSummaryGroupBox.Name = "ScoresSummaryGroupBox";
-            this.ScoresSummaryGroupBox.Size = new System.Drawing.Size(551, 428);
-            this.ScoresSummaryGroupBox.TabIndex = 2;
-            this.ScoresSummaryGroupBox.TabStop = false;
-            this.ScoresSummaryGroupBox.Text = "Scores Summary";
-            // 
-            // groupBox3
-            // 
-            this.groupBox3.Controls.Add(this.chart);
-            this.groupBox3.Location = new System.Drawing.Point(585, 14);
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(496, 466);
-            this.groupBox3.TabIndex = 1;
-            this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "Monthly Vancancy Ratio";
-            // 
-            // chart
-            // 
-            chartArea1.AlignmentStyle = System.Windows.Forms.DataVisualization.Charting.AreaAlignmentStyles.None;
-            chartArea1.AxisX.MajorGrid.Enabled = false;
-            chartArea1.AxisY.Enabled = System.Windows.Forms.DataVisualization.Charting.AxisEnabled.False;
-            chartArea1.Name = "ChartArea1";
-            this.chart.ChartAreas.Add(chartArea1);
-            legend1.Alignment = System.Drawing.StringAlignment.Center;
-            legend1.BorderWidth = 0;
-            legend1.Docking = System.Windows.Forms.DataVisualization.Charting.Docking.Bottom;
-            legend1.Name = "Legend1";
-            this.chart.Legends.Add(legend1);
-            this.chart.Location = new System.Drawing.Point(16, 44);
-            this.chart.Name = "chart";
-            series1.ChartArea = "ChartArea1";
-            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.StackedColumn100;
-            series1.Legend = "Legend1";
-            series1.Name = "Vancant";
-            series2.ChartArea = "ChartArea1";
-            series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.StackedColumn;
-            series2.Legend = "Legend1";
-            series2.Name = "Reserved";
-            this.chart.Series.Add(series1);
-            this.chart.Series.Add(series2);
-            this.chart.Size = new System.Drawing.Size(474, 416);
-            this.chart.TabIndex = 0;
-            this.chart.Text = "chart1";
-            // 
-            // PropertyOrListingsSummaryGroupBox
-            // 
-            this.PropertyOrListingsSummaryGroupBox.Location = new System.Drawing.Point(17, 14);
-            this.PropertyOrListingsSummaryGroupBox.Name = "PropertyOrListingsSummaryGroupBox";
-            this.PropertyOrListingsSummaryGroupBox.Size = new System.Drawing.Size(551, 466);
-            this.PropertyOrListingsSummaryGroupBox.TabIndex = 0;
-            this.PropertyOrListingsSummaryGroupBox.TabStop = false;
-            this.PropertyOrListingsSummaryGroupBox.Text = "Property or Listings Summary";
-            // 
-            // tabPage2
-            // 
-            this.tabPage2.Controls.Add(this.dataGridView1);
-            this.tabPage2.Controls.Add(this.groupBox6);
-            this.tabPage2.Location = new System.Drawing.Point(4, 31);
-            this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Size = new System.Drawing.Size(1084, 929);
-            this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "Service Report";
-            this.tabPage2.UseVisualStyleBackColor = true;
-            // 
-            // dataGridView1
-            // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(3, 146);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(1);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.RowHeadersVisible = false;
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 27;
-            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(1078, 780);
-            this.dataGridView1.TabIndex = 1;
-            this.dataGridView1.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dataGridView1_CellFormatting);
-            // 
-            // groupBox6
-            // 
-            this.groupBox6.Controls.Add(this.label8);
-            this.groupBox6.Controls.Add(this.label7);
-            this.groupBox6.Controls.Add(this.label6);
-            this.groupBox6.Location = new System.Drawing.Point(19, 14);
-            this.groupBox6.Name = "groupBox6";
-            this.groupBox6.Size = new System.Drawing.Size(1062, 126);
-            this.groupBox6.TabIndex = 0;
-            this.groupBox6.TabStop = false;
-            this.groupBox6.Text = "Addon Services";
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(558, 35);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(162, 22);
-            this.label8.TabIndex = 2;
-            this.label8.Text = "Most booked service:";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(58, 81);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(301, 22);
-            this.label7.TabIndex = 1;
-            this.label7.Text = "Total revenue from service reservations:";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(58, 35);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(233, 22);
-            this.label6.TabIndex = 0;
-            this.label6.Text = "Number of purchased services:";
-            // 
-            // tabPage3
-            // 
-            this.tabPage3.Controls.Add(this.label9);
-            this.tabPage3.Controls.Add(this.dataGridView3);
-            this.tabPage3.Controls.Add(this.dataGridView2);
-            this.tabPage3.Location = new System.Drawing.Point(4, 31);
-            this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Size = new System.Drawing.Size(1084, 929);
-            this.tabPage3.TabIndex = 2;
-            this.tabPage3.Text = "Host Analysis";
-            this.tabPage3.UseVisualStyleBackColor = true;
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(4, 467);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(168, 22);
-            this.label9.TabIndex = 2;
-            this.label9.Text = "Transcation detail for ";
-            // 
-            // dataGridView3
-            // 
-            this.dataGridView3.AllowUserToAddRows = false;
-            this.dataGridView3.AllowUserToDeleteRows = false;
-            this.dataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView3.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Column19,
-            this.Column20,
-            this.Column21,
-            this.Column22});
-            this.dataGridView3.Location = new System.Drawing.Point(0, 503);
-            this.dataGridView3.Name = "dataGridView3";
-            this.dataGridView3.ReadOnly = true;
-            this.dataGridView3.RowHeadersWidth = 51;
-            this.dataGridView3.RowTemplate.Height = 27;
-            this.dataGridView3.Size = new System.Drawing.Size(1078, 420);
-            this.dataGridView3.TabIndex = 1;
-            // 
-            // Column19
-            // 
-            this.Column19.HeaderText = "Date";
-            this.Column19.MinimumWidth = 6;
-            this.Column19.Name = "Column19";
-            this.Column19.ReadOnly = true;
-            this.Column19.Width = 125;
-            // 
-            // Column20
-            // 
-            this.Column20.HeaderText = "Amount";
-            this.Column20.MinimumWidth = 6;
-            this.Column20.Name = "Column20";
-            this.Column20.ReadOnly = true;
-            this.Column20.Width = 125;
-            // 
-            // Column21
-            // 
-            this.Column21.HeaderText = "Commission";
-            this.Column21.MinimumWidth = 6;
-            this.Column21.Name = "Column21";
-            this.Column21.ReadOnly = true;
-            this.Column21.Width = 125;
-            // 
-            // Column22
-            // 
-            this.Column22.HeaderText = "Description";
-            this.Column22.MinimumWidth = 6;
-            this.Column22.Name = "Column22";
-            this.Column22.ReadOnly = true;
-            this.Column22.Width = 125;
-            // 
-            // dataGridView2
-            // 
-            this.dataGridView2.AllowUserToAddRows = false;
-            this.dataGridView2.AllowUserToDeleteRows = false;
-            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Column13,
-            this.Column14,
-            this.Column15,
-            this.Column16,
-            this.Column17,
-            this.Column18});
-            this.dataGridView2.Location = new System.Drawing.Point(3, 3);
-            this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.ReadOnly = true;
-            this.dataGridView2.RowHeadersWidth = 51;
-            this.dataGridView2.RowTemplate.Height = 27;
-            this.dataGridView2.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView2.Size = new System.Drawing.Size(1078, 442);
-            this.dataGridView2.TabIndex = 0;
-            this.dataGridView2.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView2_CellClick);
-            // 
-            // Column13
-            // 
-            this.Column13.HeaderText = "ID";
-            this.Column13.MinimumWidth = 6;
-            this.Column13.Name = "Column13";
-            this.Column13.ReadOnly = true;
-            this.Column13.Width = 125;
-            // 
-            // Column14
-            // 
-            this.Column14.HeaderText = "Full Name";
-            this.Column14.MinimumWidth = 6;
-            this.Column14.Name = "Column14";
-            this.Column14.ReadOnly = true;
-            this.Column14.Width = 125;
-            // 
-            // Column15
-            // 
-            this.Column15.HeaderText = "Total Revanue";
-            this.Column15.MinimumWidth = 6;
-            this.Column15.Name = "Column15";
-            this.Column15.ReadOnly = true;
-            this.Column15.Width = 125;
-            // 
-            // Column16
-            // 
-            this.Column16.HeaderText = "Net Revenue";
-            this.Column16.MinimumWidth = 6;
-            this.Column16.Name = "Column16";
-            this.Column16.ReadOnly = true;
-            this.Column16.Width = 125;
-            // 
-            // Column17
-            // 
-            this.Column17.HeaderText = "Remoining Balance";
-            this.Column17.MinimumWidth = 6;
-            this.Column17.Name = "Column17";
-            this.Column17.ReadOnly = true;
-            this.Column17.Width = 125;
-            // 
-            // Column18
-            // 
-            this.Column18.HeaderText = "Last Withdrawal";
-            this.Column18.MinimumWidth = 6;
-            this.Column18.Name = "Column18";
-            this.Column18.ReadOnly = true;
-            this.Column18.Width = 125;
+            this.label1.Size = new System.Drawing.Size(53, 20);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "From:";
             // 
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(25, 57);
+            this.pictureBox1.Location = new System.Drawing.Point(12, 30);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(284, 172);
+            this.pictureBox1.Size = new System.Drawing.Size(284, 112);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 2;
+            this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
+            // 
+            // chart
+            // 
+            chartArea4.AxisX.MajorGrid.Enabled = false;
+            chartArea4.AxisX.MajorTickMark.Enabled = false;
+            chartArea4.AxisY.Enabled = System.Windows.Forms.DataVisualization.Charting.AxisEnabled.False;
+            chartArea4.AxisY.MajorGrid.Enabled = false;
+            chartArea4.AxisY.MajorTickMark.Enabled = false;
+            chartArea4.Name = "ChartArea1";
+            this.chart.ChartAreas.Add(chartArea4);
+            legend4.Alignment = System.Drawing.StringAlignment.Center;
+            legend4.Docking = System.Windows.Forms.DataVisualization.Charting.Docking.Bottom;
+            legend4.Name = "Legend1";
+            this.chart.Legends.Add(legend4);
+            this.chart.Location = new System.Drawing.Point(6, 26);
+            this.chart.Name = "chart";
+            series7.ChartArea = "ChartArea1";
+            series7.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.StackedColumn100;
+            series7.Legend = "Legend1";
+            series7.Name = "Vacant";
+            series8.ChartArea = "ChartArea1";
+            series8.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.StackedColumn100;
+            series8.Legend = "Legend1";
+            series8.Name = "Reserved";
+            this.chart.Series.Add(series7);
+            this.chart.Series.Add(series8);
+            this.chart.Size = new System.Drawing.Size(409, 300);
+            this.chart.TabIndex = 4;
+            this.chart.Text = "chart1";
             // 
             // Main
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 22F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1419, 988);
-            this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.tabControl1);
-            this.Controls.Add(this.groupBox1);
-            this.Font = new System.Drawing.Font("Open Sans SemiBold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.ClientSize = new System.Drawing.Size(1287, 732);
+            this.Controls.Add(this.TabControlMain);
+            this.Controls.Add(this.panel1);
+            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Main";
-            this.Text = "Seoul Stay-Reporting Dashboard";
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
-            this.tabControl1.ResumeLayout(false);
+            this.Text = "Seoul Stay - Reporting Dashboard";
+            this.TabControlMain.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
+            this.groupBox5.ResumeLayout(false);
             this.groupBox3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.chart)).EndInit();
+            this.groupBox2.ResumeLayout(false);
+            this.ListingGroupBox.ResumeLayout(false);
             this.tabPage2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            this.groupBox6.ResumeLayout(false);
-            this.groupBox6.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ServiceDataGridView)).EndInit();
+            this.groupBox4.ResumeLayout(false);
             this.tabPage3.ResumeLayout(false);
             this.tabPage3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TransactionDataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.HostDataGridView)).EndInit();
+            this.panel1.ResumeLayout(false);
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chart)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
+        private System.Windows.Forms.TabControl TabControlMain;
+        private System.Windows.Forms.TabPage tabPage1;
+        private System.Windows.Forms.GroupBox groupBox5;
+        private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.Panel FinancialSummaryPanel;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.Panel ScoresSummaryPanel;
+        private System.Windows.Forms.GroupBox ListingGroupBox;
+        private System.Windows.Forms.Panel ListingsSummaryPanel;
+        private System.Windows.Forms.TabPage tabPage2;
+        private System.Windows.Forms.DataGridView ServiceDataGridView;
+        private System.Windows.Forms.GroupBox groupBox4;
+        private System.Windows.Forms.Panel AddonServicesPanel;
+        private System.Windows.Forms.TabPage tabPage3;
+        private System.Windows.Forms.Label TransactionTitleLabel;
+        private System.Windows.Forms.DataGridView TransactionDataGridView;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
+        private System.Windows.Forms.DataGridView HostDataGridView;
+        private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.ComboBox GuestComboBox;
+        private System.Windows.Forms.ComboBox HostComboBox;
+        private System.Windows.Forms.ComboBox AreaComboBox;
+        private System.Windows.Forms.DateTimePicker ToDateTimePicker;
+        private System.Windows.Forms.DateTimePicker FromDateTimePicker;
+        private System.Windows.Forms.Button ResetBtn;
+        private System.Windows.Forms.Button ApplyBtn;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ComboBox QuestComboBox;
-        private System.Windows.Forms.ComboBox HostComboBox;
-        private System.Windows.Forms.ComboBox AreaComboBox;
-        private System.Windows.Forms.DateTimePicker ToDateTimePicker;
-        private System.Windows.Forms.DateTimePicker FormDataTimePicker;
-        private System.Windows.Forms.Button ApplyBtn;
-        private System.Windows.Forms.Button ResetBtn;
-        private System.Windows.Forms.TabControl tabControl1;
-        private System.Windows.Forms.TabPage tabPage1;
-        private System.Windows.Forms.TabPage tabPage2;
-        private System.Windows.Forms.TabPage tabPage3;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.GroupBox PropertyOrListingsSummaryGroupBox;
-        private System.Windows.Forms.GroupBox FinancialSummaryGroupBox;
-        private System.Windows.Forms.GroupBox ScoresSummaryGroupBox;
-        private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.GroupBox groupBox6;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.DataGridView dataGridView2;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.DataGridView dataGridView3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column13;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column14;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column15;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column16;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column17;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column18;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column19;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column20;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column21;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column22;
         private System.Windows.Forms.DataVisualization.Charting.Chart chart;
     }
 }
