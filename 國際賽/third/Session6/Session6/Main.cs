@@ -188,8 +188,14 @@ namespace Session6
             }
             #endregion
         }
-        public void ServiceReport() { }
-        public void HostAnalysis() { }
+        public void ServiceReport() 
+        { 
+        
+        }
+        public void HostAnalysis() 
+        { 
+        
+        }
         private void dataGridView1_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
         {
             
