@@ -1,15 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Diagnostics;
-using System.Drawing;
 using System.Linq;
-using System.Reflection;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Data.SqlClient;
 namespace Session1
 {
     public partial class Management : Form
@@ -17,6 +10,18 @@ namespace Session1
         public Management()
         {
             InitializeComponent();
+            init();
+        }
+        public void init()
+        {
+            ManageDataGridView.Rows.Clear();
+            Session1Entities entities = new Session1Entities();
+            entities.Items.Where(t => t.UserID == Global.accountID).ToList().ForEach(t =>
+            {
+                ManageDataGridView.Rows.Add(t.ID, t.Title, t.Capacity, t.Area.Name, t.ItemType.Name, "Edit Details");
+            });
+            CurrentNum[1] = ManageDataGridView.Rows.Count;
+            tabControl1_SelectedIndexChanged(null, null) ;
         }
         bool IsClose;
         private void LogoutBtn_Click(object sender, EventArgs e)
@@ -34,11 +39,7 @@ namespace Session1
             IsClose = true;
             Close();
         }
-
-        private void hint_Click(object sender, EventArgs e)
-        {
-            hint.Visible = false;
-        }
+        private void hint_Click(object sender, EventArgs e)=>hint.Visible = false;
         public List<int> CurrentNum = new List<int>() { 0, 0 };
         private void search_TextChanged(object sender, EventArgs e)
         {
@@ -55,41 +56,20 @@ namespace Session1
             if (String.IsNullOrEmpty(search.Text))
                 hint.Visible = true;
         }
-        private void search_Enter(object sender, EventArgs e)
-        {
-            hint.Visible = false;
-        }
+        private void search_Enter(object sender, EventArgs e)=>hint.Visible = false;
         private void Management_FormClosing(object sender, FormClosingEventArgs e)
         {
             if (IsClose)
-            {
                 Global.login.Close();
-                Application.Exit();
-            }
             else
                 Global.login.Visible = true;
         }
-        private void tabControl1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            CountLabel.Text = $"{CurrentNum[tabControl1.SelectedIndex]} items found.";
-        }
-        private void Management_Load(object sender, EventArgs e)
-        {
-            ManageDataGridView.Rows.Clear();
-            Session1Entities entities = new Session1Entities();
-            entities.Items.Where(t => t.UserID == Global.accountID).ToList().ForEach(t =>
-            {
-                ManageDataGridView.Rows.Add(t.ID, t.Title, t.Capacity, t.Area.Name, t.ItemType.Name, "Edit Details");
-            });
-            CurrentNum[1] = ManageDataGridView.Rows.Count;
-        }
+        private void tabControl1_SelectedIndexChanged(object sender, EventArgs e)=>CountLabel.Text = $"{CurrentNum[tabControl1.SelectedIndex]} items found.";
         private void AddListingBtn_Click(object sender, EventArgs e)
         {
-            AddOrEditListinig addOrEditListinig = new AddOrEditListinig(null);
-            addOrEditListinig.ShowDialog();
-            Management_Load(sender, e);
+            new AddOrEditListinig(null).ShowDialog();
+            init();
         }
-
         private void ManageDataGridView_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex < 0 || e.ColumnIndex != 5)
@@ -105,7 +85,7 @@ namespace Session1
                 ManageDataGridView.Rows.Add(x.ID, x.Title, x.Capacity, x.Area.Name, x.ItemType.Name, "Edit Details");
             });
             CurrentNum[1] = data.Count();
-            CountLabel.Text = $"{data.Count()} items found.";
+            tabControl1_SelectedIndexChanged(sender,e);
         }
     }
 }

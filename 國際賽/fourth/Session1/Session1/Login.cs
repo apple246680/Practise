@@ -12,12 +12,11 @@ namespace Session1
         }
         private void LoginBtn_Click(object sender, EventArgs e)
         {
-            Management management = new Management();
             Session1Entities entities = new Session1Entities();
             if (Global.accountID.HasValue)
             {
                 Visible = false;
-                management.ShowDialog();
+                new Management().ShowDialog();
                 return;
             }
             if (!string.IsNullOrEmpty(EmpTextBox.Text))
@@ -47,7 +46,7 @@ namespace Session1
             Properties.Settings.Default.Save();
             Visible = false;
             MessageBox.Show("Success!");
-            management.ShowDialog();
+            new Management().ShowDialog();
         }
         private void ShowPassword_CheckedChanged(object sender, EventArgs e)=>PasswordTextBox.UseSystemPasswordChar=!ShowPassword.Checked;
         public void ExitBtn_Click(object sender, EventArgs e)=>Close();
@@ -55,16 +54,14 @@ namespace Session1
         {
             if (!String.IsNullOrEmpty(Properties.Settings.Default.KeepLogin))
             {
-                Global.accountID = Convert.ToInt32(Properties.Settings.Default.KeepLogin);
+                Global.accountID = int.Parse(Properties.Settings.Default.KeepLogin);
                 LoginBtn_Click(sender, e);
             }
         }
         private void Create_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             Visible= false;
-            CreateAccount createAccount = new CreateAccount();
-            Visible = false;
-            createAccount.ShowDialog();
+            new CreateAccount().ShowDialog();
             Visible = true;
         }
     }

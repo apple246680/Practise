@@ -3,7 +3,6 @@ using System.Data;
 using System.Data.Entity.Migrations;
 using System.Linq;
 using System.Windows.Forms;
-
 namespace Session1
 {
     public partial class AddOrEditListinig : Form
@@ -184,7 +183,7 @@ namespace Session1
                 entities.SaveChanges();
             }
             MessageBox.Show("Success!");
-            this.Close();
+            Close();
         }
         private void tabControl1_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -231,9 +230,7 @@ namespace Session1
                     CloseBtn.Text = "Finish";
                 }
                 else
-                {
                     CloseBtn.Text = "Cancel";
-                }
             }
             beforeIndex = tabControl1.SelectedIndex;
         }

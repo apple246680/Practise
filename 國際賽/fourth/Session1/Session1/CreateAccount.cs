@@ -48,17 +48,21 @@ namespace Session1
                 MessageBox.Show("Please View Terms Document And Click Agree Conditions First.");
                 return;
             }
+            if (Password.Text.Length < 5)
+            {
+                MessageBox.Show("Password length need least five.");
+                return;
+            }
             var users = register(Username.Text, FullName.Text, Password.Text, Birthday.Value, (int)Family.Value, Male.Checked);
             if (users == null)
                 return;
             var user = users;
             MessageBox.Show("OK");
             Global.accountID = user.ID;
-            Management management = new Management();
             thisclose = false;
             Close();
             Global.login.Visible = false;
-            management.Show();
+            new Management().Show();
         }
         public User register(string username, string fullname, string password, DateTime bitthday, int familycount, bool gender)
         {
@@ -67,11 +71,6 @@ namespace Session1
             if (user != null)
             {
                 MessageBox.Show("Username is exists.");
-                return null;
-            }
-            if (password.Length < 5)
-            {
-                MessageBox.Show("Password length need least five.");
                 return null;
             }
             user = entities.Users.Add(new User
