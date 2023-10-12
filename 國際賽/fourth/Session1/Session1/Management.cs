@@ -15,8 +15,7 @@ namespace Session1
         public void init()
         {
             ManageDataGridView.Rows.Clear();
-            Session1Entities entities = new Session1Entities();
-            entities.Items.Where(t => t.UserID == Global.accountID).ToList().ForEach(t =>
+            new Session1Entities().Items.Where(t => t.UserID == Global.accountID).ToList().ForEach(t =>
             {
                 ManageDataGridView.Rows.Add(t.ID, t.Title, t.Capacity, t.Area.Name, t.ItemType.Name, "Edit Details");
             });
@@ -73,11 +72,9 @@ namespace Session1
             if (e.RowIndex < 0 || e.ColumnIndex != 5)
                 return;
             long id = (long)ManageDataGridView.Rows[e.RowIndex].Cells[0].Value;
-            AddOrEditListinig form = new AddOrEditListinig(id);
-            form.ShowDialog();
+            new AddOrEditListinig(id).ShowDialog();
             ManageDataGridView.Rows.Clear();
-            Session1Entities entities = new Session1Entities();
-            var data = entities.Items.Where(x => x.UserID == Global.accountID).ToList();
+            var data = new Session1Entities().Items.Where(x => x.UserID == Global.accountID).ToList();
             data.ForEach(x =>
             {
                 ManageDataGridView.Rows.Add(x.ID, x.Title, x.Capacity, x.Area.Name, x.ItemType.Name, "Edit Details");
