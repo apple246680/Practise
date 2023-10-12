@@ -52,6 +52,7 @@ namespace Session1
             Visible = false;
             MessageBox.Show("Success!");
             new Management().ShowDialog();
+            Visible = true;
         }
         private void ShowPassword_CheckedChanged(object sender, EventArgs e)=>PasswordTextBox.UseSystemPasswordChar=!ShowPassword.Checked;
         public void ExitBtn_Click(object sender, EventArgs e)=>Close();

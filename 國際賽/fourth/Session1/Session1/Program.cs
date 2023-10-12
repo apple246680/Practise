@@ -12,9 +12,6 @@ namespace Session1
             Application.ThreadException += HandleUnhandledException;
             Application.Run(new Login());
         }
-        private static void HandleUnhandledException(object sender, System.Threading.ThreadExceptionEventArgs e)
-        {
-            MessageBox.Show($"error: {e.Exception.Message}", "error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-        }
+        private static void HandleUnhandledException(object sender, System.Threading.ThreadExceptionEventArgs e)=>MessageBox.Show($"error: {e.Exception.Message}", "error", MessageBoxButtons.OK, MessageBoxIcon.Error);
     }
 }

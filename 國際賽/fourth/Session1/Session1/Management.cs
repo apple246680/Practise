@@ -61,8 +61,6 @@ namespace Session1
         {
             if (IsClose)
                 Global.login.Close();
-            else
-                Global.login.Visible = true;
         }
         private void tabControl1_SelectedIndexChanged(object sender, EventArgs e)=>CountLabel.Text = $"{CurrentNum[tabControl1.SelectedIndex]} items found.";
         private void AddListingBtn_Click(object sender, EventArgs e)
