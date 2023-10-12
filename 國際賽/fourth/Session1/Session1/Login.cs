@@ -9,6 +9,11 @@ namespace Session1
         {
             Global.login = this;
             InitializeComponent();
+            if (!String.IsNullOrEmpty(Properties.Settings.Default.KeepLogin))
+            {
+                Global.accountID = int.Parse(Properties.Settings.Default.KeepLogin);
+                LoginBtn_Click(null, null);
+            }
         }
         private void LoginBtn_Click(object sender, EventArgs e)
         {
@@ -50,14 +55,6 @@ namespace Session1
         }
         private void ShowPassword_CheckedChanged(object sender, EventArgs e)=>PasswordTextBox.UseSystemPasswordChar=!ShowPassword.Checked;
         public void ExitBtn_Click(object sender, EventArgs e)=>Close();
-        private void Login_Load(object sender, EventArgs e)
-        {
-            if (!String.IsNullOrEmpty(Properties.Settings.Default.KeepLogin))
-            {
-                Global.accountID = int.Parse(Properties.Settings.Default.KeepLogin);
-                LoginBtn_Click(sender, e);
-            }
-        }
         private void Create_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             Visible= false;

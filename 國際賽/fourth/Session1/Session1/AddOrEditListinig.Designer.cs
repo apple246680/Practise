@@ -193,12 +193,14 @@
             // 
             // TypeComboBox
             // 
+            this.TypeComboBox.DisplayMember = "Name";
             this.TypeComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.TypeComboBox.FormattingEnabled = true;
             this.TypeComboBox.Location = new System.Drawing.Point(93, 16);
             this.TypeComboBox.Name = "TypeComboBox";
             this.TypeComboBox.Size = new System.Drawing.Size(414, 23);
             this.TypeComboBox.TabIndex = 6;
+            this.TypeComboBox.ValueMember = "ID";
             // 
             // HostRulesTextBox
             // 
@@ -406,12 +408,14 @@
             // 
             // AttractionComboBox
             // 
+            this.AttractionComboBox.DisplayMember = "Name";
             this.AttractionComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.AttractionComboBox.FormattingEnabled = true;
             this.AttractionComboBox.Location = new System.Drawing.Point(94, 80);
             this.AttractionComboBox.Name = "AttractionComboBox";
             this.AttractionComboBox.Size = new System.Drawing.Size(395, 23);
             this.AttractionComboBox.TabIndex = 10;
+            this.AttractionComboBox.ValueMember = "ID";
             // 
             // label13
             // 
