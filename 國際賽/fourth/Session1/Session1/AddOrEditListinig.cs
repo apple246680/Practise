@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Data;
 using System.Data.Entity.Migrations;
+using System.Diagnostics;
 using System.Linq;
 using System.Windows.Forms;
 namespace Session1
@@ -197,10 +198,10 @@ namespace Session1
             if (this.beforeIndex == 0)
             {
                 if (String.IsNullOrWhiteSpace(TitleTextBox.Text)
-                    || String.IsNullOrWhiteSpace(ApproximateAddressTextBox.Text)
-                    || String.IsNullOrWhiteSpace(ExactAddressTextBox.Text)
-                    || String.IsNullOrWhiteSpace(DescriptionTextBox.Text)
-                    || String.IsNullOrWhiteSpace(HostRulesTextBox.Text))
+                 || String.IsNullOrWhiteSpace(ApproximateAddressTextBox.Text)
+                 || String.IsNullOrWhiteSpace(ExactAddressTextBox.Text)
+                 || String.IsNullOrWhiteSpace(DescriptionTextBox.Text)
+                 || String.IsNullOrWhiteSpace(HostRulesTextBox.Text))
                 {
                     MessageBox.Show("Input can't be empty.");
                     tabControl1.SelectedIndex = beforeIndex;
@@ -249,14 +250,12 @@ namespace Session1
                     return;
                 }
             }
-            using (Session1Entities entities = new Session1Entities())
-            {
+            Session1Entities entities = new Session1Entities();
                 var attraction = entities.Attractions.SingleOrDefault(t => t.ID == (long)AttractionComboBox.SelectedValue);
                 DistanceDataGridView.Rows.Add(attraction.ID, attraction.Name, attraction.Area.Name,
                     DistanceNum.Value.ToString(),
                     OnfootNum.Value == 0 ? "" : OnfootNum.Value.ToString(),
                     BycarNum.Value == 0 ? "" : BycarNum.Value.ToString());
-            }   
         }
     }
 }
