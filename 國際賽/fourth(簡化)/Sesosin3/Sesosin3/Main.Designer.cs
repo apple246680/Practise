@@ -217,7 +217,7 @@
             this.ListBoxHint.ScrollAlwaysVisible = true;
             this.ListBoxHint.Size = new System.Drawing.Size(774, 114);
             this.ListBoxHint.TabIndex = 10;
-            this.ListBoxHint.MouseClick += new System.Windows.Forms.MouseEventHandler(this.ListBoxHint_MouseClick);
+            this.ListBoxHint.MouseClick += new System.Windows.Forms.MouseEventHandler(this.ListBoxHint_KeyDown);
             this.ListBoxHint.KeyDown += new System.Windows.Forms.KeyEventHandler(this.ListBoxHint_KeyDown);
             // 
             // ResultGroupBox

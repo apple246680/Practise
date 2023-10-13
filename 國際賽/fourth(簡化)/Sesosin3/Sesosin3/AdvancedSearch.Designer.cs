@@ -145,12 +145,14 @@
             // 
             // AmenityComboBox3
             // 
+            this.AmenityComboBox3.DisplayMember = "Name";
             this.AmenityComboBox3.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.AmenityComboBox3.FormattingEnabled = true;
             this.AmenityComboBox3.Location = new System.Drawing.Point(895, 202);
             this.AmenityComboBox3.Name = "AmenityComboBox3";
             this.AmenityComboBox3.Size = new System.Drawing.Size(253, 30);
             this.AmenityComboBox3.TabIndex = 26;
+            this.AmenityComboBox3.ValueMember = "ID";
             // 
             // label14
             // 
@@ -163,12 +165,14 @@
             // 
             // AmenityComboBox2
             // 
+            this.AmenityComboBox2.DisplayMember = "Name";
             this.AmenityComboBox2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.AmenityComboBox2.FormattingEnabled = true;
             this.AmenityComboBox2.Location = new System.Drawing.Point(532, 199);
             this.AmenityComboBox2.Name = "AmenityComboBox2";
             this.AmenityComboBox2.Size = new System.Drawing.Size(253, 30);
             this.AmenityComboBox2.TabIndex = 24;
+            this.AmenityComboBox2.ValueMember = "ID";
             // 
             // label13
             // 
@@ -181,12 +185,14 @@
             // 
             // AmenityComboBox1
             // 
+            this.AmenityComboBox1.DisplayMember = "Name";
             this.AmenityComboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.AmenityComboBox1.FormattingEnabled = true;
             this.AmenityComboBox1.Location = new System.Drawing.Point(159, 199);
             this.AmenityComboBox1.Name = "AmenityComboBox1";
             this.AmenityComboBox1.Size = new System.Drawing.Size(253, 30);
             this.AmenityComboBox1.TabIndex = 22;
+            this.AmenityComboBox1.ValueMember = "ID";
             // 
             // label12
             // 
@@ -199,12 +205,14 @@
             // 
             // TypeComboBox
             // 
+            this.TypeComboBox.DisplayMember = "Name";
             this.TypeComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.TypeComboBox.FormattingEnabled = true;
             this.TypeComboBox.Location = new System.Drawing.Point(758, 151);
             this.TypeComboBox.Name = "TypeComboBox";
             this.TypeComboBox.Size = new System.Drawing.Size(253, 30);
             this.TypeComboBox.TabIndex = 20;
+            this.TypeComboBox.ValueMember = "ID";
             // 
             // label11
             // 
@@ -368,12 +376,14 @@
             // 
             // TitleComboBox
             // 
+            this.TitleComboBox.DisplayMember = "Name";
             this.TitleComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.TitleComboBox.FormattingEnabled = true;
             this.TitleComboBox.Location = new System.Drawing.Point(909, 42);
             this.TitleComboBox.Name = "TitleComboBox";
             this.TitleComboBox.Size = new System.Drawing.Size(253, 30);
             this.TitleComboBox.TabIndex = 5;
+            this.TitleComboBox.ValueMember = "ID";
             // 
             // label3
             // 
@@ -386,12 +396,14 @@
             // 
             // AttractionComboBox
             // 
+            this.AttractionComboBox.DisplayMember = "Name";
             this.AttractionComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.AttractionComboBox.FormattingEnabled = true;
             this.AttractionComboBox.Location = new System.Drawing.Point(519, 39);
             this.AttractionComboBox.Name = "AttractionComboBox";
             this.AttractionComboBox.Size = new System.Drawing.Size(253, 30);
             this.AttractionComboBox.TabIndex = 3;
+            this.AttractionComboBox.ValueMember = "ID";
             // 
             // label2
             // 
@@ -404,12 +416,14 @@
             // 
             // AreaComboBox
             // 
+            this.AreaComboBox.DisplayMember = "Name";
             this.AreaComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.AreaComboBox.FormattingEnabled = true;
             this.AreaComboBox.Location = new System.Drawing.Point(145, 38);
             this.AreaComboBox.Name = "AreaComboBox";
             this.AreaComboBox.Size = new System.Drawing.Size(253, 30);
             this.AreaComboBox.TabIndex = 1;
+            this.AreaComboBox.ValueMember = "ID";
             // 
             // label1
             // 

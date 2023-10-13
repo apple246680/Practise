@@ -1,7 +1,8 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Data;
-using System.Diagnostics;
 using System.Linq;
+using System.Text.RegularExpressions;
 using System.Windows.Forms;
 namespace Sesosin3
 {
@@ -64,16 +65,11 @@ namespace Sesosin3
             if (SearchTextBox.Text.Length >= 3)
             {
                 Session3Entities entities = new Session3Entities();
-                foreach (var x in entities.Areas.Where(t => t.Name.Contains(SearchTextBox.Text)))
-                    ListBoxHint.Items.Add(x.Name + "      Area");
-                foreach (var x in entities.Attractions.Where(t => t.Name.Contains(SearchTextBox.Text)))
-                    ListBoxHint.Items.Add(x.Name + "      Attraction");
-                foreach (var x in entities.Items.Where(t => t.Title.Contains(SearchTextBox.Text)))
-                    ListBoxHint.Items.Add(x.Title + "      Listing");
-                foreach (var x in entities.ItemTypes.Where(t => t.Name.Contains(SearchTextBox.Text)))
-                    ListBoxHint.Items.Add(x.Name + "      ItemType");
-                foreach (var x in entities.Amenities.Where(t => t.Name.Contains(SearchTextBox.Text)))
-                    ListBoxHint.Items.Add(x.Name + "      Amenities");
+                AddMatchingItems(entities.Areas.ToList(),x=>x.Name);
+                AddMatchingItems(entities.Attractions.ToList(), x => x.Name);
+                AddMatchingItems(entities.Items.ToList(), x => x.Title);
+                AddMatchingItems(entities.ItemTypes.ToList(), x => x.Name);
+                AddMatchingItems(entities.Amenities.ToList(),x=>x.Name);
                 if (ListBoxHint.Items.Count != 0)
                 {
                     ListBoxHint.BringToFront();
@@ -84,12 +80,12 @@ namespace Sesosin3
                     ListBoxHint.Visible = false;
             }
         }
-        private void ListBoxHint_KeyDown(object sender, KeyEventArgs e)
-        {
-            ListBoxHint.Visible = false;
-            SearchTextBox.Text = ListBoxHint.Text.Replace("      ", "@").Split('@')[0];
+        private void AddMatchingItems<T>(List<T> collection, Func<T, string> selector) 
+        { 
+            ListBoxHint.Items.AddRange(collection.Where(item => selector(item).Contains(SearchTextBox.Text)).Select(item => selector(item) 
+            + "      " + ((typeof(T).Name) == "Item" ? "Listing" : typeof(T).Name)).ToArray()); 
         }
-        private void ListBoxHint_MouseClick(object sender, MouseEventArgs e)
+        private void ListBoxHint_KeyDown(object sender, object e)
         {
             ListBoxHint.Visible = false;
             SearchTextBox.Text = ListBoxHint.Text.Replace("      ", "@").Split('@')[0];

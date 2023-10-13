@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Data;
 using System.Linq;
 using System.Windows.Forms;
-
 namespace Sesosin3
 {
     public partial class AdvancedSearch : Form
@@ -13,86 +12,60 @@ namespace Sesosin3
             InitializeComponent();
             init();
         }
+        List<ComboBox> amenityComboBoxList;
         public void init()
         {
+            amenityComboBoxList = new List<ComboBox>() { AmenityComboBox1, AmenityComboBox2, AmenityComboBox3 };
             Session3Entities entities = new Session3Entities();
-            AreaComboBox.Items.Clear();
-            AttractionComboBox.Items.Clear();
-            TitleComboBox.Items.Clear();
-            TypeComboBox.Items.Clear();
-            AmenityComboBox1.Items.Clear();
-            AmenityComboBox2.Items.Clear();
-            AmenityComboBox3.Items.Clear();
-            AreaComboBox.Items.AddRange(entities.Areas.Select(x => new {ID=x.ID,Name=x.Name}).ToArray());
-            AreaComboBox.Items.Insert(0, new { ID = (long)-1, Name = "" });
-            AreaComboBox.DisplayMember = "Name";
-            AreaComboBox.ValueMember = "ID";
-            AttractionComboBox.Items.AddRange(entities.Attractions.Select(x => new {ID=x.ID,Name=x.Name}).ToArray());
-            AttractionComboBox.Items.Insert(0, new { ID = (long)-1, Name = "" });
-            AttractionComboBox.DisplayMember = "Name";
-            AttractionComboBox.ValueMember = "ID";
-            TitleComboBox.Items.AddRange(entities.Items.Select(x => new {ID=x.ID,Name=x.Title}).ToArray());
-            TitleComboBox.Items.Insert(0, new { ID = (long)-1, Name = "" });
-            TitleComboBox.DisplayMember = "Name";
-            TitleComboBox.ValueMember = "ID";
-            TypeComboBox.Items.AddRange(entities.ItemTypes.Select(x => new {ID=x.ID,Name=x.Name}).ToArray());
-            TypeComboBox.Items.Insert(0, new { ID = (long)-1, Name = "" });
-            TypeComboBox.DisplayMember = "Name";
-            TypeComboBox.ValueMember = "ID";
-            AmenityComboBox1.Items.AddRange(entities.Amenities.Select(x => new { ID = x.ID, Name = x.Name }).ToArray());
-            AmenityComboBox1.Items.Insert(0, new { ID = (long)-1, Name = "" });
-            AmenityComboBox1.DisplayMember = "Name";
-            AmenityComboBox1.ValueMember = "ID";
-            AmenityComboBox2.Items.AddRange(entities.Amenities.Select(x => new { ID = x.ID, Name = x.Name }).ToArray());
-            AmenityComboBox2.Items.Insert(0, new { ID = (long)-1, Name = "" });
-            AmenityComboBox2.DisplayMember = "Name";
-            AmenityComboBox2.ValueMember = "ID";
-            AmenityComboBox3.Items.AddRange(entities.Amenities.Select(x => new { ID = x.ID, Name = x.Name }).ToArray());
-            AmenityComboBox3.Items.Insert(0, new { ID = (long)-1, Name = "" });
-            AmenityComboBox3.DisplayMember = "Name";
-            AmenityComboBox3.ValueMember = "ID";
+            ResultDataGridView.Visible = false;
+            ClearComboBoxes(AreaComboBox, AttractionComboBox, TitleComboBox, TypeComboBox, AmenityComboBox1, AmenityComboBox2, AmenityComboBox3);
+            var nulldata = new { ID = (long)-1, Name = "" };
+            ComboBoxAddData(AreaComboBox, entities.Areas.ToArray());
+            ComboBoxAddData(AttractionComboBox, entities.Attractions.ToArray());
+            ComboBoxAddData(TitleComboBox, entities.Items.Select(x => new { x.ID, Name = x.Title }).ToArray());
+            ComboBoxAddData(TypeComboBox, entities.ItemTypes.ToArray());
+            foreach (var item in amenityComboBoxList)
+                ComboBoxAddData(item, entities.Amenities.ToArray());
             StartPrice.ResetText();
             MaxPrice.ResetText();
-            FromDate.Value= DateTime.Now;
-            ToDate.Value= DateTime.Now;
+            FromDate.Value = DateTime.Now;
+            ToDate.Value = DateTime.Now;
             NightNum.Value = NightNum.Minimum;
             PeopleNum.Value = PeopleNum.Minimum;
         }
-        private void ClearBtn_Click(object sender, EventArgs e)=>init();
-        private void SimpleSearchBtn_Click(object sender, EventArgs e)=>Close();
+        public void ComboBoxAddData(ComboBox comboBox,object[] a)
+        {
+            comboBox.Items.AddRange(a);
+            comboBox.Items.Insert(0, new { ID = (long)-1, Name = "" });
+        }
+        private void ClearComboBoxes(params ComboBox[] comboBoxes) => comboBoxes.ToList().ForEach(x => { x.Items.Clear(); });
+        private void ClearBtn_Click(object sender, EventArgs e) => init();
+        private void SimpleSearchBtn_Click(object sender, EventArgs e) => Close();
         private void SearchBtn_Click(object sender, EventArgs e)
         {
-            List<ComboBox> amenityComboBoxList = new List<ComboBox>()
-            {
-                AmenityComboBox1,
-                AmenityComboBox2,
-                AmenityComboBox3
-            };
             int onoptions = 4;
-            Session3Entities entities = new Session3Entities();
-            if (FromDate.Value>ToDate.Value)
+            if (FromDate.Value > ToDate.Value)
             {
                 MessageBox.Show("From date can't over to date.");
                 return;
             }
-            if ((!string.IsNullOrEmpty(StartPrice.Text))&&(!string.IsNullOrEmpty(MaxPrice.Text)))
+            if ((!string.IsNullOrEmpty(StartPrice.Text)) && (!string.IsNullOrEmpty(MaxPrice.Text)))
             {
-                if (StartPrice.Value>MaxPrice.Value)
+                if (StartPrice.Value > MaxPrice.Value)
                 {
                     MessageBox.Show("Starting oruce can't iver Maxinum price.");
                     return;
                 }
             }
-            List<ComboBox>amenityComboBox= new List<ComboBox>() {AmenityComboBox1,AmenityComboBox2,AmenityComboBox3};
-            var items=entities.Items.ToList();
+            var items = new Session3Entities().Items.ToList();
             if (!string.IsNullOrEmpty(AreaComboBox.Text))
             {
-                items = items.Where(x=>x.AreaID==(long)AreaComboBox.SelectedIndex).ToList();
+                items = items.Where(x => x.AreaID == (long)AreaComboBox.SelectedIndex).ToList();
                 onoptions++;
             }
             if (!string.IsNullOrEmpty(AttractionComboBox.Text))
             {
-                items = items.Where(x=>x.ItemAttractions.Any(y=>y.AttractionID==(long)AttractionComboBox.SelectedValue)).ToList();
+                items = items.Where(x => x.ItemAttractions.Any(y => y.AttractionID == (long)AttractionComboBox.SelectedValue)).ToList();
                 onoptions++;
             }
             if (!string.IsNullOrEmpty(TitleComboBox.Text))
@@ -102,12 +75,12 @@ namespace Sesosin3
             }
             if (!string.IsNullOrEmpty(TypeComboBox.Text))
             {
-                items = items.Where(x=>x.ItemTypeID==(long)TypeComboBox.SelectedValue).ToList();
+                items = items.Where(x => x.ItemTypeID == (long)TypeComboBox.SelectedValue).ToList();
                 onoptions++;
             }
-            if(!string.IsNullOrEmpty(StartPrice.Text))
+            if (!string.IsNullOrEmpty(StartPrice.Text))
                 onoptions++;
-            if(!string.IsNullOrEmpty(MaxPrice.Text))
+            if (!string.IsNullOrEmpty(MaxPrice.Text))
                 onoptions++;
             var amenityIdList = amenityComboBoxList.Where(t => t.Text != "").Select(t => (long)t.SelectedValue).Distinct().ToList();
             if (amenityIdList.Count() != 0)
@@ -115,20 +88,18 @@ namespace Sesosin3
                 onoptions += amenityIdList.Count();
                 items = items.Where(t => t.ItemAmenities.Any(x => amenityIdList.Contains(x.ID))).ToList();
             }
-            items = items.Where(t => t.ItemPrices.Any(x => x.Date >= FromDate.Value && x.Date <= ToDate.Value)&& t.Capacity >= PeopleNum.Value).ToList();
+            items = items.Where(t => t.ItemPrices.Any(x => x.Date >= FromDate.Value && x.Date <= ToDate.Value) && t.Capacity >= PeopleNum.Value).ToList();
             ResultDataGridView.Rows.Clear();
             foreach (var item in items)
             {
-                var score = item.ItemScores.Any() ? item.ItemScores.Average(x => x.Value).ToString("0.0"):"";
-                var totalconpate = item.ItemPrices.Any() ? item.ItemPrices.Count(x => x.BookingDetails.Any(y => !y.isRefund)):0;
+                var score = item.ItemScores.Any() ? item.ItemScores.Average(x => x.Value).ToString("0.0") : "";
+                var totalconpate = item.ItemPrices.Any() ? item.ItemPrices.Count(x => x.BookingDetails.Any(y => !y.isRefund)) : 0;
                 foreach (var x in item.ItemPrices.Where(x => x.Date > FromDate.Value && x.Date <= ToDate.Value).ToList())
                 {
-                    DateTime endDate = x.Date.AddDays((int)NightNum.Value);
-                    var priceData = item.ItemPrices.Where(y => y.Date >= x.Date && y.Date < endDate).ToList();
+                    var priceData = item.ItemPrices.Where(y => y.Date >= x.Date && y.Date < x.Date.AddDays((int)NightNum.Value)).ToList();
                     var amount = priceData.Count() != 0 ? priceData.Sum(y => y.Price).ToString() + "$" : "Price data not found.";
-                    if (!String.IsNullOrEmpty(StartPrice.Text) && priceData.Count() != 0 && StartPrice.Value > priceData.Sum(y => y.Price))
-                        continue;
-                    if (!String.IsNullOrEmpty(MaxPrice.Text) && priceData.Count() != 0 && MaxPrice.Value < priceData.Sum(y => y.Price))
+                    if ((!String.IsNullOrEmpty(StartPrice.Text) && priceData.Count() != 0 && StartPrice.Value > priceData.Sum(y => y.Price))||
+                        (!String.IsNullOrEmpty(MaxPrice.Text) && priceData.Count() != 0 && MaxPrice.Value < priceData.Sum(y => y.Price)))
                         continue;
                     ResultDataGridView.Rows.Add(item.Title, item.Area.Name, score, totalconpate, amount, x.Date.ToString("dd/MM/yyyy"));
                 }
