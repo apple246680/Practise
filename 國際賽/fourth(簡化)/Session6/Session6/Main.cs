@@ -9,7 +9,6 @@ namespace Session6
 {
     public partial class Main : Form
     {
-
         public Main()
         {
             InitializeComponent();
@@ -20,25 +19,32 @@ namespace Session6
             Session6Entities entities = new Session6Entities();
             FromDateTimePicker.CustomFormat = " ";
             ToDateTimePicker.CustomFormat = " ";
-            var areaData = entities.Areas.Select(t => new { t.ID, t.Name }).ToList();
-            areaData.Insert(0, new { ID = (long)-1, Name = "" });
-            AreaComboBox.DataSource = areaData;
-            var hostData = entities.Users.Where(t => t.Items.Any()).Select(t => new { t.ID, Name=t.FullName }).OrderBy(t => t.Name).ToList();
-            hostData.Insert(0, new { ID = (long)-1, Name = "" });
-            HostComboBox.DataSource = hostData;
-            var guestData = entities.Users.Where(t => t.Bookings.Any()).OrderBy(t => t.Items.Count()).ToList().Reverse<Users>().Select(t => new { t.ID, Name=t.FullName }).ToList();
-            guestData.Insert(0, new { ID = (long)-1, Name = "" });
-            GuestComboBox.DataSource = guestData;
+            ComboBoxDataAdd(AreaComboBox, entities.Areas.Select(t => new { t.ID, t.Name }).ToArray());
+            ComboBoxDataAdd(HostComboBox, entities.Users.Where(t => t.Items.Any()).Select(t => new { t.ID, Name = t.FullName }).OrderBy(t => t.Name).ToArray());
+            ComboBoxDataAdd(GuestComboBox, entities.Users.Where(t => t.Bookings.Any()).OrderBy(t => t.Items.Count()).ToList().Reverse<Users>().Select(t => new { t.ID, Name = t.FullName }).ToArray());
+            #region Universal Report
+            ListingsSummaryPanel.Controls.Clear();
+            chart.Series[0].Points.Clear();
+            chart.Series[1].Points.Clear();
+            ScoresSummaryPanel.Controls.Clear();
+            FinancialSummaryPanel.Controls.Clear();
+            #endregion
+            #region Service Report
+            AddonServicesPanel.Controls.Clear();
+            ServiceDataGridView.DataSource = null;
+            #endregion
+            #region Host Report
+            HostDataGridView.DataSource = null;
+            TransactionDataGridView.Rows.Clear();
+            #endregion
         }
-        public void ComboBoxDataAdd<T>(ComboBox comboBox,List<T> addData)
+        public void ComboBoxDataAdd(ComboBox comboBox,object[] addData)
         {
-            comboBox.Items.AddRange(addData.ToArray());
+            comboBox.ValueMember = "ID";
+            comboBox.Items.AddRange(addData);
+            comboBox.Items.Insert(0, new { ID = (long)-1, Name = "" });
         }
-        private void FromDateTimePicker_ValueChanged(object sender, EventArgs e)
-        {
-            ((DateTimePicker)sender).Format = DateTimePickerFormat.Custom;
-            ((DateTimePicker)sender).CustomFormat = "yyyy-MM-dd";
-        }
+        private void FromDateTimePicker_ValueChanged(object sender, EventArgs e)=>((DateTimePicker)sender).CustomFormat = "yyyy-MM-dd";
         private void ResetBtn_Click(object sender, EventArgs e) => init();
         private void ApplyBtn_Click(object sender, EventArgs e)
         {
@@ -52,9 +58,9 @@ namespace Session6
             }
             if (TabControlMain.SelectedIndex == 0)
                 page1();
-            if (TabControlMain.SelectedIndex == 1)
+            else if (TabControlMain.SelectedIndex == 1)
                 page2();
-            if (TabControlMain.SelectedIndex == 2)
+            else if (TabControlMain.SelectedIndex == 2)
                 page3();
         }
         public void page1()
@@ -82,8 +88,8 @@ namespace Session6
             if (!String.IsNullOrWhiteSpace(AreaComboBox.Text))
             {
                 var areaId = (long)AreaComboBox.SelectedValue;
-                items = items.Where(t => t.AreaID == areaId).ToList();
-                itemPrices = itemPrices.Where(t => t.Items.AreaID == areaId).ToList();
+                //items = items.Where(t => t.AreaID == areaId).ToList();
+                //itemPrices = itemPrices.Where(t => t.Items.AreaID == areaId).ToList();
             }
             if (!String.IsNullOrWhiteSpace(HostComboBox.Text))
             {
@@ -101,8 +107,7 @@ namespace Session6
             #region Property or listing summary
             var completeBooked = bookingDetails.Where(t => !t.isRefund && t.ItemPrices.Date.Date < DateTime.Now.Date).ToList();
             CreateLabel($"Secured Bookings: {completeBooked.Count()}", ListingsSummaryPanel, 0);
-            var ppcomingBooked = bookingDetails
-                .Where(t => !t.isRefund && t.ItemPrices.Date.Date >= DateTime.Now.Date).ToList();
+            var ppcomingBooked = bookingDetails.Where(t => !t.isRefund && t.ItemPrices.Date.Date >= DateTime.Now.Date).ToList();
             CreateLabel($"Upcoming Bookings(reservations): {ppcomingBooked.Count()}", ListingsSummaryPanel, 1);
             var mostBookedDate = completeBooked.GroupBy(t => t.ItemPrices.Date.DayOfWeek).OrderByDescending(t => t.Count()).FirstOrDefault();
             CreateLabel($"Most booked day of week: {(mostBookedDate != null ? mostBookedDate.Key.ToString() : "N/A")}", ListingsSummaryPanel, 2);
@@ -123,7 +128,7 @@ namespace Session6
             var leastScoreUser = items.Where(t => t.ItemScores.Any()).Select(t => new { Name = t.Users.FullName, Score = t.ItemScores.Average(x => x.Value) }).GroupBy(t => t.Score).OrderBy(t => t.Key).FirstOrDefault();
             CreateLabel($"The least clean owner / manager:   {(leastScoreUser == null ? "N/A" : String.Join(",", leastScoreUser.Select(t => t.Name)))}", ScoresSummaryPanel, 3);
             #endregion
-            #region Monthly Vacancy Ratio:
+            #region Monthly Vacancy Ratio
             var timefiler = !String.IsNullOrWhiteSpace(ToDateTimePicker.Text) ? ToDateTimePicker.Value : DateTime.Now;
             var start = new DateTime(timefiler.AddMonths(-2).Year, timefiler.AddMonths(-2).Month, 1);
             var end = new DateTime(timefiler.Year, timefiler.Month, DateTime.DaysInMonth(timefiler.Year, timefiler.Month));
@@ -199,15 +204,10 @@ namespace Session6
             AddonServicesPanel.Controls.Clear();
             var addonServiceDetails = entities.AddonServiceDetails.ToList();
             if (!String.IsNullOrWhiteSpace(FromDateTimePicker.Text))
-            {
                 addonServiceDetails = addonServiceDetails.Where(t => t.FromDate.Date >= FromDateTimePicker.Value.Date).ToList();
-            }
             if (!String.IsNullOrWhiteSpace(ToDateTimePicker.Text))
-            {
                 addonServiceDetails = addonServiceDetails.Where(t => t.FromDate.Date <= ToDateTimePicker.Value.Date).ToList();
-            }
             CreateLabel($"Number of purchased services: {addonServiceDetails.Where(t => t.FromDate.Date <= DateTime.Today.Date && !t.isRefund).Count()}", AddonServicesPanel, 0);
-
             decimal totalRevenue = addonServiceDetails.Sum(t =>
             {
                 if (t.isRefund)
@@ -238,7 +238,7 @@ namespace Session6
                     foreach (var service in serviceType.Services)
                     {
                         List<int> timeRange = new List<int>();
-                        if (service.DayOfMonth == "*" || service.DayOfWeek == "*")
+                        if (service.DayOfMonth=="*"||service.DayOfWeek=="*")
                             timeRange.AddRange(Enumerable.Range(1, DateTime.DaysInMonth(yearFilter, month)));
                         if (!timeRange.Any())
                         {
@@ -298,17 +298,11 @@ namespace Session6
             var tansactions = entities.Transactions.ToList();
             var hosts = entities.Users.Where(t => t.Items.Any()).ToList();
             if (!String.IsNullOrWhiteSpace(this.FromDateTimePicker.Text))
-            {
                 tansactions = tansactions.Where(t => t.TransactionDate.Date >= this.FromDateTimePicker.Value.Date).ToList();
-            }
             if (!String.IsNullOrWhiteSpace(this.ToDateTimePicker.Text))
-            {
                 tansactions = tansactions.Where(t => t.TransactionDate.Date <= this.ToDateTimePicker.Value.Date).ToList();
-            }
             if (!String.IsNullOrWhiteSpace(this.HostComboBox.Text))
-            {
                 hosts = hosts.Where(t => t.ID == (long)this.HostComboBox.SelectedValue).ToList();
-            }
             List<Tuple<Users, decimal, decimal>> userRevenue = new List<Tuple<Users, decimal, decimal>>();
             foreach (var transaction in tansactions)
             {
@@ -318,23 +312,17 @@ namespace Session6
                     {
                         if (!String.IsNullOrWhiteSpace(this.HostComboBox.Text)
                             && bookingDetail.ItemPrices.Items.UserID == (long)this.HostComboBox.SelectedValue)
-                        {
                             continue;
-                        }
                         if (!String.IsNullOrWhiteSpace(this.GuestComboBox.Text)
                             && booking.UserID == (long)this.GuestComboBox.SelectedValue)
-                        {
                             continue;
-                        }
                         decimal commission = bookingDetail.ItemPrices.Price * (bookingDetail.ItemPrices.CancellationPolicies.Commission / 100);
                         decimal total = bookingDetail.ItemPrices.Price;
                         if (booking.CouponID.HasValue)
                         {
                             decimal discount = bookingDetail.ItemPrices.Price * (booking.Coupons.DiscountPercent / 100);
                             if (discount > booking.Coupons.MaximimDiscountAmount)
-                            {
                                 discount = booking.Coupons.MaximimDiscountAmount;
-                            }
                             total -= discount;
                         }
                         if (bookingDetail.isRefund)
@@ -345,10 +333,7 @@ namespace Session6
                                 .FirstOrDefault(t => t.CancellationPolicyID == bookingDetail.RefundCancellationPoliciyID
                                     && t.DaysLeft == dayLeft);
                             if (fee != null)
-                            {
-                                var refundAmount = bookingDetail.ItemPrices.Price * (fee.PenaltyPercentage / 100) / 2;
-                                total = refundAmount;
-                            }
+                                total = bookingDetail.ItemPrices.Price * (fee.PenaltyPercentage / 100) / 2;
                         }
                         userRevenue.Add(new Tuple<Users, decimal, decimal>(bookingDetail.ItemPrices.Items.Users, total, commission));
                     }
@@ -396,9 +381,7 @@ namespace Session6
         private void HostDataGridView_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex < 0)
-            {
                 return;
-            }
             this.TransactionTitleLabel.Text = $"Transaction detail for {this.HostDataGridView.Rows[e.RowIndex].Cells[1].Value.ToString()}";
             this.TransactionDataGridView.Rows.Clear();
 
@@ -408,18 +391,11 @@ namespace Session6
             {
                 var bookings = entities.Bookings.ToList();
                 if (!String.IsNullOrWhiteSpace(this.FromDateTimePicker.Text))
-                {
                     bookings = bookings.Where(t => t.BookingDate.Date >= this.FromDateTimePicker.Value.Date).ToList();
-                }
                 if (!String.IsNullOrWhiteSpace(this.ToDateTimePicker.Text))
-                {
                     bookings = bookings.Where(t => t.BookingDate.Date <= this.ToDateTimePicker.Value.Date).ToList();
-                }
                 if (!String.IsNullOrWhiteSpace(this.GuestComboBox.Text))
-                {
                     bookings = bookings.Where(t => t.UserID == (long)this.GuestComboBox.SelectedValue).ToList();
-                }
-
                 foreach (var booking in bookings.Where(t => t.BookingDetails.All(x => x.ItemPrices.Items.UserID == hostId)).OrderBy(t => t.BookingDate))
                 {
                     List<BookingDetails> refundDetails = new List<BookingDetails>();
@@ -431,19 +407,14 @@ namespace Session6
                         foreach (var bookingDetails in bookingDetailGroppingOrderBy)
                         {
                             if (bookingDetails.isRefund)
-                            {
                                 refundDetails.Add(bookingDetails);
-                            }
-
                             decimal value = bookingDetails.ItemPrices.Price;
                             commission += bookingDetails.ItemPrices.Price * (bookingDetails.ItemPrices.CancellationPolicies.Commission / 100);
                             if (booking.CouponID.HasValue)
                             {
                                 var discount = bookingDetails.ItemPrices.Price * (booking.Coupons.DiscountPercent / 100);
                                 if (discount > booking.Coupons.MaximimDiscountAmount)
-                                {
                                     discount = booking.Coupons.MaximimDiscountAmount;
-                                }
                                 value -= discount;
                             }
                             amount += value;
@@ -462,9 +433,7 @@ namespace Session6
                         {
                             current.Add(refundDetails[i]);
                             if (i == refundDetails.Count() - 1)
-                            {
                                 refundGropping.Add(current);
-                            }
                             continue;
                         }
                         if (refundDetails[i].ItemPrices.Date.Date == refundDetails[i - 1].ItemPrices.Date.AddDays(1).Date)
@@ -480,9 +449,7 @@ namespace Session6
                             refundGropping.Add(current);
                             current = new List<BookingDetails>() { refundDetails[i] };
                             if (i == refundDetails.Count() - 1)
-                            {
                                 refundGropping.Add(current);
-                            }
                         }
                     }
                     foreach (var refunds in refundGropping)
@@ -502,7 +469,6 @@ namespace Session6
                                 value -= discount;
                             }
                             amount += value;
-
                             var dayLeft = (t.ItemPrices.Date - t.RefundDate.Value).Days;
                             var fee = entities.CancellationRefundFees
                                 .FirstOrDefault(x => x.CancellationPolicyID == t.RefundCancellationPoliciyID

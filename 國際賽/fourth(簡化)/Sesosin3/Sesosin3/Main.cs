@@ -80,8 +80,7 @@ namespace Sesosin3
         }
         private void AddMatchingItems<T>(List<T> collection, Func<T, string> selector)
         {
-            ListBoxHint.Items.AddRange(collection.Where(item => selector(item).Contains(SearchTextBox.Text)).Select(item => selector(item)
-            + "      " + ((typeof(T).Name) == "Item" ? "Listing" : typeof(T).Name)).ToArray());
+            ListBoxHint.Items.AddRange(collection.Where(item => selector(item).Contains(SearchTextBox.Text)).Select(item => selector(item)+ "      " + ((typeof(T).Name) == "Item" ? "Listing" : typeof(T).Name)).ToArray());
         }
         private void ListBoxHint_KeyDown(object sender, object e)
         {
