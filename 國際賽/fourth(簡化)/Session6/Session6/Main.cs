@@ -40,9 +40,9 @@ namespace Session6
         }
         public void ComboBoxDataAdd(ComboBox comboBox,object[] addData)
         {
-            comboBox.ValueMember = "ID";
-            comboBox.Items.AddRange(addData);
-            comboBox.Items.Insert(0, new { ID = (long)-1, Name = "" });
+            var insertdata=addData.ToList();
+            insertdata.Insert(0, new { ID = (long)-1, Name = "" });
+            comboBox.DataSource = insertdata;
         }
         private void FromDateTimePicker_ValueChanged(object sender, EventArgs e)=>((DateTimePicker)sender).CustomFormat = "yyyy-MM-dd";
         private void ResetBtn_Click(object sender, EventArgs e) => init();
@@ -88,8 +88,8 @@ namespace Session6
             if (!String.IsNullOrWhiteSpace(AreaComboBox.Text))
             {
                 var areaId = (long)AreaComboBox.SelectedValue;
-                //items = items.Where(t => t.AreaID == areaId).ToList();
-                //itemPrices = itemPrices.Where(t => t.Items.AreaID == areaId).ToList();
+                items = items.Where(t => t.AreaID == areaId).ToList();
+                itemPrices = itemPrices.Where(t => t.Items.AreaID == areaId).ToList();
             }
             if (!String.IsNullOrWhiteSpace(HostComboBox.Text))
             {

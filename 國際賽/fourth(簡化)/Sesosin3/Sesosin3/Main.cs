@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data;
-using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
 namespace Sesosin3
@@ -78,10 +77,7 @@ namespace Sesosin3
                     ListBoxHint.Visible = false;
             }
         }
-        private void AddMatchingItems<T>(List<T> collection, Func<T, string> selector)
-        {
-            ListBoxHint.Items.AddRange(collection.Where(item => selector(item).Contains(SearchTextBox.Text)).Select(item => selector(item)+ "      " + ((typeof(T).Name) == "Item" ? "Listing" : typeof(T).Name)).ToArray());
-        }
+        private void AddMatchingItems<T>(List<T> collection, Func<T, string> selector)=>ListBoxHint.Items.AddRange(collection.Where(item => selector(item).Contains(SearchTextBox.Text)).Select(item => selector(item)+ "      " + ((typeof(T).Name) == "Item" ? "Listing" : typeof(T).Name)).ToArray());
         private void ListBoxHint_KeyDown(object sender, object e)
         {
             ListBoxHint.Visible = false;

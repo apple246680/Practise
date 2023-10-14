@@ -20,12 +20,12 @@ namespace Sesosin3
             ResultDataGridView.Visible = false;
             ClearComboBoxes(AreaComboBox, AttractionComboBox, TitleComboBox, TypeComboBox, AmenityComboBox1, AmenityComboBox2, AmenityComboBox3);
             var nulldata = new { ID = (long)-1, Name = "" };
-            ComboBoxAddData(AreaComboBox, entities.Areas.ToArray());
-            ComboBoxAddData(AttractionComboBox, entities.Attractions.ToArray());
+            ComboBoxAddData(AreaComboBox, entities.Areas.Select(x => new { x.ID, x.Name }).ToArray());
+            ComboBoxAddData(AttractionComboBox, entities.Attractions.Select(x => new {x.ID,x.Name}).ToArray());
             ComboBoxAddData(TitleComboBox, entities.Items.Select(x => new { x.ID, Name = x.Title }).ToArray());
-            ComboBoxAddData(TypeComboBox, entities.ItemTypes.ToArray());
+            ComboBoxAddData(TypeComboBox, entities.ItemTypes.Select(x => new { x.ID, x.Name }).ToArray());
             foreach (var item in amenityComboBoxList)
-                ComboBoxAddData(item, entities.Amenities.ToArray());
+                ComboBoxAddData(item, entities.Amenities.Select(x => new { x.ID, x.Name }).ToArray());
             StartPrice.ResetText();
             MaxPrice.ResetText();
             FromDate.Value = DateTime.Now;
@@ -33,10 +33,11 @@ namespace Sesosin3
             NightNum.Value = NightNum.Minimum;
             PeopleNum.Value = PeopleNum.Minimum;
         }
-        public void ComboBoxAddData(ComboBox comboBox,object[] a)
+        public void ComboBoxAddData(ComboBox comboBox, object[] data)
         {
-            comboBox.Items.AddRange(a);
-            comboBox.Items.Insert(0, new { ID = (long)-1, Name = "" });
+            var insertdata=data.ToList();
+            insertdata.Insert(0,new { ID = (long)-1, Name = "" });
+            comboBox.DataSource = insertdata;
         }
         private void ClearComboBoxes(params ComboBox[] comboBoxes) => comboBoxes.ToList().ForEach(x => { x.Items.Clear(); });
         private void ClearBtn_Click(object sender, EventArgs e) => init();
@@ -106,5 +107,10 @@ namespace Sesosin3
             }
             ResultDataGridView.Visible = true;
         }
+    }
+    class data
+    {
+        public long ID { get; set; }
+        public string Name { get; set; }
     }
 }
