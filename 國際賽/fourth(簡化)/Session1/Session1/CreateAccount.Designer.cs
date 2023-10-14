@@ -253,6 +253,8 @@
             this.Controls.Add(this.Back);
             this.Controls.Add(this.Register);
             this.Controls.Add(this.groupBox1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
             this.Name = "CreateAccount";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Seoul Stay-CreateAccount";

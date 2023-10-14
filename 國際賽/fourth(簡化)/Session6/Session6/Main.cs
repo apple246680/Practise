@@ -200,8 +200,8 @@ namespace Session6
         public void page2()
         {
             Session6Entities entities = new Session6Entities();
-            ServiceDataGridView.DataSource = null;
             AddonServicesPanel.Controls.Clear();
+            ServiceDataGridView.DataSource = null;
             var addonServiceDetails = entities.AddonServiceDetails.ToList();
             if (!String.IsNullOrWhiteSpace(FromDateTimePicker.Text))
                 addonServiceDetails = addonServiceDetails.Where(t => t.FromDate.Date >= FromDateTimePicker.Value.Date).ToList();
@@ -210,8 +210,7 @@ namespace Session6
             CreateLabel($"Number of purchased services: {addonServiceDetails.Where(t => t.FromDate.Date <= DateTime.Today.Date && !t.isRefund).Count()}", AddonServicesPanel, 0);
             decimal totalRevenue = addonServiceDetails.Sum(t =>
             {
-                if (t.isRefund)
-                    return 0;
+                if (t.isRefund)return 0;
                 var amount = t.NumberOfPeople * t.Services.Price;
                 if (t.AddonServices.CouponID.HasValue)
                 {
@@ -261,8 +260,7 @@ namespace Session6
                             avaiable |= timeRange.Any(t =>
                             {
                                 var data = details.Where(x => x.FromDate.Day == t).ToList();
-                                if (data.Count() == 0)
-                                    return true;
+                                if (data.Count() == 0)return true;
                                 return data.Sum(x => x.NumberOfPeople) <= service.DailyCap;
                             });
                         }
@@ -297,12 +295,12 @@ namespace Session6
             TransactionTitleLabel.Text = null;
             var tansactions = entities.Transactions.ToList();
             var hosts = entities.Users.Where(t => t.Items.Any()).ToList();
-            if (!String.IsNullOrWhiteSpace(this.FromDateTimePicker.Text))
-                tansactions = tansactions.Where(t => t.TransactionDate.Date >= this.FromDateTimePicker.Value.Date).ToList();
-            if (!String.IsNullOrWhiteSpace(this.ToDateTimePicker.Text))
-                tansactions = tansactions.Where(t => t.TransactionDate.Date <= this.ToDateTimePicker.Value.Date).ToList();
-            if (!String.IsNullOrWhiteSpace(this.HostComboBox.Text))
-                hosts = hosts.Where(t => t.ID == (long)this.HostComboBox.SelectedValue).ToList();
+            if (!String.IsNullOrWhiteSpace(FromDateTimePicker.Text))
+                tansactions = tansactions.Where(t => t.TransactionDate.Date >= FromDateTimePicker.Value.Date).ToList();
+            if (!String.IsNullOrWhiteSpace(ToDateTimePicker.Text))
+                tansactions = tansactions.Where(t => t.TransactionDate.Date <= ToDateTimePicker.Value.Date).ToList();
+            if (!String.IsNullOrWhiteSpace(HostComboBox.Text))
+                hosts = hosts.Where(t => t.ID == (long)HostComboBox.SelectedValue).ToList();
             List<Tuple<Users, decimal, decimal>> userRevenue = new List<Tuple<Users, decimal, decimal>>();
             foreach (var transaction in tansactions)
             {
@@ -310,11 +308,9 @@ namespace Session6
                 {
                     foreach (var bookingDetail in booking.BookingDetails)
                     {
-                        if (!String.IsNullOrWhiteSpace(this.HostComboBox.Text)
-                            && bookingDetail.ItemPrices.Items.UserID == (long)this.HostComboBox.SelectedValue)
+                        if (!String.IsNullOrWhiteSpace(HostComboBox.Text)&& bookingDetail.ItemPrices.Items.UserID == (long)HostComboBox.SelectedValue)
                             continue;
-                        if (!String.IsNullOrWhiteSpace(this.GuestComboBox.Text)
-                            && booking.UserID == (long)this.GuestComboBox.SelectedValue)
+                        if (!String.IsNullOrWhiteSpace(GuestComboBox.Text)&& booking.UserID == (long)GuestComboBox.SelectedValue)
                             continue;
                         decimal commission = bookingDetail.ItemPrices.Price * (bookingDetail.ItemPrices.CancellationPolicies.Commission / 100);
                         decimal total = bookingDetail.ItemPrices.Price;
@@ -339,7 +335,7 @@ namespace Session6
                     }
                 }
             }
-            this.HostDataGridView.DataSource = hosts.Select(t =>
+            HostDataGridView.DataSource = hosts.Select(t =>
             {
                 var total = userRevenue.Where(x => x.Item1.ID == t.ID).Sum(x => x.Item2);
                 var commission = userRevenue.Where(x => x.Item1.ID == t.ID).Sum(x => x.Item3);
@@ -380,22 +376,21 @@ namespace Session6
         }
         private void HostDataGridView_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.RowIndex < 0)
-                return;
-            this.TransactionTitleLabel.Text = $"Transaction detail for {this.HostDataGridView.Rows[e.RowIndex].Cells[1].Value.ToString()}";
-            this.TransactionDataGridView.Rows.Clear();
+            if (e.RowIndex < 0)return;
+            TransactionTitleLabel.Text = $"Transaction detail for {HostDataGridView.Rows[e.RowIndex].Cells[1].Value.ToString()}";
+            TransactionDataGridView.Rows.Clear();
 
-            long hostId = (long)this.HostDataGridView.Rows[e.RowIndex].Cells[0].Value;
+            long hostId = (long)HostDataGridView.Rows[e.RowIndex].Cells[0].Value;
 
             using (Session6Entities entities = new Session6Entities())
             {
                 var bookings = entities.Bookings.ToList();
-                if (!String.IsNullOrWhiteSpace(this.FromDateTimePicker.Text))
-                    bookings = bookings.Where(t => t.BookingDate.Date >= this.FromDateTimePicker.Value.Date).ToList();
-                if (!String.IsNullOrWhiteSpace(this.ToDateTimePicker.Text))
-                    bookings = bookings.Where(t => t.BookingDate.Date <= this.ToDateTimePicker.Value.Date).ToList();
-                if (!String.IsNullOrWhiteSpace(this.GuestComboBox.Text))
-                    bookings = bookings.Where(t => t.UserID == (long)this.GuestComboBox.SelectedValue).ToList();
+                if (!String.IsNullOrWhiteSpace(FromDateTimePicker.Text))
+                    bookings = bookings.Where(t => t.BookingDate.Date >= FromDateTimePicker.Value.Date).ToList();
+                if (!String.IsNullOrWhiteSpace(ToDateTimePicker.Text))
+                    bookings = bookings.Where(t => t.BookingDate.Date <= ToDateTimePicker.Value.Date).ToList();
+                if (!String.IsNullOrWhiteSpace(GuestComboBox.Text))
+                    bookings = bookings.Where(t => t.UserID == (long)GuestComboBox.SelectedValue).ToList();
                 foreach (var booking in bookings.Where(t => t.BookingDetails.All(x => x.ItemPrices.Items.UserID == hostId)).OrderBy(t => t.BookingDate))
                 {
                     List<BookingDetails> refundDetails = new List<BookingDetails>();
@@ -419,12 +414,11 @@ namespace Session6
                             }
                             amount += value;
                         }
-                        this.TransactionDataGridView.Rows.Add(booking.Transactions.TransactionDate.ToString("yyyy-MM-dd"),
+                        TransactionDataGridView.Rows.Add(booking.Transactions.TransactionDate.ToString("yyyy-MM-dd"),
                             "$" + amount,
                             "$" + commission,
                             $"Reserve {bookingDetailGroppingOrderBy.First().ItemPrices.Items.Title} from {bookingDetailGroppingOrderBy.First().ItemPrices.Date.ToString("yyyy-MM-dd")} - {bookingDetailGroppingOrderBy.Last().ItemPrices.Date.ToString("yyyy-MM-dd")}");
                     }
-
                     List<BookingDetails> current = new List<BookingDetails>();
                     List<List<BookingDetails>> refundGropping = new List<List<BookingDetails>>();
                     for (int i = 0; i < refundDetails.Count(); i++)
@@ -440,9 +434,7 @@ namespace Session6
                         {
                             current.Add(refundDetails[i]);
                             if (i == refundDetails.Count() - 1)
-                            {
                                 refundGropping.Add(current);
-                            }
                         }
                         else
                         {
@@ -463,9 +455,7 @@ namespace Session6
                             {
                                 var discount = value * (booking.Coupons.DiscountPercent / 100);
                                 if (discount > booking.Coupons.MaximimDiscountAmount)
-                                {
                                     discount = booking.Coupons.MaximimDiscountAmount;
-                                }
                                 value -= discount;
                             }
                             amount += value;
@@ -479,7 +469,7 @@ namespace Session6
                                 commission += refundAmount;
                             }
                         });
-                        this.TransactionDataGridView.Rows.Add(booking.Transactions.TransactionDate.ToString("yyyy-MM-dd"),
+                        TransactionDataGridView.Rows.Add(booking.Transactions.TransactionDate.ToString("yyyy-MM-dd"),
                             "$" + amount,
                             "$" + commission,
                             $"Cancel Reserve {refunds.First().ItemPrices.Items.Title} from {refunds.First().ItemPrices.Date.ToString("yyyy-MM-dd")} - {refunds.Last().ItemPrices.Date.ToString("yyyy-MM-dd")}");

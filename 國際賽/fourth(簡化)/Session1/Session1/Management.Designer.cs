@@ -268,6 +268,8 @@
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.ExitBtn);
             this.Controls.Add(this.LououtBtn);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
             this.Name = "Management";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Seoul Stay-Management";

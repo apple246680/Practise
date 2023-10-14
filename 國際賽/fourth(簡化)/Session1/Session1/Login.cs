@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Diagnostics;
 using System.Linq;
 using System.Windows.Forms;
 namespace Session1
@@ -58,9 +59,16 @@ namespace Session1
         public void ExitBtn_Click(object sender, EventArgs e)=>Close();
         private void Create_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            Visible= false;
+            Visible = false;
             new CreateAccount().ShowDialog();
-            Visible = true;
+            try
+            {
+                Visible = true;
+            }
+            catch
+            {
+                Close();
+            }
         }
     }
 }

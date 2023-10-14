@@ -38,7 +38,7 @@ namespace Session1
             IsClose = true;
             Close();
         }
-        private void hint_Click(object sender, EventArgs e)=>hint.Visible = false;
+        private void hint_Click(object sender, EventArgs e) { hint.Visible = false; search.Focus(); }
         public List<int> CurrentNum = new List<int>() { 0, 0 };
         private void search_TextChanged(object sender, EventArgs e)
         {

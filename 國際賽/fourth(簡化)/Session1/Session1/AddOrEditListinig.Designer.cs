@@ -728,6 +728,8 @@
             this.Controls.Add(this.CloseBtn);
             this.Controls.Add(this.NextBtn);
             this.Controls.Add(this.tabControl1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
             this.Name = "AddOrEditListinig";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Seoul Stay - Add/Edit Listing";

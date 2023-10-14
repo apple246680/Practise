@@ -1,5 +1,7 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
+using System.Data.Entity.SqlServer;
+using System.Diagnostics;
 using System.Linq;
 namespace UnitTestProject1
 {
