@@ -62,7 +62,7 @@ namespace Sesosin3
             if (SearchTextBox.Text.Length >= 3)
             {
                 Session3Entities entities = new Session3Entities();
-                AddMatchingItems(entities.Areas.ToList(), x => x.Name);
+                AddMatchingItems<Area>(entities.Areas.ToList(), x => x.Name);
                 AddMatchingItems(entities.Attractions.ToList(), x => x.Name);
                 AddMatchingItems(entities.Items.ToList(), x => x.Title);
                 AddMatchingItems(entities.ItemTypes.ToList(), x => x.Name);
@@ -77,7 +77,10 @@ namespace Sesosin3
                     ListBoxHint.Visible = false;
             }
         }
-        private void AddMatchingItems<T>(List<T> collection, Func<T, string> selector)=>ListBoxHint.Items.AddRange(collection.Where(item => selector(item).Contains(SearchTextBox.Text)).Select(item => selector(item)+ "      " + ((typeof(T).Name) == "Item" ? "Listing" : typeof(T).Name)).ToArray());
+        private void AddMatchingItems<T>(List<T> collection, Func<T, string> selector)=>
+            ListBoxHint.Items.AddRange(collection.Where(item => selector(item).Contains(SearchTextBox.Text))
+                .Select(item => selector(item)+ "      " + 
+                    ((typeof(T).Name) == "Item" ? "Listing" : typeof(T).Name)).ToArray());
         private void ListBoxHint_KeyDown(object sender, object e)
         {
             ListBoxHint.Visible = false;

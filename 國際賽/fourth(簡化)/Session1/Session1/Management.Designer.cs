@@ -144,9 +144,9 @@
             this.search.Name = "search";
             this.search.Size = new System.Drawing.Size(716, 25);
             this.search.TabIndex = 0;
-            this.search.TextChanged += new System.EventHandler(this.search_TextChanged);
+            this.search.TextChanged += new System.EventHandler(this.Search_TextChanged);
             this.search.Enter += new System.EventHandler(this.search_Enter);
-            this.search.Leave += new System.EventHandler(this.search_Leave);
+            this.search.Leave += new System.EventHandler(this.Search_Leave);
             // 
             // tabPage2
             // 

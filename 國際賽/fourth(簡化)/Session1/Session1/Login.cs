@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Diagnostics;
 using System.Linq;
 using System.Windows.Forms;
 namespace Session1
@@ -55,20 +54,14 @@ namespace Session1
             new Management().ShowDialog();
             Visible = true;
         }
-        private void ShowPassword_CheckedChanged(object sender, EventArgs e)=>PasswordTextBox.UseSystemPasswordChar=!ShowPassword.Checked;
+        private void ShowPassword_CheckedChanged(object sender, EventArgs e)=>
+            PasswordTextBox.UseSystemPasswordChar=!ShowPassword.Checked;
         public void ExitBtn_Click(object sender, EventArgs e)=>Close();
         private void Create_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             Visible = false;
             new CreateAccount().ShowDialog();
-            try
-            {
-                Visible = true;
-            }
-            catch
-            {
-                Close();
-            }
+            Visible = true;
         }
     }
 }

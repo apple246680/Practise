@@ -105,16 +105,22 @@ namespace Session6
                 bookingDetails = bookingDetails.Where(t => t.Bookings.UserID == guestId).ToList();
             }
             #region Property or listing summary
+            //預定
             var completeBooked = bookingDetails.Where(t => !t.isRefund && t.ItemPrices.Date.Date < DateTime.Now.Date).ToList();
             CreateLabel($"Secured Bookings: {completeBooked.Count()}", ListingsSummaryPanel, 0);
+            //近期預定
             var ppcomingBooked = bookingDetails.Where(t => !t.isRefund && t.ItemPrices.Date.Date >= DateTime.Now.Date).ToList();
             CreateLabel($"Upcoming Bookings(reservations): {ppcomingBooked.Count()}", ListingsSummaryPanel, 1);
+            //一週中預訂最多的一天
             var mostBookedDate = completeBooked.GroupBy(t => t.ItemPrices.Date.DayOfWeek).OrderByDescending(t => t.Count()).FirstOrDefault();
             CreateLabel($"Most booked day of week: {(mostBookedDate != null ? mostBookedDate.Key.ToString() : "N/A")}", ListingsSummaryPanel, 2);
+            //無效列表或屬性
             var inactiveItems = items.Where(t => !t.ItemPrices.Any()).ToList();
             CreateLabel($"Inactive listings or properties: {inactiveItems.Count()}", ListingsSummaryPanel, 3);
+            //最常用的優惠券
             var coupons = bookingDetails.Where(t => t.Bookings.CouponID.HasValue).GroupBy(t => t.Bookings.Coupons).Select(t => new { Name = t.Key.CouponCode, Count = t.Count() }).GroupBy(t => t.Count).OrderByDescending(t => t.Key).FirstOrDefault();
             CreateLabel($"Most used coupon:  {(coupons == null ? "N/A" : String.Join(",", coupons.Select(t => t.Name)))}", ListingsSummaryPanel, 4);
+            //空置率
             var vacancy = itemPrices.Where(t => !t.BookingDetails.Any() || t.BookingDetails.All(x => x.isRefund)).ToList();
             CreateLabel($"Vacancy ratio: {vacancy.Count()}/{itemPrices.Count()}", ListingsSummaryPanel, 5);
             #endregion
@@ -191,9 +197,12 @@ namespace Session6
                 }
             }
             var userRevenueMapping = userRevenue.GroupBy(t => t.Item1).ToList();
+            //所有所有者/管理者的平均淨收入
             CreateLabel($"Average net revenue of all owners / managers: {(userRevenueMapping.Count() != 0 ? userRevenueMapping.Average(t => t.Sum(x => x.Item2)).ToString("#.##") : "0")}", FinancialSummaryPanel, 0);
             CreateLabel($"Highest net revenue for an owner / manager: " + $"{(userRevenueMapping.Count() != 0 ? userRevenueMapping.OrderByDescending(t => t.Sum(x => x.Item2)).First().Key.FullName : "N/A")}", FinancialSummaryPanel, 1);
+            //我們的取消訂單總收入
             CreateLabel($"Our total revenue from cancellations: {cancelAmount.ToString("#.##")}", FinancialSummaryPanel, 2);
+            //優惠券總折扣
             CreateLabel($"Total discounts from coupons: {totalDiscount.ToString("#.##")}", FinancialSummaryPanel, 3);
             #endregion
         }

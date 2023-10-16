@@ -313,7 +313,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Name = "Main";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Seoul Stay - Search Properites or Listings";
+            this.Text = " ";
             this.TopGroupBox.ResumeLayout(false);
             this.TopGroupBox.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PeopleNumber)).EndInit();
