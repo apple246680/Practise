@@ -25,5 +25,12 @@ namespace Session1
             new ManagementForm().Show();
             Close();
         }
+        private void ViewTermsLinkLabel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            Visible = false;
+            new ViewTerms().ShowDialog();
+            TermsCheckBox.Enabled = true;
+            Visible = true;
+        }
     }
 }

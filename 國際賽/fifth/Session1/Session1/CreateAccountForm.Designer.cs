@@ -31,22 +31,22 @@
             this.RegisterBtn = new System.Windows.Forms.Button();
             this.ReturnLoginBtn = new System.Windows.Forms.Button();
             this.InformationGroupBox = new System.Windows.Forms.GroupBox();
-            this.UsernameLabel = new System.Windows.Forms.Label();
-            this.UsernameTextBox = new System.Windows.Forms.TextBox();
+            this.ViewTermsLinkLabel = new System.Windows.Forms.LinkLabel();
+            this.TermsCheckBox = new System.Windows.Forms.CheckBox();
+            this.RetypePasswordLabel = new System.Windows.Forms.Label();
+            this.FamilyNumericUpDown = new System.Windows.Forms.NumericUpDown();
+            this.FamilyCountLabel = new System.Windows.Forms.Label();
+            this.FemaleRadioButton = new System.Windows.Forms.RadioButton();
+            this.MaleRadioButton = new System.Windows.Forms.RadioButton();
+            this.PasswordTextBox = new System.Windows.Forms.TextBox();
+            this.PasswordLabel = new System.Windows.Forms.Label();
+            this.BirthdayDateTimePicker = new System.Windows.Forms.DateTimePicker();
+            this.BirthdayLabel = new System.Windows.Forms.Label();
             this.FullNameTextBox = new System.Windows.Forms.TextBox();
             this.FullNameLabel = new System.Windows.Forms.Label();
-            this.BirthdayLabel = new System.Windows.Forms.Label();
-            this.BirthdayDateTimePicker = new System.Windows.Forms.DateTimePicker();
-            this.PasswordLabel = new System.Windows.Forms.Label();
-            this.PasswordTextBox = new System.Windows.Forms.TextBox();
-            this.MaleRadioButton = new System.Windows.Forms.RadioButton();
-            this.FemaleRadioButton = new System.Windows.Forms.RadioButton();
-            this.FamilyCountLabel = new System.Windows.Forms.Label();
-            this.FamilyNumericUpDown = new System.Windows.Forms.NumericUpDown();
-            this.RetypePasswordLabel = new System.Windows.Forms.Label();
+            this.UsernameTextBox = new System.Windows.Forms.TextBox();
+            this.UsernameLabel = new System.Windows.Forms.Label();
             this.RetypePasswordTextBox = new System.Windows.Forms.TextBox();
-            this.TermsCheckBox = new System.Windows.Forms.CheckBox();
-            this.ViewTermsLinkLabel = new System.Windows.Forms.LinkLabel();
             this.InformationGroupBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.FamilyNumericUpDown)).BeginInit();
             this.SuspendLayout();
@@ -58,7 +58,7 @@
             this.RegisterBtn.Location = new System.Drawing.Point(716, 328);
             this.RegisterBtn.Name = "RegisterBtn";
             this.RegisterBtn.Size = new System.Drawing.Size(132, 37);
-            this.RegisterBtn.TabIndex = 3;
+            this.RegisterBtn.TabIndex = 11;
             this.RegisterBtn.Text = "Register && login";
             this.RegisterBtn.UseVisualStyleBackColor = true;
             this.RegisterBtn.Click += new System.EventHandler(this.RegisterBtn_Click);
@@ -69,7 +69,7 @@
             this.ReturnLoginBtn.Location = new System.Drawing.Point(854, 328);
             this.ReturnLoginBtn.Name = "ReturnLoginBtn";
             this.ReturnLoginBtn.Size = new System.Drawing.Size(165, 37);
-            this.ReturnLoginBtn.TabIndex = 2;
+            this.ReturnLoginBtn.TabIndex = 12;
             this.ReturnLoginBtn.Text = "Return login form";
             this.ReturnLoginBtn.UseVisualStyleBackColor = true;
             this.ReturnLoginBtn.Click += new System.EventHandler(this.ReturnLoginBtn_Click);
@@ -95,9 +95,163 @@
             this.InformationGroupBox.Location = new System.Drawing.Point(74, 37);
             this.InformationGroupBox.Name = "InformationGroupBox";
             this.InformationGroupBox.Size = new System.Drawing.Size(945, 285);
-            this.InformationGroupBox.TabIndex = 4;
+            this.InformationGroupBox.TabIndex = 0;
             this.InformationGroupBox.TabStop = false;
             this.InformationGroupBox.Text = "Yourr Information";
+            // 
+            // ViewTermsLinkLabel
+            // 
+            this.ViewTermsLinkLabel.ActiveLinkColor = System.Drawing.Color.Black;
+            this.ViewTermsLinkLabel.AutoSize = true;
+            this.ViewTermsLinkLabel.Font = new System.Drawing.Font("Open Sans", 12F);
+            this.ViewTermsLinkLabel.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(26)))), ((int)(((byte)(46)))));
+            this.ViewTermsLinkLabel.Location = new System.Drawing.Point(465, 248);
+            this.ViewTermsLinkLabel.Name = "ViewTermsLinkLabel";
+            this.ViewTermsLinkLabel.Size = new System.Drawing.Size(264, 28);
+            this.ViewTermsLinkLabel.TabIndex = 10;
+            this.ViewTermsLinkLabel.TabStop = true;
+            this.ViewTermsLinkLabel.Text = "View Terms and Conditions";
+            this.ViewTermsLinkLabel.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.ViewTermsLinkLabel_LinkClicked);
+            // 
+            // TermsCheckBox
+            // 
+            this.TermsCheckBox.AutoSize = true;
+            this.TermsCheckBox.Enabled = false;
+            this.TermsCheckBox.Font = new System.Drawing.Font("Open Sans", 12F);
+            this.TermsCheckBox.Location = new System.Drawing.Point(26, 247);
+            this.TermsCheckBox.Name = "TermsCheckBox";
+            this.TermsCheckBox.Size = new System.Drawing.Size(384, 32);
+            this.TermsCheckBox.TabIndex = 9;
+            this.TermsCheckBox.Text = "I agree to the Terms amd Connditions";
+            this.TermsCheckBox.UseVisualStyleBackColor = true;
+            // 
+            // RetypePasswordLabel
+            // 
+            this.RetypePasswordLabel.AutoSize = true;
+            this.RetypePasswordLabel.Font = new System.Drawing.Font("Open Sans", 12F);
+            this.RetypePasswordLabel.Location = new System.Drawing.Point(476, 184);
+            this.RetypePasswordLabel.Name = "RetypePasswordLabel";
+            this.RetypePasswordLabel.Size = new System.Drawing.Size(175, 28);
+            this.RetypePasswordLabel.TabIndex = 0;
+            this.RetypePasswordLabel.Text = "Retype Password:";
+            // 
+            // FamilyNumericUpDown
+            // 
+            this.FamilyNumericUpDown.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(187)))), ((int)(((byte)(187)))));
+            this.FamilyNumericUpDown.Font = new System.Drawing.Font("Open Sans Light", 12F);
+            this.FamilyNumericUpDown.Location = new System.Drawing.Point(751, 102);
+            this.FamilyNumericUpDown.Name = "FamilyNumericUpDown";
+            this.FamilyNumericUpDown.Size = new System.Drawing.Size(54, 35);
+            this.FamilyNumericUpDown.TabIndex = 8;
+            // 
+            // FamilyCountLabel
+            // 
+            this.FamilyCountLabel.AutoSize = true;
+            this.FamilyCountLabel.Font = new System.Drawing.Font("Open Sans", 12F);
+            this.FamilyCountLabel.Location = new System.Drawing.Point(476, 102);
+            this.FamilyCountLabel.Name = "FamilyCountLabel";
+            this.FamilyCountLabel.Size = new System.Drawing.Size(277, 28);
+            this.FamilyCountLabel.TabIndex = 0;
+            this.FamilyCountLabel.Text = "Number of Family Members:";
+            // 
+            // FemaleRadioButton
+            // 
+            this.FemaleRadioButton.AutoSize = true;
+            this.FemaleRadioButton.Font = new System.Drawing.Font("Open Sans", 12F);
+            this.FemaleRadioButton.Location = new System.Drawing.Point(596, 67);
+            this.FemaleRadioButton.Name = "FemaleRadioButton";
+            this.FemaleRadioButton.Size = new System.Drawing.Size(100, 32);
+            this.FemaleRadioButton.TabIndex = 7;
+            this.FemaleRadioButton.TabStop = true;
+            this.FemaleRadioButton.Text = "Female";
+            this.FemaleRadioButton.UseVisualStyleBackColor = true;
+            // 
+            // MaleRadioButton
+            // 
+            this.MaleRadioButton.AutoSize = true;
+            this.MaleRadioButton.Font = new System.Drawing.Font("Open Sans", 12F);
+            this.MaleRadioButton.Location = new System.Drawing.Point(512, 67);
+            this.MaleRadioButton.Name = "MaleRadioButton";
+            this.MaleRadioButton.Size = new System.Drawing.Size(78, 32);
+            this.MaleRadioButton.TabIndex = 6;
+            this.MaleRadioButton.TabStop = true;
+            this.MaleRadioButton.Text = "Male";
+            this.MaleRadioButton.UseVisualStyleBackColor = true;
+            // 
+            // PasswordTextBox
+            // 
+            this.PasswordTextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(187)))), ((int)(((byte)(187)))));
+            this.PasswordTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.PasswordTextBox.Font = new System.Drawing.Font("Open Sans Light", 12F);
+            this.PasswordTextBox.ImeMode = System.Windows.Forms.ImeMode.Disable;
+            this.PasswordTextBox.Location = new System.Drawing.Point(211, 177);
+            this.PasswordTextBox.Name = "PasswordTextBox";
+            this.PasswordTextBox.Size = new System.Drawing.Size(259, 35);
+            this.PasswordTextBox.TabIndex = 4;
+            this.PasswordTextBox.UseSystemPasswordChar = true;
+            // 
+            // PasswordLabel
+            // 
+            this.PasswordLabel.AutoSize = true;
+            this.PasswordLabel.Font = new System.Drawing.Font("Open Sans", 12F);
+            this.PasswordLabel.Location = new System.Drawing.Point(80, 176);
+            this.PasswordLabel.Name = "PasswordLabel";
+            this.PasswordLabel.Size = new System.Drawing.Size(107, 28);
+            this.PasswordLabel.TabIndex = 0;
+            this.PasswordLabel.Text = "Password:";
+            // 
+            // BirthdayDateTimePicker
+            // 
+            this.BirthdayDateTimePicker.CalendarMonthBackground = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(187)))), ((int)(((byte)(187)))));
+            this.BirthdayDateTimePicker.CustomFormat = " / /";
+            this.BirthdayDateTimePicker.Font = new System.Drawing.Font("Open Sans Light", 12F);
+            this.BirthdayDateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.BirthdayDateTimePicker.Location = new System.Drawing.Point(211, 136);
+            this.BirthdayDateTimePicker.Name = "BirthdayDateTimePicker";
+            this.BirthdayDateTimePicker.Size = new System.Drawing.Size(259, 35);
+            this.BirthdayDateTimePicker.TabIndex = 3;
+            // 
+            // BirthdayLabel
+            // 
+            this.BirthdayLabel.AutoSize = true;
+            this.BirthdayLabel.Font = new System.Drawing.Font("Open Sans", 12F);
+            this.BirthdayLabel.Location = new System.Drawing.Point(80, 134);
+            this.BirthdayLabel.Name = "BirthdayLabel";
+            this.BirthdayLabel.Size = new System.Drawing.Size(95, 28);
+            this.BirthdayLabel.TabIndex = 0;
+            this.BirthdayLabel.Text = "Birthday:";
+            // 
+            // FullNameTextBox
+            // 
+            this.FullNameTextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(187)))), ((int)(((byte)(187)))));
+            this.FullNameTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.FullNameTextBox.Font = new System.Drawing.Font("Open Sans Light", 12F);
+            this.FullNameTextBox.ImeMode = System.Windows.Forms.ImeMode.Disable;
+            this.FullNameTextBox.Location = new System.Drawing.Point(211, 93);
+            this.FullNameTextBox.Name = "FullNameTextBox";
+            this.FullNameTextBox.Size = new System.Drawing.Size(259, 35);
+            this.FullNameTextBox.TabIndex = 2;
+            // 
+            // FullNameLabel
+            // 
+            this.FullNameLabel.AutoSize = true;
+            this.FullNameLabel.Font = new System.Drawing.Font("Open Sans", 12F);
+            this.FullNameLabel.Location = new System.Drawing.Point(80, 93);
+            this.FullNameLabel.Name = "FullNameLabel";
+            this.FullNameLabel.Size = new System.Drawing.Size(110, 28);
+            this.FullNameLabel.TabIndex = 0;
+            this.FullNameLabel.Text = "Full Name:";
+            // 
+            // UsernameTextBox
+            // 
+            this.UsernameTextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(187)))), ((int)(((byte)(187)))));
+            this.UsernameTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.UsernameTextBox.Font = new System.Drawing.Font("Open Sans Light", 12F);
+            this.UsernameTextBox.ImeMode = System.Windows.Forms.ImeMode.Disable;
+            this.UsernameTextBox.Location = new System.Drawing.Point(211, 52);
+            this.UsernameTextBox.Name = "UsernameTextBox";
+            this.UsernameTextBox.Size = new System.Drawing.Size(259, 35);
+            this.UsernameTextBox.TabIndex = 1;
             // 
             // UsernameLabel
             // 
@@ -109,151 +263,17 @@
             this.UsernameLabel.TabIndex = 0;
             this.UsernameLabel.Text = "Username:";
             // 
-            // UsernameTextBox
-            // 
-            this.UsernameTextBox.Font = new System.Drawing.Font("Open Sans Light", 12F);
-            this.UsernameTextBox.Location = new System.Drawing.Point(211, 52);
-            this.UsernameTextBox.Name = "UsernameTextBox";
-            this.UsernameTextBox.Size = new System.Drawing.Size(259, 35);
-            this.UsernameTextBox.TabIndex = 1;
-            // 
-            // FullNameTextBox
-            // 
-            this.FullNameTextBox.Font = new System.Drawing.Font("Open Sans Light", 12F);
-            this.FullNameTextBox.Location = new System.Drawing.Point(211, 93);
-            this.FullNameTextBox.Name = "FullNameTextBox";
-            this.FullNameTextBox.Size = new System.Drawing.Size(259, 35);
-            this.FullNameTextBox.TabIndex = 3;
-            // 
-            // FullNameLabel
-            // 
-            this.FullNameLabel.AutoSize = true;
-            this.FullNameLabel.Font = new System.Drawing.Font("Open Sans", 12F);
-            this.FullNameLabel.Location = new System.Drawing.Point(80, 93);
-            this.FullNameLabel.Name = "FullNameLabel";
-            this.FullNameLabel.Size = new System.Drawing.Size(110, 28);
-            this.FullNameLabel.TabIndex = 2;
-            this.FullNameLabel.Text = "Full Name:";
-            // 
-            // BirthdayLabel
-            // 
-            this.BirthdayLabel.AutoSize = true;
-            this.BirthdayLabel.Font = new System.Drawing.Font("Open Sans", 12F);
-            this.BirthdayLabel.Location = new System.Drawing.Point(80, 134);
-            this.BirthdayLabel.Name = "BirthdayLabel";
-            this.BirthdayLabel.Size = new System.Drawing.Size(95, 28);
-            this.BirthdayLabel.TabIndex = 4;
-            this.BirthdayLabel.Text = "Birthday:";
-            // 
-            // BirthdayDateTimePicker
-            // 
-            this.BirthdayDateTimePicker.Font = new System.Drawing.Font("Open Sans Light", 12F);
-            this.BirthdayDateTimePicker.Location = new System.Drawing.Point(211, 136);
-            this.BirthdayDateTimePicker.Name = "BirthdayDateTimePicker";
-            this.BirthdayDateTimePicker.Size = new System.Drawing.Size(259, 35);
-            this.BirthdayDateTimePicker.TabIndex = 5;
-            // 
-            // PasswordLabel
-            // 
-            this.PasswordLabel.AutoSize = true;
-            this.PasswordLabel.Font = new System.Drawing.Font("Open Sans", 12F);
-            this.PasswordLabel.Location = new System.Drawing.Point(80, 176);
-            this.PasswordLabel.Name = "PasswordLabel";
-            this.PasswordLabel.Size = new System.Drawing.Size(107, 28);
-            this.PasswordLabel.TabIndex = 6;
-            this.PasswordLabel.Text = "Password:";
-            // 
-            // PasswordTextBox
-            // 
-            this.PasswordTextBox.Font = new System.Drawing.Font("Open Sans Light", 12F);
-            this.PasswordTextBox.Location = new System.Drawing.Point(211, 177);
-            this.PasswordTextBox.Name = "PasswordTextBox";
-            this.PasswordTextBox.Size = new System.Drawing.Size(259, 35);
-            this.PasswordTextBox.TabIndex = 7;
-            // 
-            // MaleRadioButton
-            // 
-            this.MaleRadioButton.AutoSize = true;
-            this.MaleRadioButton.Font = new System.Drawing.Font("Open Sans", 12F);
-            this.MaleRadioButton.Location = new System.Drawing.Point(512, 67);
-            this.MaleRadioButton.Name = "MaleRadioButton";
-            this.MaleRadioButton.Size = new System.Drawing.Size(78, 32);
-            this.MaleRadioButton.TabIndex = 8;
-            this.MaleRadioButton.TabStop = true;
-            this.MaleRadioButton.Text = "Male";
-            this.MaleRadioButton.UseVisualStyleBackColor = true;
-            // 
-            // FemaleRadioButton
-            // 
-            this.FemaleRadioButton.AutoSize = true;
-            this.FemaleRadioButton.Font = new System.Drawing.Font("Open Sans", 12F);
-            this.FemaleRadioButton.Location = new System.Drawing.Point(596, 67);
-            this.FemaleRadioButton.Name = "FemaleRadioButton";
-            this.FemaleRadioButton.Size = new System.Drawing.Size(100, 32);
-            this.FemaleRadioButton.TabIndex = 9;
-            this.FemaleRadioButton.TabStop = true;
-            this.FemaleRadioButton.Text = "Female";
-            this.FemaleRadioButton.UseVisualStyleBackColor = true;
-            // 
-            // FamilyCountLabel
-            // 
-            this.FamilyCountLabel.AutoSize = true;
-            this.FamilyCountLabel.Font = new System.Drawing.Font("Open Sans", 12F);
-            this.FamilyCountLabel.Location = new System.Drawing.Point(476, 102);
-            this.FamilyCountLabel.Name = "FamilyCountLabel";
-            this.FamilyCountLabel.Size = new System.Drawing.Size(277, 28);
-            this.FamilyCountLabel.TabIndex = 10;
-            this.FamilyCountLabel.Text = "Number of Family Members:";
-            // 
-            // FamilyNumericUpDown
-            // 
-            this.FamilyNumericUpDown.Font = new System.Drawing.Font("Open Sans Light", 12F);
-            this.FamilyNumericUpDown.Location = new System.Drawing.Point(751, 102);
-            this.FamilyNumericUpDown.Name = "FamilyNumericUpDown";
-            this.FamilyNumericUpDown.Size = new System.Drawing.Size(54, 35);
-            this.FamilyNumericUpDown.TabIndex = 11;
-            // 
-            // RetypePasswordLabel
-            // 
-            this.RetypePasswordLabel.AutoSize = true;
-            this.RetypePasswordLabel.Font = new System.Drawing.Font("Open Sans", 12F);
-            this.RetypePasswordLabel.Location = new System.Drawing.Point(476, 184);
-            this.RetypePasswordLabel.Name = "RetypePasswordLabel";
-            this.RetypePasswordLabel.Size = new System.Drawing.Size(175, 28);
-            this.RetypePasswordLabel.TabIndex = 12;
-            this.RetypePasswordLabel.Text = "Retype Password:";
-            // 
             // RetypePasswordTextBox
             // 
+            this.RetypePasswordTextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(187)))), ((int)(((byte)(187)))));
+            this.RetypePasswordTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.RetypePasswordTextBox.Font = new System.Drawing.Font("Open Sans Light", 12F);
+            this.RetypePasswordTextBox.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.RetypePasswordTextBox.Location = new System.Drawing.Point(731, 221);
             this.RetypePasswordTextBox.Name = "RetypePasswordTextBox";
             this.RetypePasswordTextBox.Size = new System.Drawing.Size(259, 35);
-            this.RetypePasswordTextBox.TabIndex = 13;
-            // 
-            // TermsCheckBox
-            // 
-            this.TermsCheckBox.AutoSize = true;
-            this.TermsCheckBox.Font = new System.Drawing.Font("Open Sans", 12F);
-            this.TermsCheckBox.Location = new System.Drawing.Point(26, 247);
-            this.TermsCheckBox.Name = "TermsCheckBox";
-            this.TermsCheckBox.Size = new System.Drawing.Size(384, 32);
-            this.TermsCheckBox.TabIndex = 13;
-            this.TermsCheckBox.Text = "I agree to the Terms amd Connditions";
-            this.TermsCheckBox.UseVisualStyleBackColor = true;
-            // 
-            // ViewTermsLinkLabel
-            // 
-            this.ViewTermsLinkLabel.ActiveLinkColor = System.Drawing.Color.Black;
-            this.ViewTermsLinkLabel.AutoSize = true;
-            this.ViewTermsLinkLabel.Font = new System.Drawing.Font("Open Sans", 12F);
-            this.ViewTermsLinkLabel.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(26)))), ((int)(((byte)(46)))));
-            this.ViewTermsLinkLabel.Location = new System.Drawing.Point(465, 248);
-            this.ViewTermsLinkLabel.Name = "ViewTermsLinkLabel";
-            this.ViewTermsLinkLabel.Size = new System.Drawing.Size(264, 28);
-            this.ViewTermsLinkLabel.TabIndex = 14;
-            this.ViewTermsLinkLabel.TabStop = true;
-            this.ViewTermsLinkLabel.Text = "View Terms and Conditions";
+            this.RetypePasswordTextBox.TabIndex = 5;
+            this.RetypePasswordTextBox.UseSystemPasswordChar = true;
             // 
             // CreateAccountForm
             // 

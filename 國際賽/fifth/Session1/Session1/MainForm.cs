@@ -19,6 +19,7 @@ namespace Session1
         }
         private void CreateLinkLabel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
+            ShowPasswordCheckBox.Focus();
             Visible=false;
             var CreateAccountform = new CreateAccountForm().ShowDialog();
             if (CreateAccountform == DialogResult.Cancel)
@@ -28,6 +29,15 @@ namespace Session1
         {
             Visible = false;
             new ManagementForm().Show();
+        }
+        private void ShowPasswordCheckBox_CheckedChanged(object sender, EventArgs e)
+        {
+            PasswordTextBox.UseSystemPasswordChar = !ShowPasswordCheckBox.Checked;
+        }
+
+        private void ExitButton_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
     }
 }
