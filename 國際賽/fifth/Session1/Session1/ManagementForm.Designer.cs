@@ -34,7 +34,7 @@
             // ExitBtn
             // 
             this.ExitBtn.Font = new System.Drawing.Font("Open Sans SemiBold", 9F);
-            this.ExitBtn.Location = new System.Drawing.Point(714, 209);
+            this.ExitBtn.Location = new System.Drawing.Point(615, 161);
             this.ExitBtn.Name = "ExitBtn";
             this.ExitBtn.Size = new System.Drawing.Size(75, 35);
             this.ExitBtn.TabIndex = 0;
