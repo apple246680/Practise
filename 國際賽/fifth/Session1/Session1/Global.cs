@@ -9,5 +9,6 @@ namespace Session1
     public static class Global
     {
         public static MainForm mainForm { get; set; }
+        public static long? accountID { get; set; }
     }
 }

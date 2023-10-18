@@ -2,8 +2,8 @@
 <SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="Session1.Properties" GeneratedClassName="Settings">
   <Profiles />
   <Settings>
-    <Setting Name="KeepLogin" Type="System.Int64" Scope="Application">
-      <Value Profile="(Default)">0</Value>
+    <Setting Name="KeepLogin" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
     </Setting>
   </Settings>
 </SettingsFile>

@@ -23,12 +23,15 @@ namespace Session1.Properties {
             }
         }
         
-        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("0")]
-        public long KeepLogin {
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string KeepLogin {
             get {
-                return ((long)(this["KeepLogin"]));
+                return ((string)(this["KeepLogin"]));
+            }
+            set {
+                this["KeepLogin"] = value;
             }
         }
     }

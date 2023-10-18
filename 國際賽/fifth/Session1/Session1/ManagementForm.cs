@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.ToolTip;
 
 namespace Session1
 {
@@ -23,6 +24,11 @@ namespace Session1
         private void ExitBtn_Click(object sender, EventArgs e)
         {
             Application.Exit();
+        }
+
+        private void LououtBtn_Click(object sender, EventArgs e)
+        {
+            
         }
     }
 }
