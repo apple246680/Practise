@@ -76,13 +76,20 @@ namespace Session1
 
         private void Search_TextChanged(object sender, EventArgs e)
         {
-            TravelerDataGridView.Rows.Clear();
-            new Session1Entities().Items.Where(x => x.Title == search.Text 
-            || x.Area.Name == search.Text 
-            || x.ItemAttractions.Any(y => y.Distance <= 1 && y.Attraction.Name == search.Text)).ToList().ForEach(x =>
+            TravelerDataGridView.DataSource = null;
+            var aa = new Session1Entities().Items.Where(x => x.Title == search.Text
+            || x.Area.Name == search.Text
+            || x.ItemAttractions.Any(y => y.Distance <= 1 && y.Attraction.Name == search.Text)).ToList().Select(x =>new
             {
-                TravelerDataGridView.Rows.Add(x.Title, x.Capacity, x.Area.Name, x.ItemType.Name);
+                Title=x.Title,
+                Capacity=x.Capacity,
+                Area=x.Area.Name,
+                ItemType=x.ItemType.Name
             });
+            //{
+            //    TravelerDataGridView.Rows.Add(x.Title, x.Capacity, x.Area.Name, x.ItemType.Name);
+            //});
+            TravelerDataGridView.DataSource= aa.ToList();
             CurrentNum[0] = TravelerDataGridView.Rows.Count;
             CountLabel.Text = $"{TravelerDataGridView.Rows.Count} items found.";
         }
