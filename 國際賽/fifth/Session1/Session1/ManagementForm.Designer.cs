@@ -77,6 +77,7 @@
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(1005, 405);
             this.tabControl1.TabIndex = 10;
+            this.tabControl1.SelectedIndexChanged += new System.EventHandler(this.tabControl1_SelectedIndexChanged);
             // 
             // tabPage1
             // 
@@ -155,6 +156,7 @@
             this.hint.Size = new System.Drawing.Size(719, 22);
             this.hint.TabIndex = 1;
             this.hint.Text = "Search destination or Listing Title or Attraction";
+            this.hint.Click += new System.EventHandler(this.hint_Click);
             // 
             // search
             // 
@@ -162,6 +164,9 @@
             this.search.Name = "search";
             this.search.Size = new System.Drawing.Size(716, 28);
             this.search.TabIndex = 0;
+            this.search.TextChanged += new System.EventHandler(this.search_TextChanged);
+            this.search.Enter += new System.EventHandler(this.search_Enter);
+            this.search.Leave += new System.EventHandler(this.search_Leave);
             // 
             // tabPage2
             // 
@@ -184,6 +189,7 @@
             this.AddListingBtn.TabIndex = 6;
             this.AddListingBtn.Text = "Add Listing";
             this.AddListingBtn.UseVisualStyleBackColor = true;
+            this.AddListingBtn.Click += new System.EventHandler(this.AddListingBtn_Click);
             // 
             // ManageDataGridView
             // 
@@ -210,6 +216,7 @@
             this.ManageDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
             this.ManageDataGridView.Size = new System.Drawing.Size(799, 253);
             this.ManageDataGridView.TabIndex = 7;
+            this.ManageDataGridView.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.ManageDataGridView_CellClick);
             // 
             // Column1
             // 
@@ -312,6 +319,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Seoul Stay - Management";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.ManagementForm_FormClosing);
+            this.Load += new System.EventHandler(this.ManagementForm_Load);
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
