@@ -81,6 +81,7 @@
             // 
             // tabPage1
             // 
+            this.tabPage1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(187)))), ((int)(((byte)(187)))));
             this.tabPage1.Controls.Add(this.TravelerDataGridView);
             this.tabPage1.Controls.Add(this.hint);
             this.tabPage1.Controls.Add(this.search);
@@ -90,7 +91,6 @@
             this.tabPage1.Size = new System.Drawing.Size(997, 370);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "I\'m Traveler";
-            this.tabPage1.UseVisualStyleBackColor = true;
             // 
             // TravelerDataGridView
             // 
@@ -99,6 +99,7 @@
             this.TravelerDataGridView.AllowUserToResizeColumns = false;
             this.TravelerDataGridView.AllowUserToResizeRows = false;
             this.TravelerDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.TravelerDataGridView.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(187)))), ((int)(((byte)(187)))));
             this.TravelerDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.TravelerDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn1,
@@ -150,7 +151,9 @@
             // 
             // hint
             // 
-            this.hint.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(187)))), ((int)(((byte)(187)))));
+            this.hint.BackColor = System.Drawing.Color.Black;
+            this.hint.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.hint.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(26)))), ((int)(((byte)(49)))));
             this.hint.Location = new System.Drawing.Point(124, 21);
             this.hint.Name = "hint";
             this.hint.Size = new System.Drawing.Size(719, 22);
@@ -160,6 +163,8 @@
             // 
             // search
             // 
+            this.search.BackColor = System.Drawing.Color.Black;
+            this.search.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(26)))), ((int)(((byte)(49)))));
             this.search.Location = new System.Drawing.Point(127, 18);
             this.search.Name = "search";
             this.search.Size = new System.Drawing.Size(716, 28);
@@ -281,6 +286,8 @@
             // 
             // ExitBtn
             // 
+            this.ExitBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ExitBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(26)))), ((int)(((byte)(49)))));
             this.ExitBtn.Location = new System.Drawing.Point(923, 24);
             this.ExitBtn.Name = "ExitBtn";
             this.ExitBtn.Size = new System.Drawing.Size(75, 36);
@@ -291,6 +298,8 @@
             // 
             // LououtBtn
             // 
+            this.LououtBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.LououtBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(26)))), ((int)(((byte)(49)))));
             this.LououtBtn.Location = new System.Drawing.Point(842, 24);
             this.LououtBtn.Name = "LououtBtn";
             this.LououtBtn.Size = new System.Drawing.Size(75, 36);

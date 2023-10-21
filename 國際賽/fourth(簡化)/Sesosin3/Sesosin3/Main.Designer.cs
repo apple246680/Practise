@@ -224,9 +224,9 @@
             // 
             this.ResultGroupBox.Controls.Add(this.ResultLabel);
             this.ResultGroupBox.Controls.Add(this.ResultDataGridView);
-            this.ResultGroupBox.Location = new System.Drawing.Point(46, 310);
+            this.ResultGroupBox.Location = new System.Drawing.Point(46, 289);
             this.ResultGroupBox.Name = "ResultGroupBox";
-            this.ResultGroupBox.Size = new System.Drawing.Size(1134, 395);
+            this.ResultGroupBox.Size = new System.Drawing.Size(1134, 327);
             this.ResultGroupBox.TabIndex = 1;
             this.ResultGroupBox.TabStop = false;
             this.ResultGroupBox.Text = "Search results";
@@ -253,7 +253,7 @@
             this.Column3,
             this.Column4,
             this.Column5});
-            this.ResultDataGridView.Location = new System.Drawing.Point(51, 46);
+            this.ResultDataGridView.Location = new System.Drawing.Point(59, 27);
             this.ResultDataGridView.Name = "ResultDataGridView";
             this.ResultDataGridView.ReadOnly = true;
             this.ResultDataGridView.RowHeadersVisible = false;
