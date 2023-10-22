@@ -73,7 +73,7 @@
             this.AreaComboBox = new System.Windows.Forms.ComboBox();
             this.AreaLabel = new System.Windows.Forms.Label();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
-            this.ResultGroupBox = new System.Windows.Forms.GroupBox();
+            this.ResultGroupBox1 = new System.Windows.Forms.GroupBox();
             this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
             this.SimpleResultDataGridView = new System.Windows.Forms.DataGridView();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -89,6 +89,9 @@
             this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ResultLabel = new System.Windows.Forms.Label();
+            this.ResultGroupBox2 = new System.Windows.Forms.GroupBox();
+            this.flowLayoutPanel3 = new System.Windows.Forms.FlowLayoutPanel();
+            this.label1 = new System.Windows.Forms.Label();
             this.SimpleGroupBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PeopleNumber1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.NightsNumber)).BeginInit();
@@ -98,10 +101,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.PeopleNumber2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.NightNum)).BeginInit();
             this.flowLayoutPanel1.SuspendLayout();
-            this.ResultGroupBox.SuspendLayout();
+            this.ResultGroupBox1.SuspendLayout();
             this.flowLayoutPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.SimpleResultDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.AdvancedResultDataGridView)).BeginInit();
+            this.ResultGroupBox2.SuspendLayout();
+            this.flowLayoutPanel3.SuspendLayout();
             this.SuspendLayout();
             // 
             // SimpleGroupBox
@@ -133,6 +138,7 @@
             this.HintLabel.Size = new System.Drawing.Size(474, 22);
             this.HintLabel.TabIndex = 9;
             this.HintLabel.Text = "Enter area name, attraction, property title, property type, amenities ...";
+            this.HintLabel.Click += new System.EventHandler(this.HintLabel_Click);
             // 
             // AdvanedFormBtn
             // 
@@ -144,6 +150,7 @@
             this.AdvanedFormBtn.TabIndex = 7;
             this.AdvanedFormBtn.Text = "Advanced Search";
             this.AdvanedFormBtn.UseVisualStyleBackColor = true;
+            this.AdvanedFormBtn.Click += new System.EventHandler(this.AdvanedFormBtn_Click);
             // 
             // SimpleSearchBtn
             // 
@@ -155,6 +162,7 @@
             this.SimpleSearchBtn.TabIndex = 5;
             this.SimpleSearchBtn.Text = "Search properties...";
             this.SimpleSearchBtn.UseVisualStyleBackColor = true;
+            this.SimpleSearchBtn.Click += new System.EventHandler(this.SimpleSearchBtn_Click);
             // 
             // PeopleLabel1
             // 
@@ -255,6 +263,9 @@
             this.SearchTextBox.Name = "SearchTextBox";
             this.SearchTextBox.Size = new System.Drawing.Size(774, 28);
             this.SearchTextBox.TabIndex = 0;
+            this.SearchTextBox.TextChanged += new System.EventHandler(this.SearchTextBox_TextChanged);
+            this.SearchTextBox.Enter += new System.EventHandler(this.SearchTextBox_Enter);
+            this.SearchTextBox.Leave += new System.EventHandler(this.SearchTextBox_Leave);
             // 
             // ListBoxHint
             // 
@@ -267,6 +278,7 @@
             this.ListBoxHint.ScrollAlwaysVisible = true;
             this.ListBoxHint.Size = new System.Drawing.Size(774, 112);
             this.ListBoxHint.TabIndex = 10;
+            this.ListBoxHint.MouseClick += new System.Windows.Forms.MouseEventHandler(this.ListBoxHint_MouseClick);
             // 
             // AdvancedGroupBox
             // 
@@ -306,6 +318,7 @@
             this.AdvancedGroupBox.TabIndex = 3;
             this.AdvancedGroupBox.TabStop = false;
             this.AdvancedGroupBox.Text = "Advanced Search";
+            this.AdvancedGroupBox.Visible = false;
             // 
             // AdvancedSearchBtn
             // 
@@ -326,6 +339,7 @@
             this.ClearBtn.TabIndex = 28;
             this.ClearBtn.Text = "Clear form";
             this.ClearBtn.UseVisualStyleBackColor = true;
+            this.ClearBtn.Click += new System.EventHandler(this.ClearBtn_Click);
             // 
             // SimpleSearchFormBtn
             // 
@@ -336,6 +350,7 @@
             this.SimpleSearchFormBtn.TabIndex = 27;
             this.SimpleSearchFormBtn.Text = "Simple Search";
             this.SimpleSearchFormBtn.UseVisualStyleBackColor = true;
+            this.SimpleSearchFormBtn.Click += new System.EventHandler(this.SimpleSearchFormBtn_Click);
             // 
             // AmenityComboBox3
             // 
@@ -581,7 +596,6 @@
             this.TitleComboBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(187)))), ((int)(((byte)(187)))));
             this.TitleComboBox.DisplayMember = "Name";
             this.TitleComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.TitleComboBox.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.TitleComboBox.FormattingEnabled = true;
             this.TitleComboBox.Location = new System.Drawing.Point(909, 42);
             this.TitleComboBox.Name = "TitleComboBox";
@@ -603,7 +617,6 @@
             this.AttractionComboBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(187)))), ((int)(((byte)(187)))));
             this.AttractionComboBox.DisplayMember = "Name";
             this.AttractionComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.AttractionComboBox.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.AttractionComboBox.FormattingEnabled = true;
             this.AttractionComboBox.Location = new System.Drawing.Point(519, 39);
             this.AttractionComboBox.Name = "AttractionComboBox";
@@ -625,7 +638,6 @@
             this.AreaComboBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(187)))), ((int)(((byte)(187)))));
             this.AreaComboBox.DisplayMember = "Name";
             this.AreaComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.AreaComboBox.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.AreaComboBox.FormattingEnabled = true;
             this.AreaComboBox.Location = new System.Drawing.Point(145, 38);
             this.AreaComboBox.Name = "AreaComboBox";
@@ -646,26 +658,27 @@
             // 
             this.flowLayoutPanel1.Controls.Add(this.SimpleGroupBox);
             this.flowLayoutPanel1.Controls.Add(this.AdvancedGroupBox);
+            this.flowLayoutPanel1.Controls.Add(this.ResultGroupBox1);
+            this.flowLayoutPanel1.Controls.Add(this.ResultGroupBox2);
             this.flowLayoutPanel1.Location = new System.Drawing.Point(12, 12);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(1230, 508);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(1230, 971);
             this.flowLayoutPanel1.TabIndex = 4;
             // 
-            // ResultGroupBox
+            // ResultGroupBox1
             // 
-            this.ResultGroupBox.Controls.Add(this.flowLayoutPanel2);
-            this.ResultGroupBox.Controls.Add(this.ResultLabel);
-            this.ResultGroupBox.Location = new System.Drawing.Point(15, 526);
-            this.ResultGroupBox.Name = "ResultGroupBox";
-            this.ResultGroupBox.Size = new System.Drawing.Size(1227, 448);
-            this.ResultGroupBox.TabIndex = 5;
-            this.ResultGroupBox.TabStop = false;
-            this.ResultGroupBox.Text = "Search results";
+            this.ResultGroupBox1.Controls.Add(this.flowLayoutPanel2);
+            this.ResultGroupBox1.Controls.Add(this.ResultLabel);
+            this.ResultGroupBox1.Location = new System.Drawing.Point(3, 504);
+            this.ResultGroupBox1.Name = "ResultGroupBox1";
+            this.ResultGroupBox1.Size = new System.Drawing.Size(1227, 243);
+            this.ResultGroupBox1.TabIndex = 6;
+            this.ResultGroupBox1.TabStop = false;
+            this.ResultGroupBox1.Text = "Search results";
             // 
             // flowLayoutPanel2
             // 
             this.flowLayoutPanel2.Controls.Add(this.SimpleResultDataGridView);
-            this.flowLayoutPanel2.Controls.Add(this.AdvancedResultDataGridView);
             this.flowLayoutPanel2.Location = new System.Drawing.Point(14, 27);
             this.flowLayoutPanel2.Name = "flowLayoutPanel2";
             this.flowLayoutPanel2.Size = new System.Drawing.Size(1202, 412);
@@ -751,13 +764,13 @@
             this.dataGridViewTextBoxColumn5,
             this.Column6});
             this.AdvancedResultDataGridView.GridColor = System.Drawing.SystemColors.ButtonShadow;
-            this.AdvancedResultDataGridView.Location = new System.Drawing.Point(3, 209);
+            this.AdvancedResultDataGridView.Location = new System.Drawing.Point(3, 3);
             this.AdvancedResultDataGridView.Name = "AdvancedResultDataGridView";
             this.AdvancedResultDataGridView.ReadOnly = true;
             this.AdvancedResultDataGridView.RowHeadersVisible = false;
             this.AdvancedResultDataGridView.RowHeadersWidth = 51;
             this.AdvancedResultDataGridView.RowTemplate.Height = 27;
-            this.AdvancedResultDataGridView.Size = new System.Drawing.Size(1200, 200);
+            this.AdvancedResultDataGridView.Size = new System.Drawing.Size(1200, 169);
             this.AdvancedResultDataGridView.TabIndex = 12;
             // 
             // dataGridViewTextBoxColumn1
@@ -816,13 +829,40 @@
             this.ResultLabel.Size = new System.Drawing.Size(0, 22);
             this.ResultLabel.TabIndex = 11;
             // 
+            // ResultGroupBox2
+            // 
+            this.ResultGroupBox2.Controls.Add(this.flowLayoutPanel3);
+            this.ResultGroupBox2.Controls.Add(this.label1);
+            this.ResultGroupBox2.Location = new System.Drawing.Point(3, 753);
+            this.ResultGroupBox2.Name = "ResultGroupBox2";
+            this.ResultGroupBox2.Size = new System.Drawing.Size(1227, 208);
+            this.ResultGroupBox2.TabIndex = 7;
+            this.ResultGroupBox2.TabStop = false;
+            this.ResultGroupBox2.Text = "Search results";
+            this.ResultGroupBox2.Visible = false;
+            // 
+            // flowLayoutPanel3
+            // 
+            this.flowLayoutPanel3.Controls.Add(this.AdvancedResultDataGridView);
+            this.flowLayoutPanel3.Location = new System.Drawing.Point(14, 27);
+            this.flowLayoutPanel3.Name = "flowLayoutPanel3";
+            this.flowLayoutPanel3.Size = new System.Drawing.Size(1202, 412);
+            this.flowLayoutPanel3.TabIndex = 13;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(55, 343);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(0, 22);
+            this.label1.TabIndex = 11;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 22F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(187)))), ((int)(((byte)(187)))));
-            this.ClientSize = new System.Drawing.Size(1254, 995);
-            this.Controls.Add(this.ResultGroupBox);
+            this.ClientSize = new System.Drawing.Size(1254, 593);
             this.Controls.Add(this.flowLayoutPanel1);
             this.Font = new System.Drawing.Font("Open Sans Light", 9F);
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
@@ -842,11 +882,14 @@
             ((System.ComponentModel.ISupportInitialize)(this.PeopleNumber2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.NightNum)).EndInit();
             this.flowLayoutPanel1.ResumeLayout(false);
-            this.ResultGroupBox.ResumeLayout(false);
-            this.ResultGroupBox.PerformLayout();
+            this.ResultGroupBox1.ResumeLayout(false);
+            this.ResultGroupBox1.PerformLayout();
             this.flowLayoutPanel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.SimpleResultDataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.AdvancedResultDataGridView)).EndInit();
+            this.ResultGroupBox2.ResumeLayout(false);
+            this.ResultGroupBox2.PerformLayout();
+            this.flowLayoutPanel3.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -898,8 +941,8 @@
         private System.Windows.Forms.ComboBox AreaComboBox;
         private System.Windows.Forms.Label AreaLabel;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
-        private System.Windows.Forms.GroupBox ResultGroupBox;
-        private System.Windows.Forms.Label ResultLabel;
+        private System.Windows.Forms.GroupBox ResultGroupBox1;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel2;
         private System.Windows.Forms.DataGridView SimpleResultDataGridView;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
@@ -913,7 +956,10 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel2;
+        private System.Windows.Forms.Label ResultLabel;
+        private System.Windows.Forms.GroupBox ResultGroupBox2;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel3;
+        private System.Windows.Forms.Label label1;
     }
 }
 

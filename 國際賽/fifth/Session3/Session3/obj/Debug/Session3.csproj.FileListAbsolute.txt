@@ -8,3 +8,8 @@ C:\Users\USER\Documents\GitHub\Practise\國際賽\fifth\Session3\Session3\obj\De
 C:\Users\USER\Documents\GitHub\Practise\國際賽\fifth\Session3\Session3\obj\Debug\Session3.csproj.CoreCompileInputs.cache
 C:\Users\USER\Documents\GitHub\Practise\國際賽\fifth\Session3\Session3\obj\Debug\Session3.exe
 C:\Users\USER\Documents\GitHub\Practise\國際賽\fifth\Session3\Session3\obj\Debug\Session3.pdb
+C:\Users\USER\Documents\GitHub\Practise\國際賽\fifth\Session3\Session3\bin\Debug\EntityFramework.dll
+C:\Users\USER\Documents\GitHub\Practise\國際賽\fifth\Session3\Session3\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\USER\Documents\GitHub\Practise\國際賽\fifth\Session3\Session3\bin\Debug\EntityFramework.xml
+C:\Users\USER\Documents\GitHub\Practise\國際賽\fifth\Session3\Session3\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\USER\Documents\GitHub\Practise\國際賽\fifth\Session3\Session3\obj\Debug\Session3.csproj.CopyComplete
