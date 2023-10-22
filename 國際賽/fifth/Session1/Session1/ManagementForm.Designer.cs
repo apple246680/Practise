@@ -83,7 +83,6 @@
             // 
             this.tabPage1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(187)))), ((int)(((byte)(187)))));
             this.tabPage1.Controls.Add(this.TravelerDataGridView);
-            this.tabPage1.Controls.Add(this.hint);
             this.tabPage1.Controls.Add(this.search);
             this.tabPage1.Location = new System.Drawing.Point(4, 31);
             this.tabPage1.Name = "tabPage1";
@@ -151,10 +150,10 @@
             // 
             // hint
             // 
-            this.hint.BackColor = System.Drawing.Color.Black;
+            this.hint.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(187)))), ((int)(((byte)(187)))));
             this.hint.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.hint.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(26)))), ((int)(((byte)(49)))));
-            this.hint.Location = new System.Drawing.Point(124, 21);
+            this.hint.Location = new System.Drawing.Point(622, 77);
             this.hint.Name = "hint";
             this.hint.Size = new System.Drawing.Size(719, 22);
             this.hint.TabIndex = 1;
@@ -163,7 +162,7 @@
             // 
             // search
             // 
-            this.search.BackColor = System.Drawing.Color.Black;
+            this.search.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(187)))), ((int)(((byte)(187)))));
             this.search.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(26)))), ((int)(((byte)(49)))));
             this.search.Location = new System.Drawing.Point(127, 18);
             this.search.Name = "search";
@@ -315,6 +314,7 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(187)))), ((int)(((byte)(187)))));
             this.ClientSize = new System.Drawing.Size(1037, 553);
             this.Controls.Add(this.CountLabel);
+            this.Controls.Add(this.hint);
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.ExitBtn);
