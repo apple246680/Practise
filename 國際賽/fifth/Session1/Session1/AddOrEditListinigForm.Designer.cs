@@ -113,6 +113,7 @@
             // 
             // tabPage1
             // 
+            this.tabPage1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(187)))), ((int)(((byte)(187)))));
             this.tabPage1.Controls.Add(this.TitleTextBox);
             this.tabPage1.Controls.Add(this.TypeComboBox);
             this.tabPage1.Controls.Add(this.HostRulesTextBox);
@@ -144,10 +145,11 @@
             this.tabPage1.Size = new System.Drawing.Size(1049, 501);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Listing Details";
-            this.tabPage1.UseVisualStyleBackColor = true;
             // 
             // TitleTextBox
             // 
+            this.TitleTextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(187)))), ((int)(((byte)(187)))));
+            this.TitleTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.TitleTextBox.Location = new System.Drawing.Point(603, 16);
             this.TitleTextBox.MaxLength = 50;
             this.TitleTextBox.Name = "TitleTextBox";
@@ -156,7 +158,9 @@
             // 
             // TypeComboBox
             // 
+            this.TypeComboBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(187)))), ((int)(((byte)(187)))));
             this.TypeComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.TypeComboBox.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.TypeComboBox.FormattingEnabled = true;
             this.TypeComboBox.Location = new System.Drawing.Point(93, 16);
             this.TypeComboBox.Name = "TypeComboBox";
@@ -165,6 +169,8 @@
             // 
             // HostRulesTextBox
             // 
+            this.HostRulesTextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(187)))), ((int)(((byte)(187)))));
+            this.HostRulesTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.HostRulesTextBox.Location = new System.Drawing.Point(253, 332);
             this.HostRulesTextBox.MaxLength = 2000;
             this.HostRulesTextBox.Multiline = true;
@@ -175,6 +181,8 @@
             // 
             // DescriptionTextBox
             // 
+            this.DescriptionTextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(187)))), ((int)(((byte)(187)))));
+            this.DescriptionTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.DescriptionTextBox.Location = new System.Drawing.Point(253, 262);
             this.DescriptionTextBox.MaxLength = 2000;
             this.DescriptionTextBox.Multiline = true;
@@ -185,6 +193,8 @@
             // 
             // ExactAddressTextBox
             // 
+            this.ExactAddressTextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(187)))), ((int)(((byte)(187)))));
+            this.ExactAddressTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.ExactAddressTextBox.Location = new System.Drawing.Point(253, 192);
             this.ExactAddressTextBox.MaxLength = 500;
             this.ExactAddressTextBox.Multiline = true;
@@ -195,6 +205,8 @@
             // 
             // ApproximateAddressTextBox
             // 
+            this.ApproximateAddressTextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(187)))), ((int)(((byte)(187)))));
+            this.ApproximateAddressTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.ApproximateAddressTextBox.Location = new System.Drawing.Point(253, 125);
             this.ApproximateAddressTextBox.MaxLength = 250;
             this.ApproximateAddressTextBox.Name = "ApproximateAddressTextBox";
@@ -203,6 +215,8 @@
             // 
             // BathroomNum
             // 
+            this.BathroomNum.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(187)))), ((int)(((byte)(187)))));
+            this.BathroomNum.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.BathroomNum.Location = new System.Drawing.Point(958, 69);
             this.BathroomNum.Minimum = new decimal(new int[] {
             1,
@@ -220,6 +234,8 @@
             // 
             // BedroomNum
             // 
+            this.BedroomNum.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(187)))), ((int)(((byte)(187)))));
+            this.BedroomNum.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.BedroomNum.Location = new System.Drawing.Point(662, 69);
             this.BedroomNum.Minimum = new decimal(new int[] {
             1,
@@ -237,6 +253,8 @@
             // 
             // BedsNum
             // 
+            this.BedsNum.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(187)))), ((int)(((byte)(187)))));
+            this.BedsNum.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.BedsNum.Location = new System.Drawing.Point(371, 69);
             this.BedsNum.Minimum = new decimal(new int[] {
             1,
@@ -254,6 +272,8 @@
             // 
             // CapacityyNum
             // 
+            this.CapacityyNum.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(187)))), ((int)(((byte)(187)))));
+            this.CapacityyNum.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.CapacityyNum.Location = new System.Drawing.Point(124, 69);
             this.CapacityyNum.Minimum = new decimal(new int[] {
             1,
@@ -271,6 +291,8 @@
             // 
             // MaxNum
             // 
+            this.MaxNum.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(187)))), ((int)(((byte)(187)))));
+            this.MaxNum.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.MaxNum.Location = new System.Drawing.Point(782, 432);
             this.MaxNum.Maximum = new decimal(new int[] {
             100000,
@@ -293,6 +315,8 @@
             // 
             // MinNum
             // 
+            this.MinNum.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(187)))), ((int)(((byte)(187)))));
+            this.MinNum.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.MinNum.Location = new System.Drawing.Point(457, 432);
             this.MinNum.Maximum = new decimal(new int[] {
             100000,
@@ -432,6 +456,7 @@
             // 
             // tabPage2
             // 
+            this.tabPage2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(187)))), ((int)(((byte)(187)))));
             this.tabPage2.Controls.Add(this.label14);
             this.tabPage2.Controls.Add(this.AmenitiesDataGridView);
             this.tabPage2.Location = new System.Drawing.Point(4, 31);
@@ -440,7 +465,6 @@
             this.tabPage2.Size = new System.Drawing.Size(1049, 501);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Amenities";
-            this.tabPage2.UseVisualStyleBackColor = true;
             // 
             // label14
             // 
@@ -458,6 +482,7 @@
             this.AmenitiesDataGridView.AllowUserToResizeColumns = false;
             this.AmenitiesDataGridView.AllowUserToResizeRows = false;
             this.AmenitiesDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.AmenitiesDataGridView.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(187)))), ((int)(((byte)(187)))));
             this.AmenitiesDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.AmenitiesDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column1,
@@ -500,6 +525,7 @@
             // 
             // tabPage3
             // 
+            this.tabPage3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(187)))), ((int)(((byte)(187)))));
             this.tabPage3.Controls.Add(this.AddAttractionBtn);
             this.tabPage3.Controls.Add(this.label20);
             this.tabPage3.Controls.Add(this.OnfootNum);
@@ -517,10 +543,10 @@
             this.tabPage3.Size = new System.Drawing.Size(1049, 501);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Distance to Attraction";
-            this.tabPage3.UseVisualStyleBackColor = true;
             // 
             // AddAttractionBtn
             // 
+            this.AddAttractionBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.AddAttractionBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.AddAttractionBtn.Location = new System.Drawing.Point(873, 129);
             this.AddAttractionBtn.Name = "AddAttractionBtn";
@@ -543,6 +569,7 @@
             // 
             // OnfootNum
             // 
+            this.OnfootNum.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(187)))), ((int)(((byte)(187)))));
             this.OnfootNum.Location = new System.Drawing.Point(540, 82);
             this.OnfootNum.Name = "OnfootNum";
             this.OnfootNum.Size = new System.Drawing.Size(304, 28);
@@ -550,6 +577,7 @@
             // 
             // BycarNum
             // 
+            this.BycarNum.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(187)))), ((int)(((byte)(187)))));
             this.BycarNum.Location = new System.Drawing.Point(540, 172);
             this.BycarNum.Name = "BycarNum";
             this.BycarNum.Size = new System.Drawing.Size(304, 28);
@@ -557,6 +585,7 @@
             // 
             // DistanceNum
             // 
+            this.DistanceNum.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(187)))), ((int)(((byte)(187)))));
             this.DistanceNum.DecimalPlaces = 1;
             this.DistanceNum.Location = new System.Drawing.Point(104, 172);
             this.DistanceNum.Name = "DistanceNum";
@@ -565,7 +594,9 @@
             // 
             // AttractionComboBox
             // 
+            this.AttractionComboBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(187)))), ((int)(((byte)(187)))));
             this.AttractionComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.AttractionComboBox.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.AttractionComboBox.FormattingEnabled = true;
             this.AttractionComboBox.Location = new System.Drawing.Point(94, 80);
             this.AttractionComboBox.Name = "AttractionComboBox";
@@ -615,6 +646,7 @@
             this.DistanceDataGridView.AllowUserToResizeColumns = false;
             this.DistanceDataGridView.AllowUserToResizeRows = false;
             this.DistanceDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.DistanceDataGridView.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(187)))), ((int)(((byte)(187)))));
             this.DistanceDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DistanceDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column7,
@@ -695,6 +727,7 @@
             // 
             // CloseBtn
             // 
+            this.CloseBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.CloseBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CloseBtn.Location = new System.Drawing.Point(836, 554);
             this.CloseBtn.Name = "CloseBtn";
@@ -706,6 +739,7 @@
             // 
             // NextBtn
             // 
+            this.NextBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.NextBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.NextBtn.Location = new System.Drawing.Point(669, 554);
             this.NextBtn.Name = "NextBtn";
@@ -720,6 +754,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 22F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(187)))), ((int)(((byte)(187)))));
             this.ClientSize = new System.Drawing.Size(1094, 607);
             this.Controls.Add(this.CloseBtn);
             this.Controls.Add(this.NextBtn);

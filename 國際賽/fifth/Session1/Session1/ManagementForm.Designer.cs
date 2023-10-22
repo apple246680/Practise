@@ -82,7 +82,9 @@
             // tabPage1
             // 
             this.tabPage1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(187)))), ((int)(((byte)(187)))));
+            this.tabPage1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.tabPage1.Controls.Add(this.TravelerDataGridView);
+            this.tabPage1.Controls.Add(this.hint);
             this.tabPage1.Controls.Add(this.search);
             this.tabPage1.Location = new System.Drawing.Point(4, 31);
             this.tabPage1.Name = "tabPage1";
@@ -105,6 +107,7 @@
             this.dataGridViewTextBoxColumn2,
             this.dataGridViewTextBoxColumn3,
             this.dataGridViewTextBoxColumn4});
+            this.TravelerDataGridView.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(187)))), ((int)(((byte)(187)))));
             this.TravelerDataGridView.Location = new System.Drawing.Point(83, 58);
             this.TravelerDataGridView.MultiSelect = false;
             this.TravelerDataGridView.Name = "TravelerDataGridView";
@@ -153,7 +156,7 @@
             this.hint.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(187)))), ((int)(((byte)(187)))));
             this.hint.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.hint.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(26)))), ((int)(((byte)(49)))));
-            this.hint.Location = new System.Drawing.Point(622, 77);
+            this.hint.Location = new System.Drawing.Point(124, 18);
             this.hint.Name = "hint";
             this.hint.Size = new System.Drawing.Size(719, 22);
             this.hint.TabIndex = 1;
@@ -174,6 +177,8 @@
             // 
             // tabPage2
             // 
+            this.tabPage2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(187)))), ((int)(((byte)(187)))));
+            this.tabPage2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.tabPage2.Controls.Add(this.AddListingBtn);
             this.tabPage2.Controls.Add(this.ManageDataGridView);
             this.tabPage2.Location = new System.Drawing.Point(4, 31);
@@ -182,10 +187,10 @@
             this.tabPage2.Size = new System.Drawing.Size(997, 370);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "I\'m Owner / manager";
-            this.tabPage2.UseVisualStyleBackColor = true;
             // 
             // AddListingBtn
             // 
+            this.AddListingBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.AddListingBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.AddListingBtn.Location = new System.Drawing.Point(104, 33);
             this.AddListingBtn.Name = "AddListingBtn";
@@ -210,6 +215,7 @@
             this.Column4,
             this.Column5,
             this.Column6});
+            this.ManageDataGridView.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(187)))), ((int)(((byte)(187)))));
             this.ManageDataGridView.Location = new System.Drawing.Point(93, 94);
             this.ManageDataGridView.MultiSelect = false;
             this.ManageDataGridView.Name = "ManageDataGridView";
@@ -314,7 +320,6 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(187)))), ((int)(((byte)(187)))));
             this.ClientSize = new System.Drawing.Size(1037, 553);
             this.Controls.Add(this.CountLabel);
-            this.Controls.Add(this.hint);
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.ExitBtn);
