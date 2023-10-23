@@ -46,15 +46,15 @@
             this.ClearBtn = new System.Windows.Forms.Button();
             this.SimpleSearchFormBtn = new System.Windows.Forms.Button();
             this.AmenityComboBox3 = new System.Windows.Forms.ComboBox();
-            this.label14 = new System.Windows.Forms.Label();
+            this.AmenityLabel3 = new System.Windows.Forms.Label();
             this.AmenityComboBox2 = new System.Windows.Forms.ComboBox();
-            this.label13 = new System.Windows.Forms.Label();
+            this.AmenityLabel2 = new System.Windows.Forms.Label();
             this.AmenityComboBox1 = new System.Windows.Forms.ComboBox();
-            this.label12 = new System.Windows.Forms.Label();
+            this.AmenityLabel1 = new System.Windows.Forms.Label();
             this.TypeComboBox = new System.Windows.Forms.ComboBox();
-            this.label11 = new System.Windows.Forms.Label();
+            this.PropertyTypeeLabel = new System.Windows.Forms.Label();
             this.MaxPrice = new System.Windows.Forms.NumericUpDown();
-            this.label10 = new System.Windows.Forms.Label();
+            this.MaxPriceLabel = new System.Windows.Forms.Label();
             this.StartPrice = new System.Windows.Forms.NumericUpDown();
             this.label9 = new System.Windows.Forms.Label();
             this.PeopleLabel2 = new System.Windows.Forms.Label();
@@ -81,6 +81,9 @@
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ResultLabel = new System.Windows.Forms.Label();
+            this.ResultGroupBox2 = new System.Windows.Forms.GroupBox();
+            this.flowLayoutPanel3 = new System.Windows.Forms.FlowLayoutPanel();
             this.AdvancedResultDataGridView = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -88,9 +91,6 @@
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ResultLabel = new System.Windows.Forms.Label();
-            this.ResultGroupBox2 = new System.Windows.Forms.GroupBox();
-            this.flowLayoutPanel3 = new System.Windows.Forms.FlowLayoutPanel();
             this.label1 = new System.Windows.Forms.Label();
             this.SimpleGroupBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PeopleNumber1)).BeginInit();
@@ -104,9 +104,9 @@
             this.ResultGroupBox1.SuspendLayout();
             this.flowLayoutPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.SimpleResultDataGridView)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.AdvancedResultDataGridView)).BeginInit();
             this.ResultGroupBox2.SuspendLayout();
             this.flowLayoutPanel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.AdvancedResultDataGridView)).BeginInit();
             this.SuspendLayout();
             // 
             // SimpleGroupBox
@@ -286,15 +286,15 @@
             this.AdvancedGroupBox.Controls.Add(this.ClearBtn);
             this.AdvancedGroupBox.Controls.Add(this.SimpleSearchFormBtn);
             this.AdvancedGroupBox.Controls.Add(this.AmenityComboBox3);
-            this.AdvancedGroupBox.Controls.Add(this.label14);
+            this.AdvancedGroupBox.Controls.Add(this.AmenityLabel3);
             this.AdvancedGroupBox.Controls.Add(this.AmenityComboBox2);
-            this.AdvancedGroupBox.Controls.Add(this.label13);
+            this.AdvancedGroupBox.Controls.Add(this.AmenityLabel2);
             this.AdvancedGroupBox.Controls.Add(this.AmenityComboBox1);
-            this.AdvancedGroupBox.Controls.Add(this.label12);
+            this.AdvancedGroupBox.Controls.Add(this.AmenityLabel1);
             this.AdvancedGroupBox.Controls.Add(this.TypeComboBox);
-            this.AdvancedGroupBox.Controls.Add(this.label11);
+            this.AdvancedGroupBox.Controls.Add(this.PropertyTypeeLabel);
             this.AdvancedGroupBox.Controls.Add(this.MaxPrice);
-            this.AdvancedGroupBox.Controls.Add(this.label10);
+            this.AdvancedGroupBox.Controls.Add(this.MaxPriceLabel);
             this.AdvancedGroupBox.Controls.Add(this.StartPrice);
             this.AdvancedGroupBox.Controls.Add(this.label9);
             this.AdvancedGroupBox.Controls.Add(this.PeopleLabel2);
@@ -329,6 +329,7 @@
             this.AdvancedSearchBtn.TabIndex = 29;
             this.AdvancedSearchBtn.Text = "Search properties...";
             this.AdvancedSearchBtn.UseVisualStyleBackColor = true;
+            this.AdvancedSearchBtn.Click += new System.EventHandler(this.AdvancedSearchBtn_Click);
             // 
             // ClearBtn
             // 
@@ -364,14 +365,14 @@
             this.AmenityComboBox3.TabIndex = 26;
             this.AmenityComboBox3.ValueMember = "ID";
             // 
-            // label14
+            // AmenityLabel3
             // 
-            this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(800, 205);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(68, 22);
-            this.label14.TabIndex = 25;
-            this.label14.Text = "Amenity:";
+            this.AmenityLabel3.AutoSize = true;
+            this.AmenityLabel3.Location = new System.Drawing.Point(800, 205);
+            this.AmenityLabel3.Name = "AmenityLabel3";
+            this.AmenityLabel3.Size = new System.Drawing.Size(68, 22);
+            this.AmenityLabel3.TabIndex = 25;
+            this.AmenityLabel3.Text = "Amenity:";
             // 
             // AmenityComboBox2
             // 
@@ -385,14 +386,14 @@
             this.AmenityComboBox2.TabIndex = 24;
             this.AmenityComboBox2.ValueMember = "ID";
             // 
-            // label13
+            // AmenityLabel2
             // 
-            this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(437, 202);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(68, 22);
-            this.label13.TabIndex = 23;
-            this.label13.Text = "Amenity:";
+            this.AmenityLabel2.AutoSize = true;
+            this.AmenityLabel2.Location = new System.Drawing.Point(437, 202);
+            this.AmenityLabel2.Name = "AmenityLabel2";
+            this.AmenityLabel2.Size = new System.Drawing.Size(68, 22);
+            this.AmenityLabel2.TabIndex = 23;
+            this.AmenityLabel2.Text = "Amenity:";
             // 
             // AmenityComboBox1
             // 
@@ -406,14 +407,14 @@
             this.AmenityComboBox1.TabIndex = 22;
             this.AmenityComboBox1.ValueMember = "ID";
             // 
-            // label12
+            // AmenityLabel1
             // 
-            this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(64, 202);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(68, 22);
-            this.label12.TabIndex = 21;
-            this.label12.Text = "Amenity:";
+            this.AmenityLabel1.AutoSize = true;
+            this.AmenityLabel1.Location = new System.Drawing.Point(64, 202);
+            this.AmenityLabel1.Name = "AmenityLabel1";
+            this.AmenityLabel1.Size = new System.Drawing.Size(68, 22);
+            this.AmenityLabel1.TabIndex = 21;
+            this.AmenityLabel1.Text = "Amenity:";
             // 
             // TypeComboBox
             // 
@@ -427,14 +428,14 @@
             this.TypeComboBox.TabIndex = 20;
             this.TypeComboBox.ValueMember = "ID";
             // 
-            // label11
+            // PropertyTypeeLabel
             // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(623, 151);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(109, 22);
-            this.label11.TabIndex = 19;
-            this.label11.Text = "Property Type:";
+            this.PropertyTypeeLabel.AutoSize = true;
+            this.PropertyTypeeLabel.Location = new System.Drawing.Point(623, 151);
+            this.PropertyTypeeLabel.Name = "PropertyTypeeLabel";
+            this.PropertyTypeeLabel.Size = new System.Drawing.Size(109, 22);
+            this.PropertyTypeeLabel.TabIndex = 19;
+            this.PropertyTypeeLabel.Text = "Property Type:";
             // 
             // MaxPrice
             // 
@@ -450,14 +451,14 @@
             this.MaxPrice.Size = new System.Drawing.Size(120, 28);
             this.MaxPrice.TabIndex = 18;
             // 
-            // label10
+            // MaxPriceLabel
             // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(357, 145);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(117, 22);
-            this.label10.TabIndex = 17;
-            this.label10.Text = "Maximum price:";
+            this.MaxPriceLabel.AutoSize = true;
+            this.MaxPriceLabel.Location = new System.Drawing.Point(357, 145);
+            this.MaxPriceLabel.Name = "MaxPriceLabel";
+            this.MaxPriceLabel.Size = new System.Drawing.Size(117, 22);
+            this.MaxPriceLabel.TabIndex = 17;
+            this.MaxPriceLabel.Text = "Maximum price:";
             // 
             // StartPrice
             // 
@@ -750,6 +751,34 @@
             this.Column5.ReadOnly = true;
             this.Column5.Width = 137;
             // 
+            // ResultLabel
+            // 
+            this.ResultLabel.AutoSize = true;
+            this.ResultLabel.Location = new System.Drawing.Point(55, 343);
+            this.ResultLabel.Name = "ResultLabel";
+            this.ResultLabel.Size = new System.Drawing.Size(0, 22);
+            this.ResultLabel.TabIndex = 11;
+            // 
+            // ResultGroupBox2
+            // 
+            this.ResultGroupBox2.Controls.Add(this.flowLayoutPanel3);
+            this.ResultGroupBox2.Controls.Add(this.label1);
+            this.ResultGroupBox2.Location = new System.Drawing.Point(3, 753);
+            this.ResultGroupBox2.Name = "ResultGroupBox2";
+            this.ResultGroupBox2.Size = new System.Drawing.Size(1227, 208);
+            this.ResultGroupBox2.TabIndex = 7;
+            this.ResultGroupBox2.TabStop = false;
+            this.ResultGroupBox2.Text = "Search results";
+            this.ResultGroupBox2.Visible = false;
+            // 
+            // flowLayoutPanel3
+            // 
+            this.flowLayoutPanel3.Controls.Add(this.AdvancedResultDataGridView);
+            this.flowLayoutPanel3.Location = new System.Drawing.Point(14, 27);
+            this.flowLayoutPanel3.Name = "flowLayoutPanel3";
+            this.flowLayoutPanel3.Size = new System.Drawing.Size(1202, 412);
+            this.flowLayoutPanel3.TabIndex = 13;
+            // 
             // AdvancedResultDataGridView
             // 
             this.AdvancedResultDataGridView.AllowUserToAddRows = false;
@@ -821,34 +850,6 @@
             this.Column6.ReadOnly = true;
             this.Column6.Width = 125;
             // 
-            // ResultLabel
-            // 
-            this.ResultLabel.AutoSize = true;
-            this.ResultLabel.Location = new System.Drawing.Point(55, 343);
-            this.ResultLabel.Name = "ResultLabel";
-            this.ResultLabel.Size = new System.Drawing.Size(0, 22);
-            this.ResultLabel.TabIndex = 11;
-            // 
-            // ResultGroupBox2
-            // 
-            this.ResultGroupBox2.Controls.Add(this.flowLayoutPanel3);
-            this.ResultGroupBox2.Controls.Add(this.label1);
-            this.ResultGroupBox2.Location = new System.Drawing.Point(3, 753);
-            this.ResultGroupBox2.Name = "ResultGroupBox2";
-            this.ResultGroupBox2.Size = new System.Drawing.Size(1227, 208);
-            this.ResultGroupBox2.TabIndex = 7;
-            this.ResultGroupBox2.TabStop = false;
-            this.ResultGroupBox2.Text = "Search results";
-            this.ResultGroupBox2.Visible = false;
-            // 
-            // flowLayoutPanel3
-            // 
-            this.flowLayoutPanel3.Controls.Add(this.AdvancedResultDataGridView);
-            this.flowLayoutPanel3.Location = new System.Drawing.Point(14, 27);
-            this.flowLayoutPanel3.Name = "flowLayoutPanel3";
-            this.flowLayoutPanel3.Size = new System.Drawing.Size(1202, 412);
-            this.flowLayoutPanel3.TabIndex = 13;
-            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -886,10 +887,10 @@
             this.ResultGroupBox1.PerformLayout();
             this.flowLayoutPanel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.SimpleResultDataGridView)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.AdvancedResultDataGridView)).EndInit();
             this.ResultGroupBox2.ResumeLayout(false);
             this.ResultGroupBox2.PerformLayout();
             this.flowLayoutPanel3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.AdvancedResultDataGridView)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -914,15 +915,15 @@
         private System.Windows.Forms.Button ClearBtn;
         private System.Windows.Forms.Button SimpleSearchFormBtn;
         private System.Windows.Forms.ComboBox AmenityComboBox3;
-        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.Label AmenityLabel3;
         private System.Windows.Forms.ComboBox AmenityComboBox2;
-        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Label AmenityLabel2;
         private System.Windows.Forms.ComboBox AmenityComboBox1;
-        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label AmenityLabel1;
         private System.Windows.Forms.ComboBox TypeComboBox;
-        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label PropertyTypeeLabel;
         private System.Windows.Forms.NumericUpDown MaxPrice;
-        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label MaxPriceLabel;
         private System.Windows.Forms.NumericUpDown StartPrice;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label PeopleLabel2;
