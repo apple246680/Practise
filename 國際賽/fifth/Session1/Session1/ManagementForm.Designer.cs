@@ -51,12 +51,14 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.ExitBtn = new System.Windows.Forms.Button();
             this.LououtBtn = new System.Windows.Forms.Button();
+            this.SearchIcon = new System.Windows.Forms.PictureBox();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.TravelerDataGridView)).BeginInit();
             this.tabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ManageDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.SearchIcon)).BeginInit();
             this.SuspendLayout();
             // 
             // CountLabel
@@ -83,6 +85,7 @@
             // 
             this.tabPage1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(187)))), ((int)(((byte)(187)))));
             this.tabPage1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.tabPage1.Controls.Add(this.SearchIcon);
             this.tabPage1.Controls.Add(this.TravelerDataGridView);
             this.tabPage1.Controls.Add(this.hint);
             this.tabPage1.Controls.Add(this.search);
@@ -192,6 +195,8 @@
             // 
             this.AddListingBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.AddListingBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.AddListingBtn.Image = ((System.Drawing.Image)(resources.GetObject("AddListingBtn.Image")));
+            this.AddListingBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.AddListingBtn.Location = new System.Drawing.Point(104, 33);
             this.AddListingBtn.Name = "AddListingBtn";
             this.AddListingBtn.Size = new System.Drawing.Size(195, 37);
@@ -313,6 +318,16 @@
             this.LououtBtn.UseVisualStyleBackColor = true;
             this.LououtBtn.Click += new System.EventHandler(this.LououtBtn_Click);
             // 
+            // SearchIcon
+            // 
+            this.SearchIcon.Image = ((System.Drawing.Image)(resources.GetObject("SearchIcon.Image")));
+            this.SearchIcon.Location = new System.Drawing.Point(83, 18);
+            this.SearchIcon.Name = "SearchIcon";
+            this.SearchIcon.Size = new System.Drawing.Size(38, 38);
+            this.SearchIcon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.SearchIcon.TabIndex = 7;
+            this.SearchIcon.TabStop = false;
+            // 
             // ManagementForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 22F);
@@ -341,6 +356,7 @@
             this.tabPage2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.ManageDataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.SearchIcon)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -370,5 +386,6 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button ExitBtn;
         private System.Windows.Forms.Button LououtBtn;
+        private System.Windows.Forms.PictureBox SearchIcon;
     }
 }

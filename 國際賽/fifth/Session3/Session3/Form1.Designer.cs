@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.SimpleGroupBox = new System.Windows.Forms.GroupBox();
             this.HintLabel = new System.Windows.Forms.Label();
             this.AdvanedFormBtn = new System.Windows.Forms.Button();
@@ -144,6 +145,8 @@
             // 
             this.AdvanedFormBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.AdvanedFormBtn.Font = new System.Drawing.Font("Open Sans Light", 9F);
+            this.AdvanedFormBtn.Image = ((System.Drawing.Image)(resources.GetObject("AdvanedFormBtn.Image")));
+            this.AdvanedFormBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.AdvanedFormBtn.Location = new System.Drawing.Point(848, 93);
             this.AdvanedFormBtn.Name = "AdvanedFormBtn";
             this.AdvanedFormBtn.Size = new System.Drawing.Size(300, 39);
@@ -156,6 +159,8 @@
             // 
             this.SimpleSearchBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.SimpleSearchBtn.Font = new System.Drawing.Font("Open Sans Light", 9F);
+            this.SimpleSearchBtn.Image = ((System.Drawing.Image)(resources.GetObject("SimpleSearchBtn.Image")));
+            this.SimpleSearchBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.SimpleSearchBtn.Location = new System.Drawing.Point(848, 31);
             this.SimpleSearchBtn.Name = "SimpleSearchBtn";
             this.SimpleSearchBtn.Size = new System.Drawing.Size(300, 39);
@@ -323,9 +328,11 @@
             // AdvancedSearchBtn
             // 
             this.AdvancedSearchBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.AdvancedSearchBtn.Image = ((System.Drawing.Image)(resources.GetObject("AdvancedSearchBtn.Image")));
+            this.AdvancedSearchBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.AdvancedSearchBtn.Location = new System.Drawing.Point(791, 241);
             this.AdvancedSearchBtn.Name = "AdvancedSearchBtn";
-            this.AdvancedSearchBtn.Size = new System.Drawing.Size(220, 38);
+            this.AdvancedSearchBtn.Size = new System.Drawing.Size(266, 38);
             this.AdvancedSearchBtn.TabIndex = 29;
             this.AdvancedSearchBtn.Text = "Search properties...";
             this.AdvancedSearchBtn.UseVisualStyleBackColor = true;
@@ -334,9 +341,11 @@
             // ClearBtn
             // 
             this.ClearBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.ClearBtn.Location = new System.Drawing.Point(623, 241);
+            this.ClearBtn.Image = ((System.Drawing.Image)(resources.GetObject("ClearBtn.Image")));
+            this.ClearBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.ClearBtn.Location = new System.Drawing.Point(548, 241);
             this.ClearBtn.Name = "ClearBtn";
-            this.ClearBtn.Size = new System.Drawing.Size(162, 38);
+            this.ClearBtn.Size = new System.Drawing.Size(237, 38);
             this.ClearBtn.TabIndex = 28;
             this.ClearBtn.Text = "Clear form";
             this.ClearBtn.UseVisualStyleBackColor = true;
@@ -345,9 +354,11 @@
             // SimpleSearchFormBtn
             // 
             this.SimpleSearchFormBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.SimpleSearchFormBtn.Location = new System.Drawing.Point(455, 241);
+            this.SimpleSearchFormBtn.Image = ((System.Drawing.Image)(resources.GetObject("SimpleSearchFormBtn.Image")));
+            this.SimpleSearchFormBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.SimpleSearchFormBtn.Location = new System.Drawing.Point(322, 241);
             this.SimpleSearchFormBtn.Name = "SimpleSearchFormBtn";
-            this.SimpleSearchFormBtn.Size = new System.Drawing.Size(162, 38);
+            this.SimpleSearchFormBtn.Size = new System.Drawing.Size(220, 38);
             this.SimpleSearchFormBtn.TabIndex = 27;
             this.SimpleSearchFormBtn.Text = "Simple Search";
             this.SimpleSearchFormBtn.UseVisualStyleBackColor = true;
