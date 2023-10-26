@@ -14,7 +14,6 @@ namespace Session6
 {
     public partial class Main : Form
     {
-
         public Main()
         {
             InitializeComponent();
@@ -403,14 +402,10 @@ namespace Session6
         private void HostDataGridView_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex < 0)
-            {
                 return;
-            }
             this.TransactionTitleLabel.Text = $"Transaction detail for {this.HostDataGridView.Rows[e.RowIndex].Cells[1].Value.ToString()}";
             this.TransactionDataGridView.Rows.Clear();
-
             long hostId = (long)this.HostDataGridView.Rows[e.RowIndex].Cells[0].Value;
-
             using (Session6Entities entities = new Session6Entities())
             {
                 var bookings = entities.Bookings.ToList();
