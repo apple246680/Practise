@@ -143,14 +143,14 @@ namespace Session6
             #region Financial Summary
             decimal cancelAmount = 0;
             decimal totalDiscount = 0;
-            List<(Users, decimal)> userRevenue = new List<(Users, decimal)>();
+            var userRevenue = new List<(Users, decimal)>();
             foreach (var booking in transactions.SelectMany(x=>x.Bookings))
             {
                 foreach (var bookingDetail in booking.BookingDetails)
                 {
                     if ((!string.IsNullOrWhiteSpace(HostComboBox.Text) && bookingDetail.ItemPrices.Items.UserID == (long)HostComboBox.SelectedValue) || (!string.IsNullOrWhiteSpace(GuestComboBox.Text) && booking.UserID == (long)GuestComboBox.SelectedValue))
                         continue;
-                    decimal total = bookingDetail.ItemPrices.Price - bookingDetail.ItemPrices.Price * (bookingDetail.ItemPrices.CancellationPolicies.Commission / 100);
+                    var total = bookingDetail.ItemPrices.Price - bookingDetail.ItemPrices.Price * (bookingDetail.ItemPrices.CancellationPolicies.Commission / 100);
                     if (booking.CouponID.HasValue)
                     {
                         decimal discount = bookingDetail.ItemPrices.Price * (booking.Coupons.DiscountPercent / 100);
