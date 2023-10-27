@@ -180,8 +180,6 @@ namespace Session6
                     userRevenue.Add(new Tuple<Users, decimal>(booking.Users, total));
                 }
             }
-            List<(int, int)> aa = new List<(int, int)>();
-            aa.Add((1,2));
             var userRevenueMapping = userRevenue.GroupBy(t => t.Item1).ToList();
             CreateLabel($"Average net revenue of all owners / managers: {(userRevenueMapping.Count() != 0 ? userRevenueMapping.Average(t => t.Sum(x => x.Item2)).ToString("#.##") : "0")}", FinancialSummaryPanel, 0);
             CreateLabel($"Highest net revenue for an owner / manager: " + $"{(userRevenueMapping.Count() != 0 ? userRevenueMapping.OrderByDescending(t => t.Sum(x => x.Item2)).First().Key.FullName : "N/A")}", FinancialSummaryPanel, 1);
@@ -219,10 +217,6 @@ namespace Session6
                 }
                 return amount;
             });
-            var yyds = (Sum: 4.5, Count: 3);
-            var asdd = new List<(object Sum, int Count)>();
-            asdd.Add((1,1));
-            asdd.Add(("1",2));
             CreateLabel($"Total revenue from service reservations: {totalRevenue.ToString("#.##")}", AddonServicesPanel, 1);
             var mostBookedService = addonServiceDetails.GroupBy(t => t.Services).GroupBy(t => t.Count()).OrderByDescending(t => t.Key).FirstOrDefault();
             CreateLabel($"Most booked service: {(mostBookedService == null ? "N/A" : String.Join(",", mostBookedService.Select(t => t.Key.Name)))}", AddonServicesPanel, 2);

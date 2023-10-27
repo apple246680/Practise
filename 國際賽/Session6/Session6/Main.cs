@@ -128,6 +128,60 @@ namespace Session6
             var leastScoreUser = items.Where(t => t.ItemScores.Any()).Select(t => new { Name = t.Users.FullName, Score = t.ItemScores.Average(x => x.Value) }).GroupBy(t => t.Score).OrderBy(t => t.Key).FirstOrDefault();
             CreateLabel($"The least clean owner / manager:   {(leastScoreUser == null ? "N/A" : String.Join(",", leastScoreUser.Select(t => t.Name)))}", ScoresSummaryPanel, 3);
             #endregion
+            #region Monthly Vacancy Ratio
+            var timefilter = !string.IsNullOrWhiteSpace(ToDateTimePicker.Text) ? ToDateTimePicker.Value : DateTime.Now;
+            var start = new DateTime(timefilter.AddMonths(-2).Year, timefilter.AddMonths(-2).Month, 1);
+            var end = new DateTime(timefilter.Year, timefilter.Month, DateTime.DaysInMonth(timefilter.Year, timefilter.Month));
+            for (DateTime temp = start; temp < end; temp = temp.AddMonths(1))
+            {
+                var nextMonth = temp.AddMonths(1);
+                var data = itemPrices.Where(x => x.Date >= temp && x.Date < nextMonth).ToList();
+                chart.Series[0].Points.AddXY(temp.Date.ToString("MMM", new CultureInfo("en-US")), data.Count(x => !x.BookingDetails.Any() || x.BookingDetails.All(y => y.isRefund)));
+                chart.Series[1].Points.AddXY(temp.Date.ToString("MMM", new CultureInfo("en-US")), data.Count(x => x.BookingDetails.Any(y => !y.isRefund)));
+            }
+            #endregion
+            #region Financial Summary
+            decimal cancelAmount = 0;
+            decimal totalDiscount = 0;
+            List<(Users, decimal)> userRevenue = new List<(Users, decimal)>();
+            foreach (var booking in transactions.SelectMany(x=>x.Bookings))
+            {
+                foreach (var bookingDetail in booking.BookingDetails)
+                {
+                    if ((!string.IsNullOrWhiteSpace(HostComboBox.Text) && bookingDetail.ItemPrices.Items.UserID == (long)HostComboBox.SelectedValue) || (!string.IsNullOrWhiteSpace(GuestComboBox.Text) && booking.UserID == (long)GuestComboBox.SelectedValue))
+                        continue;
+                    decimal total = bookingDetail.ItemPrices.Price - bookingDetail.ItemPrices.Price * (bookingDetail.ItemPrices.CancellationPolicies.Commission / 100);
+                    if (booking.CouponID.HasValue)
+                    {
+                        decimal discount = bookingDetail.ItemPrices.Price * (booking.Coupons.DiscountPercent / 100);
+                        if (discount > booking.Coupons.MaximimDiscountAmount)
+                            discount = booking.Coupons.MaximimDiscountAmount;
+                        total-=discount;
+                        totalDiscount += discount;
+                    }
+                    if (bookingDetail.isRefund)
+                    {
+                        total = 0;
+                        var dayLeft = (bookingDetail.ItemPrices.Date - bookingDetail.RefundDate.Value).Days;
+                        var fee = entities.CancellationRefundFees
+                            .FirstOrDefault(t => t.CancellationPolicyID == bookingDetail.RefundCancellationPoliciyID
+                                && t.DaysLeft == dayLeft);
+                        if (fee != null)
+                        {
+                            var refundAmount = bookingDetail.ItemPrices.Price * (fee.PenaltyPercentage / 100) / 2;
+                            cancelAmount += refundAmount;
+                            total = refundAmount;
+                        }
+                    }
+                    userRevenue.Add((booking.Users, total));
+                }
+            }
+            var userRevenueMapping = userRevenue.GroupBy(x => x.Item1).ToList();
+            CreateLabel($"Average net revenue of all owners / managers: {(userRevenueMapping.Count!=0?userRevenueMapping.Average(x=>x.Sum(y=>y.Item2)).ToString("#.##"):"0")}", FinancialSummaryPanel, 0);
+            CreateLabel($"Highest net revenue for an owner / manager: {(userRevenueMapping.Count()!=0?userRevenueMapping.OrderByDescending(x=>x.Sum(y=>y.Item2)).First().Key.FullName:"N/A")}", FinancialSummaryPanel, 1);
+            CreateLabel($"Our total revenue from cancellations: {cancelAmount.ToString("#.##")}", FinancialSummaryPanel, 2);
+            CreateLabel($"Total discounts from coupons: {totalDiscount.ToString("#.##")}", FinancialSummaryPanel, 3);
+            #endregion
         }
         public void CreateLabel(string text, Control control, int index)
         {
