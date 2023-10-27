@@ -7,6 +7,7 @@ using System.Drawing;
 using System.Globalization;
 using System.IO;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -145,52 +146,42 @@ namespace Session6
             decimal cancelAmount = 0;
             decimal totalDiscount = 0;
             List<Tuple<Users, decimal>> userRevenue = new List<Tuple<Users, decimal>>();
-            foreach (var transaction in transactions)
+            foreach (var booking in transactions.SelectMany(x => x.Bookings))
             {
-                foreach (var booking in transaction.Bookings)
+                foreach (var bookingDetail in booking.BookingDetails)
                 {
-                    foreach (var bookingDetail in booking.BookingDetails)
+                    if (!String.IsNullOrWhiteSpace(HostComboBox.Text) && bookingDetail.ItemPrices.Items.UserID == (long)HostComboBox.SelectedValue)
+                        continue;
+                    if (!String.IsNullOrWhiteSpace(GuestComboBox.Text) && booking.UserID == (long)GuestComboBox.SelectedValue)
+                        continue;
+                    decimal total = bookingDetail.ItemPrices.Price - bookingDetail.ItemPrices.Price * (bookingDetail.ItemPrices.CancellationPolicies.Commission / 100);
+                    if (booking.CouponID.HasValue)
                     {
-                        if (!String.IsNullOrWhiteSpace(HostComboBox.Text)
-                            && bookingDetail.ItemPrices.Items.UserID == (long)HostComboBox.SelectedValue)
-                        {
-                            continue;
-                        }
-                        if (!String.IsNullOrWhiteSpace(GuestComboBox.Text)
-                            && booking.UserID == (long)GuestComboBox.SelectedValue)
-                        {
-                            continue;
-                        }
-                        decimal total = bookingDetail.ItemPrices.Price -
-                            bookingDetail.ItemPrices.Price * (bookingDetail.ItemPrices.CancellationPolicies.Commission / 100);
-                        if (booking.CouponID.HasValue)
-                        {
-                            decimal discount = bookingDetail.ItemPrices.Price * (booking.Coupons.DiscountPercent / 100);
-                            if (discount > booking.Coupons.MaximimDiscountAmount)
-                            {
-                                discount = booking.Coupons.MaximimDiscountAmount;
-                            }
-                            total -= discount;
-                            totalDiscount += discount;
-                        }
-                        if (bookingDetail.isRefund)
-                        {
-                            total = 0;
-                            var dayLeft = (bookingDetail.ItemPrices.Date - bookingDetail.RefundDate.Value).Days;
-                            var fee = entities.CancellationRefundFees
-                                .FirstOrDefault(t => t.CancellationPolicyID == bookingDetail.RefundCancellationPoliciyID
-                                    && t.DaysLeft == dayLeft);
-                            if (fee != null)
-                            {
-                                var refundAmount = bookingDetail.ItemPrices.Price * (fee.PenaltyPercentage / 100) / 2;
-                                cancelAmount += refundAmount;
-                                total = refundAmount;
-                            }
-                        }
-                        userRevenue.Add(new Tuple<Users, decimal>(booking.Users, total));
+                        decimal discount = bookingDetail.ItemPrices.Price * (booking.Coupons.DiscountPercent / 100);
+                        if (discount > booking.Coupons.MaximimDiscountAmount)
+                            discount = booking.Coupons.MaximimDiscountAmount;
+                        total -= discount;
+                        totalDiscount += discount;
                     }
+                    if (bookingDetail.isRefund)
+                    {
+                        total = 0;
+                        var dayLeft = (bookingDetail.ItemPrices.Date - bookingDetail.RefundDate.Value).Days;
+                        var fee = entities.CancellationRefundFees
+                            .FirstOrDefault(t => t.CancellationPolicyID == bookingDetail.RefundCancellationPoliciyID
+                                && t.DaysLeft == dayLeft);
+                        if (fee != null)
+                        {
+                            var refundAmount = bookingDetail.ItemPrices.Price * (fee.PenaltyPercentage / 100) / 2;
+                            cancelAmount += refundAmount;
+                            total = refundAmount;
+                        }
+                    }
+                    userRevenue.Add(new Tuple<Users, decimal>(booking.Users, total));
                 }
             }
+            List<(int, int)> aa = new List<(int, int)>();
+            aa.Add((1,2));
             var userRevenueMapping = userRevenue.GroupBy(t => t.Item1).ToList();
             CreateLabel($"Average net revenue of all owners / managers: {(userRevenueMapping.Count() != 0 ? userRevenueMapping.Average(t => t.Sum(x => x.Item2)).ToString("#.##") : "0")}", FinancialSummaryPanel, 0);
             CreateLabel($"Highest net revenue for an owner / manager: " + $"{(userRevenueMapping.Count() != 0 ? userRevenueMapping.OrderByDescending(t => t.Sum(x => x.Item2)).First().Key.FullName : "N/A")}", FinancialSummaryPanel, 1);
@@ -228,6 +219,10 @@ namespace Session6
                 }
                 return amount;
             });
+            var yyds = (Sum: 4.5, Count: 3);
+            var asdd = new List<(object Sum, int Count)>();
+            asdd.Add((1,1));
+            asdd.Add(("1",2));
             CreateLabel($"Total revenue from service reservations: {totalRevenue.ToString("#.##")}", AddonServicesPanel, 1);
             var mostBookedService = addonServiceDetails.GroupBy(t => t.Services).GroupBy(t => t.Count()).OrderByDescending(t => t.Key).FirstOrDefault();
             CreateLabel($"Most booked service: {(mostBookedService == null ? "N/A" : String.Join(",", mostBookedService.Select(t => t.Key.Name)))}", AddonServicesPanel, 2);
