@@ -226,13 +226,13 @@ namespace Session6
             var toMonth = !String.IsNullOrWhiteSpace(ToDateTimePicker.Text) ? ToDateTimePicker.Value.Month : 12;
             foreach (var serviceType in entities.ServiceTypes.ToList())
             {
-                List<int> serviceMonthlyAvaiable = new List<int>() { 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2 };
-                for (int month = fromMonth; month <= toMonth; month++)
+                var serviceMonthlyAvaiable = Enumerable.Repeat(2, 12).ToList();
+                for (var month = fromMonth; month <= toMonth; month++)
                 {
-                    bool avaiable = false;
+                    var avaiable = false;
                     foreach (var service in serviceType.Services)
                     {
-                        List<int> timeRange = new List<int>();
+                        var timeRange = new List<int>();
                         if (service.DayOfMonth == "*" || service.DayOfWeek == "*")
                             timeRange.AddRange(Enumerable.Range(1, DateTime.DaysInMonth(yearFilter, month)));
                         if (!timeRange.Any())
@@ -293,17 +293,11 @@ namespace Session6
             var tansactions = entities.Transactions.ToList();
             var hosts = entities.Users.Where(t => t.Items.Any()).ToList();
             if (!String.IsNullOrWhiteSpace(this.FromDateTimePicker.Text))
-            {
                 tansactions = tansactions.Where(t => t.TransactionDate.Date >= this.FromDateTimePicker.Value.Date).ToList();
-            }
             if (!String.IsNullOrWhiteSpace(this.ToDateTimePicker.Text))
-            {
                 tansactions = tansactions.Where(t => t.TransactionDate.Date <= this.ToDateTimePicker.Value.Date).ToList();
-            }
             if (!String.IsNullOrWhiteSpace(this.HostComboBox.Text))
-            {
                 hosts = hosts.Where(t => t.ID == (long)this.HostComboBox.SelectedValue).ToList();
-            }
             List<Tuple<Users, decimal, decimal>> userRevenue = new List<Tuple<Users, decimal, decimal>>();
             foreach (var transaction in tansactions)
             {

@@ -108,10 +108,10 @@
             this.tabPage1.Controls.Add(this.groupBox3);
             this.tabPage1.Controls.Add(this.groupBox2);
             this.tabPage1.Controls.Add(this.ListingGroupBox);
-            this.tabPage1.Location = new System.Drawing.Point(27, 4);
+            this.tabPage1.Location = new System.Drawing.Point(29, 4);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(938, 724);
+            this.tabPage1.Size = new System.Drawing.Size(936, 724);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Universal Report";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -169,9 +169,9 @@
             // 
             this.FinancialSummaryPanel.AutoScroll = true;
             this.FinancialSummaryPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.FinancialSummaryPanel.Location = new System.Drawing.Point(3, 19);
+            this.FinancialSummaryPanel.Location = new System.Drawing.Point(3, 23);
             this.FinancialSummaryPanel.Name = "FinancialSummaryPanel";
-            this.FinancialSummaryPanel.Size = new System.Drawing.Size(400, 294);
+            this.FinancialSummaryPanel.Size = new System.Drawing.Size(400, 290);
             this.FinancialSummaryPanel.TabIndex = 0;
             // 
             // groupBox2
@@ -188,9 +188,9 @@
             // 
             this.ScoresSummaryPanel.AutoScroll = true;
             this.ScoresSummaryPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ScoresSummaryPanel.Location = new System.Drawing.Point(3, 19);
+            this.ScoresSummaryPanel.Location = new System.Drawing.Point(3, 23);
             this.ScoresSummaryPanel.Name = "ScoresSummaryPanel";
-            this.ScoresSummaryPanel.Size = new System.Drawing.Size(400, 294);
+            this.ScoresSummaryPanel.Size = new System.Drawing.Size(400, 290);
             this.ScoresSummaryPanel.TabIndex = 0;
             // 
             // ListingGroupBox
@@ -207,19 +207,19 @@
             // 
             this.ListingsSummaryPanel.AutoScroll = true;
             this.ListingsSummaryPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ListingsSummaryPanel.Location = new System.Drawing.Point(3, 19);
+            this.ListingsSummaryPanel.Location = new System.Drawing.Point(3, 23);
             this.ListingsSummaryPanel.Name = "ListingsSummaryPanel";
-            this.ListingsSummaryPanel.Size = new System.Drawing.Size(400, 294);
+            this.ListingsSummaryPanel.Size = new System.Drawing.Size(400, 290);
             this.ListingsSummaryPanel.TabIndex = 0;
             // 
             // tabPage2
             // 
             this.tabPage2.Controls.Add(this.ServiceDataGridView);
             this.tabPage2.Controls.Add(this.groupBox4);
-            this.tabPage2.Location = new System.Drawing.Point(27, 4);
+            this.tabPage2.Location = new System.Drawing.Point(29, 4);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(938, 724);
+            this.tabPage2.Size = new System.Drawing.Size(936, 724);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Service Report";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -258,9 +258,9 @@
             // 
             this.AddonServicesPanel.AutoScroll = true;
             this.AddonServicesPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.AddonServicesPanel.Location = new System.Drawing.Point(3, 19);
+            this.AddonServicesPanel.Location = new System.Drawing.Point(3, 23);
             this.AddonServicesPanel.Name = "AddonServicesPanel";
-            this.AddonServicesPanel.Size = new System.Drawing.Size(832, 207);
+            this.AddonServicesPanel.Size = new System.Drawing.Size(832, 203);
             this.AddonServicesPanel.TabIndex = 0;
             // 
             // tabPage3
@@ -268,9 +268,9 @@
             this.tabPage3.Controls.Add(this.TransactionTitleLabel);
             this.tabPage3.Controls.Add(this.TransactionDataGridView);
             this.tabPage3.Controls.Add(this.HostDataGridView);
-            this.tabPage3.Location = new System.Drawing.Point(27, 4);
+            this.tabPage3.Location = new System.Drawing.Point(29, 4);
             this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Size = new System.Drawing.Size(938, 724);
+            this.tabPage3.Size = new System.Drawing.Size(936, 724);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Host Analysis";
             this.tabPage3.UseVisualStyleBackColor = true;
@@ -280,7 +280,7 @@
             this.TransactionTitleLabel.AutoSize = true;
             this.TransactionTitleLabel.Location = new System.Drawing.Point(49, 357);
             this.TransactionTitleLabel.Name = "TransactionTitleLabel";
-            this.TransactionTitleLabel.Size = new System.Drawing.Size(0, 17);
+            this.TransactionTitleLabel.Size = new System.Drawing.Size(0, 20);
             this.TransactionTitleLabel.TabIndex = 4;
             // 
             // TransactionDataGridView
@@ -313,7 +313,7 @@
             this.Column1.MinimumWidth = 6;
             this.Column1.Name = "Column1";
             this.Column1.ReadOnly = true;
-            this.Column1.Width = 63;
+            this.Column1.Width = 74;
             // 
             // Column2
             // 
@@ -321,7 +321,7 @@
             this.Column2.MinimumWidth = 6;
             this.Column2.Name = "Column2";
             this.Column2.ReadOnly = true;
-            this.Column2.Width = 81;
+            this.Column2.Width = 95;
             // 
             // Column3
             // 
@@ -329,7 +329,7 @@
             this.Column3.MinimumWidth = 6;
             this.Column3.Name = "Column3";
             this.Column3.ReadOnly = true;
-            this.Column3.Width = 108;
+            this.Column3.Width = 131;
             // 
             // Column4
             // 
@@ -337,7 +337,7 @@
             this.Column4.MinimumWidth = 6;
             this.Column4.Name = "Column4";
             this.Column4.ReadOnly = true;
-            this.Column4.Width = 104;
+            this.Column4.Width = 124;
             // 
             // HostDataGridView
             // 
@@ -396,7 +396,7 @@
             this.GuestComboBox.FormattingEnabled = true;
             this.GuestComboBox.Location = new System.Drawing.Point(32, 350);
             this.GuestComboBox.Name = "GuestComboBox";
-            this.GuestComboBox.Size = new System.Drawing.Size(224, 25);
+            this.GuestComboBox.Size = new System.Drawing.Size(224, 28);
             this.GuestComboBox.TabIndex = 1;
             // 
             // HostComboBox
@@ -405,7 +405,7 @@
             this.HostComboBox.FormattingEnabled = true;
             this.HostComboBox.Location = new System.Drawing.Point(31, 283);
             this.HostComboBox.Name = "HostComboBox";
-            this.HostComboBox.Size = new System.Drawing.Size(224, 25);
+            this.HostComboBox.Size = new System.Drawing.Size(224, 28);
             this.HostComboBox.TabIndex = 1;
             // 
             // AreaComboBox
@@ -414,7 +414,7 @@
             this.AreaComboBox.FormattingEnabled = true;
             this.AreaComboBox.Location = new System.Drawing.Point(31, 220);
             this.AreaComboBox.Name = "AreaComboBox";
-            this.AreaComboBox.Size = new System.Drawing.Size(224, 25);
+            this.AreaComboBox.Size = new System.Drawing.Size(224, 28);
             this.AreaComboBox.TabIndex = 1;
             // 
             // ToDateTimePicker
@@ -423,7 +423,7 @@
             this.ToDateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.ToDateTimePicker.Location = new System.Drawing.Point(31, 145);
             this.ToDateTimePicker.Name = "ToDateTimePicker";
-            this.ToDateTimePicker.Size = new System.Drawing.Size(224, 23);
+            this.ToDateTimePicker.Size = new System.Drawing.Size(224, 27);
             this.ToDateTimePicker.TabIndex = 1;
             this.ToDateTimePicker.ValueChanged += new System.EventHandler(this.FromDateTimePicker_ValueChanged);
             // 
@@ -433,7 +433,7 @@
             this.FromDateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.FromDateTimePicker.Location = new System.Drawing.Point(31, 84);
             this.FromDateTimePicker.Name = "FromDateTimePicker";
-            this.FromDateTimePicker.Size = new System.Drawing.Size(224, 23);
+            this.FromDateTimePicker.Size = new System.Drawing.Size(224, 27);
             this.FromDateTimePicker.TabIndex = 1;
             this.FromDateTimePicker.ValueChanged += new System.EventHandler(this.FromDateTimePicker_ValueChanged);
             // 
@@ -464,7 +464,7 @@
             this.label5.AutoSize = true;
             this.label5.Location = new System.Drawing.Point(27, 323);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(50, 17);
+            this.label5.Size = new System.Drawing.Size(59, 20);
             this.label5.TabIndex = 1;
             this.label5.Text = "Guest:";
             // 
@@ -473,7 +473,7 @@
             this.label4.AutoSize = true;
             this.label4.Location = new System.Drawing.Point(27, 256);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(41, 17);
+            this.label4.Size = new System.Drawing.Size(50, 20);
             this.label4.TabIndex = 1;
             this.label4.Text = "Host:";
             // 
@@ -482,7 +482,7 @@
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(28, 193);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(42, 17);
+            this.label3.Size = new System.Drawing.Size(49, 20);
             this.label3.TabIndex = 1;
             this.label3.Text = "Area:";
             // 
@@ -491,7 +491,7 @@
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(27, 118);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(29, 17);
+            this.label2.Size = new System.Drawing.Size(33, 20);
             this.label2.TabIndex = 1;
             this.label2.Text = "To:";
             // 
@@ -500,7 +500,7 @@
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(27, 57);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(44, 17);
+            this.label1.Size = new System.Drawing.Size(53, 20);
             this.label1.TabIndex = 1;
             this.label1.Text = "From:";
             // 
@@ -516,7 +516,7 @@
             // 
             // Main
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1287, 732);
             this.Controls.Add(this.TabControlMain);
