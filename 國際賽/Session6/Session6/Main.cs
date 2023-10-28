@@ -61,6 +61,10 @@ namespace Session6
             }
             if (TabControlMain.SelectedIndex == 0)
                 page1();
+            if (TabControlMain.SelectedIndex == 1)
+                page2();
+            if (TabControlMain.SelectedIndex == 2)
+                page3();
         }
         public void page1()
         {
@@ -193,6 +197,14 @@ namespace Session6
                 Font = base.Font
             };
             control.Controls.Add(label);
+        }
+        public void page2()
+        {
+
+        }
+        public void page3()
+        {
+
         }
     }
 }
