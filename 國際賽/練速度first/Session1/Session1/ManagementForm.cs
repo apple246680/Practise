@@ -70,12 +70,10 @@ namespace Session1
         {
             if (e.RowIndex < 0 || e.ColumnIndex != 5)
                 return;
-            long id = (long)ManageDataGridView.Rows[e.RowIndex].Cells[0].Value;
-            var form = new AddOrEditListinigForm(id);
+            var form = new AddOrEditListinigForm((long)ManageDataGridView.Rows[e.RowIndex].Cells[0].Value);
             form.ShowDialog();
             ManageDataGridView.Rows.Clear();
-            Session1Entities entities = new Session1Entities();
-            var data = entities.Items.Where(x => x.UserID == Global.accountID).ToList();
+            var data = new Session1Entities().Items.Where(x => x.UserID == Global.accountID).ToList();
             data.ForEach(x =>
             {
                 ManageDataGridView.Rows.Add(x.ID, x.Title, x.Capacity, x.Areas.Name, x.ItemTypes.Name, "Edit Details");

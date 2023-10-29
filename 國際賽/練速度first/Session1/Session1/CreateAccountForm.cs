@@ -29,11 +29,10 @@ namespace Session1
                 MessageBox.Show("Please View Terms Document And Click Agree Conditions First.");
                 return;
             }
-            var user = Global.register(UsernameTextBox.Text, FullNameTextBox.Text, PasswordTextBox.Text, BirthdayDateTimePicker.Value, (int)FamilyNumericUpDown.Value, MaleRadioButton.Checked);
-            MessageBox.Show("OK");
-            Global.accountID = user.ID;
+            Global.accountID = Global.register(UsernameTextBox.Text, FullNameTextBox.Text, PasswordTextBox.Text, BirthdayDateTimePicker.Value, (int)FamilyNumericUpDown.Value, MaleRadioButton.Checked).ID;
             new ManagementForm().Show();
             Close();
+            MessageBox.Show("OK");
         }
         private void ViewTermsLinkLabel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
