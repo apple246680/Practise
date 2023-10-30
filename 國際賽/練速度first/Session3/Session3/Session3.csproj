@@ -82,6 +82,7 @@
     <Compile Include="DimDate.cs">
       <DependentUpon>SessionModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Global.cs" />
     <Compile Include="Item.cs">
       <DependentUpon>SessionModel.tt</DependentUpon>
     </Compile>
