@@ -4,13 +4,13 @@ using Session3;
 namespace Session3UnitTestProject
 {
     [TestClass]
-    public class UnitTest1
+    public class Session3UnitTest
     {
         [TestMethod]
         public void TestMethod1()
         {
             var entities=new Session3Entities();
-
+            
         }
     }
 }
