@@ -54,12 +54,12 @@ namespace Session6
                     return;
                 }
             }
-            if (TabControlMain.SelectedIndex == 0)
-                page1();
-            if (TabControlMain.SelectedIndex == 1)
-                page2();
-            if (TabControlMain.SelectedIndex == 2)
-                page3();
+            switch (TabControlMain.SelectedIndex)
+            {
+                case 0: page1(); break;
+                case 1: page2(); break;
+                case 2: page3(); break;
+            }
         }
         public void page1()
         {
@@ -98,6 +98,7 @@ namespace Session6
             }
             if (!String.IsNullOrWhiteSpace(GuestComboBox.Text))
             {
+                ulong aaaa;
                 var guestId = (long)GuestComboBox.SelectedValue;
                 transactions = transactions.Where(t => t.UserID == guestId).ToList();
                 bookingDetails = bookingDetails.Where(t => t.Bookings.UserID == guestId).ToList();
@@ -143,7 +144,7 @@ namespace Session6
             decimal cancelAmount = 0;
             decimal totalDiscount = 0;
             var userRevenue = new List<(Users, decimal)>();
-            foreach (var booking in transactions.SelectMany(x=>x.Bookings))
+            foreach (var booking in transactions.SelectMany(x => x.Bookings))
             {
                 foreach (var bookingDetail in booking.BookingDetails)
                 {
@@ -155,7 +156,7 @@ namespace Session6
                         decimal discount = bookingDetail.ItemPrices.Price * (booking.Coupons.DiscountPercent / 100);
                         if (discount > booking.Coupons.MaximimDiscountAmount)
                             discount = booking.Coupons.MaximimDiscountAmount;
-                        total-=discount;
+                        total -= discount;
                         totalDiscount += discount;
                     }
                     if (bookingDetail.isRefund)
@@ -176,8 +177,8 @@ namespace Session6
                 }
             }
             var userRevenueMapping = userRevenue.GroupBy(x => x.Item1).ToList();
-            CreateLabel($"Average net revenue of all owners / managers: {(userRevenueMapping.Count!=0?userRevenueMapping.Average(x=>x.Sum(y=>y.Item2)).ToString("#.##"):"0")}", FinancialSummaryPanel, 0);
-            CreateLabel($"Highest net revenue for an owner / manager: {(userRevenueMapping.Count()!=0?userRevenueMapping.OrderByDescending(x=>x.Sum(y=>y.Item2)).First().Key.FullName:"N/A")}", FinancialSummaryPanel, 1);
+            CreateLabel($"Average net revenue of all owners / managers: {(userRevenueMapping.Count != 0 ? userRevenueMapping.Average(x => x.Sum(y => y.Item2)).ToString("#.##") : "0")}", FinancialSummaryPanel, 0);
+            CreateLabel($"Highest net revenue for an owner / manager: {(userRevenueMapping.Count() != 0 ? userRevenueMapping.OrderByDescending(x => x.Sum(y => y.Item2)).First().Key.FullName : "N/A")}", FinancialSummaryPanel, 1);
             CreateLabel($"Our total revenue from cancellations: {cancelAmount.ToString("#.##")}", FinancialSummaryPanel, 2);
             CreateLabel($"Total discounts from coupons: {totalDiscount.ToString("#.##")}", FinancialSummaryPanel, 3);
             #endregion
@@ -227,7 +228,7 @@ namespace Session6
             var toMonth = !String.IsNullOrWhiteSpace(ToDateTimePicker.Text) ? ToDateTimePicker.Value.Month : 12;
             foreach (var serviceType in entities.ServiceTypes.ToList())
             {
-                var serviceMonthlyAvaiable = Enumerable.Repeat(2,12).ToList();
+                var serviceMonthlyAvaiable = Enumerable.Repeat(2, 12).ToList();
                 for (int month = fromMonth; month <= toMonth; month++)
                 {
                     bool avaiable = false;
@@ -306,7 +307,7 @@ namespace Session6
                 {
                     foreach (var bookingDetail in booking.BookingDetails)
                     {
-                        if ((!String.IsNullOrWhiteSpace(HostComboBox.Text)&& bookingDetail.ItemPrices.Items.UserID == (long)HostComboBox.SelectedValue)||(!String.IsNullOrWhiteSpace(GuestComboBox.Text) && booking.UserID == (long)GuestComboBox.SelectedValue))
+                        if ((!String.IsNullOrWhiteSpace(HostComboBox.Text) && bookingDetail.ItemPrices.Items.UserID == (long)HostComboBox.SelectedValue) || (!String.IsNullOrWhiteSpace(GuestComboBox.Text) && booking.UserID == (long)GuestComboBox.SelectedValue))
                             continue;
                         var commission = bookingDetail.ItemPrices.Price * (bookingDetail.ItemPrices.CancellationPolicies.Commission / 100);
                         var total = bookingDetail.ItemPrices.Price;
@@ -406,7 +407,6 @@ namespace Session6
                             "$" + commission,
                             $"Reserve {bookingDetailGroppingOrderBy.First().ItemPrices.Items.Title} from {bookingDetailGroppingOrderBy.First().ItemPrices.Date.ToString("yyyy-MM-dd")} - {bookingDetailGroppingOrderBy.Last().ItemPrices.Date.ToString("yyyy-MM-dd")}");
                     }
-
                     var current = new List<BookingDetails>();
                     var refundGroppin = new List<List<BookingDetails>>();
                     for (int i = 0; i < refundDetails.Count(); i++)
@@ -464,6 +464,6 @@ namespace Session6
                     }
                 }
             }
-            }
+        }
     }
 }
