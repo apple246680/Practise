@@ -16,7 +16,7 @@ namespace Session6
         }
         public void init()
         {
-            Session6Entities entities = new Session6Entities();
+            var entities = new Session6Entities();
             FromDateTimePicker.CustomFormat = " ";
             ToDateTimePicker.CustomFormat = " ";
             var areaData = entities.Areas.Select(t => new { t.ID, t.Name }).ToList();
@@ -34,6 +34,14 @@ namespace Session6
             GuestComboBox.DataSource = guestData;
             GuestComboBox.DisplayMember = "FullName";
             GuestComboBox.ValueMember = "ID";
+            ListingsSummaryPanel.Controls.Clear();
+            ScoresSummaryPanel.Controls.Clear();
+            FinancialSummaryPanel.Controls.Clear();
+            AddonServicesPanel.Controls.Clear();
+            ServiceDataGridView.DataSource = null;
+            HostDataGridView.DataSource = null;
+            TransactionDataGridView.Rows.Clear();
+            TransactionTitleLabel.Text = string.Empty;
         }
         private void FromDateTimePicker_ValueChanged(object sender, EventArgs e)
         {
@@ -98,7 +106,6 @@ namespace Session6
             }
             if (!String.IsNullOrWhiteSpace(GuestComboBox.Text))
             {
-                ulong aaaa;
                 var guestId = (long)GuestComboBox.SelectedValue;
                 transactions = transactions.Where(t => t.UserID == guestId).ToList();
                 bookingDetails = bookingDetails.Where(t => t.Bookings.UserID == guestId).ToList();
@@ -205,7 +212,7 @@ namespace Session6
             if (!String.IsNullOrWhiteSpace(ToDateTimePicker.Text))
                 addonServiceDetails = addonServiceDetails.Where(t => t.FromDate.Date <= ToDateTimePicker.Value.Date).ToList();
             CreateLabel($"Number of purchased services: {addonServiceDetails.Where(t => t.FromDate.Date <= DateTime.Today.Date && !t.isRefund).Count()}", AddonServicesPanel, 0);
-            decimal totalRevenue = addonServiceDetails.Sum(t =>
+            var totalRevenue = addonServiceDetails.Sum(t =>
             {
                 if (t.isRefund)
                     return 0;
@@ -222,7 +229,7 @@ namespace Session6
             CreateLabel($"Total revenue from service reservations: {totalRevenue.ToString("#.##")}", AddonServicesPanel, 1);
             var mostBookedService = addonServiceDetails.GroupBy(t => t.Services).GroupBy(t => t.Count()).OrderByDescending(t => t.Key).FirstOrDefault();
             CreateLabel($"Most booked service: {(mostBookedService == null ? "N/A" : String.Join(",", mostBookedService.Select(t => t.Key.Name)))}", AddonServicesPanel, 2);
-            List<object> dataSource = new List<object>();
+            var dataSource = new List<object>();
             var yearFilter = !String.IsNullOrWhiteSpace(ToDateTimePicker.Text) ? ToDateTimePicker.Value.Year : DateTime.Now.Year;
             var fromMonth = !String.IsNullOrWhiteSpace(FromDateTimePicker.Text) ? FromDateTimePicker.Value.Month : 1;
             var toMonth = !String.IsNullOrWhiteSpace(ToDateTimePicker.Text) ? ToDateTimePicker.Value.Month : 12;
@@ -247,9 +254,8 @@ namespace Session6
                         {
                             avaiable |= timeRange.Any(t =>
                             {
-                                var data = details.Where(x => x.FromDate.DayOfWeek == (DayOfWeek)t).ToList();
-                                if (data.Count() == 0)
-                                    return true;
+                                var data = details.Where(x => x.FromDate.DayOfWeek == (DayOfWeek)t);
+                                if (data.Count() == 0)return true;
                                 return data.Sum(x => x.NumberOfPeople) <= service.DailyCap;
                             });
                         }
@@ -257,9 +263,8 @@ namespace Session6
                         {
                             avaiable |= timeRange.Any(t =>
                             {
-                                var data = details.Where(x => x.FromDate.Day == t).ToList();
-                                if (data.Count() == 0)
-                                    return true;
+                                var data = details.Where(x => x.FromDate.Day == t);
+                                if (data.Count() == 0)return true;
                                 return data.Sum(x => x.NumberOfPeople) <= service.DailyCap;
                             });
                         }
@@ -300,7 +305,7 @@ namespace Session6
                 tansactions = tansactions.Where(t => t.TransactionDate.Date <= ToDateTimePicker.Value.Date).ToList();
             if (!String.IsNullOrWhiteSpace(HostComboBox.Text))
                 hosts = hosts.Where(t => t.ID == (long)HostComboBox.SelectedValue).ToList();
-            List<Tuple<Users, decimal, decimal>> userRevenue = new List<Tuple<Users, decimal, decimal>>();
+            var userRevenue = new List<(Users,decimal,decimal)>();
             foreach (var transaction in tansactions)
             {
                 foreach (var booking in transaction.Bookings)
@@ -331,7 +336,7 @@ namespace Session6
                                 total = refundAmount;
                             }
                         }
-                        userRevenue.Add(new Tuple<Users, decimal, decimal>(bookingDetail.ItemPrices.Items.Users, total, commission));
+                        userRevenue.Add((bookingDetail.ItemPrices.Items.Users, total, commission));
                     }
                 }
             }
@@ -356,12 +361,16 @@ namespace Session6
         {
             if (e.ColumnIndex < 1)
                 return;
-            int value = Convert.ToInt32(e.Value);
-            e.Value = "";
-            if (value == 1)
+            switch (Convert.ToInt32(e.Value))
+            {
+                case 1:
                 e.CellStyle.BackColor = Color.FromArgb(229, 26, 46);
-            else if (value == 2)
+                    break;
+                case 2:
                 ServiceDataGridView.Columns[e.ColumnIndex].HeaderText = "";
+                    break;
+            }
+            e.Value = "";
         }
         private void HostDataGridView_CellClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -370,7 +379,7 @@ namespace Session6
             TransactionTitleLabel.Text = $"Transaction detail for {HostDataGridView.Rows[e.RowIndex].Cells[1].Value.ToString()}";
             TransactionDataGridView.Rows.Clear();
             long hostId = (long)HostDataGridView.Rows[e.RowIndex].Cells[0].Value;
-            using (Session6Entities entities = new Session6Entities())
+            using (var entities = new Session6Entities())
             {
                 var bookings = entities.Bookings.ToList();
                 if (!String.IsNullOrWhiteSpace(FromDateTimePicker.Text))
@@ -442,9 +451,7 @@ namespace Session6
                             if (booking.CouponID.HasValue)
                             {
                                 var discount = value * (booking.Coupons.DiscountPercent / 100);
-                                if (discount > booking.Coupons.MaximimDiscountAmount)
-                                    discount = booking.Coupons.MaximimDiscountAmount;
-                                value -= discount;
+                                discount = Math.Min(discount, booking.Coupons.MaximimDiscountAmount);
                             }
                             amount += value;
                             var dayLeft = (t.ItemPrices.Date - t.RefundDate.Value).Days;
@@ -452,14 +459,11 @@ namespace Session6
                                 .FirstOrDefault(x => x.CancellationPolicyID == t.RefundCancellationPoliciyID
                                     && x.DaysLeft == dayLeft);
                             if (fee != null)
-                            {
-                                var refundAmount = t.ItemPrices.Price * (fee.PenaltyPercentage / 100) / 2;
-                                commission += refundAmount;
-                            }
+                                commission += t.ItemPrices.Price * (fee.PenaltyPercentage / 100) / 2;
                         });
                         TransactionDataGridView.Rows.Add(booking.Transactions.TransactionDate.ToString("yyyy-MM-dd"),
-                            "$" + amount,
-                            "$" + commission,
+                            $"${amount}",
+                            $"${commission}",
                             $"Cancel Reserve {refunds.First().ItemPrices.Items.Title} from {refunds.First().ItemPrices.Date.ToString("yyyy-MM-dd")} - {refunds.Last().ItemPrices.Date.ToString("yyyy-MM-dd")}");
                     }
                 }
