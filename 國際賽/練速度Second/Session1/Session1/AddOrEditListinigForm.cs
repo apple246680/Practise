@@ -3,6 +3,7 @@ using System.Data;
 using System.Data.Entity.Migrations;
 using System.Linq;
 using System.Windows.Forms;
+
 namespace Session1
 {
     public partial class AddOrEditListinigForm : Form
@@ -19,7 +20,7 @@ namespace Session1
 
         private void AddOrEditListinigForm_Load(object sender, EventArgs e)
         {
-            Session1Entities entities = new Session1Entities();
+            var entities = new Session1Entities();
             TypeComboBox.DataSource = entities.ItemTypes.Select(x => new { x.ID, x.Name }).ToList();
             TypeComboBox.ValueMember = "ID";
             TypeComboBox.DisplayMember = "Name";
@@ -67,6 +68,7 @@ namespace Session1
                 AmenitiesDataGridView.Rows.Add(t.ID, t.Name, check);
             });
         }
+
         private void NextBtn_Click(object sender, EventArgs e)
         {
             if (tabControl1.SelectedIndex != 2)

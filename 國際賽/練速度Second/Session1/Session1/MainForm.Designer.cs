@@ -164,6 +164,7 @@
             // 
             // LoginButton
             // 
+            this.LoginButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.LoginButton.Font = new System.Drawing.Font("Open Sans", 12F);
             this.LoginButton.Image = ((System.Drawing.Image)(resources.GetObject("LoginButton.Image")));
             this.LoginButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -177,6 +178,7 @@
             // 
             // ExitButton
             // 
+            this.ExitButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.ExitButton.Font = new System.Drawing.Font("Open Sans", 12F);
             this.ExitButton.Image = ((System.Drawing.Image)(resources.GetObject("ExitButton.Image")));
             this.ExitButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;

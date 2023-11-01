@@ -590,7 +590,7 @@
   <data name="LoginButton.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAEkAAAA4CAYAAACxDdW4AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAS
-        cgAAEnIBXmVb4wAADsJJREFUeF7tm3lYleW6h5lBRUDEkQQVFVEwBJxH9NhkbhU0qy1pWpqJMymZhWMY
+        cQAAEnEB89x6jgAADsJJREFUeF7tm3lYleW6h5lBRUDEkQQVFVEwBJxH9NhkbhU0qy1pWpqJMymZhWMY
         u62ipdGwTVEQTYUsOc55HHJGDUQFGWKQQWZYwBq49/t9SLtsAQvPkTyXPtd1/7W+4V2/9bzP83vf71t6
         IngS0NfXf2j0PD09eRiGDRvGoEGD6NevH3369MHDw+OR4ubmhqurK87Ozjg5OeHo6Nho6AUGBvIwrFq1
         iqVLl7Jw4ULmzZuHr6/vI2P27NnMnDmT6dOnM3nyZCZMmMD48eMbDb0jR47wMERHR7N//34iIiIICwtj
@@ -659,7 +659,7 @@
   <data name="ExitButton.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAEMAAAA4CAYAAACmL0VxAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAS
-        cgAAEnIBXmVb4wAADf5JREFUaEPlmglYjXnbwDstSkq7JaaoRDJDtkFTlsG8DA0zI9tn91myDYNkXsZY
+        cQAAEnEB89x6jgAADf5JREFUaEPlmglYjXnbwDstSkq7JaaoRDJDtkFTlsG8DA0zI9tn91myDYNkXsZY
         Zt4hIWSdmWSd15ixjIlp8GIKM2SpNKlJSoWk03bOqU5+7/855IuOnBDX9XVf/a6r61TneZ7fc//v+/6f
         J72vvvoKXVmyZAkLFizA39+fmTNnMnXq1JfOpEmTGDduHCNGjGDw4MEMHDjwlaEXERGBroSHh3Pw4EH2
         7dvHnj172LFjx0snNDSUrVu3smHDBoKDgwkKCnpl6KWnp6MraWlppKamkpKSQnJyMklJSS+dxMREEhIS

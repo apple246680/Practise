@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Linq;
 using System.Windows.Forms;
+
 namespace Session1
 {
     public partial class MainForm : Form
@@ -10,6 +11,7 @@ namespace Session1
             InitializeComponent();
             Global.mainForm= this;
         }
+
         private void CreateLinkLabel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             ShowPasswordCheckBox.Focus();
@@ -18,14 +20,17 @@ namespace Session1
             if (CreateAccountform == DialogResult.Cancel)
             Visible = true;
         }
+
         private void ShowPasswordCheckBox_CheckedChanged(object sender, EventArgs e)
         {
             PasswordTextBox.UseSystemPasswordChar = !ShowPasswordCheckBox.Checked;
         }
+
         private void ExitButton_Click(object sender, EventArgs e)
         {
             Application.Exit();
         }
+
         private void LoginButton_Click(object sender, EventArgs e)
         {
 
@@ -58,9 +63,13 @@ namespace Session1
                 Global.accountID = user.ID;
             }
             if (KeepSignCheckBox.Checked)
+            {
                 Properties.Settings.Default.KeepLogin = Global.accountID.ToString();
+            }
             else
+            {
                 Properties.Settings.Default.KeepLogin = "";
+            }
             Properties.Settings.Default.Save();
             Visible = false;
             MessageBox.Show("Success!");
