@@ -69,9 +69,10 @@
             this.PropertyTitleLabel = new System.Windows.Forms.Label();
             this.AttractionComboBox = new System.Windows.Forms.ComboBox();
             this.AttractionLabel = new System.Windows.Forms.Label();
-            this.AreaComboBox = new System.Windows.Forms.ComboBox();
             this.AreaLabel = new System.Windows.Forms.Label();
+            this.AreaComboBox = new System.Windows.Forms.ComboBox();
             this.SearchResultsGroupBox = new System.Windows.Forms.GroupBox();
+            this.ResultsLabel = new System.Windows.Forms.Label();
             this.ResultsDataGridView = new System.Windows.Forms.DataGridView();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -79,7 +80,6 @@
             this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ResultsLabel = new System.Windows.Forms.Label();
             this.AllFlowLayoutPanel.SuspendLayout();
             this.SimpleAdvancedGroupBox.SuspendLayout();
             this.DownPanel.SuspendLayout();
@@ -106,10 +106,10 @@
             // 
             // SimpleAdvancedGroupBox
             // 
+            this.SimpleAdvancedGroupBox.Controls.Add(this.SimpleSearchBtn);
+            this.SimpleAdvancedGroupBox.Controls.Add(this.AdvanedFormBtn);
             this.SimpleAdvancedGroupBox.Controls.Add(this.DownPanel);
             this.SimpleAdvancedGroupBox.Controls.Add(this.HintLabel);
-            this.SimpleAdvancedGroupBox.Controls.Add(this.AdvanedFormBtn);
-            this.SimpleAdvancedGroupBox.Controls.Add(this.SimpleSearchBtn);
             this.SimpleAdvancedGroupBox.Controls.Add(this.FromDateTimePicker);
             this.SimpleAdvancedGroupBox.Controls.Add(this.FromLabel);
             this.SimpleAdvancedGroupBox.Controls.Add(this.SearchTextBox);
@@ -153,9 +153,10 @@
             this.AdvancedSearchBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.AdvancedSearchBtn.Location = new System.Drawing.Point(765, 72);
             this.AdvancedSearchBtn.Name = "AdvancedSearchBtn";
-            this.AdvancedSearchBtn.Size = new System.Drawing.Size(266, 38);
+            this.AdvancedSearchBtn.Size = new System.Drawing.Size(219, 38);
             this.AdvancedSearchBtn.TabIndex = 44;
             this.AdvancedSearchBtn.Text = "Search properties...";
+            this.AdvancedSearchBtn.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.AdvancedSearchBtn.UseVisualStyleBackColor = true;
             this.AdvancedSearchBtn.Click += new System.EventHandler(this.AdvancedSearchBtn_Click);
             // 
@@ -166,9 +167,10 @@
             this.ClearBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.ClearBtn.Location = new System.Drawing.Point(522, 72);
             this.ClearBtn.Name = "ClearBtn";
-            this.ClearBtn.Size = new System.Drawing.Size(237, 38);
+            this.ClearBtn.Size = new System.Drawing.Size(161, 38);
             this.ClearBtn.TabIndex = 43;
             this.ClearBtn.Text = "Clear form";
+            this.ClearBtn.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.ClearBtn.UseVisualStyleBackColor = true;
             // 
             // SimpleSearchFormBtn
@@ -178,9 +180,10 @@
             this.SimpleSearchFormBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.SimpleSearchFormBtn.Location = new System.Drawing.Point(296, 72);
             this.SimpleSearchFormBtn.Name = "SimpleSearchFormBtn";
-            this.SimpleSearchFormBtn.Size = new System.Drawing.Size(220, 38);
+            this.SimpleSearchFormBtn.Size = new System.Drawing.Size(184, 38);
             this.SimpleSearchFormBtn.TabIndex = 42;
             this.SimpleSearchFormBtn.Text = "Simple Search";
+            this.SimpleSearchFormBtn.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.SimpleSearchFormBtn.UseVisualStyleBackColor = true;
             this.SimpleSearchFormBtn.Click += new System.EventHandler(this.SimpleSearchFormBtn_Click);
             // 
@@ -192,7 +195,7 @@
             this.AmenityComboBox3.FormattingEnabled = true;
             this.AmenityComboBox3.Location = new System.Drawing.Point(870, 41);
             this.AmenityComboBox3.Name = "AmenityComboBox3";
-            this.AmenityComboBox3.Size = new System.Drawing.Size(253, 25);
+            this.AmenityComboBox3.Size = new System.Drawing.Size(253, 30);
             this.AmenityComboBox3.TabIndex = 41;
             this.AmenityComboBox3.ValueMember = "ID";
             // 
@@ -201,7 +204,7 @@
             this.AmenityLabel3.AutoSize = true;
             this.AmenityLabel3.Location = new System.Drawing.Point(775, 44);
             this.AmenityLabel3.Name = "AmenityLabel3";
-            this.AmenityLabel3.Size = new System.Drawing.Size(56, 17);
+            this.AmenityLabel3.Size = new System.Drawing.Size(68, 22);
             this.AmenityLabel3.TabIndex = 40;
             this.AmenityLabel3.Text = "Amenity:";
             // 
@@ -213,7 +216,7 @@
             this.AmenityComboBox2.FormattingEnabled = true;
             this.AmenityComboBox2.Location = new System.Drawing.Point(507, 38);
             this.AmenityComboBox2.Name = "AmenityComboBox2";
-            this.AmenityComboBox2.Size = new System.Drawing.Size(253, 25);
+            this.AmenityComboBox2.Size = new System.Drawing.Size(253, 30);
             this.AmenityComboBox2.TabIndex = 39;
             this.AmenityComboBox2.ValueMember = "ID";
             // 
@@ -222,7 +225,7 @@
             this.AmenityLabel2.AutoSize = true;
             this.AmenityLabel2.Location = new System.Drawing.Point(412, 41);
             this.AmenityLabel2.Name = "AmenityLabel2";
-            this.AmenityLabel2.Size = new System.Drawing.Size(56, 17);
+            this.AmenityLabel2.Size = new System.Drawing.Size(68, 22);
             this.AmenityLabel2.TabIndex = 38;
             this.AmenityLabel2.Text = "Amenity:";
             // 
@@ -234,7 +237,7 @@
             this.AmenityComboBox1.FormattingEnabled = true;
             this.AmenityComboBox1.Location = new System.Drawing.Point(134, 38);
             this.AmenityComboBox1.Name = "AmenityComboBox1";
-            this.AmenityComboBox1.Size = new System.Drawing.Size(253, 25);
+            this.AmenityComboBox1.Size = new System.Drawing.Size(253, 30);
             this.AmenityComboBox1.TabIndex = 37;
             this.AmenityComboBox1.ValueMember = "ID";
             // 
@@ -243,7 +246,7 @@
             this.AmenityLabel1.AutoSize = true;
             this.AmenityLabel1.Location = new System.Drawing.Point(39, 41);
             this.AmenityLabel1.Name = "AmenityLabel1";
-            this.AmenityLabel1.Size = new System.Drawing.Size(56, 17);
+            this.AmenityLabel1.Size = new System.Drawing.Size(68, 22);
             this.AmenityLabel1.TabIndex = 36;
             this.AmenityLabel1.Text = "Amenity:";
             // 
@@ -255,7 +258,7 @@
             this.TypeComboBox.FormattingEnabled = true;
             this.TypeComboBox.Location = new System.Drawing.Point(731, 10);
             this.TypeComboBox.Name = "TypeComboBox";
-            this.TypeComboBox.Size = new System.Drawing.Size(253, 25);
+            this.TypeComboBox.Size = new System.Drawing.Size(253, 30);
             this.TypeComboBox.TabIndex = 35;
             this.TypeComboBox.ValueMember = "ID";
             // 
@@ -264,7 +267,7 @@
             this.PropertyTypeeLabel.AutoSize = true;
             this.PropertyTypeeLabel.Location = new System.Drawing.Point(597, 16);
             this.PropertyTypeeLabel.Name = "PropertyTypeeLabel";
-            this.PropertyTypeeLabel.Size = new System.Drawing.Size(88, 17);
+            this.PropertyTypeeLabel.Size = new System.Drawing.Size(109, 22);
             this.PropertyTypeeLabel.TabIndex = 34;
             this.PropertyTypeeLabel.Text = "Property Type:";
             // 
@@ -279,7 +282,7 @@
             0,
             0});
             this.MaxPrice.Name = "MaxPrice";
-            this.MaxPrice.Size = new System.Drawing.Size(120, 24);
+            this.MaxPrice.Size = new System.Drawing.Size(120, 28);
             this.MaxPrice.TabIndex = 33;
             // 
             // MaxPriceLabel
@@ -287,7 +290,7 @@
             this.MaxPriceLabel.AutoSize = true;
             this.MaxPriceLabel.Location = new System.Drawing.Point(331, 10);
             this.MaxPriceLabel.Name = "MaxPriceLabel";
-            this.MaxPriceLabel.Size = new System.Drawing.Size(96, 17);
+            this.MaxPriceLabel.Size = new System.Drawing.Size(117, 22);
             this.MaxPriceLabel.TabIndex = 32;
             this.MaxPriceLabel.Text = "Maximum price:";
             // 
@@ -302,7 +305,7 @@
             0,
             0});
             this.StartPrice.Name = "StartPrice";
-            this.StartPrice.Size = new System.Drawing.Size(120, 24);
+            this.StartPrice.Size = new System.Drawing.Size(120, 28);
             this.StartPrice.TabIndex = 31;
             // 
             // StartingPriceLabel
@@ -310,7 +313,7 @@
             this.StartingPriceLabel.AutoSize = true;
             this.StartingPriceLabel.Location = new System.Drawing.Point(61, 8);
             this.StartingPriceLabel.Name = "StartingPriceLabel";
-            this.StartingPriceLabel.Size = new System.Drawing.Size(84, 17);
+            this.StartingPriceLabel.Size = new System.Drawing.Size(103, 22);
             this.StartingPriceLabel.TabIndex = 30;
             this.StartingPriceLabel.Text = "Starting price:";
             // 
@@ -319,7 +322,7 @@
             this.HintLabel.AutoSize = true;
             this.HintLabel.Location = new System.Drawing.Point(87, 34);
             this.HintLabel.Name = "HintLabel";
-            this.HintLabel.Size = new System.Drawing.Size(388, 17);
+            this.HintLabel.Size = new System.Drawing.Size(474, 22);
             this.HintLabel.TabIndex = 9;
             this.HintLabel.Text = "Enter area name, attraction, property title, property type, amenities ...";
             this.HintLabel.Click += new System.EventHandler(this.HintLabel_Click);
@@ -330,11 +333,12 @@
             this.AdvanedFormBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
             this.AdvanedFormBtn.Image = ((System.Drawing.Image)(resources.GetObject("AdvanedFormBtn.Image")));
             this.AdvanedFormBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.AdvanedFormBtn.Location = new System.Drawing.Point(848, 93);
+            this.AdvanedFormBtn.Location = new System.Drawing.Point(898, 84);
             this.AdvanedFormBtn.Name = "AdvanedFormBtn";
-            this.AdvanedFormBtn.Size = new System.Drawing.Size(300, 39);
+            this.AdvanedFormBtn.Size = new System.Drawing.Size(183, 39);
             this.AdvanedFormBtn.TabIndex = 7;
             this.AdvanedFormBtn.Text = "Advanced Search";
+            this.AdvanedFormBtn.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.AdvanedFormBtn.UseVisualStyleBackColor = true;
             this.AdvanedFormBtn.Click += new System.EventHandler(this.AdvanedFormBtn_Click);
             // 
@@ -344,11 +348,12 @@
             this.SimpleSearchBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
             this.SimpleSearchBtn.Image = ((System.Drawing.Image)(resources.GetObject("SimpleSearchBtn.Image")));
             this.SimpleSearchBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.SimpleSearchBtn.Location = new System.Drawing.Point(848, 31);
+            this.SimpleSearchBtn.Location = new System.Drawing.Point(898, 40);
             this.SimpleSearchBtn.Name = "SimpleSearchBtn";
-            this.SimpleSearchBtn.Size = new System.Drawing.Size(300, 39);
+            this.SimpleSearchBtn.Size = new System.Drawing.Size(207, 39);
             this.SimpleSearchBtn.TabIndex = 5;
             this.SimpleSearchBtn.Text = "Search properties...";
+            this.SimpleSearchBtn.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.SimpleSearchBtn.UseVisualStyleBackColor = true;
             this.SimpleSearchBtn.Click += new System.EventHandler(this.SimpleSearchBtn_Click);
             // 
@@ -358,7 +363,7 @@
             this.FromDateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.FromDateTimePicker.Location = new System.Drawing.Point(75, 117);
             this.FromDateTimePicker.Name = "FromDateTimePicker";
-            this.FromDateTimePicker.Size = new System.Drawing.Size(240, 24);
+            this.FromDateTimePicker.Size = new System.Drawing.Size(240, 28);
             this.FromDateTimePicker.TabIndex = 2;
             // 
             // FromLabel
@@ -366,7 +371,7 @@
             this.FromLabel.AutoSize = true;
             this.FromLabel.Location = new System.Drawing.Point(13, 117);
             this.FromLabel.Name = "FromLabel";
-            this.FromLabel.Size = new System.Drawing.Size(40, 17);
+            this.FromLabel.Size = new System.Drawing.Size(50, 22);
             this.FromLabel.TabIndex = 1;
             this.FromLabel.Text = "From:";
             // 
@@ -376,7 +381,7 @@
             this.SearchTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.SearchTextBox.Location = new System.Drawing.Point(51, 31);
             this.SearchTextBox.Name = "SearchTextBox";
-            this.SearchTextBox.Size = new System.Drawing.Size(774, 24);
+            this.SearchTextBox.Size = new System.Drawing.Size(774, 28);
             this.SearchTextBox.TabIndex = 0;
             this.SearchTextBox.TextChanged += new System.EventHandler(this.SearchTextBox_TextChanged);
             this.SearchTextBox.Enter += new System.EventHandler(this.SearchTextBox_Enter);
@@ -406,7 +411,7 @@
             this.ToDateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.ToDateTimePicker.Location = new System.Drawing.Point(37, 9);
             this.ToDateTimePicker.Name = "ToDateTimePicker";
-            this.ToDateTimePicker.Size = new System.Drawing.Size(240, 24);
+            this.ToDateTimePicker.Size = new System.Drawing.Size(240, 28);
             this.ToDateTimePicker.TabIndex = 4;
             // 
             // ToLabel
@@ -414,7 +419,7 @@
             this.ToLabel.AutoSize = true;
             this.ToLabel.Location = new System.Drawing.Point(7, 6);
             this.ToLabel.Name = "ToLabel";
-            this.ToLabel.Size = new System.Drawing.Size(24, 17);
+            this.ToLabel.Size = new System.Drawing.Size(31, 22);
             this.ToLabel.TabIndex = 3;
             this.ToLabel.Text = "To:";
             // 
@@ -435,7 +440,7 @@
             this.PeopleLabel.AutoSize = true;
             this.PeopleLabel.Location = new System.Drawing.Point(365, 15);
             this.PeopleLabel.Name = "PeopleLabel";
-            this.PeopleLabel.Size = new System.Drawing.Size(46, 17);
+            this.PeopleLabel.Size = new System.Drawing.Size(56, 22);
             this.PeopleLabel.TabIndex = 4;
             this.PeopleLabel.Text = "people";
             // 
@@ -454,7 +459,7 @@
             0,
             0});
             this.NightsNumber.Name = "NightsNumber";
-            this.NightsNumber.Size = new System.Drawing.Size(92, 24);
+            this.NightsNumber.Size = new System.Drawing.Size(92, 28);
             this.NightsNumber.TabIndex = 3;
             this.NightsNumber.Value = new decimal(new int[] {
             1,
@@ -477,7 +482,7 @@
             0,
             0});
             this.PeopleNumber.Name = "PeopleNumber";
-            this.PeopleNumber.Size = new System.Drawing.Size(92, 24);
+            this.PeopleNumber.Size = new System.Drawing.Size(92, 28);
             this.PeopleNumber.TabIndex = 3;
             this.PeopleNumber.Value = new decimal(new int[] {
             1,
@@ -490,7 +495,7 @@
             this.ForLabel.AutoSize = true;
             this.ForLabel.Location = new System.Drawing.Point(3, 15);
             this.ForLabel.Name = "ForLabel";
-            this.ForLabel.Size = new System.Drawing.Size(24, 17);
+            this.ForLabel.Size = new System.Drawing.Size(30, 22);
             this.ForLabel.TabIndex = 4;
             this.ForLabel.Text = "for";
             // 
@@ -499,7 +504,7 @@
             this.NightLabel.AutoSize = true;
             this.NightLabel.Location = new System.Drawing.Point(153, 14);
             this.NightLabel.Name = "NightLabel";
-            this.NightLabel.Size = new System.Drawing.Size(64, 17);
+            this.NightLabel.Size = new System.Drawing.Size(81, 22);
             this.NightLabel.TabIndex = 4;
             this.NightLabel.Text = "nights and";
             // 
@@ -508,11 +513,11 @@
             this.ListBoxHint.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(187)))), ((int)(((byte)(187)))));
             this.ListBoxHint.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.ListBoxHint.FormattingEnabled = true;
-            this.ListBoxHint.ItemHeight = 17;
+            this.ListBoxHint.ItemHeight = 22;
             this.ListBoxHint.Location = new System.Drawing.Point(46, 77);
             this.ListBoxHint.Name = "ListBoxHint";
             this.ListBoxHint.ScrollAlwaysVisible = true;
-            this.ListBoxHint.Size = new System.Drawing.Size(774, 87);
+            this.ListBoxHint.Size = new System.Drawing.Size(774, 68);
             this.ListBoxHint.TabIndex = 10;
             this.ListBoxHint.MouseClick += new System.Windows.Forms.MouseEventHandler(this.ListBoxHint_MouseClick);
             // 
@@ -537,7 +542,7 @@
             this.TitleComboBox.FormattingEnabled = true;
             this.TitleComboBox.Location = new System.Drawing.Point(847, 3);
             this.TitleComboBox.Name = "TitleComboBox";
-            this.TitleComboBox.Size = new System.Drawing.Size(253, 25);
+            this.TitleComboBox.Size = new System.Drawing.Size(253, 30);
             this.TitleComboBox.TabIndex = 11;
             this.TitleComboBox.ValueMember = "ID";
             // 
@@ -546,7 +551,7 @@
             this.PropertyTitleLabel.AutoSize = true;
             this.PropertyTitleLabel.Location = new System.Drawing.Point(718, 6);
             this.PropertyTitleLabel.Name = "PropertyTitleLabel";
-            this.PropertyTitleLabel.Size = new System.Drawing.Size(85, 17);
+            this.PropertyTitleLabel.Size = new System.Drawing.Size(104, 22);
             this.PropertyTitleLabel.TabIndex = 10;
             this.PropertyTitleLabel.Text = "Property Title:";
             // 
@@ -558,7 +563,7 @@
             this.AttractionComboBox.FormattingEnabled = true;
             this.AttractionComboBox.Location = new System.Drawing.Point(457, 0);
             this.AttractionComboBox.Name = "AttractionComboBox";
-            this.AttractionComboBox.Size = new System.Drawing.Size(253, 25);
+            this.AttractionComboBox.Size = new System.Drawing.Size(253, 30);
             this.AttractionComboBox.TabIndex = 9;
             this.AttractionComboBox.ValueMember = "ID";
             // 
@@ -567,9 +572,18 @@
             this.AttractionLabel.AutoSize = true;
             this.AttractionLabel.Location = new System.Drawing.Point(360, 3);
             this.AttractionLabel.Name = "AttractionLabel";
-            this.AttractionLabel.Size = new System.Drawing.Size(64, 17);
+            this.AttractionLabel.Size = new System.Drawing.Size(80, 22);
             this.AttractionLabel.TabIndex = 8;
             this.AttractionLabel.Text = "Attraction:";
+            // 
+            // AreaLabel
+            // 
+            this.AreaLabel.AutoSize = true;
+            this.AreaLabel.Location = new System.Drawing.Point(6, 1);
+            this.AreaLabel.Name = "AreaLabel";
+            this.AreaLabel.Size = new System.Drawing.Size(45, 22);
+            this.AreaLabel.TabIndex = 6;
+            this.AreaLabel.Text = "Area:";
             // 
             // AreaComboBox
             // 
@@ -579,18 +593,9 @@
             this.AreaComboBox.FormattingEnabled = true;
             this.AreaComboBox.Location = new System.Drawing.Point(83, -1);
             this.AreaComboBox.Name = "AreaComboBox";
-            this.AreaComboBox.Size = new System.Drawing.Size(253, 25);
+            this.AreaComboBox.Size = new System.Drawing.Size(253, 30);
             this.AreaComboBox.TabIndex = 7;
             this.AreaComboBox.ValueMember = "ID";
-            // 
-            // AreaLabel
-            // 
-            this.AreaLabel.AutoSize = true;
-            this.AreaLabel.Location = new System.Drawing.Point(6, 1);
-            this.AreaLabel.Name = "AreaLabel";
-            this.AreaLabel.Size = new System.Drawing.Size(36, 17);
-            this.AreaLabel.TabIndex = 6;
-            this.AreaLabel.Text = "Area:";
             // 
             // SearchResultsGroupBox
             // 
@@ -602,6 +607,14 @@
             this.SearchResultsGroupBox.TabIndex = 6;
             this.SearchResultsGroupBox.TabStop = false;
             this.SearchResultsGroupBox.Text = "Search results";
+            // 
+            // ResultsLabel
+            // 
+            this.ResultsLabel.AutoSize = true;
+            this.ResultsLabel.Location = new System.Drawing.Point(13, 213);
+            this.ResultsLabel.Name = "ResultsLabel";
+            this.ResultsLabel.Size = new System.Drawing.Size(0, 22);
+            this.ResultsLabel.TabIndex = 37;
             // 
             // ResultsDataGridView
             // 
@@ -620,56 +633,61 @@
             this.ResultsDataGridView.Name = "ResultsDataGridView";
             this.ResultsDataGridView.ReadOnly = true;
             this.ResultsDataGridView.RowHeadersVisible = false;
+            this.ResultsDataGridView.RowHeadersWidth = 51;
             this.ResultsDataGridView.Size = new System.Drawing.Size(1144, 186);
             this.ResultsDataGridView.TabIndex = 0;
             // 
             // Column1
             // 
             this.Column1.HeaderText = "Property";
+            this.Column1.MinimumWidth = 6;
             this.Column1.Name = "Column1";
             this.Column1.ReadOnly = true;
+            this.Column1.Width = 125;
             // 
             // Column2
             // 
             this.Column2.HeaderText = "Area";
+            this.Column2.MinimumWidth = 6;
             this.Column2.Name = "Column2";
             this.Column2.ReadOnly = true;
+            this.Column2.Width = 125;
             // 
             // Column3
             // 
             this.Column3.HeaderText = "Average Score";
+            this.Column3.MinimumWidth = 6;
             this.Column3.Name = "Column3";
             this.Column3.ReadOnly = true;
+            this.Column3.Width = 125;
             // 
             // Column4
             // 
             this.Column4.HeaderText = "Total completed reservations";
+            this.Column4.MinimumWidth = 6;
             this.Column4.Name = "Column4";
             this.Column4.ReadOnly = true;
+            this.Column4.Width = 125;
             // 
             // Column5
             // 
             this.Column5.HeaderText = "Amount payable";
+            this.Column5.MinimumWidth = 6;
             this.Column5.Name = "Column5";
             this.Column5.ReadOnly = true;
+            this.Column5.Width = 125;
             // 
             // Column6
             // 
             this.Column6.HeaderText = "Check-in at";
+            this.Column6.MinimumWidth = 6;
             this.Column6.Name = "Column6";
             this.Column6.ReadOnly = true;
-            // 
-            // ResultsLabel
-            // 
-            this.ResultsLabel.AutoSize = true;
-            this.ResultsLabel.Location = new System.Drawing.Point(13, 213);
-            this.ResultsLabel.Name = "ResultsLabel";
-            this.ResultsLabel.Size = new System.Drawing.Size(0, 17);
-            this.ResultsLabel.TabIndex = 37;
+            this.Column6.Width = 125;
             // 
             // MainForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 22F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(187)))), ((int)(((byte)(187)))));
             this.ClientSize = new System.Drawing.Size(1184, 555);

@@ -97,8 +97,10 @@ namespace Session3
         }
         private void SearchTextBox_Leave(object sender, EventArgs e)
         {
-            if (string.IsNullOrWhiteSpace(SearchTextBox.Text)&&SimpleSearchBtn.Visible)
+            if (string.IsNullOrWhiteSpace(SearchTextBox.Text) && SimpleSearchBtn.Visible)
+            {
                 HintLabel.Visible = true;
+            }
         }
         private void SimpleSearchBtn_Click(object sender, EventArgs e)
         {
@@ -168,9 +170,13 @@ namespace Session3
                 onoptions++;
             }
             if (!string.IsNullOrEmpty(StartPrice.Text))
+            {
                 onoptions++;
+            }
             if (!string.IsNullOrEmpty(MaxPrice.Text))
+            {
                 onoptions++;
+            }
             var amenityIdList = amenityComboBoxList.Where(t => t.Text != "").Select(t => (long)t.SelectedValue).Distinct().ToList();
             if (amenityIdList.Count() != 0)
             {
@@ -189,9 +195,13 @@ namespace Session3
                     var priceData = item.ItemPrices.Where(y => y.Date >= x.Date && y.Date < endDate).ToList();
                     var amount = priceData.Count() != 0 ? priceData.Sum(y => y.Price).ToString() + "$" : "Price data not found.";
                     if (!String.IsNullOrEmpty(StartPrice.Text) && priceData.Count() != 0 && StartPrice.Value > priceData.Sum(y => y.Price))
+                    {
                         continue;
+                    }
                     if (!String.IsNullOrEmpty(MaxPrice.Text) && priceData.Count() != 0 && MaxPrice.Value < priceData.Sum(y => y.Price))
+                    {
                         continue;
+                    }
                     ResultsDataGridView.Rows.Add(item.Title, item.Area.Name, score, totalconpate, amount, x.Date.ToString("dd/MM/yyyy"));
                 }
             }
@@ -206,15 +216,25 @@ namespace Session3
             {
                 var entities = new Session3Entities();
                 foreach (var x in entities.Areas.Where(t => t.Name.Contains(SearchTextBox.Text)))
+                {
                     ListBoxHint.Items.Add(x.Name + "      Area");
+                }
                 foreach (var x in entities.Attractions.Where(t => t.Name.Contains(SearchTextBox.Text)))
+                {
                     ListBoxHint.Items.Add(x.Name + "      Attraction");
+                }
                 foreach (var x in entities.Items.Where(t => t.Title.Contains(SearchTextBox.Text)))
+                {
                     ListBoxHint.Items.Add(x.Title + "      Listing");
+                }
                 foreach (var x in entities.ItemTypes.Where(t => t.Name.Contains(SearchTextBox.Text)))
+                {
                     ListBoxHint.Items.Add(x.Name + "      ItemType");
+                }
                 foreach (var x in entities.Amenities.Where(t => t.Name.Contains(SearchTextBox.Text)))
+                {
                     ListBoxHint.Items.Add(x.Name + "      Amenities");
+                }
                 if (ListBoxHint.Items.Count != 0)
                 {
                     ListBoxHint.BringToFront();
@@ -222,7 +242,9 @@ namespace Session3
                     ListBoxHint.SelectedIndex = 0;
                 }
                 if (ListBoxHint.Text.Replace("      ", "@").Split('@')[0] == SearchTextBox.Text)
+                {
                     ListBoxHint.Visible = false;
+                }
             }
         }
         private void ListBoxHint_MouseClick(object sender, MouseEventArgs e)

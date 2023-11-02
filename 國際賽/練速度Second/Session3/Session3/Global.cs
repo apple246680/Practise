@@ -10,9 +10,13 @@ namespace Session3
             {
                 var user = entities.Users.SingleOrDefault(t => t.Username == username);
                 if (user != null)
+                {
                     throw new ArgumentException("Username is exists.");
+                }
                 if (password.Length < 5)
+                {
                     throw new ArgumentException("Password length need least five.");
+                }
                 user = entities.Users.Add(new User
                 {
                     GUID = Guid.NewGuid(),
