@@ -69,6 +69,7 @@
             this.LoginGroupBox.Controls.Add(this.EmployeeLabel);
             this.LoginGroupBox.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.LoginGroupBox.Font = new System.Drawing.Font("Open Sans SemiBold", 12F);
+            this.LoginGroupBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(187)))), ((int)(((byte)(187)))));
             this.LoginGroupBox.Location = new System.Drawing.Point(73, 137);
             this.LoginGroupBox.Name = "LoginGroupBox";
             this.LoginGroupBox.Size = new System.Drawing.Size(818, 250);
@@ -80,6 +81,7 @@
             // 
             this.ShowPasswordCheckBox.AutoSize = true;
             this.ShowPasswordCheckBox.Font = new System.Drawing.Font("Open Sans", 12F);
+            this.ShowPasswordCheckBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(187)))), ((int)(((byte)(187)))));
             this.ShowPasswordCheckBox.Location = new System.Drawing.Point(600, 140);
             this.ShowPasswordCheckBox.Name = "ShowPasswordCheckBox";
             this.ShowPasswordCheckBox.Size = new System.Drawing.Size(179, 32);
@@ -92,6 +94,7 @@
             // 
             this.KeepSignCheckBox.AutoSize = true;
             this.KeepSignCheckBox.Font = new System.Drawing.Font("Open Sans", 12F);
+            this.KeepSignCheckBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(187)))), ((int)(((byte)(187)))));
             this.KeepSignCheckBox.Location = new System.Drawing.Point(600, 87);
             this.KeepSignCheckBox.Name = "KeepSignCheckBox";
             this.KeepSignCheckBox.Size = new System.Drawing.Size(203, 32);
@@ -137,6 +140,7 @@
             // 
             this.PasswordLabel.AutoSize = true;
             this.PasswordLabel.Font = new System.Drawing.Font("Open Sans", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.PasswordLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(187)))), ((int)(((byte)(187)))));
             this.PasswordLabel.Location = new System.Drawing.Point(81, 166);
             this.PasswordLabel.Name = "PasswordLabel";
             this.PasswordLabel.Size = new System.Drawing.Size(107, 28);
@@ -147,6 +151,7 @@
             // 
             this.UserLabel.AutoSize = true;
             this.UserLabel.Font = new System.Drawing.Font("Open Sans", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.UserLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(187)))), ((int)(((byte)(187)))));
             this.UserLabel.Location = new System.Drawing.Point(81, 113);
             this.UserLabel.Name = "UserLabel";
             this.UserLabel.Size = new System.Drawing.Size(61, 28);
@@ -157,6 +162,7 @@
             // 
             this.EmployeeLabel.AutoSize = true;
             this.EmployeeLabel.Font = new System.Drawing.Font("Open Sans", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.EmployeeLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(187)))), ((int)(((byte)(187)))));
             this.EmployeeLabel.Location = new System.Drawing.Point(81, 60);
             this.EmployeeLabel.Name = "EmployeeLabel";
             this.EmployeeLabel.Size = new System.Drawing.Size(108, 28);
@@ -167,6 +173,7 @@
             // 
             this.LoginButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.LoginButton.Font = new System.Drawing.Font("Open Sans", 12F);
+            this.LoginButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(187)))), ((int)(((byte)(187)))));
             this.LoginButton.Image = ((System.Drawing.Image)(resources.GetObject("LoginButton.Image")));
             this.LoginButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.LoginButton.Location = new System.Drawing.Point(273, 425);
@@ -181,6 +188,7 @@
             // 
             this.ExitButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.ExitButton.Font = new System.Drawing.Font("Open Sans", 12F);
+            this.ExitButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(187)))), ((int)(((byte)(187)))));
             this.ExitButton.Image = ((System.Drawing.Image)(resources.GetObject("ExitButton.Image")));
             this.ExitButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.ExitButton.Location = new System.Drawing.Point(491, 425);
@@ -195,6 +203,7 @@
             // 
             this.CreateAccountLabel.AutoSize = true;
             this.CreateAccountLabel.Font = new System.Drawing.Font("Open Sans", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CreateAccountLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(187)))), ((int)(((byte)(187)))));
             this.CreateAccountLabel.Location = new System.Drawing.Point(268, 499);
             this.CreateAccountLabel.Name = "CreateAccountLabel";
             this.CreateAccountLabel.Size = new System.Drawing.Size(228, 28);
@@ -219,7 +228,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 22F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(187)))), ((int)(((byte)(187)))));
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(85)))), ((int)(((byte)(85)))), ((int)(((byte)(85)))));
             this.ClientSize = new System.Drawing.Size(982, 553);
             this.Controls.Add(this.CreateLinkLabel);
             this.Controls.Add(this.CreateAccountLabel);
