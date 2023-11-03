@@ -203,7 +203,7 @@
             // AddListingBtn
             // 
             this.AddListingBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.AddListingBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.AddListingBtn.Font = new System.Drawing.Font("Open Sans Light", 10F);
             this.AddListingBtn.Image = ((System.Drawing.Image)(resources.GetObject("AddListingBtn.Image")));
             this.AddListingBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.AddListingBtn.Location = new System.Drawing.Point(104, 33);

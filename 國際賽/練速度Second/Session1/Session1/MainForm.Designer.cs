@@ -67,10 +67,11 @@
             this.LoginGroupBox.Controls.Add(this.PasswordLabel);
             this.LoginGroupBox.Controls.Add(this.UserLabel);
             this.LoginGroupBox.Controls.Add(this.EmployeeLabel);
+            this.LoginGroupBox.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.LoginGroupBox.Font = new System.Drawing.Font("Open Sans SemiBold", 12F);
             this.LoginGroupBox.Location = new System.Drawing.Point(73, 137);
             this.LoginGroupBox.Name = "LoginGroupBox";
-            this.LoginGroupBox.Size = new System.Drawing.Size(800, 250);
+            this.LoginGroupBox.Size = new System.Drawing.Size(818, 250);
             this.LoginGroupBox.TabIndex = 0;
             this.LoginGroupBox.TabStop = false;
             this.LoginGroupBox.Text = "Login";
