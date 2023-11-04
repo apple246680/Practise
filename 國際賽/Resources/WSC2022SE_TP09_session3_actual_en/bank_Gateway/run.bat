@@ -1,0 +1,2 @@
+Bank.Server.exe
+pause

@@ -561,7 +561,7 @@
             this.FootCarNotZeroLabel.AutoSize = true;
             this.FootCarNotZeroLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
             this.FootCarNotZeroLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(26)))), ((int)(((byte)(46)))));
-            this.FootCarNotZeroLabel.Location = new System.Drawing.Point(775, 37);
+            this.FootCarNotZeroLabel.Location = new System.Drawing.Point(770, 25);
             this.FootCarNotZeroLabel.Name = "FootCarNotZeroLabel";
             this.FootCarNotZeroLabel.Size = new System.Drawing.Size(255, 36);
             this.FootCarNotZeroLabel.TabIndex = 12;
