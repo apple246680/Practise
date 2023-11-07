@@ -283,7 +283,7 @@
             this.AreaComboBox.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.AreaComboBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(26)))), ((int)(((byte)(46)))));
             this.AreaComboBox.FormattingEnabled = true;
-            this.AreaComboBox.Location = new System.Drawing.Point(83, -1);
+            this.AreaComboBox.Location = new System.Drawing.Point(78, 2);
             this.AreaComboBox.Name = "AreaComboBox";
             this.AreaComboBox.Size = new System.Drawing.Size(253, 23);
             this.AreaComboBox.TabIndex = 7;
@@ -294,7 +294,7 @@
             this.SearchTextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(187)))), ((int)(((byte)(187)))));
             this.SearchTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.SearchTextBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(26)))), ((int)(((byte)(46)))));
-            this.SearchTextBox.Location = new System.Drawing.Point(51, 45);
+            this.SearchTextBox.Location = new System.Drawing.Point(54, 58);
             this.SearchTextBox.Name = "SearchTextBox";
             this.SearchTextBox.Size = new System.Drawing.Size(774, 22);
             this.SearchTextBox.TabIndex = 0;

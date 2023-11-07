@@ -113,14 +113,14 @@ namespace Session3
             using (var entities = new Session3Entities())
             {
                 var items = entities.Items.ToList();
-                if (!String.IsNullOrEmpty(SearchTextBox.Text)&&SearchTextBox.Text!= "Enter area name, attraction, property title, property type, amenities ...")
-                    items = items.Where(x => x.Areas.Name == SearchTextBox.Text || x.Title == SearchTextBox.Text || x.ItemAttractions.Any(y => y.Attractions.Name == SearchTextBox.Text) || x.ItemTypes.Name == SearchTextBox.Text || x.ItemAmenities.Any(y => y.Amenities.Name == SearchTextBox.Text)).ToList();
                 var nights = (int)NightsNumber.Value;
                 var people = (int)PeopleNumber.Value;
                 DateTime from = FromDateTimePicker.Value;
                 DateTime to = from.AddDays(nights);
                 items = items.Where(x => x.ItemPrices.Any(y => y.Date >= from && y.Date <= to)
                     && x.Capacity >= people).OrderBy(x => x.Title).ToList();
+                if (!String.IsNullOrEmpty(SearchTextBox.Text)&&SearchTextBox.Text!= "Enter area name, attraction, property title, property type, amenities ...")
+                    items = items.Where(x => x.Areas.Name.Trim() == SearchTextBox.Text || x.Title.Trim()==SearchTextBox.Text || x.ItemAttractions.Any(y => y.Attractions.Name.Trim() == SearchTextBox.Text) || x.ItemTypes.Name.Trim() == SearchTextBox.Text || x.ItemAmenities.Any(y => y.Amenities.Name.Trim() == SearchTextBox.Text)).ToList();
                 ResultsDataGridView.Rows.Clear();
                 items.ForEach(x =>
                 {
