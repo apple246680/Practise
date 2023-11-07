@@ -13,7 +13,7 @@ namespace Session3UnitTestProject
         [TestMethod]
         [DataRow("dadada", "dadada", "dadadad", true, 1)]
         [DataRow("aagag", "aagag", "aagag", true, 1)]
-        [DataRow("mahdi", "1234", "Min-Seo Young-Ho", true, 1)]
+        [DataRow("aaa", "12345", "Min-Seo Young-Ho", true, 1)]
         public void TestUserRegister(string username, string password, string fullname, bool gender, int familyCount)
         {
             var birthday = DateTime.Today;

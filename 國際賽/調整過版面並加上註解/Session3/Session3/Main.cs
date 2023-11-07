@@ -52,19 +52,23 @@ namespace Session3
             AmenityComboBox1.Items.Clear();
             AmenityComboBox2.Items.Clear();
             AmenityComboBox3.Items.Clear();
-            AreaComboBox.Items.AddRange(entities.Areas.Select(x => new { x.ID, x.Name }).ToArray());
-            AreaComboBox.Items.Insert(0, new { ID = (long)-1, Name = "" });
-            AttractionComboBox.Items.AddRange(entities.Attractions.Select(x => new { x.ID, x.Name }).ToArray());
-            AttractionComboBox.Items.Insert(0, new { ID = (long)-1, Name = "" });
-            TitleComboBox.Items.AddRange(entities.Items.Select(x => new { x.ID, Name = x.Title }).ToArray());
-            TitleComboBox.Items.Insert(0, new { ID = (long)-1, Name = "" });
-            TypeComboBox.Items.AddRange(entities.ItemTypes.Select(x => new { x.ID, x.Name }).ToArray());
-            TypeComboBox.Items.Insert(0, new { ID = (long)-1, Name = "" });
-            foreach (var comboBox in amenityComboBoxList)
-            {
-                comboBox.Items.AddRange(entities.Amenities.Select(x => new { x.ID, x.Name }).ToArray());
-                comboBox.Items.Insert(0, new { ID = (long)-1, Name = "" });
-            }
+            var areadata=(entities.Areas.Select(x => new { x.ID, x.Name }).ToList());
+            areadata.Insert(0, new { ID = (long)-1, Name = "" });
+            AreaComboBox.DataSource = areadata;
+            var Attractiondata=(entities.Attractions.Select(x => new { x.ID, x.Name }).ToList());
+            Attractiondata.Insert(0, new { ID = (long)-1, Name = "" });
+            AttractionComboBox.DataSource = Attractiondata;
+            var titledata=(entities.Items.Select(x => new { x.ID, Name = x.Title }).ToList());
+            titledata.Insert(0, new { ID = (long)-1, Name = "" });
+            TitleComboBox.DataSource = titledata;
+            var typedata=(entities.ItemTypes.Select(x => new { x.ID, x.Name }).ToList());
+            typedata.Insert(0, new { ID = (long)-1, Name = "" });
+            TypeComboBox.DataSource = typedata;
+            var amenities=(entities.Amenities.Select(x => new { x.ID, x.Name }).ToList());
+            amenities.Insert(0, new { ID = (long)-1, Name = "" });
+            AmenityComboBox1.DataSource = new List<object>(amenities);
+            AmenityComboBox2.DataSource = new List<object>(amenities);
+            AmenityComboBox3.DataSource = new List<object>(amenities);
         }
         /// <summary>
         /// Show Advaned Search Page
@@ -109,7 +113,7 @@ namespace Session3
             using (var entities = new Session3Entities())
             {
                 var items = entities.Items.ToList();
-                if (!String.IsNullOrEmpty(SearchTextBox.Text))
+                if (!String.IsNullOrEmpty(SearchTextBox.Text)&&SearchTextBox.Text!= "Enter area name, attraction, property title, property type, amenities ...")
                     items = items.Where(x => x.Areas.Name == SearchTextBox.Text || x.Title == SearchTextBox.Text || x.ItemAttractions.Any(y => y.Attractions.Name == SearchTextBox.Text) || x.ItemTypes.Name == SearchTextBox.Text || x.ItemAmenities.Any(y => y.Amenities.Name == SearchTextBox.Text)).ToList();
                 var nights = (int)NightsNumber.Value;
                 var people = (int)PeopleNumber.Value;
@@ -155,7 +159,8 @@ namespace Session3
             var items = entities.Items.ToList();
             if (!string.IsNullOrEmpty(AreaComboBox.Text))
             {
-                items = items.Where(x => x.AreaID == (long)AreaComboBox.SelectedIndex).ToList();
+                var id = (long)AreaComboBox.SelectedValue;
+                items = items.Where(x => x.AreaID == id).ToList();
                 onoptions++;
             }
             if (!string.IsNullOrEmpty(AttractionComboBox.Text))
