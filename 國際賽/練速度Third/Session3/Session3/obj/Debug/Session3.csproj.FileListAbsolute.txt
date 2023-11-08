@@ -1,0 +1,10 @@
+C:\Users\USER\Documents\GitHub\Practise\國際賽\練速度Third\Session3\Session3\bin\Debug\Session3.exe.config
+C:\Users\USER\Documents\GitHub\Practise\國際賽\練速度Third\Session3\Session3\bin\Debug\Session3.exe
+C:\Users\USER\Documents\GitHub\Practise\國際賽\練速度Third\Session3\Session3\bin\Debug\Session3.pdb
+C:\Users\USER\Documents\GitHub\Practise\國際賽\練速度Third\Session3\Session3\obj\Debug\Session3.csproj.AssemblyReference.cache
+C:\Users\USER\Documents\GitHub\Practise\國際賽\練速度Third\Session3\Session3\obj\Debug\Session3.Properties.Resources.resources
+C:\Users\USER\Documents\GitHub\Practise\國際賽\練速度Third\Session3\Session3\obj\Debug\Session3.csproj.GenerateResource.cache
+C:\Users\USER\Documents\GitHub\Practise\國際賽\練速度Third\Session3\Session3\obj\Debug\Session3.csproj.CoreCompileInputs.cache
+C:\Users\USER\Documents\GitHub\Practise\國際賽\練速度Third\Session3\Session3\obj\Debug\Session3.exe
+C:\Users\USER\Documents\GitHub\Practise\國際賽\練速度Third\Session3\Session3\obj\Debug\Session3.pdb
+C:\Users\USER\Documents\GitHub\Practise\國際賽\練速度Third\Session3\Session3\obj\Debug\Session3.Main.resources
