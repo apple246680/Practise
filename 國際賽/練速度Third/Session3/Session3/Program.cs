@@ -16,7 +16,13 @@ namespace Session3
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
+            Application.ThreadException += HandleUnhandledException;
             Application.Run(new Main());
+        }
+
+        private static void HandleUnhandledException(object sender, System.Threading.ThreadExceptionEventArgs e)
+        {
+            MessageBox.Show($"error: {e.Exception.Message}", "error", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
     }
 }

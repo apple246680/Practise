@@ -151,8 +151,9 @@
             this.SearchTextBox.Size = new System.Drawing.Size(774, 28);
             this.SearchTextBox.TabIndex = 0;
             this.SearchTextBox.Text = "Enter area name, attraction, property title, property type, amenities ...";
-            this.SearchTextBox.MouseClick += new System.Windows.Forms.MouseEventHandler(this.SearchTextBox_MouseClick);
+            this.SearchTextBox.TextChanged += new System.EventHandler(this.SearchTextBox_TextChanged);
             this.SearchTextBox.Leave += new System.EventHandler(this.SearchTextBox_Leave);
+            this.SearchTextBox.MouseDown += new System.Windows.Forms.MouseEventHandler(this.SearchTextBox_MouseDown);
             // 
             // SimpleSearchBtn
             // 
@@ -170,6 +171,7 @@
             this.SimpleSearchBtn.Text = "Search properties...";
             this.SimpleSearchBtn.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.SimpleSearchBtn.UseVisualStyleBackColor = true;
+            this.SimpleSearchBtn.Click += new System.EventHandler(this.SimpleSearchBtn_Click);
             // 
             // AdvanedFormBtn
             // 
@@ -227,6 +229,7 @@
             this.AdvancedSearchBtn.Text = "Search properties...";
             this.AdvancedSearchBtn.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.AdvancedSearchBtn.UseVisualStyleBackColor = true;
+            this.AdvancedSearchBtn.Click += new System.EventHandler(this.AdvancedSearchBtn_Click);
             // 
             // ClearBtn
             // 
@@ -539,6 +542,7 @@
             this.ListBoxHint.ScrollAlwaysVisible = true;
             this.ListBoxHint.Size = new System.Drawing.Size(774, 46);
             this.ListBoxHint.TabIndex = 10;
+            this.ListBoxHint.MouseClick += new System.Windows.Forms.MouseEventHandler(this.ListBoxHint_MouseClick);
             // 
             // TopPanel
             // 
@@ -658,8 +662,9 @@
             this.ResultsLabel.AutoSize = true;
             this.ResultsLabel.Location = new System.Drawing.Point(13, 213);
             this.ResultsLabel.Name = "ResultsLabel";
-            this.ResultsLabel.Size = new System.Drawing.Size(0, 22);
+            this.ResultsLabel.Size = new System.Drawing.Size(41, 22);
             this.ResultsLabel.TabIndex = 37;
+            this.ResultsLabel.Text = "here";
             // 
             // ResultsDataGridView
             // 
@@ -727,7 +732,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 22F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(187)))), ((int)(((byte)(187)))));
-            this.ClientSize = new System.Drawing.Size(1184, 555);
+            this.ClientSize = new System.Drawing.Size(1184, 580);
             this.Controls.Add(this.AllFlowLayoutPanel);
             this.Font = new System.Drawing.Font("Open Sans Light", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
