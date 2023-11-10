@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{87BFA9E7-1BAB-486B-9206-BC3358604987}</ProjectGuid>
+    <ProjectGuid>{8F943ED0-FC7C-4FBF-99E2-801218B7C0B5}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <RootNamespace>Session1</RootNamespace>
     <AssemblyName>Session1</AssemblyName>
@@ -55,69 +55,75 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AddOrEditListingForm.cs">
-      <SubType>Form</SubType>
+    <Compile Include="AddOrEditListing.cs">
+      <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="AddOrEditListingForm.Designer.cs">
-      <DependentUpon>AddOrEditListingForm.cs</DependentUpon>
+    <Compile Include="AddOrEditListing.Designer.cs">
+      <DependentUpon>AddOrEditListing.cs</DependentUpon>
     </Compile>
-    <Compile Include="Amenities.cs">
+    <Compile Include="Amenity.cs">
       <DependentUpon>Session1Model.tt</DependentUpon>
     </Compile>
-    <Compile Include="Areas.cs">
+    <Compile Include="Area.cs">
       <DependentUpon>Session1Model.tt</DependentUpon>
     </Compile>
-    <Compile Include="Attractions.cs">
+    <Compile Include="Attraction.cs">
       <DependentUpon>Session1Model.tt</DependentUpon>
     </Compile>
-    <Compile Include="CancellationPolicies.cs">
+    <Compile Include="CancellationPolicy.cs">
       <DependentUpon>Session1Model.tt</DependentUpon>
     </Compile>
-    <Compile Include="CancellationRefundFees.cs">
+    <Compile Include="CancellationRefundFee.cs">
       <DependentUpon>Session1Model.tt</DependentUpon>
     </Compile>
-    <Compile Include="Coupons.cs">
+    <Compile Include="Coupon.cs">
       <DependentUpon>Session1Model.tt</DependentUpon>
     </Compile>
-    <Compile Include="CreateAccountForm.cs">
-      <SubType>Form</SubType>
+    <Compile Include="CreateAccount.cs">
+      <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="CreateAccountForm.Designer.cs">
-      <DependentUpon>CreateAccountForm.cs</DependentUpon>
+    <Compile Include="CreateAccount.Designer.cs">
+      <DependentUpon>CreateAccount.cs</DependentUpon>
     </Compile>
-    <Compile Include="DimDates.cs">
+    <Compile Include="DimDate.cs">
       <DependentUpon>Session1Model.tt</DependentUpon>
     </Compile>
     <Compile Include="Global.cs" />
-    <Compile Include="ItemAmenities.cs">
+    <Compile Include="Item.cs">
       <DependentUpon>Session1Model.tt</DependentUpon>
     </Compile>
-    <Compile Include="ItemAttractions.cs">
+    <Compile Include="ItemAmenity.cs">
       <DependentUpon>Session1Model.tt</DependentUpon>
     </Compile>
-    <Compile Include="ItemPictures.cs">
+    <Compile Include="ItemAttraction.cs">
       <DependentUpon>Session1Model.tt</DependentUpon>
     </Compile>
-    <Compile Include="ItemPrices.cs">
+    <Compile Include="ItemPicture.cs">
       <DependentUpon>Session1Model.tt</DependentUpon>
     </Compile>
-    <Compile Include="Items.cs">
+    <Compile Include="ItemPrice.cs">
       <DependentUpon>Session1Model.tt</DependentUpon>
     </Compile>
-    <Compile Include="ItemTypes.cs">
+    <Compile Include="ItemType.cs">
       <DependentUpon>Session1Model.tt</DependentUpon>
     </Compile>
-    <Compile Include="LoginForm.cs">
+    <Compile Include="Login.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Login.Designer.cs">
+      <DependentUpon>Login.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Main.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="LoginForm.Designer.cs">
-      <DependentUpon>LoginForm.cs</DependentUpon>
+    <Compile Include="Main.Designer.cs">
+      <DependentUpon>Main.cs</DependentUpon>
     </Compile>
-    <Compile Include="ManagementForm.cs">
-      <SubType>Form</SubType>
+    <Compile Include="Management.cs">
+      <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="ManagementForm.Designer.cs">
-      <DependentUpon>ManagementForm.cs</DependentUpon>
+    <Compile Include="Management.Designer.cs">
+      <DependentUpon>Management.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -136,35 +142,35 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Session1Model.edmx</DependentUpon>
     </Compile>
-    <Compile Include="TermsForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="TermsForm.Designer.cs">
-      <DependentUpon>TermsForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Transactions.cs">
+    <Compile Include="sysdiagram.cs">
       <DependentUpon>Session1Model.tt</DependentUpon>
     </Compile>
-    <Compile Include="TransactionTypes.cs">
+    <Compile Include="Transaction.cs">
       <DependentUpon>Session1Model.tt</DependentUpon>
     </Compile>
-    <Compile Include="Users.cs">
+    <Compile Include="TransactionType.cs">
       <DependentUpon>Session1Model.tt</DependentUpon>
     </Compile>
-    <Compile Include="UserTypes.cs">
+    <Compile Include="User.cs">
       <DependentUpon>Session1Model.tt</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="AddOrEditListingForm.resx">
-      <DependentUpon>AddOrEditListingForm.cs</DependentUpon>
+    <Compile Include="UserType.cs">
+      <DependentUpon>Session1Model.tt</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="AddOrEditListing.resx">
+      <DependentUpon>AddOrEditListing.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="CreateAccountForm.resx">
-      <DependentUpon>CreateAccountForm.cs</DependentUpon>
+    <EmbeddedResource Include="CreateAccount.resx">
+      <DependentUpon>CreateAccount.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="LoginForm.resx">
-      <DependentUpon>LoginForm.cs</DependentUpon>
+    <EmbeddedResource Include="Login.resx">
+      <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ManagementForm.resx">
-      <DependentUpon>ManagementForm.cs</DependentUpon>
+    <EmbeddedResource Include="Main.resx">
+      <DependentUpon>Main.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Management.resx">
+      <DependentUpon>Management.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -176,9 +182,6 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="TermsForm.resx">
-      <DependentUpon>TermsForm.cs</DependentUpon>
-    </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -201,7 +204,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\WSC2022SE_TP09_Logo_actual_en.png" />
+    <None Include="Resources\135-search.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\267-plus.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\276-enter.png" />
@@ -210,10 +216,9 @@
     <None Include="Resources\277-exit.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\267-plus1.png" />
-    <None Include="Resources\267-plus.png" />
-    <None Include="Resources\135-search1.png" />
-    <None Include="Resources\135-search.png" />
+    <None Include="Resources\WSC2022SE_TP09_Logo_actual_en.png" />
+  </ItemGroup>
+  <ItemGroup>
     <Content Include="Session1Model.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>Session1Model.Context.cs</LastGenOutput>

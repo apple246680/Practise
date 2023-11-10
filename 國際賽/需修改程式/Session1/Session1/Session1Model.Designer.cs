@@ -1,4 +1,4 @@
-﻿// T4 code generation is enabled for model 'C:\Users\USER\Documents\GitHub\Practise\國際賽\Session1\Session1\Session1Model.edmx'. 
+﻿// T4 code generation is enabled for model 'C:\Users\pengy\Desktop\Practise\國際賽\需修改程式\Session1\Session1\Session1Model.edmx'. 
 // To enable legacy code generation, change the value of the 'Code Generation Strategy' designer
 // property to 'Legacy ObjectContext'. This property is available in the Properties Window when the model
 // is open in the designer.

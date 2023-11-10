@@ -1,6 +1,9 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
 using System.Windows.Forms;
- 
+
 namespace Session1
 {
     internal static class Program
@@ -14,7 +17,7 @@ namespace Session1
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.ThreadException += HandleUnhandledException;
-            Application.Run(new LoginForm());
+            Application.Run(new MainForm());
         }
         private static void HandleUnhandledException(object sender, System.Threading.ThreadExceptionEventArgs e)
         {

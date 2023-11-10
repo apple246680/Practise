@@ -73,39 +73,9 @@ namespace Session1.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap _135_search1 {
-            get {
-                object obj = ResourceManager.GetObject("135-search1", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap _135_search2 {
-            get {
-                object obj = ResourceManager.GetObject("135-search2", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap _267_plus {
             get {
                 object obj = ResourceManager.GetObject("267-plus", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap _267_plus1 {
-            get {
-                object obj = ResourceManager.GetObject("267-plus1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

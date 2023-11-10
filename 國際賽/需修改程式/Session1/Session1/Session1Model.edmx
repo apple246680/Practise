@@ -146,6 +146,16 @@
           <Property Name="GUID" Type="uniqueidentifier" Nullable="false" />
           <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
         </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="principal_id" Type="int" Nullable="false" />
+          <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="version" Type="int" />
+          <Property Name="definition" Type="varbinary(max)" />
+        </EntityType>
         <EntityType Name="Transactions">
           <Key>
             <PropertyRef Name="ID" />
@@ -370,6 +380,7 @@
           <EntitySet Name="ItemPrices" EntityType="Self.ItemPrices" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Items" EntityType="Self.Items" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="ItemTypes" EntityType="Self.ItemTypes" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Transactions" EntityType="Self.Transactions" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TransactionTypes" EntityType="Self.TransactionTypes" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Users" EntityType="Self.Users" Schema="dbo" store:Type="Tables" />
@@ -436,7 +447,7 @@
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="Session1Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
-        <EntityType Name="Amenities">
+        <EntityType Name="Amenity">
           <Key>
             <PropertyRef Name="ID" />
           </Key>
@@ -446,7 +457,7 @@
           <Property Name="IconName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="ItemAmenities" Relationship="Self.FK_PlaceAmenities_Amenities" FromRole="Amenities" ToRole="ItemAmenities" />
         </EntityType>
-        <EntityType Name="Areas">
+        <EntityType Name="Area">
           <Key>
             <PropertyRef Name="ID" />
           </Key>
@@ -456,7 +467,7 @@
           <NavigationProperty Name="Attractions" Relationship="Self.FK_Attractions_Areas" FromRole="Areas" ToRole="Attractions" />
           <NavigationProperty Name="Items" Relationship="Self.FK_Items_Areas" FromRole="Areas" ToRole="Items" />
         </EntityType>
-        <EntityType Name="Attractions">
+        <EntityType Name="Attraction">
           <Key>
             <PropertyRef Name="ID" />
           </Key>
@@ -465,10 +476,10 @@
           <Property Name="AreaID" Type="Int64" Nullable="false" />
           <Property Name="Name" Type="String" MaxLength="150" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="Address" Type="String" MaxLength="500" FixedLength="false" Unicode="false" Nullable="false" />
-          <NavigationProperty Name="Areas" Relationship="Self.FK_Attractions_Areas" FromRole="Attractions" ToRole="Areas" />
+          <NavigationProperty Name="Area" Relationship="Self.FK_Attractions_Areas" FromRole="Attractions" ToRole="Areas" />
           <NavigationProperty Name="ItemAttractions" Relationship="Self.FK_PlaceSightseeingLocations_SightseeingLocations" FromRole="Attractions" ToRole="ItemAttractions" />
         </EntityType>
-        <EntityType Name="CancellationPolicies">
+        <EntityType Name="CancellationPolicy">
           <Key>
             <PropertyRef Name="ID" />
           </Key>
@@ -479,7 +490,7 @@
           <NavigationProperty Name="CancellationRefundFees" Relationship="Self.FK_CancellationRefundFees_CancellationPolicies" FromRole="CancellationPolicies" ToRole="CancellationRefundFees" />
           <NavigationProperty Name="ItemPrices" Relationship="Self.FK_PlacePrices_CancellationPolicies" FromRole="CancellationPolicies" ToRole="ItemPrices" />
         </EntityType>
-        <EntityType Name="CancellationRefundFees">
+        <EntityType Name="CancellationRefundFee">
           <Key>
             <PropertyRef Name="ID" />
           </Key>
@@ -488,9 +499,9 @@
           <Property Name="CancellationPolicyID" Type="Int64" Nullable="false" />
           <Property Name="DaysLeft" Type="Int32" Nullable="false" />
           <Property Name="PenaltyPercentage" Type="Decimal" Precision="5" Scale="2" Nullable="false" />
-          <NavigationProperty Name="CancellationPolicies" Relationship="Self.FK_CancellationRefundFees_CancellationPolicies" FromRole="CancellationRefundFees" ToRole="CancellationPolicies" />
+          <NavigationProperty Name="CancellationPolicy" Relationship="Self.FK_CancellationRefundFees_CancellationPolicies" FromRole="CancellationRefundFees" ToRole="CancellationPolicies" />
         </EntityType>
-        <EntityType Name="Coupons">
+        <EntityType Name="Coupon">
           <Key>
             <PropertyRef Name="ID" />
           </Key>
@@ -500,7 +511,7 @@
           <Property Name="DiscountPercent" Type="Decimal" Precision="4" Scale="1" Nullable="false" />
           <Property Name="MaximimDiscountAmount" Type="Decimal" Precision="10" Scale="2" Nullable="false" />
         </EntityType>
-        <EntityType Name="DimDates">
+        <EntityType Name="DimDate">
           <Key>
             <PropertyRef Name="ID" />
           </Key>
@@ -515,7 +526,7 @@
           <Property Name="DayName" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="isHoliday" Type="Boolean" Nullable="false" />
         </EntityType>
-        <EntityType Name="ItemAmenities">
+        <EntityType Name="ItemAmenity">
           <Key>
             <PropertyRef Name="ID" />
           </Key>
@@ -523,10 +534,10 @@
           <Property Name="GUID" Type="Guid" Nullable="false" />
           <Property Name="ItemID" Type="Int64" Nullable="false" />
           <Property Name="AmenityID" Type="Int64" Nullable="false" />
-          <NavigationProperty Name="Amenities" Relationship="Self.FK_PlaceAmenities_Amenities" FromRole="ItemAmenities" ToRole="Amenities" />
-          <NavigationProperty Name="Items" Relationship="Self.FK_PlaceAmenities_Places" FromRole="ItemAmenities" ToRole="Items" />
+          <NavigationProperty Name="Amenity" Relationship="Self.FK_PlaceAmenities_Amenities" FromRole="ItemAmenities" ToRole="Amenities" />
+          <NavigationProperty Name="Item" Relationship="Self.FK_PlaceAmenities_Places" FromRole="ItemAmenities" ToRole="Items" />
         </EntityType>
-        <EntityType Name="ItemAttractions">
+        <EntityType Name="ItemAttraction">
           <Key>
             <PropertyRef Name="ID" />
           </Key>
@@ -537,10 +548,10 @@
           <Property Name="Distance" Type="Decimal" Precision="5" Scale="1" />
           <Property Name="DurationOnFoot" Type="Int64" />
           <Property Name="DurationByCar" Type="Int64" />
-          <NavigationProperty Name="Attractions" Relationship="Self.FK_PlaceSightseeingLocations_SightseeingLocations" FromRole="ItemAttractions" ToRole="Attractions" />
-          <NavigationProperty Name="Items" Relationship="Self.FK_PlaceSightseeingLocations_Places" FromRole="ItemAttractions" ToRole="Items" />
+          <NavigationProperty Name="Attraction" Relationship="Self.FK_PlaceSightseeingLocations_SightseeingLocations" FromRole="ItemAttractions" ToRole="Attractions" />
+          <NavigationProperty Name="Item" Relationship="Self.FK_PlaceSightseeingLocations_Places" FromRole="ItemAttractions" ToRole="Items" />
         </EntityType>
-        <EntityType Name="ItemPictures">
+        <EntityType Name="ItemPicture">
           <Key>
             <PropertyRef Name="ID" />
           </Key>
@@ -548,9 +559,9 @@
           <Property Name="GUID" Type="Guid" Nullable="false" />
           <Property Name="ItemID" Type="Int64" Nullable="false" />
           <Property Name="PictureFileName" Type="String" MaxLength="500" FixedLength="false" Unicode="false" Nullable="false" />
-          <NavigationProperty Name="Items" Relationship="Self.FK_PlacePictures_Places" FromRole="ItemPictures" ToRole="Items" />
+          <NavigationProperty Name="Item" Relationship="Self.FK_PlacePictures_Places" FromRole="ItemPictures" ToRole="Items" />
         </EntityType>
-        <EntityType Name="ItemPrices">
+        <EntityType Name="ItemPrice">
           <Key>
             <PropertyRef Name="ID" />
           </Key>
@@ -560,10 +571,10 @@
           <Property Name="Date" Type="DateTime" Nullable="false" Precision="0" />
           <Property Name="Price" Type="Decimal" Precision="10" Scale="2" Nullable="false" />
           <Property Name="CancellationPolicyID" Type="Int64" Nullable="false" />
-          <NavigationProperty Name="CancellationPolicies" Relationship="Self.FK_PlacePrices_CancellationPolicies" FromRole="ItemPrices" ToRole="CancellationPolicies" />
-          <NavigationProperty Name="Items" Relationship="Self.FK_PlacePrices_Places" FromRole="ItemPrices" ToRole="Items" />
+          <NavigationProperty Name="CancellationPolicy" Relationship="Self.FK_PlacePrices_CancellationPolicies" FromRole="ItemPrices" ToRole="CancellationPolicies" />
+          <NavigationProperty Name="Item" Relationship="Self.FK_PlacePrices_Places" FromRole="ItemPrices" ToRole="Items" />
         </EntityType>
-        <EntityType Name="Items">
+        <EntityType Name="Item">
           <Key>
             <PropertyRef Name="ID" />
           </Key>
@@ -583,15 +594,15 @@
           <Property Name="HostRules" Type="String" MaxLength="2000" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="MinimumNights" Type="Int32" Nullable="false" />
           <Property Name="MaximumNights" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="Areas" Relationship="Self.FK_Items_Areas" FromRole="Items" ToRole="Areas" />
+          <NavigationProperty Name="Area" Relationship="Self.FK_Items_Areas" FromRole="Items" ToRole="Areas" />
           <NavigationProperty Name="ItemAmenities" Relationship="Self.FK_PlaceAmenities_Places" FromRole="Items" ToRole="ItemAmenities" />
           <NavigationProperty Name="ItemAttractions" Relationship="Self.FK_PlaceSightseeingLocations_Places" FromRole="Items" ToRole="ItemAttractions" />
           <NavigationProperty Name="ItemPictures" Relationship="Self.FK_PlacePictures_Places" FromRole="Items" ToRole="ItemPictures" />
           <NavigationProperty Name="ItemPrices" Relationship="Self.FK_PlacePrices_Places" FromRole="Items" ToRole="ItemPrices" />
-          <NavigationProperty Name="ItemTypes" Relationship="Self.FK_Places_PlaceTypes" FromRole="Items" ToRole="ItemTypes" />
-          <NavigationProperty Name="Users" Relationship="Self.FK_Places_Users" FromRole="Items" ToRole="Users" />
+          <NavigationProperty Name="ItemType" Relationship="Self.FK_Places_PlaceTypes" FromRole="Items" ToRole="ItemTypes" />
+          <NavigationProperty Name="User" Relationship="Self.FK_Places_Users" FromRole="Items" ToRole="Users" />
         </EntityType>
-        <EntityType Name="ItemTypes">
+        <EntityType Name="ItemType">
           <Key>
             <PropertyRef Name="ID" />
           </Key>
@@ -600,7 +611,17 @@
           <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <NavigationProperty Name="Items" Relationship="Self.FK_Places_PlaceTypes" FromRole="ItemTypes" ToRole="Items" />
         </EntityType>
-        <EntityType Name="Transactions">
+        <EntityType Name="sysdiagram">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="principal_id" Type="Int32" Nullable="false" />
+          <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="version" Type="Int32" />
+          <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="Transaction">
           <Key>
             <PropertyRef Name="ID" />
           </Key>
@@ -611,9 +632,9 @@
           <Property Name="Amount" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
           <Property Name="TransactionDate" Type="DateTime" Nullable="false" Precision="0" />
           <Property Name="GatewayReturnID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-          <NavigationProperty Name="TransactionTypes" Relationship="Self.FK_Transactions_TransactionTypes" FromRole="Transactions" ToRole="TransactionTypes" />
+          <NavigationProperty Name="TransactionType" Relationship="Self.FK_Transactions_TransactionTypes" FromRole="Transactions" ToRole="TransactionTypes" />
         </EntityType>
-        <EntityType Name="TransactionTypes">
+        <EntityType Name="TransactionType">
           <Key>
             <PropertyRef Name="ID" />
           </Key>
@@ -622,7 +643,7 @@
           <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <NavigationProperty Name="Transactions" Relationship="Self.FK_Transactions_TransactionTypes" FromRole="TransactionTypes" ToRole="Transactions" />
         </EntityType>
-        <EntityType Name="Users">
+        <EntityType Name="User">
           <Key>
             <PropertyRef Name="ID" />
           </Key>
@@ -636,9 +657,9 @@
           <Property Name="BirthDate" Type="DateTime" Nullable="false" Precision="0" />
           <Property Name="FamilyCount" Type="Int32" Nullable="false" />
           <NavigationProperty Name="Items" Relationship="Self.FK_Places_Users" FromRole="Users" ToRole="Items" />
-          <NavigationProperty Name="UserTypes" Relationship="Self.FK_Users_UserTypes" FromRole="Users" ToRole="UserTypes" />
+          <NavigationProperty Name="UserType" Relationship="Self.FK_Users_UserTypes" FromRole="Users" ToRole="UserTypes" />
         </EntityType>
-        <EntityType Name="UserTypes">
+        <EntityType Name="UserType">
           <Key>
             <PropertyRef Name="ID" />
           </Key>
@@ -648,8 +669,8 @@
           <NavigationProperty Name="Users" Relationship="Self.FK_Users_UserTypes" FromRole="UserTypes" ToRole="Users" />
         </EntityType>
         <Association Name="FK_PlaceAmenities_Amenities">
-          <End Role="Amenities" Type="Self.Amenities" Multiplicity="1" />
-          <End Role="ItemAmenities" Type="Self.ItemAmenities" Multiplicity="*" />
+          <End Role="Amenities" Type="Self.Amenity" Multiplicity="1" />
+          <End Role="ItemAmenities" Type="Self.ItemAmenity" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Amenities">
               <PropertyRef Name="ID" />
@@ -660,8 +681,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Attractions_Areas">
-          <End Role="Areas" Type="Self.Areas" Multiplicity="1" />
-          <End Role="Attractions" Type="Self.Attractions" Multiplicity="*" />
+          <End Role="Areas" Type="Self.Area" Multiplicity="1" />
+          <End Role="Attractions" Type="Self.Attraction" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Areas">
               <PropertyRef Name="ID" />
@@ -672,8 +693,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Items_Areas">
-          <End Role="Areas" Type="Self.Areas" Multiplicity="1" />
-          <End Role="Items" Type="Self.Items" Multiplicity="*" />
+          <End Role="Areas" Type="Self.Area" Multiplicity="1" />
+          <End Role="Items" Type="Self.Item" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Areas">
               <PropertyRef Name="ID" />
@@ -684,8 +705,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_PlaceSightseeingLocations_SightseeingLocations">
-          <End Role="Attractions" Type="Self.Attractions" Multiplicity="1" />
-          <End Role="ItemAttractions" Type="Self.ItemAttractions" Multiplicity="*" />
+          <End Role="Attractions" Type="Self.Attraction" Multiplicity="1" />
+          <End Role="ItemAttractions" Type="Self.ItemAttraction" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Attractions">
               <PropertyRef Name="ID" />
@@ -696,8 +717,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_CancellationRefundFees_CancellationPolicies">
-          <End Role="CancellationPolicies" Type="Self.CancellationPolicies" Multiplicity="1" />
-          <End Role="CancellationRefundFees" Type="Self.CancellationRefundFees" Multiplicity="*" />
+          <End Role="CancellationPolicies" Type="Self.CancellationPolicy" Multiplicity="1" />
+          <End Role="CancellationRefundFees" Type="Self.CancellationRefundFee" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="CancellationPolicies">
               <PropertyRef Name="ID" />
@@ -708,8 +729,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_PlacePrices_CancellationPolicies">
-          <End Role="CancellationPolicies" Type="Self.CancellationPolicies" Multiplicity="1" />
-          <End Role="ItemPrices" Type="Self.ItemPrices" Multiplicity="*" />
+          <End Role="CancellationPolicies" Type="Self.CancellationPolicy" Multiplicity="1" />
+          <End Role="ItemPrices" Type="Self.ItemPrice" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="CancellationPolicies">
               <PropertyRef Name="ID" />
@@ -720,8 +741,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_PlaceAmenities_Places">
-          <End Role="Items" Type="Self.Items" Multiplicity="1" />
-          <End Role="ItemAmenities" Type="Self.ItemAmenities" Multiplicity="*" />
+          <End Role="Items" Type="Self.Item" Multiplicity="1" />
+          <End Role="ItemAmenities" Type="Self.ItemAmenity" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Items">
               <PropertyRef Name="ID" />
@@ -732,8 +753,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_PlaceSightseeingLocations_Places">
-          <End Role="Items" Type="Self.Items" Multiplicity="1" />
-          <End Role="ItemAttractions" Type="Self.ItemAttractions" Multiplicity="*" />
+          <End Role="Items" Type="Self.Item" Multiplicity="1" />
+          <End Role="ItemAttractions" Type="Self.ItemAttraction" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Items">
               <PropertyRef Name="ID" />
@@ -744,8 +765,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_PlacePictures_Places">
-          <End Role="Items" Type="Self.Items" Multiplicity="1" />
-          <End Role="ItemPictures" Type="Self.ItemPictures" Multiplicity="*" />
+          <End Role="Items" Type="Self.Item" Multiplicity="1" />
+          <End Role="ItemPictures" Type="Self.ItemPicture" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Items">
               <PropertyRef Name="ID" />
@@ -756,8 +777,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_PlacePrices_Places">
-          <End Role="Items" Type="Self.Items" Multiplicity="1" />
-          <End Role="ItemPrices" Type="Self.ItemPrices" Multiplicity="*" />
+          <End Role="Items" Type="Self.Item" Multiplicity="1" />
+          <End Role="ItemPrices" Type="Self.ItemPrice" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Items">
               <PropertyRef Name="ID" />
@@ -768,8 +789,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Places_PlaceTypes">
-          <End Role="ItemTypes" Type="Self.ItemTypes" Multiplicity="1" />
-          <End Role="Items" Type="Self.Items" Multiplicity="*" />
+          <End Role="ItemTypes" Type="Self.ItemType" Multiplicity="1" />
+          <End Role="Items" Type="Self.Item" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="ItemTypes">
               <PropertyRef Name="ID" />
@@ -780,8 +801,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Places_Users">
-          <End Role="Users" Type="Self.Users" Multiplicity="1" />
-          <End Role="Items" Type="Self.Items" Multiplicity="*" />
+          <End Role="Users" Type="Self.User" Multiplicity="1" />
+          <End Role="Items" Type="Self.Item" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Users">
               <PropertyRef Name="ID" />
@@ -792,8 +813,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Transactions_TransactionTypes">
-          <End Role="TransactionTypes" Type="Self.TransactionTypes" Multiplicity="1" />
-          <End Role="Transactions" Type="Self.Transactions" Multiplicity="*" />
+          <End Role="TransactionTypes" Type="Self.TransactionType" Multiplicity="1" />
+          <End Role="Transactions" Type="Self.Transaction" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="TransactionTypes">
               <PropertyRef Name="ID" />
@@ -804,8 +825,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Users_UserTypes">
-          <End Role="UserTypes" Type="Self.UserTypes" Multiplicity="1" />
-          <End Role="Users" Type="Self.Users" Multiplicity="*" />
+          <End Role="UserTypes" Type="Self.UserType" Multiplicity="1" />
+          <End Role="Users" Type="Self.User" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="UserTypes">
               <PropertyRef Name="ID" />
@@ -816,23 +837,24 @@
           </ReferentialConstraint>
         </Association>
         <EntityContainer Name="Session1Entities" annotation:LazyLoadingEnabled="true">
-          <EntitySet Name="Amenities" EntityType="Self.Amenities" />
-          <EntitySet Name="Areas" EntityType="Self.Areas" />
-          <EntitySet Name="Attractions" EntityType="Self.Attractions" />
-          <EntitySet Name="CancellationPolicies" EntityType="Self.CancellationPolicies" />
-          <EntitySet Name="CancellationRefundFees" EntityType="Self.CancellationRefundFees" />
-          <EntitySet Name="Coupons" EntityType="Self.Coupons" />
-          <EntitySet Name="DimDates" EntityType="Self.DimDates" />
-          <EntitySet Name="ItemAmenities" EntityType="Self.ItemAmenities" />
-          <EntitySet Name="ItemAttractions" EntityType="Self.ItemAttractions" />
-          <EntitySet Name="ItemPictures" EntityType="Self.ItemPictures" />
-          <EntitySet Name="ItemPrices" EntityType="Self.ItemPrices" />
-          <EntitySet Name="Items" EntityType="Self.Items" />
-          <EntitySet Name="ItemTypes" EntityType="Self.ItemTypes" />
-          <EntitySet Name="Transactions" EntityType="Self.Transactions" />
-          <EntitySet Name="TransactionTypes" EntityType="Self.TransactionTypes" />
-          <EntitySet Name="Users" EntityType="Self.Users" />
-          <EntitySet Name="UserTypes" EntityType="Self.UserTypes" />
+          <EntitySet Name="Amenities" EntityType="Self.Amenity" />
+          <EntitySet Name="Areas" EntityType="Self.Area" />
+          <EntitySet Name="Attractions" EntityType="Self.Attraction" />
+          <EntitySet Name="CancellationPolicies" EntityType="Self.CancellationPolicy" />
+          <EntitySet Name="CancellationRefundFees" EntityType="Self.CancellationRefundFee" />
+          <EntitySet Name="Coupons" EntityType="Self.Coupon" />
+          <EntitySet Name="DimDates" EntityType="Self.DimDate" />
+          <EntitySet Name="ItemAmenities" EntityType="Self.ItemAmenity" />
+          <EntitySet Name="ItemAttractions" EntityType="Self.ItemAttraction" />
+          <EntitySet Name="ItemPictures" EntityType="Self.ItemPicture" />
+          <EntitySet Name="ItemPrices" EntityType="Self.ItemPrice" />
+          <EntitySet Name="Items" EntityType="Self.Item" />
+          <EntitySet Name="ItemTypes" EntityType="Self.ItemType" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagram" />
+          <EntitySet Name="Transactions" EntityType="Self.Transaction" />
+          <EntitySet Name="TransactionTypes" EntityType="Self.TransactionType" />
+          <EntitySet Name="Users" EntityType="Self.User" />
+          <EntitySet Name="UserTypes" EntityType="Self.UserType" />
           <AssociationSet Name="FK_PlaceAmenities_Amenities" Association="Self.FK_PlaceAmenities_Amenities">
             <End Role="Amenities" EntitySet="Amenities" />
             <End Role="ItemAmenities" EntitySet="ItemAmenities" />
@@ -897,7 +919,7 @@
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
         <EntityContainerMapping StorageEntityContainer="Session1ModelStoreContainer" CdmEntityContainer="Session1Entities">
           <EntitySetMapping Name="Amenities">
-            <EntityTypeMapping TypeName="Session1Model.Amenities">
+            <EntityTypeMapping TypeName="Session1Model.Amenity">
               <MappingFragment StoreEntitySet="Amenities">
                 <ScalarProperty Name="ID" ColumnName="ID" />
                 <ScalarProperty Name="GUID" ColumnName="GUID" />
@@ -907,7 +929,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Areas">
-            <EntityTypeMapping TypeName="Session1Model.Areas">
+            <EntityTypeMapping TypeName="Session1Model.Area">
               <MappingFragment StoreEntitySet="Areas">
                 <ScalarProperty Name="ID" ColumnName="ID" />
                 <ScalarProperty Name="GUID" ColumnName="GUID" />
@@ -916,7 +938,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Attractions">
-            <EntityTypeMapping TypeName="Session1Model.Attractions">
+            <EntityTypeMapping TypeName="Session1Model.Attraction">
               <MappingFragment StoreEntitySet="Attractions">
                 <ScalarProperty Name="ID" ColumnName="ID" />
                 <ScalarProperty Name="GUID" ColumnName="GUID" />
@@ -927,7 +949,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="CancellationPolicies">
-            <EntityTypeMapping TypeName="Session1Model.CancellationPolicies">
+            <EntityTypeMapping TypeName="Session1Model.CancellationPolicy">
               <MappingFragment StoreEntitySet="CancellationPolicies">
                 <ScalarProperty Name="ID" ColumnName="ID" />
                 <ScalarProperty Name="GUID" ColumnName="GUID" />
@@ -937,7 +959,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="CancellationRefundFees">
-            <EntityTypeMapping TypeName="Session1Model.CancellationRefundFees">
+            <EntityTypeMapping TypeName="Session1Model.CancellationRefundFee">
               <MappingFragment StoreEntitySet="CancellationRefundFees">
                 <ScalarProperty Name="ID" ColumnName="ID" />
                 <ScalarProperty Name="GUID" ColumnName="GUID" />
@@ -948,7 +970,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Coupons">
-            <EntityTypeMapping TypeName="Session1Model.Coupons">
+            <EntityTypeMapping TypeName="Session1Model.Coupon">
               <MappingFragment StoreEntitySet="Coupons">
                 <ScalarProperty Name="ID" ColumnName="ID" />
                 <ScalarProperty Name="GUID" ColumnName="GUID" />
@@ -959,7 +981,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="DimDates">
-            <EntityTypeMapping TypeName="Session1Model.DimDates">
+            <EntityTypeMapping TypeName="Session1Model.DimDate">
               <MappingFragment StoreEntitySet="DimDates">
                 <ScalarProperty Name="ID" ColumnName="ID" />
                 <ScalarProperty Name="Date" ColumnName="Date" />
@@ -975,7 +997,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="ItemAmenities">
-            <EntityTypeMapping TypeName="Session1Model.ItemAmenities">
+            <EntityTypeMapping TypeName="Session1Model.ItemAmenity">
               <MappingFragment StoreEntitySet="ItemAmenities">
                 <ScalarProperty Name="ID" ColumnName="ID" />
                 <ScalarProperty Name="GUID" ColumnName="GUID" />
@@ -985,7 +1007,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="ItemAttractions">
-            <EntityTypeMapping TypeName="Session1Model.ItemAttractions">
+            <EntityTypeMapping TypeName="Session1Model.ItemAttraction">
               <MappingFragment StoreEntitySet="ItemAttractions">
                 <ScalarProperty Name="ID" ColumnName="ID" />
                 <ScalarProperty Name="GUID" ColumnName="GUID" />
@@ -998,7 +1020,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="ItemPictures">
-            <EntityTypeMapping TypeName="Session1Model.ItemPictures">
+            <EntityTypeMapping TypeName="Session1Model.ItemPicture">
               <MappingFragment StoreEntitySet="ItemPictures">
                 <ScalarProperty Name="ID" ColumnName="ID" />
                 <ScalarProperty Name="GUID" ColumnName="GUID" />
@@ -1008,7 +1030,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="ItemPrices">
-            <EntityTypeMapping TypeName="Session1Model.ItemPrices">
+            <EntityTypeMapping TypeName="Session1Model.ItemPrice">
               <MappingFragment StoreEntitySet="ItemPrices">
                 <ScalarProperty Name="ID" ColumnName="ID" />
                 <ScalarProperty Name="GUID" ColumnName="GUID" />
@@ -1020,7 +1042,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Items">
-            <EntityTypeMapping TypeName="Session1Model.Items">
+            <EntityTypeMapping TypeName="Session1Model.Item">
               <MappingFragment StoreEntitySet="Items">
                 <ScalarProperty Name="ID" ColumnName="ID" />
                 <ScalarProperty Name="GUID" ColumnName="GUID" />
@@ -1042,7 +1064,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="ItemTypes">
-            <EntityTypeMapping TypeName="Session1Model.ItemTypes">
+            <EntityTypeMapping TypeName="Session1Model.ItemType">
               <MappingFragment StoreEntitySet="ItemTypes">
                 <ScalarProperty Name="ID" ColumnName="ID" />
                 <ScalarProperty Name="GUID" ColumnName="GUID" />
@@ -1050,8 +1072,19 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <EntitySetMapping Name="sysdiagrams">
+            <EntityTypeMapping TypeName="Session1Model.sysdiagram">
+              <MappingFragment StoreEntitySet="sysdiagrams">
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+                <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+                <ScalarProperty Name="version" ColumnName="version" />
+                <ScalarProperty Name="definition" ColumnName="definition" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
           <EntitySetMapping Name="Transactions">
-            <EntityTypeMapping TypeName="Session1Model.Transactions">
+            <EntityTypeMapping TypeName="Session1Model.Transaction">
               <MappingFragment StoreEntitySet="Transactions">
                 <ScalarProperty Name="ID" ColumnName="ID" />
                 <ScalarProperty Name="GUID" ColumnName="GUID" />
@@ -1064,7 +1097,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="TransactionTypes">
-            <EntityTypeMapping TypeName="Session1Model.TransactionTypes">
+            <EntityTypeMapping TypeName="Session1Model.TransactionType">
               <MappingFragment StoreEntitySet="TransactionTypes">
                 <ScalarProperty Name="ID" ColumnName="ID" />
                 <ScalarProperty Name="GUID" ColumnName="GUID" />
@@ -1073,7 +1106,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Users">
-            <EntityTypeMapping TypeName="Session1Model.Users">
+            <EntityTypeMapping TypeName="Session1Model.User">
               <MappingFragment StoreEntitySet="Users">
                 <ScalarProperty Name="ID" ColumnName="ID" />
                 <ScalarProperty Name="GUID" ColumnName="GUID" />
@@ -1088,7 +1121,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="UserTypes">
-            <EntityTypeMapping TypeName="Session1Model.UserTypes">
+            <EntityTypeMapping TypeName="Session1Model.UserType">
               <MappingFragment StoreEntitySet="UserTypes">
                 <ScalarProperty Name="ID" ColumnName="ID" />
                 <ScalarProperty Name="GUID" ColumnName="GUID" />
@@ -1110,7 +1143,7 @@
     <Options>
       <DesignerInfoPropertySet>
         <DesignerProperty Name="ValidateOnBuild" Value="true" />
-        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
         <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
         <DesignerProperty Name="UseLegacyProvider" Value="false" />
         <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
