@@ -76,7 +76,7 @@
             this.ShowPasswordCheckbox.ForeColor = System.Drawing.Color.Black;
             this.ShowPasswordCheckbox.Location = new System.Drawing.Point(378, 131);
             this.ShowPasswordCheckbox.Name = "ShowPasswordCheckbox";
-            this.ShowPasswordCheckbox.Size = new System.Drawing.Size(111, 21);
+            this.ShowPasswordCheckbox.Size = new System.Drawing.Size(137, 26);
             this.ShowPasswordCheckbox.TabIndex = 7;
             this.ShowPasswordCheckbox.Text = "Show Password";
             this.ShowPasswordCheckbox.UseVisualStyleBackColor = true;
@@ -90,7 +90,7 @@
             this.KeepMeSignedInCheckbox.ForeColor = System.Drawing.Color.Black;
             this.KeepMeSignedInCheckbox.Location = new System.Drawing.Point(378, 79);
             this.KeepMeSignedInCheckbox.Name = "KeepMeSignedInCheckbox";
-            this.KeepMeSignedInCheckbox.Size = new System.Drawing.Size(126, 21);
+            this.KeepMeSignedInCheckbox.Size = new System.Drawing.Size(154, 26);
             this.KeepMeSignedInCheckbox.TabIndex = 6;
             this.KeepMeSignedInCheckbox.Text = "Keep me signed in";
             this.KeepMeSignedInCheckbox.UseVisualStyleBackColor = true;
@@ -101,7 +101,7 @@
             this.PasswordTextbox.ForeColor = System.Drawing.Color.Black;
             this.PasswordTextbox.Location = new System.Drawing.Point(128, 151);
             this.PasswordTextbox.Name = "PasswordTextbox";
-            this.PasswordTextbox.Size = new System.Drawing.Size(234, 29);
+            this.PasswordTextbox.Size = new System.Drawing.Size(234, 35);
             this.PasswordTextbox.TabIndex = 5;
             // 
             // UserTextbox
@@ -110,7 +110,7 @@
             this.UserTextbox.ForeColor = System.Drawing.Color.Black;
             this.UserTextbox.Location = new System.Drawing.Point(130, 98);
             this.UserTextbox.Name = "UserTextbox";
-            this.UserTextbox.Size = new System.Drawing.Size(234, 29);
+            this.UserTextbox.Size = new System.Drawing.Size(234, 35);
             this.UserTextbox.TabIndex = 4;
             // 
             // EmployeeTextbox
@@ -119,7 +119,7 @@
             this.EmployeeTextbox.ForeColor = System.Drawing.Color.Black;
             this.EmployeeTextbox.Location = new System.Drawing.Point(130, 46);
             this.EmployeeTextbox.Name = "EmployeeTextbox";
-            this.EmployeeTextbox.Size = new System.Drawing.Size(234, 29);
+            this.EmployeeTextbox.Size = new System.Drawing.Size(234, 35);
             this.EmployeeTextbox.TabIndex = 3;
             // 
             // PasswordLabel
@@ -129,7 +129,7 @@
             this.PasswordLabel.ForeColor = System.Drawing.Color.Black;
             this.PasswordLabel.Location = new System.Drawing.Point(15, 154);
             this.PasswordLabel.Name = "PasswordLabel";
-            this.PasswordLabel.Size = new System.Drawing.Size(88, 23);
+            this.PasswordLabel.Size = new System.Drawing.Size(107, 28);
             this.PasswordLabel.TabIndex = 2;
             this.PasswordLabel.Text = "Password:";
             // 
@@ -140,7 +140,7 @@
             this.UserLabel.ForeColor = System.Drawing.Color.Black;
             this.UserLabel.Location = new System.Drawing.Point(15, 98);
             this.UserLabel.Name = "UserLabel";
-            this.UserLabel.Size = new System.Drawing.Size(50, 23);
+            this.UserLabel.Size = new System.Drawing.Size(61, 28);
             this.UserLabel.TabIndex = 1;
             this.UserLabel.Text = "User:";
             // 
@@ -151,7 +151,7 @@
             this.EmployeeLabel.ForeColor = System.Drawing.Color.Black;
             this.EmployeeLabel.Location = new System.Drawing.Point(15, 46);
             this.EmployeeLabel.Name = "EmployeeLabel";
-            this.EmployeeLabel.Size = new System.Drawing.Size(88, 23);
+            this.EmployeeLabel.Size = new System.Drawing.Size(108, 28);
             this.EmployeeLabel.TabIndex = 0;
             this.EmployeeLabel.Text = "Employee:";
             // 
@@ -164,7 +164,7 @@
             this.CreateAccountLinkLabel.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(26)))), ((int)(((byte)(46)))));
             this.CreateAccountLinkLabel.Location = new System.Drawing.Point(497, 507);
             this.CreateAccountLinkLabel.Name = "CreateAccountLinkLabel";
-            this.CreateAccountLinkLabel.Size = new System.Drawing.Size(70, 17);
+            this.CreateAccountLinkLabel.Size = new System.Drawing.Size(84, 22);
             this.CreateAccountLinkLabel.TabIndex = 14;
             this.CreateAccountLinkLabel.TabStop = true;
             this.CreateAccountLinkLabel.Text = "Create one";
@@ -178,7 +178,7 @@
             this.DontHaveAccountLabel.ForeColor = System.Drawing.Color.Black;
             this.DontHaveAccountLabel.Location = new System.Drawing.Point(255, 507);
             this.DontHaveAccountLabel.Name = "DontHaveAccountLabel";
-            this.DontHaveAccountLabel.Size = new System.Drawing.Size(172, 23);
+            this.DontHaveAccountLabel.Size = new System.Drawing.Size(224, 28);
             this.DontHaveAccountLabel.TabIndex = 13;
             this.DontHaveAccountLabel.Text = "Don\'t have an account?";
             // 
@@ -226,7 +226,7 @@
             // 
             // Login
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(187)))), ((int)(((byte)(187)))));
             this.Controls.Add(this.LoginGroupBox);
@@ -238,6 +238,7 @@
             this.Font = new System.Drawing.Font("Open Sans SemiBold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Name = "Login";
             this.Size = new System.Drawing.Size(949, 627);
+            this.Load += new System.EventHandler(this.Login_Load);
             this.LoginGroupBox.ResumeLayout(false);
             this.LoginGroupBox.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.LogoPictureBox)).EndInit();

@@ -16,10 +16,8 @@ namespace Session1
         {
             InitializeComponent();
             Global.MainForm = this;
-            var login=new Login() {Dock= DockStyle.Fill};   
-            Controls.Add(login);
+            Global.BackLogin();
             Text = "Seoul Stay - Welcome";
-            login.Show();
         }
     }
 }

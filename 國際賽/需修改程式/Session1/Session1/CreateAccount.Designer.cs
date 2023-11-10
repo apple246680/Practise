@@ -60,11 +60,12 @@
             this.TermsLinkLabel.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(26)))), ((int)(((byte)(46)))));
             this.TermsLinkLabel.Location = new System.Drawing.Point(425, 289);
             this.TermsLinkLabel.Name = "TermsLinkLabel";
-            this.TermsLinkLabel.Size = new System.Drawing.Size(215, 23);
+            this.TermsLinkLabel.Size = new System.Drawing.Size(263, 28);
             this.TermsLinkLabel.TabIndex = 15;
             this.TermsLinkLabel.TabStop = true;
             this.TermsLinkLabel.Text = "View Terms and Canditions";
             this.TermsLinkLabel.VisitedLinkColor = System.Drawing.Color.Black;
+            this.TermsLinkLabel.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.TermsLinkLabel_LinkClicked);
             // 
             // RetypePasswordTextbox
             // 
@@ -73,7 +74,7 @@
             this.RetypePasswordTextbox.ForeColor = System.Drawing.Color.Black;
             this.RetypePasswordTextbox.Location = new System.Drawing.Point(569, 232);
             this.RetypePasswordTextbox.Name = "RetypePasswordTextbox";
-            this.RetypePasswordTextbox.Size = new System.Drawing.Size(201, 29);
+            this.RetypePasswordTextbox.Size = new System.Drawing.Size(201, 35);
             this.RetypePasswordTextbox.TabIndex = 14;
             // 
             // RetypePasswordLabel
@@ -83,7 +84,7 @@
             this.RetypePasswordLabel.ForeColor = System.Drawing.Color.Black;
             this.RetypePasswordLabel.Location = new System.Drawing.Point(392, 241);
             this.RetypePasswordLabel.Name = "RetypePasswordLabel";
-            this.RetypePasswordLabel.Size = new System.Drawing.Size(144, 23);
+            this.RetypePasswordLabel.Size = new System.Drawing.Size(175, 28);
             this.RetypePasswordLabel.TabIndex = 13;
             this.RetypePasswordLabel.Text = "Retype Password:";
             // 
@@ -94,7 +95,7 @@
             this.FamilyNumericUpDown.ForeColor = System.Drawing.Color.Black;
             this.FamilyNumericUpDown.Location = new System.Drawing.Point(676, 116);
             this.FamilyNumericUpDown.Name = "FamilyNumericUpDown";
-            this.FamilyNumericUpDown.Size = new System.Drawing.Size(94, 29);
+            this.FamilyNumericUpDown.Size = new System.Drawing.Size(94, 35);
             this.FamilyNumericUpDown.TabIndex = 12;
             // 
             // NumberOfFamilyMembersLabel
@@ -104,7 +105,7 @@
             this.NumberOfFamilyMembersLabel.ForeColor = System.Drawing.Color.Black;
             this.NumberOfFamilyMembersLabel.Location = new System.Drawing.Point(392, 116);
             this.NumberOfFamilyMembersLabel.Name = "NumberOfFamilyMembersLabel";
-            this.NumberOfFamilyMembersLabel.Size = new System.Drawing.Size(224, 23);
+            this.NumberOfFamilyMembersLabel.Size = new System.Drawing.Size(277, 28);
             this.NumberOfFamilyMembersLabel.TabIndex = 11;
             this.NumberOfFamilyMembersLabel.Text = "Number of Family Members:";
             // 
@@ -115,7 +116,7 @@
             this.FamleRadioButton.ForeColor = System.Drawing.Color.Black;
             this.FamleRadioButton.Location = new System.Drawing.Point(569, 55);
             this.FamleRadioButton.Name = "FamleRadioButton";
-            this.FamleRadioButton.Size = new System.Drawing.Size(82, 27);
+            this.FamleRadioButton.Size = new System.Drawing.Size(100, 32);
             this.FamleRadioButton.TabIndex = 10;
             this.FamleRadioButton.TabStop = true;
             this.FamleRadioButton.Text = "Female";
@@ -128,7 +129,7 @@
             this.MaleRadioButton.ForeColor = System.Drawing.Color.Black;
             this.MaleRadioButton.Location = new System.Drawing.Point(470, 55);
             this.MaleRadioButton.Name = "MaleRadioButton";
-            this.MaleRadioButton.Size = new System.Drawing.Size(64, 27);
+            this.MaleRadioButton.Size = new System.Drawing.Size(78, 32);
             this.MaleRadioButton.TabIndex = 9;
             this.MaleRadioButton.TabStop = true;
             this.MaleRadioButton.Text = "Male";
@@ -143,7 +144,7 @@
             this.TermsCheckBox.ForeColor = System.Drawing.Color.Black;
             this.TermsCheckBox.Location = new System.Drawing.Point(22, 285);
             this.TermsCheckBox.Name = "TermsCheckBox";
-            this.TermsCheckBox.Size = new System.Drawing.Size(297, 27);
+            this.TermsCheckBox.Size = new System.Drawing.Size(361, 32);
             this.TermsCheckBox.TabIndex = 8;
             this.TermsCheckBox.Text = "I agree to the Terms and Conditions";
             this.TermsCheckBox.UseVisualStyleBackColor = true;
@@ -155,7 +156,7 @@
             this.PasswordTextBox.ForeColor = System.Drawing.Color.Black;
             this.PasswordTextBox.Location = new System.Drawing.Point(138, 233);
             this.PasswordTextBox.Name = "PasswordTextBox";
-            this.PasswordTextBox.Size = new System.Drawing.Size(248, 29);
+            this.PasswordTextBox.Size = new System.Drawing.Size(248, 35);
             this.PasswordTextBox.TabIndex = 7;
             // 
             // BirthdayDateTimePicker
@@ -169,7 +170,7 @@
             this.BirthdayDateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.BirthdayDateTimePicker.Location = new System.Drawing.Point(138, 172);
             this.BirthdayDateTimePicker.Name = "BirthdayDateTimePicker";
-            this.BirthdayDateTimePicker.Size = new System.Drawing.Size(248, 29);
+            this.BirthdayDateTimePicker.Size = new System.Drawing.Size(248, 35);
             this.BirthdayDateTimePicker.TabIndex = 6;
             // 
             // FullNameTextBox
@@ -179,7 +180,7 @@
             this.FullNameTextBox.ForeColor = System.Drawing.Color.Black;
             this.FullNameTextBox.Location = new System.Drawing.Point(138, 111);
             this.FullNameTextBox.Name = "FullNameTextBox";
-            this.FullNameTextBox.Size = new System.Drawing.Size(248, 29);
+            this.FullNameTextBox.Size = new System.Drawing.Size(248, 35);
             this.FullNameTextBox.TabIndex = 5;
             // 
             // UsernameTextBox
@@ -189,7 +190,7 @@
             this.UsernameTextBox.ForeColor = System.Drawing.Color.Black;
             this.UsernameTextBox.Location = new System.Drawing.Point(138, 50);
             this.UsernameTextBox.Name = "UsernameTextBox";
-            this.UsernameTextBox.Size = new System.Drawing.Size(248, 29);
+            this.UsernameTextBox.Size = new System.Drawing.Size(248, 35);
             this.UsernameTextBox.TabIndex = 4;
             // 
             // PasswordLabel
@@ -199,7 +200,7 @@
             this.PasswordLabel.ForeColor = System.Drawing.Color.Black;
             this.PasswordLabel.Location = new System.Drawing.Point(17, 234);
             this.PasswordLabel.Name = "PasswordLabel";
-            this.PasswordLabel.Size = new System.Drawing.Size(88, 23);
+            this.PasswordLabel.Size = new System.Drawing.Size(107, 28);
             this.PasswordLabel.TabIndex = 3;
             this.PasswordLabel.Text = "Password:";
             // 
@@ -210,7 +211,7 @@
             this.BirthdayLabel.ForeColor = System.Drawing.Color.Black;
             this.BirthdayLabel.Location = new System.Drawing.Point(17, 175);
             this.BirthdayLabel.Name = "BirthdayLabel";
-            this.BirthdayLabel.Size = new System.Drawing.Size(78, 23);
+            this.BirthdayLabel.Size = new System.Drawing.Size(95, 28);
             this.BirthdayLabel.TabIndex = 2;
             this.BirthdayLabel.Text = "Birthday:";
             // 
@@ -221,7 +222,7 @@
             this.FullNameLabel.ForeColor = System.Drawing.Color.Black;
             this.FullNameLabel.Location = new System.Drawing.Point(17, 116);
             this.FullNameLabel.Name = "FullNameLabel";
-            this.FullNameLabel.Size = new System.Drawing.Size(89, 23);
+            this.FullNameLabel.Size = new System.Drawing.Size(110, 28);
             this.FullNameLabel.TabIndex = 1;
             this.FullNameLabel.Text = "Full Name:";
             // 
@@ -232,7 +233,7 @@
             this.UsernameLabel.ForeColor = System.Drawing.Color.Black;
             this.UsernameLabel.Location = new System.Drawing.Point(17, 57);
             this.UsernameLabel.Name = "UsernameLabel";
-            this.UsernameLabel.Size = new System.Drawing.Size(93, 23);
+            this.UsernameLabel.Size = new System.Drawing.Size(114, 28);
             this.UsernameLabel.TabIndex = 0;
             this.UsernameLabel.Text = "Username:";
             // 
@@ -270,13 +271,14 @@
             this.RegisterAndLoginBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(85)))), ((int)(((byte)(85)))), ((int)(((byte)(85)))));
             this.RegisterAndLoginBtn.Image = global::Session1.Properties.Resources._276_enter;
             this.RegisterAndLoginBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.RegisterAndLoginBtn.Location = new System.Drawing.Point(486, 454);
+            this.RegisterAndLoginBtn.Location = new System.Drawing.Point(468, 454);
             this.RegisterAndLoginBtn.Name = "RegisterAndLoginBtn";
-            this.RegisterAndLoginBtn.Size = new System.Drawing.Size(166, 57);
+            this.RegisterAndLoginBtn.Size = new System.Drawing.Size(184, 57);
             this.RegisterAndLoginBtn.TabIndex = 10;
             this.RegisterAndLoginBtn.Text = "Register && login";
             this.RegisterAndLoginBtn.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.RegisterAndLoginBtn.UseVisualStyleBackColor = false;
+            this.RegisterAndLoginBtn.Click += new System.EventHandler(this.RegisterAndLoginBtn_Click);
             // 
             // ReturnLoginFormBtn
             // 
@@ -287,15 +289,16 @@
             this.ReturnLoginFormBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.ReturnLoginFormBtn.Location = new System.Drawing.Point(658, 454);
             this.ReturnLoginFormBtn.Name = "ReturnLoginFormBtn";
-            this.ReturnLoginFormBtn.Size = new System.Drawing.Size(173, 57);
+            this.ReturnLoginFormBtn.Size = new System.Drawing.Size(204, 57);
             this.ReturnLoginFormBtn.TabIndex = 11;
             this.ReturnLoginFormBtn.Text = "Return login Form";
             this.ReturnLoginFormBtn.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.ReturnLoginFormBtn.UseVisualStyleBackColor = false;
+            this.ReturnLoginFormBtn.Click += new System.EventHandler(this.ReturnLoginFormBtn_Click);
             // 
             // CreateAccount
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(187)))), ((int)(((byte)(187)))));
             this.Controls.Add(this.RegisterAndLoginBtn);

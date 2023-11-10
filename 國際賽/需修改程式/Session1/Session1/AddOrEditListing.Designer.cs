@@ -97,7 +97,7 @@
             this.TitleTextBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(26)))), ((int)(((byte)(46)))));
             this.TitleTextBox.Location = new System.Drawing.Point(536, 12);
             this.TitleTextBox.Name = "TitleTextBox";
-            this.TitleTextBox.Size = new System.Drawing.Size(330, 24);
+            this.TitleTextBox.Size = new System.Drawing.Size(330, 28);
             this.TitleTextBox.TabIndex = 25;
             // 
             // MaxNum
@@ -107,7 +107,7 @@
             this.MaxNum.ForeColor = System.Drawing.Color.Black;
             this.MaxNum.Location = new System.Drawing.Point(519, 333);
             this.MaxNum.Name = "MaxNum";
-            this.MaxNum.Size = new System.Drawing.Size(64, 24);
+            this.MaxNum.Size = new System.Drawing.Size(64, 28);
             this.MaxNum.TabIndex = 24;
             // 
             // MinNum
@@ -117,7 +117,7 @@
             this.MinNum.ForeColor = System.Drawing.Color.Black;
             this.MinNum.Location = new System.Drawing.Point(350, 333);
             this.MinNum.Name = "MinNum";
-            this.MinNum.Size = new System.Drawing.Size(64, 24);
+            this.MinNum.Size = new System.Drawing.Size(64, 28);
             this.MinNum.TabIndex = 23;
             // 
             // MaximumLabel
@@ -126,7 +126,7 @@
             this.MaximumLabel.Font = new System.Drawing.Font("Open Sans", 10F);
             this.MaximumLabel.Location = new System.Drawing.Point(420, 333);
             this.MaximumLabel.Name = "MaximumLabel";
-            this.MaximumLabel.Size = new System.Drawing.Size(80, 20);
+            this.MaximumLabel.Size = new System.Drawing.Size(93, 24);
             this.MaximumLabel.TabIndex = 22;
             this.MaximumLabel.Text = "Maximum:";
             // 
@@ -136,7 +136,7 @@
             this.MinmumLabel.Font = new System.Drawing.Font("Open Sans", 10F);
             this.MinmumLabel.Location = new System.Drawing.Point(255, 333);
             this.MinmumLabel.Name = "MinmumLabel";
-            this.MinmumLabel.Size = new System.Drawing.Size(78, 20);
+            this.MinmumLabel.Size = new System.Drawing.Size(89, 24);
             this.MinmumLabel.TabIndex = 21;
             this.MinmumLabel.Text = "Minimum:";
             // 
@@ -180,7 +180,7 @@
             this.ApproximateAddressTextBox.ForeColor = System.Drawing.Color.Black;
             this.ApproximateAddressTextBox.Location = new System.Drawing.Point(198, 91);
             this.ApproximateAddressTextBox.Name = "ApproximateAddressTextBox";
-            this.ApproximateAddressTextBox.Size = new System.Drawing.Size(676, 24);
+            this.ApproximateAddressTextBox.Size = new System.Drawing.Size(676, 28);
             this.ApproximateAddressTextBox.TabIndex = 16;
             // 
             // BathroomNum
@@ -190,7 +190,7 @@
             this.BathroomNum.ForeColor = System.Drawing.Color.Black;
             this.BathroomNum.Location = new System.Drawing.Point(817, 57);
             this.BathroomNum.Name = "BathroomNum";
-            this.BathroomNum.Size = new System.Drawing.Size(60, 24);
+            this.BathroomNum.Size = new System.Drawing.Size(60, 28);
             this.BathroomNum.TabIndex = 15;
             // 
             // BedroomNum
@@ -200,7 +200,7 @@
             this.BedroomNum.ForeColor = System.Drawing.Color.Black;
             this.BedroomNum.Location = new System.Drawing.Point(569, 53);
             this.BedroomNum.Name = "BedroomNum";
-            this.BedroomNum.Size = new System.Drawing.Size(60, 24);
+            this.BedroomNum.Size = new System.Drawing.Size(60, 28);
             this.BedroomNum.TabIndex = 14;
             // 
             // BedsNum
@@ -210,7 +210,7 @@
             this.BedsNum.ForeColor = System.Drawing.Color.Black;
             this.BedsNum.Location = new System.Drawing.Point(310, 53);
             this.BedsNum.Name = "BedsNum";
-            this.BedsNum.Size = new System.Drawing.Size(61, 24);
+            this.BedsNum.Size = new System.Drawing.Size(61, 28);
             this.BedsNum.TabIndex = 13;
             // 
             // CapacityyNum
@@ -220,7 +220,7 @@
             this.CapacityyNum.ForeColor = System.Drawing.Color.Black;
             this.CapacityyNum.Location = new System.Drawing.Point(91, 49);
             this.CapacityyNum.Name = "CapacityyNum";
-            this.CapacityyNum.Size = new System.Drawing.Size(64, 24);
+            this.CapacityyNum.Size = new System.Drawing.Size(64, 28);
             this.CapacityyNum.TabIndex = 12;
             // 
             // ByCarColumn
@@ -228,7 +228,6 @@
             this.ByCarColumn.HeaderText = "By Car (minutes)";
             this.ByCarColumn.MinimumWidth = 6;
             this.ByCarColumn.Name = "ByCarColumn";
-            this.ByCarColumn.ReadOnly = true;
             this.ByCarColumn.Width = 125;
             // 
             // OnFootColumn
@@ -236,7 +235,6 @@
             this.OnFootColumn.HeaderText = "On Foot (minutes)";
             this.OnFootColumn.MinimumWidth = 6;
             this.OnFootColumn.Name = "OnFootColumn";
-            this.OnFootColumn.ReadOnly = true;
             this.OnFootColumn.Width = 125;
             // 
             // DistanceColumn
@@ -244,7 +242,6 @@
             this.DistanceColumn.HeaderText = "Distance (km)";
             this.DistanceColumn.MinimumWidth = 6;
             this.DistanceColumn.Name = "DistanceColumn";
-            this.DistanceColumn.ReadOnly = true;
             this.DistanceColumn.Width = 125;
             // 
             // ExactAddressLabel
@@ -253,7 +250,7 @@
             this.ExactAddressLabel.Font = new System.Drawing.Font("Open Sans", 10F);
             this.ExactAddressLabel.Location = new System.Drawing.Point(3, 126);
             this.ExactAddressLabel.Name = "ExactAddressLabel";
-            this.ExactAddressLabel.Size = new System.Drawing.Size(103, 20);
+            this.ExactAddressLabel.Size = new System.Drawing.Size(119, 24);
             this.ExactAddressLabel.TabIndex = 17;
             this.ExactAddressLabel.Text = "Exact Address";
             // 
@@ -262,7 +259,6 @@
             this.AttractionColumn.HeaderText = "Attraction";
             this.AttractionColumn.MinimumWidth = 6;
             this.AttractionColumn.Name = "AttractionColumn";
-            this.AttractionColumn.ReadOnly = true;
             this.AttractionColumn.Width = 125;
             // 
             // TypeComboBox
@@ -274,7 +270,7 @@
             this.TypeComboBox.FormattingEnabled = true;
             this.TypeComboBox.Location = new System.Drawing.Point(84, 12);
             this.TypeComboBox.Name = "TypeComboBox";
-            this.TypeComboBox.Size = new System.Drawing.Size(393, 25);
+            this.TypeComboBox.Size = new System.Drawing.Size(393, 30);
             this.TypeComboBox.TabIndex = 10;
             // 
             // ReservationTimeLabel
@@ -283,7 +279,7 @@
             this.ReservationTimeLabel.Font = new System.Drawing.Font("Open Sans", 10F);
             this.ReservationTimeLabel.Location = new System.Drawing.Point(8, 333);
             this.ReservationTimeLabel.Name = "ReservationTimeLabel";
-            this.ReservationTimeLabel.Size = new System.Drawing.Size(178, 20);
+            this.ReservationTimeLabel.Size = new System.Drawing.Size(205, 24);
             this.ReservationTimeLabel.TabIndex = 9;
             this.ReservationTimeLabel.Text = "Reservation Time (Night):";
             // 
@@ -293,7 +289,7 @@
             this.HostRulesLabel.Font = new System.Drawing.Font("Open Sans", 10F);
             this.HostRulesLabel.Location = new System.Drawing.Point(3, 250);
             this.HostRulesLabel.Name = "HostRulesLabel";
-            this.HostRulesLabel.Size = new System.Drawing.Size(84, 20);
+            this.HostRulesLabel.Size = new System.Drawing.Size(97, 24);
             this.HostRulesLabel.TabIndex = 8;
             this.HostRulesLabel.Text = "Host Rules:";
             // 
@@ -303,7 +299,7 @@
             this.DescriptionLabel.Font = new System.Drawing.Font("Open Sans", 10F);
             this.DescriptionLabel.Location = new System.Drawing.Point(3, 188);
             this.DescriptionLabel.Name = "DescriptionLabel";
-            this.DescriptionLabel.Size = new System.Drawing.Size(90, 20);
+            this.DescriptionLabel.Size = new System.Drawing.Size(103, 24);
             this.DescriptionLabel.TabIndex = 7;
             this.DescriptionLabel.Text = "Description:";
             // 
@@ -313,7 +309,7 @@
             this.ApproximateAddressLabel.Font = new System.Drawing.Font("Open Sans", 10F);
             this.ApproximateAddressLabel.Location = new System.Drawing.Point(6, 91);
             this.ApproximateAddressLabel.Name = "ApproximateAddressLabel";
-            this.ApproximateAddressLabel.Size = new System.Drawing.Size(158, 20);
+            this.ApproximateAddressLabel.Size = new System.Drawing.Size(184, 24);
             this.ApproximateAddressLabel.TabIndex = 6;
             this.ApproximateAddressLabel.Text = "Approximate Address:";
             // 
@@ -323,7 +319,7 @@
             this.BathroomLabel.Font = new System.Drawing.Font("Open Sans", 10F);
             this.BathroomLabel.Location = new System.Drawing.Point(635, 57);
             this.BathroomLabel.Name = "BathroomLabel";
-            this.BathroomLabel.Size = new System.Drawing.Size(156, 20);
+            this.BathroomLabel.Size = new System.Drawing.Size(183, 24);
             this.BathroomLabel.TabIndex = 5;
             this.BathroomLabel.Text = "Number of Bathroom:";
             // 
@@ -333,7 +329,7 @@
             this.BedLabel.Font = new System.Drawing.Font("Open Sans", 10F);
             this.BedLabel.Location = new System.Drawing.Point(161, 53);
             this.BedLabel.Name = "BedLabel";
-            this.BedLabel.Size = new System.Drawing.Size(123, 20);
+            this.BedLabel.Size = new System.Drawing.Size(143, 24);
             this.BedLabel.TabIndex = 3;
             this.BedLabel.Text = "Number of Beds:";
             // 
@@ -342,7 +338,6 @@
             this.AreaColumn.HeaderText = "Area";
             this.AreaColumn.MinimumWidth = 6;
             this.AreaColumn.Name = "AreaColumn";
-            this.AreaColumn.ReadOnly = true;
             this.AreaColumn.Width = 125;
             // 
             // BedroomLabel
@@ -351,7 +346,7 @@
             this.BedroomLabel.Font = new System.Drawing.Font("Open Sans", 10F);
             this.BedroomLabel.Location = new System.Drawing.Point(377, 53);
             this.BedroomLabel.Name = "BedroomLabel";
-            this.BedroomLabel.Size = new System.Drawing.Size(158, 20);
+            this.BedroomLabel.Size = new System.Drawing.Size(186, 24);
             this.BedroomLabel.TabIndex = 4;
             this.BedroomLabel.Text = "Number of Bedrooms:";
             // 
@@ -361,7 +356,7 @@
             this.BodyLabel.Font = new System.Drawing.Font("Open Sans SemiBold", 9F);
             this.BodyLabel.Location = new System.Drawing.Point(13, 11);
             this.BodyLabel.Name = "BodyLabel";
-            this.BodyLabel.Size = new System.Drawing.Size(505, 17);
+            this.BodyLabel.Size = new System.Drawing.Size(636, 22);
             this.BodyLabel.TabIndex = 7;
             this.BodyLabel.Text = "Specify the distance from each close by attraction and the time it takes to get t" +
     "o them:";
@@ -372,14 +367,12 @@
             this.CapacityLabel.Font = new System.Drawing.Font("Open Sans", 10F);
             this.CapacityLabel.Location = new System.Drawing.Point(8, 53);
             this.CapacityLabel.Name = "CapacityLabel";
-            this.CapacityLabel.Size = new System.Drawing.Size(70, 20);
+            this.CapacityLabel.Size = new System.Drawing.Size(80, 24);
             this.CapacityLabel.TabIndex = 2;
             this.CapacityLabel.Text = "Capacity:";
             // 
             // DistanceDataGridView
             // 
-            this.DistanceDataGridView.AllowUserToAddRows = false;
-            this.DistanceDataGridView.AllowUserToDeleteRows = false;
             this.DistanceDataGridView.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(187)))), ((int)(((byte)(187)))));
             this.DistanceDataGridView.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -402,7 +395,6 @@
             this.DistanceDataGridView.GridColor = System.Drawing.Color.Black;
             this.DistanceDataGridView.Location = new System.Drawing.Point(17, 31);
             this.DistanceDataGridView.Name = "DistanceDataGridView";
-            this.DistanceDataGridView.ReadOnly = true;
             this.DistanceDataGridView.RowHeadersVisible = false;
             this.DistanceDataGridView.RowHeadersWidth = 62;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(187)))), ((int)(((byte)(187)))));
@@ -421,7 +413,6 @@
             this.dataGridViewTextBoxColumn1.HeaderText = "ID";
             this.dataGridViewTextBoxColumn1.MinimumWidth = 6;
             this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.ReadOnly = true;
             this.dataGridViewTextBoxColumn1.Visible = false;
             this.dataGridViewTextBoxColumn1.Width = 125;
             // 
@@ -430,9 +421,9 @@
             this.DistanceToAttractionPage.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(187)))), ((int)(((byte)(187)))));
             this.DistanceToAttractionPage.Controls.Add(this.DistanceDataGridView);
             this.DistanceToAttractionPage.Controls.Add(this.BodyLabel);
-            this.DistanceToAttractionPage.Location = new System.Drawing.Point(4, 26);
+            this.DistanceToAttractionPage.Location = new System.Drawing.Point(4, 31);
             this.DistanceToAttractionPage.Name = "DistanceToAttractionPage";
-            this.DistanceToAttractionPage.Size = new System.Drawing.Size(880, 396);
+            this.DistanceToAttractionPage.Size = new System.Drawing.Size(880, 391);
             this.DistanceToAttractionPage.TabIndex = 2;
             this.DistanceToAttractionPage.Text = "Distance to Attraction";
             // 
@@ -442,7 +433,7 @@
             this.ChooesAmenitiesLabel.Font = new System.Drawing.Font("Open Sans", 12F);
             this.ChooesAmenitiesLabel.Location = new System.Drawing.Point(6, 12);
             this.ChooesAmenitiesLabel.Name = "ChooesAmenitiesLabel";
-            this.ChooesAmenitiesLabel.Size = new System.Drawing.Size(221, 23);
+            this.ChooesAmenitiesLabel.Size = new System.Drawing.Size(273, 28);
             this.ChooesAmenitiesLabel.TabIndex = 0;
             this.ChooesAmenitiesLabel.Text = "Choose Available Amenities:";
             // 
@@ -514,10 +505,10 @@
             this.AmenitiesPage.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(187)))), ((int)(((byte)(187)))));
             this.AmenitiesPage.Controls.Add(this.AmenitiesDataGridView);
             this.AmenitiesPage.Controls.Add(this.ChooesAmenitiesLabel);
-            this.AmenitiesPage.Location = new System.Drawing.Point(4, 26);
+            this.AmenitiesPage.Location = new System.Drawing.Point(4, 31);
             this.AmenitiesPage.Name = "AmenitiesPage";
             this.AmenitiesPage.Padding = new System.Windows.Forms.Padding(3);
-            this.AmenitiesPage.Size = new System.Drawing.Size(880, 396);
+            this.AmenitiesPage.Size = new System.Drawing.Size(880, 391);
             this.AmenitiesPage.TabIndex = 1;
             this.AmenitiesPage.Text = "Amenities";
             // 
@@ -527,7 +518,7 @@
             this.TitleLabel.Font = new System.Drawing.Font("Open Sans", 10F);
             this.TitleLabel.Location = new System.Drawing.Point(483, 12);
             this.TitleLabel.Name = "TitleLabel";
-            this.TitleLabel.Size = new System.Drawing.Size(42, 20);
+            this.TitleLabel.Size = new System.Drawing.Size(47, 24);
             this.TitleLabel.TabIndex = 1;
             this.TitleLabel.Text = "Title:";
             // 
@@ -537,7 +528,7 @@
             this.TypeLabel.Font = new System.Drawing.Font("Open Sans", 10F);
             this.TypeLabel.Location = new System.Drawing.Point(25, 12);
             this.TypeLabel.Name = "TypeLabel";
-            this.TypeLabel.Size = new System.Drawing.Size(45, 20);
+            this.TypeLabel.Size = new System.Drawing.Size(52, 24);
             this.TypeLabel.TabIndex = 0;
             this.TypeLabel.Text = "Type:";
             // 
@@ -569,10 +560,10 @@
             this.ListingDetailsPage.Controls.Add(this.CapacityLabel);
             this.ListingDetailsPage.Controls.Add(this.TitleLabel);
             this.ListingDetailsPage.Controls.Add(this.TypeLabel);
-            this.ListingDetailsPage.Location = new System.Drawing.Point(4, 26);
+            this.ListingDetailsPage.Location = new System.Drawing.Point(4, 31);
             this.ListingDetailsPage.Name = "ListingDetailsPage";
             this.ListingDetailsPage.Padding = new System.Windows.Forms.Padding(3);
-            this.ListingDetailsPage.Size = new System.Drawing.Size(880, 396);
+            this.ListingDetailsPage.Size = new System.Drawing.Size(880, 391);
             this.ListingDetailsPage.TabIndex = 0;
             this.ListingDetailsPage.Text = "Listing Details";
             // 
@@ -587,6 +578,7 @@
             this.ListingTabControl.SelectedIndex = 0;
             this.ListingTabControl.Size = new System.Drawing.Size(888, 426);
             this.ListingTabControl.TabIndex = 14;
+            this.ListingTabControl.SelectedIndexChanged += new System.EventHandler(this.ListingTabControl_SelectedIndexChanged);
             // 
             // CloseBtn
             // 
@@ -596,11 +588,12 @@
             this.CloseBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.CloseBtn.Location = new System.Drawing.Point(803, 511);
             this.CloseBtn.Name = "CloseBtn";
-            this.CloseBtn.Size = new System.Drawing.Size(97, 36);
+            this.CloseBtn.Size = new System.Drawing.Size(115, 36);
             this.CloseBtn.TabIndex = 13;
             this.CloseBtn.Text = "Close/Finish";
             this.CloseBtn.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.CloseBtn.UseVisualStyleBackColor = false;
+            this.CloseBtn.Click += new System.EventHandler(this.CloseBtn_Click);
             // 
             // NextBtn
             // 
@@ -615,10 +608,11 @@
             this.NextBtn.Text = "Next";
             this.NextBtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.NextBtn.UseVisualStyleBackColor = false;
+            this.NextBtn.Click += new System.EventHandler(this.NextBtn_Click);
             // 
             // AddOrEditListing
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(187)))), ((int)(((byte)(187)))));
             this.Controls.Add(this.ListingTabControl);
@@ -627,6 +621,7 @@
             this.Font = new System.Drawing.Font("Open Sans Light", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Name = "AddOrEditListing";
             this.Size = new System.Drawing.Size(949, 627);
+            this.Load += new System.EventHandler(this.AddOrEditListing_Load);
             ((System.ComponentModel.ISupportInitialize)(this.MaxNum)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.MinNum)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.BathroomNum)).EndInit();

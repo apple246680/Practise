@@ -40,7 +40,7 @@
             this.Capacity1Column = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Title1Column = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.LououtBtn = new System.Windows.Forms.Button();
-            this.RegisterAndLoginBtn = new System.Windows.Forms.Button();
+            this.AddListingBtn = new System.Windows.Forms.Button();
             this.SearchTextbox = new System.Windows.Forms.TextBox();
             this.ManagerDataGridView = new System.Windows.Forms.DataGridView();
             this.TypeColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -49,17 +49,17 @@
             this.TitleColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TravelerDataGridView = new System.Windows.Forms.DataGridView();
             this.TravelerPage = new System.Windows.Forms.TabPage();
+            this.SearchPicturebox = new System.Windows.Forms.PictureBox();
             this.ManagerPage = new System.Windows.Forms.TabPage();
             this.ManagementTabControl = new System.Windows.Forms.TabControl();
             this.LogoPicturebox = new System.Windows.Forms.PictureBox();
-            this.SearchPicturebox = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.ManagerDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.TravelerDataGridView)).BeginInit();
             this.TravelerPage.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.SearchPicturebox)).BeginInit();
             this.ManagerPage.SuspendLayout();
             this.ManagementTabControl.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.LogoPicturebox)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.SearchPicturebox)).BeginInit();
             this.SuspendLayout();
             // 
             // CountLabel
@@ -69,7 +69,7 @@
             this.CountLabel.ForeColor = System.Drawing.Color.Black;
             this.CountLabel.Location = new System.Drawing.Point(93, 503);
             this.CountLabel.Name = "CountLabel";
-            this.CountLabel.Size = new System.Drawing.Size(90, 17);
+            this.CountLabel.Size = new System.Drawing.Size(114, 22);
             this.CountLabel.TabIndex = 17;
             this.CountLabel.Text = "0 items found.";
             // 
@@ -86,6 +86,7 @@
             this.ExitBtn.TabIndex = 16;
             this.ExitBtn.Text = "Exit";
             this.ExitBtn.UseVisualStyleBackColor = false;
+            this.ExitBtn.Click += new System.EventHandler(this.ExitBtn_Click);
             // 
             // TColumn
             // 
@@ -144,35 +145,39 @@
             this.LououtBtn.TabIndex = 15;
             this.LououtBtn.Text = "Logout";
             this.LououtBtn.UseVisualStyleBackColor = false;
+            this.LououtBtn.Click += new System.EventHandler(this.LououtBtn_Click);
             // 
-            // RegisterAndLoginBtn
+            // AddListingBtn
             // 
-            this.RegisterAndLoginBtn.BackColor = System.Drawing.Color.White;
-            this.RegisterAndLoginBtn.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(26)))), ((int)(((byte)(46)))));
-            this.RegisterAndLoginBtn.FlatAppearance.BorderSize = 2;
-            this.RegisterAndLoginBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(26)))), ((int)(((byte)(46)))));
-            this.RegisterAndLoginBtn.Font = new System.Drawing.Font("Open Sans SemiBold", 9F);
-            this.RegisterAndLoginBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(85)))), ((int)(((byte)(85)))), ((int)(((byte)(85)))));
-            this.RegisterAndLoginBtn.Image = global::Session1.Properties.Resources._267_plus;
-            this.RegisterAndLoginBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.RegisterAndLoginBtn.Location = new System.Drawing.Point(63, 2);
-            this.RegisterAndLoginBtn.Name = "RegisterAndLoginBtn";
-            this.RegisterAndLoginBtn.Size = new System.Drawing.Size(138, 36);
-            this.RegisterAndLoginBtn.TabIndex = 8;
-            this.RegisterAndLoginBtn.Text = "Add Listing";
-            this.RegisterAndLoginBtn.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.RegisterAndLoginBtn.UseVisualStyleBackColor = false;
+            this.AddListingBtn.BackColor = System.Drawing.Color.White;
+            this.AddListingBtn.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(26)))), ((int)(((byte)(46)))));
+            this.AddListingBtn.FlatAppearance.BorderSize = 2;
+            this.AddListingBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(26)))), ((int)(((byte)(46)))));
+            this.AddListingBtn.Font = new System.Drawing.Font("Open Sans SemiBold", 9F);
+            this.AddListingBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(85)))), ((int)(((byte)(85)))), ((int)(((byte)(85)))));
+            this.AddListingBtn.Image = global::Session1.Properties.Resources._267_plus;
+            this.AddListingBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.AddListingBtn.Location = new System.Drawing.Point(64, -1);
+            this.AddListingBtn.Name = "AddListingBtn";
+            this.AddListingBtn.Size = new System.Drawing.Size(138, 36);
+            this.AddListingBtn.TabIndex = 8;
+            this.AddListingBtn.Text = "Add Listing";
+            this.AddListingBtn.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.AddListingBtn.UseVisualStyleBackColor = false;
+            this.AddListingBtn.Click += new System.EventHandler(this.AddListingBtn_Click);
             // 
             // SearchTextbox
             // 
-            this.SearchTextbox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(187)))), ((int)(((byte)(187)))));
-            this.SearchTextbox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.SearchTextbox.BackColor = System.Drawing.Color.White;
             this.SearchTextbox.ForeColor = System.Drawing.Color.Black;
             this.SearchTextbox.Location = new System.Drawing.Point(72, 6);
             this.SearchTextbox.Name = "SearchTextbox";
-            this.SearchTextbox.Size = new System.Drawing.Size(559, 24);
+            this.SearchTextbox.Size = new System.Drawing.Size(559, 28);
             this.SearchTextbox.TabIndex = 0;
             this.SearchTextbox.Text = "Search destination or Listing Title or Attaction";
+            this.SearchTextbox.MouseClick += new System.Windows.Forms.MouseEventHandler(this.SearchTextbox_MouseClick);
+            this.SearchTextbox.TextChanged += new System.EventHandler(this.SearchTextbox_TextChanged);
+            this.SearchTextbox.Leave += new System.EventHandler(this.SearchTextbox_Leave);
             // 
             // ManagerDataGridView
             // 
@@ -211,6 +216,7 @@
             this.ManagerDataGridView.RowTemplate.Height = 27;
             this.ManagerDataGridView.Size = new System.Drawing.Size(754, 217);
             this.ManagerDataGridView.TabIndex = 3;
+            this.ManagerDataGridView.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.ManagerDataGridView_CellClick);
             // 
             // TypeColumn
             // 
@@ -289,24 +295,35 @@
             this.TravelerPage.Controls.Add(this.SearchPicturebox);
             this.TravelerPage.Controls.Add(this.SearchTextbox);
             this.TravelerPage.Font = new System.Drawing.Font("Open Sans SemiBold", 9F);
-            this.TravelerPage.Location = new System.Drawing.Point(4, 26);
+            this.TravelerPage.Location = new System.Drawing.Point(4, 31);
             this.TravelerPage.Name = "TravelerPage";
             this.TravelerPage.Padding = new System.Windows.Forms.Padding(3);
-            this.TravelerPage.Size = new System.Drawing.Size(768, 270);
+            this.TravelerPage.Size = new System.Drawing.Size(768, 265);
             this.TravelerPage.TabIndex = 0;
             this.TravelerPage.Text = "I\'m Traveler";
+            // 
+            // SearchPicturebox
+            // 
+            this.SearchPicturebox.Image = global::Session1.Properties.Resources._135_search;
+            this.SearchPicturebox.Location = new System.Drawing.Point(40, 6);
+            this.SearchPicturebox.Margin = new System.Windows.Forms.Padding(0);
+            this.SearchPicturebox.Name = "SearchPicturebox";
+            this.SearchPicturebox.Size = new System.Drawing.Size(29, 28);
+            this.SearchPicturebox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.SearchPicturebox.TabIndex = 1;
+            this.SearchPicturebox.TabStop = false;
             // 
             // ManagerPage
             // 
             this.ManagerPage.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(187)))), ((int)(((byte)(187)))));
             this.ManagerPage.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.ManagerPage.Controls.Add(this.RegisterAndLoginBtn);
+            this.ManagerPage.Controls.Add(this.AddListingBtn);
             this.ManagerPage.Controls.Add(this.ManagerDataGridView);
             this.ManagerPage.Font = new System.Drawing.Font("Open Sans SemiBold", 9F);
-            this.ManagerPage.Location = new System.Drawing.Point(4, 26);
+            this.ManagerPage.Location = new System.Drawing.Point(4, 31);
             this.ManagerPage.Name = "ManagerPage";
             this.ManagerPage.Padding = new System.Windows.Forms.Padding(3);
-            this.ManagerPage.Size = new System.Drawing.Size(768, 270);
+            this.ManagerPage.Size = new System.Drawing.Size(768, 265);
             this.ManagerPage.TabIndex = 1;
             this.ManagerPage.Text = "I\'m Owner/Manager";
             // 
@@ -320,6 +337,7 @@
             this.ManagementTabControl.SelectedIndex = 0;
             this.ManagementTabControl.Size = new System.Drawing.Size(776, 300);
             this.ManagementTabControl.TabIndex = 14;
+            this.ManagementTabControl.SelectedIndexChanged += new System.EventHandler(this.ManagementTabControl_SelectedIndexChanged);
             // 
             // LogoPicturebox
             // 
@@ -331,20 +349,9 @@
             this.LogoPicturebox.TabIndex = 13;
             this.LogoPicturebox.TabStop = false;
             // 
-            // SearchPicturebox
-            // 
-            this.SearchPicturebox.Image = global::Session1.Properties.Resources._135_search;
-            this.SearchPicturebox.Location = new System.Drawing.Point(40, 6);
-            this.SearchPicturebox.Margin = new System.Windows.Forms.Padding(0);
-            this.SearchPicturebox.Name = "SearchPicturebox";
-            this.SearchPicturebox.Size = new System.Drawing.Size(29, 28);
-            this.SearchPicturebox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.SearchPicturebox.TabIndex = 1;
-            this.SearchPicturebox.TabStop = false;
-            // 
             // Management
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(187)))), ((int)(((byte)(187)))));
             this.Controls.Add(this.CountLabel);
@@ -355,14 +362,15 @@
             this.Font = new System.Drawing.Font("Open Sans SemiBold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Name = "Management";
             this.Size = new System.Drawing.Size(949, 627);
+            this.Load += new System.EventHandler(this.Management_Load);
             ((System.ComponentModel.ISupportInitialize)(this.ManagerDataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.TravelerDataGridView)).EndInit();
             this.TravelerPage.ResumeLayout(false);
             this.TravelerPage.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.SearchPicturebox)).EndInit();
             this.ManagerPage.ResumeLayout(false);
             this.ManagementTabControl.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.LogoPicturebox)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.SearchPicturebox)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -379,7 +387,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Capacity1Column;
         private System.Windows.Forms.DataGridViewTextBoxColumn Title1Column;
         private System.Windows.Forms.Button LououtBtn;
-        private System.Windows.Forms.Button RegisterAndLoginBtn;
+        private System.Windows.Forms.Button AddListingBtn;
         private System.Windows.Forms.TextBox SearchTextbox;
         private System.Windows.Forms.DataGridView ManagerDataGridView;
         private System.Windows.Forms.PictureBox SearchPicturebox;

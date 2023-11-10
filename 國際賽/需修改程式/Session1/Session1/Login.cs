@@ -30,20 +30,12 @@ namespace Session1
             Application.Exit();
         }
 
-        public void ShowManagement()
-        {
-            var management = new Management() { Dock = DockStyle.Fill };
-            Global.MainForm.Controls.Clear();
-            Global.MainForm.Controls.Add(management);
-            management.Show();
-
-        }
         private void LoginBtn_Click(object sender, EventArgs e)
         {
             var entities = new Session1Entities();
             if (Global.userID.HasValue)
             {
-                ShowManagement();
+                Global.ShowManagement();
                 return;
             }
             if (!string.IsNullOrWhiteSpace(EmployeeTextbox.Text))
@@ -67,11 +59,46 @@ namespace Session1
                     MessageBox.Show("Username cannot white.");
                     return;
                 }
+                if (user.Password!=PasswordTextbox.Text)
+                {
+                    MessageBox.Show("Password is wrong");
+                }
                 Global.userID = user.ID;
             }
             else
             {
+                var user = entities.Users.SingleOrDefault(x => x.Username == UserTextbox.Text && x.UserTypeID == 1);
+                if (user == null)
+                {
+                    MessageBox.Show("Username is wrong");
+                    return;
+                }
+                if (user.Password != PasswordTextbox.Text)
+                {
+                    MessageBox.Show("Password is wrong");
+                    return;
+                }
+                Global.userID = user.ID;
+            }
+            if (KeepMeSignedInCheckbox.Checked)
+            {
+                Properties.Settings.Default.KeepLogin = Global.userID.ToString();
+            }
+            else
+            {
+                Properties.Settings.Default.KeepLogin = "";
+            }
+            Properties.Settings.Default.Save();
+            Global.ShowManagement();
+            MessageBox.Show("Success!");
+        }
 
+        private void Login_Load(object sender, EventArgs e)
+        {
+            if (Properties.Settings.Default.KeepLogin!="")
+            {
+                Global.userID = long.Parse(Properties.Settings.Default.KeepLogin);
+                LoginBtn_Click(null,null);
             }
         }
     }
