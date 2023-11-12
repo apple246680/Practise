@@ -252,5 +252,10 @@ namespace Session3
             ListBoxHint.Visible = false;
             SearchTextBox.Text = ListBoxHint.Text.Replace("      ", "@").Split('@').First();
         }
+
+        private void ClearBtn_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

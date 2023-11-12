@@ -76,10 +76,12 @@ namespace Session3
         /// </summary>
         private void SimpleSearchFormBtn_Click(object sender, EventArgs e)
         {
+            ResultsDataGridView.Columns[5].Visible=false;
             TopPanel.Visible = false;
             ListBoxHint.Visible = false;
             DownPanel.Visible = false;
             ToDatePanel.Visible = false;
+            SearchResultsGroupBox.Visible = false;
             SearchTextBox.Visible = true;
             SimpleSearchBtn.Visible = true;
             AdvanedFormBtn.Visible = true;
@@ -95,6 +97,8 @@ namespace Session3
             ListBoxHint.Visible = false;
             SimpleSearchBtn.Visible = false;
             AdvanedFormBtn.Visible = false;
+            SearchResultsGroupBox.Visible = false;
+            ResultsDataGridView.Columns[5].Visible = true;
             TopPanel.Visible = true;
             DownPanel.Visible = true;
             ToDatePanel.Visible = true;

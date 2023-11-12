@@ -31,6 +31,8 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.AllFlowLayoutPanel = new System.Windows.Forms.FlowLayoutPanel();
             this.SimpleAdvancedGroupBox = new System.Windows.Forms.GroupBox();
+            this.SimpleSearchBtn = new System.Windows.Forms.Button();
+            this.AdvanedFormBtn = new System.Windows.Forms.Button();
             this.DownPanel = new System.Windows.Forms.Panel();
             this.AdvancedSearchBtn = new System.Windows.Forms.Button();
             this.ClearBtn = new System.Windows.Forms.Button();
@@ -48,8 +50,6 @@
             this.StartPrice = new System.Windows.Forms.NumericUpDown();
             this.StartingPriceLabel = new System.Windows.Forms.Label();
             this.HintLabel = new System.Windows.Forms.Label();
-            this.AdvanedFormBtn = new System.Windows.Forms.Button();
-            this.SimpleSearchBtn = new System.Windows.Forms.Button();
             this.FromDateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.FromLabel = new System.Windows.Forms.Label();
             this.SearchTextBox = new System.Windows.Forms.TextBox();
@@ -124,6 +124,36 @@
             this.SimpleAdvancedGroupBox.TabStop = false;
             this.SimpleAdvancedGroupBox.Text = "Simple search";
             // 
+            // SimpleSearchBtn
+            // 
+            this.SimpleSearchBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.SimpleSearchBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
+            this.SimpleSearchBtn.Image = ((System.Drawing.Image)(resources.GetObject("SimpleSearchBtn.Image")));
+            this.SimpleSearchBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.SimpleSearchBtn.Location = new System.Drawing.Point(898, 40);
+            this.SimpleSearchBtn.Name = "SimpleSearchBtn";
+            this.SimpleSearchBtn.Size = new System.Drawing.Size(207, 39);
+            this.SimpleSearchBtn.TabIndex = 5;
+            this.SimpleSearchBtn.Text = "Search properties...";
+            this.SimpleSearchBtn.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.SimpleSearchBtn.UseVisualStyleBackColor = true;
+            this.SimpleSearchBtn.Click += new System.EventHandler(this.SimpleSearchBtn_Click);
+            // 
+            // AdvanedFormBtn
+            // 
+            this.AdvanedFormBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.AdvanedFormBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
+            this.AdvanedFormBtn.Image = ((System.Drawing.Image)(resources.GetObject("AdvanedFormBtn.Image")));
+            this.AdvanedFormBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.AdvanedFormBtn.Location = new System.Drawing.Point(898, 84);
+            this.AdvanedFormBtn.Name = "AdvanedFormBtn";
+            this.AdvanedFormBtn.Size = new System.Drawing.Size(183, 39);
+            this.AdvanedFormBtn.TabIndex = 7;
+            this.AdvanedFormBtn.Text = "Advanced Search";
+            this.AdvanedFormBtn.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.AdvanedFormBtn.UseVisualStyleBackColor = true;
+            this.AdvanedFormBtn.Click += new System.EventHandler(this.AdvanedFormBtn_Click);
+            // 
             // DownPanel
             // 
             this.DownPanel.Controls.Add(this.AdvancedSearchBtn);
@@ -172,6 +202,7 @@
             this.ClearBtn.Text = "Clear form";
             this.ClearBtn.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.ClearBtn.UseVisualStyleBackColor = true;
+            this.ClearBtn.Click += new System.EventHandler(this.ClearBtn_Click);
             // 
             // SimpleSearchFormBtn
             // 
@@ -326,36 +357,6 @@
             this.HintLabel.TabIndex = 9;
             this.HintLabel.Text = "Enter area name, attraction, property title, property type, amenities ...";
             this.HintLabel.Click += new System.EventHandler(this.HintLabel_Click);
-            // 
-            // AdvanedFormBtn
-            // 
-            this.AdvanedFormBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.AdvanedFormBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
-            this.AdvanedFormBtn.Image = ((System.Drawing.Image)(resources.GetObject("AdvanedFormBtn.Image")));
-            this.AdvanedFormBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.AdvanedFormBtn.Location = new System.Drawing.Point(898, 84);
-            this.AdvanedFormBtn.Name = "AdvanedFormBtn";
-            this.AdvanedFormBtn.Size = new System.Drawing.Size(183, 39);
-            this.AdvanedFormBtn.TabIndex = 7;
-            this.AdvanedFormBtn.Text = "Advanced Search";
-            this.AdvanedFormBtn.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.AdvanedFormBtn.UseVisualStyleBackColor = true;
-            this.AdvanedFormBtn.Click += new System.EventHandler(this.AdvanedFormBtn_Click);
-            // 
-            // SimpleSearchBtn
-            // 
-            this.SimpleSearchBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.SimpleSearchBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
-            this.SimpleSearchBtn.Image = ((System.Drawing.Image)(resources.GetObject("SimpleSearchBtn.Image")));
-            this.SimpleSearchBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.SimpleSearchBtn.Location = new System.Drawing.Point(898, 40);
-            this.SimpleSearchBtn.Name = "SimpleSearchBtn";
-            this.SimpleSearchBtn.Size = new System.Drawing.Size(207, 39);
-            this.SimpleSearchBtn.TabIndex = 5;
-            this.SimpleSearchBtn.Text = "Search properties...";
-            this.SimpleSearchBtn.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.SimpleSearchBtn.UseVisualStyleBackColor = true;
-            this.SimpleSearchBtn.Click += new System.EventHandler(this.SimpleSearchBtn_Click);
             // 
             // FromDateTimePicker
             // 

@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Main));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.OtherPanel = new System.Windows.Forms.Panel();
             this.PeopleLabel = new System.Windows.Forms.Label();
             this.NightsNumber = new System.Windows.Forms.NumericUpDown();
@@ -118,7 +119,7 @@
             // 
             // NightsNumber
             // 
-            this.NightsNumber.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(187)))), ((int)(((byte)(187)))));
+            this.NightsNumber.BackColor = System.Drawing.Color.White;
             this.NightsNumber.ForeColor = System.Drawing.Color.Black;
             this.NightsNumber.Location = new System.Drawing.Point(55, 12);
             this.NightsNumber.Maximum = new decimal(new int[] {
@@ -142,7 +143,7 @@
             // 
             // PeopleNumber
             // 
-            this.PeopleNumber.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(187)))), ((int)(((byte)(187)))));
+            this.PeopleNumber.BackColor = System.Drawing.Color.White;
             this.PeopleNumber.ForeColor = System.Drawing.Color.Black;
             this.PeopleNumber.Location = new System.Drawing.Point(257, 12);
             this.PeopleNumber.Maximum = new decimal(new int[] {
@@ -192,13 +193,13 @@
             this.FromDateTimePicker.Name = "FromDateTimePicker";
             this.FromDateTimePicker.Size = new System.Drawing.Size(240, 28);
             this.FromDateTimePicker.TabIndex = 2;
+            this.FromDateTimePicker.ValueChanged += new System.EventHandler(this.FromDateTimePicker_ValueChanged);
             // 
             // TitleComboBox
             // 
-            this.TitleComboBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(187)))), ((int)(((byte)(187)))));
+            this.TitleComboBox.BackColor = System.Drawing.Color.White;
             this.TitleComboBox.DisplayMember = "Name";
-            this.TitleComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.TitleComboBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(26)))), ((int)(((byte)(46)))));
+            this.TitleComboBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(85)))), ((int)(((byte)(85)))), ((int)(((byte)(85)))));
             this.TitleComboBox.FormattingEnabled = true;
             this.TitleComboBox.Location = new System.Drawing.Point(847, 3);
             this.TitleComboBox.Name = "TitleComboBox";
@@ -209,7 +210,7 @@
             // PropertyTitleLabel
             // 
             this.PropertyTitleLabel.AutoSize = true;
-            this.PropertyTitleLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(26)))), ((int)(((byte)(46)))));
+            this.PropertyTitleLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(85)))), ((int)(((byte)(85)))), ((int)(((byte)(85)))));
             this.PropertyTitleLabel.Location = new System.Drawing.Point(718, 6);
             this.PropertyTitleLabel.Name = "PropertyTitleLabel";
             this.PropertyTitleLabel.Size = new System.Drawing.Size(104, 22);
@@ -218,22 +219,22 @@
             // 
             // AttractionComboBox
             // 
-            this.AttractionComboBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(187)))), ((int)(((byte)(187)))));
+            this.AttractionComboBox.BackColor = System.Drawing.Color.White;
             this.AttractionComboBox.DisplayMember = "Name";
             this.AttractionComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.AttractionComboBox.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.AttractionComboBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(26)))), ((int)(((byte)(46)))));
+            this.AttractionComboBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(85)))), ((int)(((byte)(85)))), ((int)(((byte)(85)))));
             this.AttractionComboBox.FormattingEnabled = true;
             this.AttractionComboBox.Location = new System.Drawing.Point(457, 0);
             this.AttractionComboBox.Name = "AttractionComboBox";
             this.AttractionComboBox.Size = new System.Drawing.Size(253, 30);
             this.AttractionComboBox.TabIndex = 9;
             this.AttractionComboBox.ValueMember = "ID";
+            this.AttractionComboBox.SelectedIndexChanged += new System.EventHandler(this.AttractionComboBox_SelectedIndexChanged);
             // 
             // AttractionLabel
             // 
             this.AttractionLabel.AutoSize = true;
-            this.AttractionLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(26)))), ((int)(((byte)(46)))));
+            this.AttractionLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(85)))), ((int)(((byte)(85)))), ((int)(((byte)(85)))));
             this.AttractionLabel.Location = new System.Drawing.Point(360, 3);
             this.AttractionLabel.Name = "AttractionLabel";
             this.AttractionLabel.Size = new System.Drawing.Size(80, 22);
@@ -243,7 +244,7 @@
             // AreaLabel
             // 
             this.AreaLabel.AutoSize = true;
-            this.AreaLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(26)))), ((int)(((byte)(46)))));
+            this.AreaLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(85)))), ((int)(((byte)(85)))), ((int)(((byte)(85)))));
             this.AreaLabel.Location = new System.Drawing.Point(6, 1);
             this.AreaLabel.Name = "AreaLabel";
             this.AreaLabel.Size = new System.Drawing.Size(45, 22);
@@ -252,17 +253,17 @@
             // 
             // AreaComboBox
             // 
-            this.AreaComboBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(187)))), ((int)(((byte)(187)))));
+            this.AreaComboBox.BackColor = System.Drawing.Color.White;
             this.AreaComboBox.DisplayMember = "Name";
             this.AreaComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.AreaComboBox.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.AreaComboBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(26)))), ((int)(((byte)(46)))));
+            this.AreaComboBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(85)))), ((int)(((byte)(85)))), ((int)(((byte)(85)))));
             this.AreaComboBox.FormattingEnabled = true;
             this.AreaComboBox.Location = new System.Drawing.Point(78, 2);
             this.AreaComboBox.Name = "AreaComboBox";
             this.AreaComboBox.Size = new System.Drawing.Size(253, 30);
             this.AreaComboBox.TabIndex = 7;
             this.AreaComboBox.ValueMember = "ID";
+            this.AreaComboBox.SelectedIndexChanged += new System.EventHandler(this.AreaComboBox_SelectedIndexChanged);
             // 
             // Column5
             // 
@@ -270,7 +271,6 @@
             this.Column5.MinimumWidth = 6;
             this.Column5.Name = "Column5";
             this.Column5.ReadOnly = true;
-            this.Column5.Width = 125;
             // 
             // AllFlowLayoutPanel
             // 
@@ -304,18 +304,21 @@
             // 
             this.SearchTextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(187)))), ((int)(((byte)(187)))));
             this.SearchTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.SearchTextBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(26)))), ((int)(((byte)(46)))));
+            this.SearchTextBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(85)))), ((int)(((byte)(85)))), ((int)(((byte)(85)))));
             this.SearchTextBox.Location = new System.Drawing.Point(54, 18);
             this.SearchTextBox.Name = "SearchTextBox";
             this.SearchTextBox.Size = new System.Drawing.Size(774, 28);
             this.SearchTextBox.TabIndex = 0;
+            this.SearchTextBox.TabStop = false;
             this.SearchTextBox.Text = "Enter area name, attraction, property title, property type, amenities ...";
+            this.SearchTextBox.TextChanged += new System.EventHandler(this.SearchTextBox_TextChanged);
+            this.SearchTextBox.Enter += new System.EventHandler(this.SearchTextBox_Enter);
+            this.SearchTextBox.Leave += new System.EventHandler(this.SearchTextBox_Leave);
             // 
             // SimpleSearchBtn
             // 
-            this.SimpleSearchBtn.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(26)))), ((int)(((byte)(46)))));
-            this.SimpleSearchBtn.FlatAppearance.BorderSize = 2;
-            this.SimpleSearchBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.SimpleSearchBtn.BackColor = System.Drawing.Color.White;
+            this.SimpleSearchBtn.FlatAppearance.BorderSize = 0;
             this.SimpleSearchBtn.Font = new System.Drawing.Font("Open Sans SemiBold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.SimpleSearchBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(85)))), ((int)(((byte)(85)))), ((int)(((byte)(85)))));
             this.SimpleSearchBtn.Image = ((System.Drawing.Image)(resources.GetObject("SimpleSearchBtn.Image")));
@@ -326,14 +329,13 @@
             this.SimpleSearchBtn.TabIndex = 5;
             this.SimpleSearchBtn.Text = "Search properties...";
             this.SimpleSearchBtn.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.SimpleSearchBtn.UseVisualStyleBackColor = true;
+            this.SimpleSearchBtn.UseVisualStyleBackColor = false;
             this.SimpleSearchBtn.Click += new System.EventHandler(this.SimpleSearchBtn_Click);
             // 
             // AdvanedFormBtn
             // 
-            this.AdvanedFormBtn.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(26)))), ((int)(((byte)(46)))));
-            this.AdvanedFormBtn.FlatAppearance.BorderSize = 2;
-            this.AdvanedFormBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.AdvanedFormBtn.BackColor = System.Drawing.Color.White;
+            this.AdvanedFormBtn.FlatAppearance.BorderSize = 0;
             this.AdvanedFormBtn.Font = new System.Drawing.Font("Open Sans SemiBold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.AdvanedFormBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(85)))), ((int)(((byte)(85)))), ((int)(((byte)(85)))));
             this.AdvanedFormBtn.Image = ((System.Drawing.Image)(resources.GetObject("AdvanedFormBtn.Image")));
@@ -344,7 +346,7 @@
             this.AdvanedFormBtn.TabIndex = 7;
             this.AdvanedFormBtn.Text = "Advanced Search";
             this.AdvanedFormBtn.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.AdvanedFormBtn.UseVisualStyleBackColor = true;
+            this.AdvanedFormBtn.UseVisualStyleBackColor = false;
             this.AdvanedFormBtn.Click += new System.EventHandler(this.AdvanedFormBtn_Click);
             // 
             // DownPanel
@@ -371,9 +373,8 @@
             // 
             // AdvancedSearchBtn
             // 
-            this.AdvancedSearchBtn.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(26)))), ((int)(((byte)(46)))));
-            this.AdvancedSearchBtn.FlatAppearance.BorderSize = 2;
-            this.AdvancedSearchBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.AdvancedSearchBtn.BackColor = System.Drawing.Color.White;
+            this.AdvancedSearchBtn.FlatAppearance.BorderSize = 0;
             this.AdvancedSearchBtn.Font = new System.Drawing.Font("Open Sans SemiBold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.AdvancedSearchBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(85)))), ((int)(((byte)(85)))), ((int)(((byte)(85)))));
             this.AdvancedSearchBtn.Image = ((System.Drawing.Image)(resources.GetObject("AdvancedSearchBtn.Image")));
@@ -384,13 +385,13 @@
             this.AdvancedSearchBtn.TabIndex = 44;
             this.AdvancedSearchBtn.Text = "Search properties...";
             this.AdvancedSearchBtn.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.AdvancedSearchBtn.UseVisualStyleBackColor = true;
+            this.AdvancedSearchBtn.UseVisualStyleBackColor = false;
+            this.AdvancedSearchBtn.Click += new System.EventHandler(this.AdvancedSearchBtn_Click);
             // 
             // ClearBtn
             // 
-            this.ClearBtn.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(26)))), ((int)(((byte)(46)))));
-            this.ClearBtn.FlatAppearance.BorderSize = 2;
-            this.ClearBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ClearBtn.BackColor = System.Drawing.Color.White;
+            this.ClearBtn.FlatAppearance.BorderSize = 0;
             this.ClearBtn.Font = new System.Drawing.Font("Open Sans SemiBold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ClearBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(85)))), ((int)(((byte)(85)))), ((int)(((byte)(85)))));
             this.ClearBtn.Image = ((System.Drawing.Image)(resources.GetObject("ClearBtn.Image")));
@@ -401,13 +402,13 @@
             this.ClearBtn.TabIndex = 43;
             this.ClearBtn.Text = "Clear form";
             this.ClearBtn.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.ClearBtn.UseVisualStyleBackColor = true;
+            this.ClearBtn.UseVisualStyleBackColor = false;
+            this.ClearBtn.Click += new System.EventHandler(this.ClearBtn_Click);
             // 
             // SimpleSearchFormBtn
             // 
-            this.SimpleSearchFormBtn.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(26)))), ((int)(((byte)(46)))));
-            this.SimpleSearchFormBtn.FlatAppearance.BorderSize = 2;
-            this.SimpleSearchFormBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.SimpleSearchFormBtn.BackColor = System.Drawing.Color.White;
+            this.SimpleSearchFormBtn.FlatAppearance.BorderSize = 0;
             this.SimpleSearchFormBtn.Font = new System.Drawing.Font("Open Sans SemiBold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.SimpleSearchFormBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(85)))), ((int)(((byte)(85)))), ((int)(((byte)(85)))));
             this.SimpleSearchFormBtn.Image = ((System.Drawing.Image)(resources.GetObject("SimpleSearchFormBtn.Image")));
@@ -418,7 +419,8 @@
             this.SimpleSearchFormBtn.TabIndex = 42;
             this.SimpleSearchFormBtn.Text = "Simple Search";
             this.SimpleSearchFormBtn.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.SimpleSearchFormBtn.UseVisualStyleBackColor = true;
+            this.SimpleSearchFormBtn.UseVisualStyleBackColor = false;
+            this.SimpleSearchFormBtn.Click += new System.EventHandler(this.SimpleSearchFormBtn_Click);
             // 
             // AmenityComboBox3
             // 
@@ -431,7 +433,9 @@
             this.AmenityComboBox3.Name = "AmenityComboBox3";
             this.AmenityComboBox3.Size = new System.Drawing.Size(253, 30);
             this.AmenityComboBox3.TabIndex = 41;
+            this.AmenityComboBox3.Tag = "3";
             this.AmenityComboBox3.ValueMember = "ID";
+            this.AmenityComboBox3.MouseClick += new System.Windows.Forms.MouseEventHandler(this.AmenityComboBox_MouseClick);
             // 
             // AmenityLabel3
             // 
@@ -448,13 +452,16 @@
             this.AmenityComboBox2.BackColor = System.Drawing.Color.White;
             this.AmenityComboBox2.DisplayMember = "Name";
             this.AmenityComboBox2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.AmenityComboBox2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(26)))), ((int)(((byte)(46)))));
+            this.AmenityComboBox2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(85)))), ((int)(((byte)(85)))), ((int)(((byte)(85)))));
             this.AmenityComboBox2.FormattingEnabled = true;
             this.AmenityComboBox2.Location = new System.Drawing.Point(507, 38);
             this.AmenityComboBox2.Name = "AmenityComboBox2";
             this.AmenityComboBox2.Size = new System.Drawing.Size(253, 30);
             this.AmenityComboBox2.TabIndex = 39;
+            this.AmenityComboBox2.Tag = "2";
             this.AmenityComboBox2.ValueMember = "ID";
+            this.AmenityComboBox2.SelectedIndexChanged += new System.EventHandler(this.AmenityComboBox_SelectedIndexChanged);
+            this.AmenityComboBox2.MouseClick += new System.Windows.Forms.MouseEventHandler(this.AmenityComboBox_MouseClick);
             // 
             // AmenityLabel2
             // 
@@ -473,11 +480,14 @@
             this.AmenityComboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.AmenityComboBox1.ForeColor = System.Drawing.Color.Black;
             this.AmenityComboBox1.FormattingEnabled = true;
-            this.AmenityComboBox1.Location = new System.Drawing.Point(134, 38);
+            this.AmenityComboBox1.Location = new System.Drawing.Point(153, 33);
             this.AmenityComboBox1.Name = "AmenityComboBox1";
             this.AmenityComboBox1.Size = new System.Drawing.Size(253, 30);
             this.AmenityComboBox1.TabIndex = 37;
+            this.AmenityComboBox1.Tag = "1";
             this.AmenityComboBox1.ValueMember = "ID";
+            this.AmenityComboBox1.SelectedIndexChanged += new System.EventHandler(this.AmenityComboBox_SelectedIndexChanged);
+            this.AmenityComboBox1.MouseClick += new System.Windows.Forms.MouseEventHandler(this.AmenityComboBox_MouseClick);
             // 
             // AmenityLabel1
             // 
@@ -494,7 +504,7 @@
             this.TypeComboBox.BackColor = System.Drawing.Color.White;
             this.TypeComboBox.DisplayMember = "Name";
             this.TypeComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.TypeComboBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(26)))), ((int)(((byte)(46)))));
+            this.TypeComboBox.ForeColor = System.Drawing.Color.Black;
             this.TypeComboBox.FormattingEnabled = true;
             this.TypeComboBox.Location = new System.Drawing.Point(731, 10);
             this.TypeComboBox.Name = "TypeComboBox";
@@ -594,7 +604,7 @@
             // 
             this.ToDateTimePicker.CustomFormat = "dd/MM/yyyy";
             this.ToDateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.ToDateTimePicker.Location = new System.Drawing.Point(37, 9);
+            this.ToDateTimePicker.Location = new System.Drawing.Point(43, 1);
             this.ToDateTimePicker.Name = "ToDateTimePicker";
             this.ToDateTimePicker.Size = new System.Drawing.Size(240, 28);
             this.ToDateTimePicker.TabIndex = 4;
@@ -611,9 +621,9 @@
             // 
             // ListBoxHint
             // 
-            this.ListBoxHint.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(187)))), ((int)(((byte)(187)))));
+            this.ListBoxHint.BackColor = System.Drawing.Color.White;
             this.ListBoxHint.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.ListBoxHint.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(26)))), ((int)(((byte)(46)))));
+            this.ListBoxHint.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(85)))), ((int)(((byte)(85)))), ((int)(((byte)(85)))));
             this.ListBoxHint.FormattingEnabled = true;
             this.ListBoxHint.ItemHeight = 22;
             this.ListBoxHint.Location = new System.Drawing.Point(54, 60);
@@ -621,6 +631,7 @@
             this.ListBoxHint.ScrollAlwaysVisible = true;
             this.ListBoxHint.Size = new System.Drawing.Size(774, 46);
             this.ListBoxHint.TabIndex = 10;
+            this.ListBoxHint.MouseClick += new System.Windows.Forms.MouseEventHandler(this.ListBoxHint_MouseClick);
             // 
             // TopPanel
             // 
@@ -659,7 +670,16 @@
             // 
             this.ResultsDataGridView.AllowUserToAddRows = false;
             this.ResultsDataGridView.AllowUserToDeleteRows = false;
+            this.ResultsDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.ResultsDataGridView.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(187)))), ((int)(((byte)(187)))));
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(187)))), ((int)(((byte)(187)))));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Open Sans Light", 9F);
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(26)))), ((int)(((byte)(46)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.ResultsDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.ResultsDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.ResultsDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column1,
@@ -668,6 +688,8 @@
             this.Column4,
             this.Column5,
             this.Column6});
+            this.ResultsDataGridView.EnableHeadersVisualStyles = false;
+            this.ResultsDataGridView.GridColor = System.Drawing.Color.Black;
             this.ResultsDataGridView.Location = new System.Drawing.Point(9, 24);
             this.ResultsDataGridView.Name = "ResultsDataGridView";
             this.ResultsDataGridView.ReadOnly = true;
@@ -682,7 +704,6 @@
             this.Column1.MinimumWidth = 6;
             this.Column1.Name = "Column1";
             this.Column1.ReadOnly = true;
-            this.Column1.Width = 125;
             // 
             // Column2
             // 
@@ -690,7 +711,6 @@
             this.Column2.MinimumWidth = 6;
             this.Column2.Name = "Column2";
             this.Column2.ReadOnly = true;
-            this.Column2.Width = 125;
             // 
             // Column3
             // 
@@ -698,7 +718,6 @@
             this.Column3.MinimumWidth = 6;
             this.Column3.Name = "Column3";
             this.Column3.ReadOnly = true;
-            this.Column3.Width = 125;
             // 
             // Column4
             // 
@@ -706,7 +725,6 @@
             this.Column4.MinimumWidth = 6;
             this.Column4.Name = "Column4";
             this.Column4.ReadOnly = true;
-            this.Column4.Width = 125;
             // 
             // Column6
             // 
@@ -714,7 +732,6 @@
             this.Column6.MinimumWidth = 6;
             this.Column6.Name = "Column6";
             this.Column6.ReadOnly = true;
-            this.Column6.Width = 125;
             // 
             // Main
             // 

@@ -8,57 +8,67 @@ namespace Session3UnitTestProject
     [TestClass]
     public class UnitTest1
     {
-        public static Users Register(string username, string fullname, string password, DateTime birthday, int numberOfFamily, bool gender)
+        /// <summary>
+        /// Test User can Register?
+        /// </summary>
+        [TestMethod]
+        [DataRow("dadada", "dadada", "dadadad", true, 1)]
+        [DataRow("aagag", "aagag", "aagag", true, 1)]
+        [DataRow("aaa", "12345", "Min-Seo Young-Ho", true, 1)]
+        public void TestUserRegister(string username, string password, string fullname, bool gender, int familyCount)
         {
-            using (var entities = new Session3Entities())
+            var birthday = DateTime.Today;
+            Users user;
+            try
             {
-                var user = entities.Users.SingleOrDefault(t => t.Username == username);
-                if (user != null)
+                user = GlobalClass.Register(username, fullname, password, birthday, familyCount, gender);
+                using (var entities = new Session3Entities())
                 {
-                    throw new ArgumentException("Username is exists.");
-                }
-                if (password.Length < 5)
-                {
-                    throw new ArgumentException("Password length need least five.");
-                }
-                user = entities.Users.Add(new Users
-                {
-                    GUID = Guid.NewGuid(),
-                    Username = username,
-                    Password = password,
-                    BirthDate = birthday,
-                    FullName = fullname,
-                    FamilyCount = numberOfFamily,
-                    Gender = gender,
-                    UserTypeID = 2
-                });
-                entities.SaveChanges();
-                return user;
-            }
-        }
-        public static void CheckItemDate()
-        {
-            using (var entities = new Session3Entities())
-            {
-                var date = new DateTime(2017, 02, 19).Date;
-                var items = entities.Items.Where(t => t.ItemPrices.Any(x => x.Date <= date)).ToList();
-                if (items.Count > 0)
-                {
-                    throw new Exception($"No property or listing should have availabilities before 19/02/2017." +
-                        $"{Environment.NewLine}Error Data : {String.Join(Environment.NewLine, items.Select(t => $"Item ID: {t.ID}"))}");
+                    user = entities.Users.SingleOrDefault(t => t.ID == user.ID);
+                    Assert.IsTrue(user != null, "Register user is not found.");
+                    Assert.IsTrue(user.Username == username, "Register user Username value different.");
+                    Assert.IsTrue(user.Password == password, "Register Password value different.");
+                    Assert.IsTrue(user.FullName == fullname, "Register FullName value different.");
+                    Assert.IsTrue(user.Gender == gender, "Register Gender value different.");
+                    Assert.IsTrue(user.BirthDate == birthday, "Register BirthDate value different.");
+                    Assert.IsTrue(user.FamilyCount == familyCount, "Register FamilyCount value different.");
+                    entities.Users.Remove(entities.Users.SingleOrDefault(t => t.ID == user.ID));
+                    entities.SaveChanges();
                 }
             }
-        }
-        public static void CheckScore()
-        {
-            using (var entities = new Session3Entities())
+            catch (ArgumentException ex)
             {
-                var itemsScore = entities.ItemScores.Where(t => t.Value > 5 || t.Value < 0).ToList();
-                if (itemsScore.Count > 0)
-                {
-                    throw new Exception($"No score associated with any of the properties or listings should have higher score than 5 and lower score than 0." +
-                        $"{Environment.NewLine}Error Data: {String.Join(Environment.NewLine, itemsScore.Select(t => $"ItemScoreId : {t.ID}  Value : {t.Value}"))}");
-                }
+                Assert.Fail(ex.Message);
+            }
+        }
+        /// <summary>
+        /// Test ItemScore
+        /// </summary>
+        [TestMethod]
+        public void TestItemScore()
+        {
+            try
+            {
+                GlobalClass.CheckScore();
+            }
+            catch (Exception ex)
+            {
+                Assert.Fail(ex.Message);
+            }
+        }
+        /// <summary>
+        /// Test ItemAvailableDate
+        /// </summary>
+        [TestMethod]
+        public void TestItemAvailableDate()
+        {
+            try
+            {
+                GlobalClass.CheckItemDate();
+            }
+            catch (Exception ex)
+            {
+                Assert.Fail(ex.Message);
             }
         }
     }
