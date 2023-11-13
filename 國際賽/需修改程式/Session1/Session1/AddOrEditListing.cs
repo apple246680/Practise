@@ -75,29 +75,29 @@ namespace Session1
 
         private void NextBtn_Click(object sender, EventArgs e)
         {
-            if (ListingTabControl.SelectedIndex != 2)
-            {
-                if (ListingTabControl.SelectedIndex == 0)
+                if (ListingTabControl.SelectedIndex != 2)
                 {
-                    if (String.IsNullOrWhiteSpace(TitleTextBox.Text)
-                        || String.IsNullOrWhiteSpace(ApproximateAddressTextBox.Text)
-                        || String.IsNullOrWhiteSpace(ExactAddressTextBox.Text)
-                        || String.IsNullOrWhiteSpace(DescriptionTextBox.Text)
-                        || String.IsNullOrWhiteSpace(HostRulesTextBox.Text))
+                    if (ListingTabControl.SelectedIndex == 0)
                     {
-                        MessageBox.Show("Input can't be empty.");
-                        ListingTabControl.SelectedIndex = beforeIndex;
-                        return;
+                        if (String.IsNullOrWhiteSpace(TitleTextBox.Text)
+                            || String.IsNullOrWhiteSpace(ApproximateAddressTextBox.Text)
+                            || String.IsNullOrWhiteSpace(ExactAddressTextBox.Text)
+                            || String.IsNullOrWhiteSpace(DescriptionTextBox.Text)
+                            || String.IsNullOrWhiteSpace(HostRulesTextBox.Text))
+                        {
+                            MessageBox.Show("Input can't be empty.");
+                            ListingTabControl.SelectedIndex = beforeIndex;
+                            return;
+                        }
+                        if (MinNum.Value > MaxNum.Value)
+                        {
+                            MessageBox.Show("Nights minmum can't over maximum");
+                            ListingTabControl.SelectedIndex = beforeIndex;
+                            return;
+                        }
                     }
-                    if (MinNum.Value > MaxNum.Value)
-                    {
-                        MessageBox.Show("Nights minmum can't over maximum");
-                        ListingTabControl.SelectedIndex = beforeIndex;
-                        return;
-                    }
+                    ListingTabControl.SelectedIndex++;
                 }
-                ListingTabControl.SelectedIndex++;
-            }
         }
 
         private void CloseBtn_Click(object sender, EventArgs e)
