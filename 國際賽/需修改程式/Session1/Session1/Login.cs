@@ -67,7 +67,7 @@ namespace Session1
             }
             else
             {
-                var user = entities.Users.SingleOrDefault(x => x.Username == UserTextbox.Text && x.UserTypeID == 1);
+                var user = entities.Users.SingleOrDefault(x => x.Username == UserTextbox.Text);
                 if (user == null)
                 {
                     MessageBox.Show("Username is wrong");

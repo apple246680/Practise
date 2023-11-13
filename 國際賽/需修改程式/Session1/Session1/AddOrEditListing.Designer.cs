@@ -65,10 +65,6 @@
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DistanceToAttractionPage = new System.Windows.Forms.TabPage();
             this.ChooesAmenitiesLabel = new System.Windows.Forms.Label();
-            this.TColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.AmenityColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.IDColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.AmenitiesDataGridView = new System.Windows.Forms.DataGridView();
             this.AmenitiesPage = new System.Windows.Forms.TabPage();
             this.TitleLabel = new System.Windows.Forms.Label();
             this.TypeLabel = new System.Windows.Forms.Label();
@@ -76,6 +72,10 @@
             this.ListingTabControl = new System.Windows.Forms.TabControl();
             this.CloseBtn = new System.Windows.Forms.Button();
             this.NextBtn = new System.Windows.Forms.Button();
+            this.AmenitiesDataGridView = new System.Windows.Forms.DataGridView();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.MaxNum)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.MinNum)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BathroomNum)).BeginInit();
@@ -84,20 +84,20 @@
             ((System.ComponentModel.ISupportInitialize)(this.CapacityyNum)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DistanceDataGridView)).BeginInit();
             this.DistanceToAttractionPage.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.AmenitiesDataGridView)).BeginInit();
             this.AmenitiesPage.SuspendLayout();
             this.ListingDetailsPage.SuspendLayout();
             this.ListingTabControl.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.AmenitiesDataGridView)).BeginInit();
             this.SuspendLayout();
             // 
             // TitleTextBox
             // 
             this.TitleTextBox.BackColor = System.Drawing.Color.White;
             this.TitleTextBox.Font = new System.Drawing.Font("Open Sans Light", 9F);
-            this.TitleTextBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(26)))), ((int)(((byte)(46)))));
+            this.TitleTextBox.ForeColor = System.Drawing.Color.Black;
             this.TitleTextBox.Location = new System.Drawing.Point(536, 12);
             this.TitleTextBox.Name = "TitleTextBox";
-            this.TitleTextBox.Size = new System.Drawing.Size(330, 28);
+            this.TitleTextBox.Size = new System.Drawing.Size(330, 24);
             this.TitleTextBox.TabIndex = 25;
             // 
             // MaxNum
@@ -106,8 +106,13 @@
             this.MaxNum.Font = new System.Drawing.Font("Open Sans Light", 9F);
             this.MaxNum.ForeColor = System.Drawing.Color.Black;
             this.MaxNum.Location = new System.Drawing.Point(519, 333);
+            this.MaxNum.Maximum = new decimal(new int[] {
+            10000,
+            0,
+            0,
+            0});
             this.MaxNum.Name = "MaxNum";
-            this.MaxNum.Size = new System.Drawing.Size(64, 28);
+            this.MaxNum.Size = new System.Drawing.Size(64, 24);
             this.MaxNum.TabIndex = 24;
             // 
             // MinNum
@@ -117,7 +122,7 @@
             this.MinNum.ForeColor = System.Drawing.Color.Black;
             this.MinNum.Location = new System.Drawing.Point(350, 333);
             this.MinNum.Name = "MinNum";
-            this.MinNum.Size = new System.Drawing.Size(64, 28);
+            this.MinNum.Size = new System.Drawing.Size(64, 24);
             this.MinNum.TabIndex = 23;
             // 
             // MaximumLabel
@@ -126,7 +131,7 @@
             this.MaximumLabel.Font = new System.Drawing.Font("Open Sans", 10F);
             this.MaximumLabel.Location = new System.Drawing.Point(420, 333);
             this.MaximumLabel.Name = "MaximumLabel";
-            this.MaximumLabel.Size = new System.Drawing.Size(93, 24);
+            this.MaximumLabel.Size = new System.Drawing.Size(80, 20);
             this.MaximumLabel.TabIndex = 22;
             this.MaximumLabel.Text = "Maximum:";
             // 
@@ -136,7 +141,7 @@
             this.MinmumLabel.Font = new System.Drawing.Font("Open Sans", 10F);
             this.MinmumLabel.Location = new System.Drawing.Point(255, 333);
             this.MinmumLabel.Name = "MinmumLabel";
-            this.MinmumLabel.Size = new System.Drawing.Size(89, 24);
+            this.MinmumLabel.Size = new System.Drawing.Size(78, 20);
             this.MinmumLabel.TabIndex = 21;
             this.MinmumLabel.Text = "Minimum:";
             // 
@@ -180,7 +185,7 @@
             this.ApproximateAddressTextBox.ForeColor = System.Drawing.Color.Black;
             this.ApproximateAddressTextBox.Location = new System.Drawing.Point(198, 91);
             this.ApproximateAddressTextBox.Name = "ApproximateAddressTextBox";
-            this.ApproximateAddressTextBox.Size = new System.Drawing.Size(676, 28);
+            this.ApproximateAddressTextBox.Size = new System.Drawing.Size(676, 24);
             this.ApproximateAddressTextBox.TabIndex = 16;
             // 
             // BathroomNum
@@ -190,7 +195,7 @@
             this.BathroomNum.ForeColor = System.Drawing.Color.Black;
             this.BathroomNum.Location = new System.Drawing.Point(817, 57);
             this.BathroomNum.Name = "BathroomNum";
-            this.BathroomNum.Size = new System.Drawing.Size(60, 28);
+            this.BathroomNum.Size = new System.Drawing.Size(60, 24);
             this.BathroomNum.TabIndex = 15;
             // 
             // BedroomNum
@@ -200,7 +205,7 @@
             this.BedroomNum.ForeColor = System.Drawing.Color.Black;
             this.BedroomNum.Location = new System.Drawing.Point(569, 53);
             this.BedroomNum.Name = "BedroomNum";
-            this.BedroomNum.Size = new System.Drawing.Size(60, 28);
+            this.BedroomNum.Size = new System.Drawing.Size(60, 24);
             this.BedroomNum.TabIndex = 14;
             // 
             // BedsNum
@@ -210,7 +215,7 @@
             this.BedsNum.ForeColor = System.Drawing.Color.Black;
             this.BedsNum.Location = new System.Drawing.Point(310, 53);
             this.BedsNum.Name = "BedsNum";
-            this.BedsNum.Size = new System.Drawing.Size(61, 28);
+            this.BedsNum.Size = new System.Drawing.Size(61, 24);
             this.BedsNum.TabIndex = 13;
             // 
             // CapacityyNum
@@ -220,7 +225,7 @@
             this.CapacityyNum.ForeColor = System.Drawing.Color.Black;
             this.CapacityyNum.Location = new System.Drawing.Point(91, 49);
             this.CapacityyNum.Name = "CapacityyNum";
-            this.CapacityyNum.Size = new System.Drawing.Size(64, 28);
+            this.CapacityyNum.Size = new System.Drawing.Size(64, 24);
             this.CapacityyNum.TabIndex = 12;
             // 
             // ByCarColumn
@@ -228,21 +233,18 @@
             this.ByCarColumn.HeaderText = "By Car (minutes)";
             this.ByCarColumn.MinimumWidth = 6;
             this.ByCarColumn.Name = "ByCarColumn";
-            this.ByCarColumn.Width = 125;
             // 
             // OnFootColumn
             // 
             this.OnFootColumn.HeaderText = "On Foot (minutes)";
             this.OnFootColumn.MinimumWidth = 6;
             this.OnFootColumn.Name = "OnFootColumn";
-            this.OnFootColumn.Width = 125;
             // 
             // DistanceColumn
             // 
             this.DistanceColumn.HeaderText = "Distance (km)";
             this.DistanceColumn.MinimumWidth = 6;
             this.DistanceColumn.Name = "DistanceColumn";
-            this.DistanceColumn.Width = 125;
             // 
             // ExactAddressLabel
             // 
@@ -250,7 +252,7 @@
             this.ExactAddressLabel.Font = new System.Drawing.Font("Open Sans", 10F);
             this.ExactAddressLabel.Location = new System.Drawing.Point(3, 126);
             this.ExactAddressLabel.Name = "ExactAddressLabel";
-            this.ExactAddressLabel.Size = new System.Drawing.Size(119, 24);
+            this.ExactAddressLabel.Size = new System.Drawing.Size(103, 20);
             this.ExactAddressLabel.TabIndex = 17;
             this.ExactAddressLabel.Text = "Exact Address";
             // 
@@ -259,18 +261,17 @@
             this.AttractionColumn.HeaderText = "Attraction";
             this.AttractionColumn.MinimumWidth = 6;
             this.AttractionColumn.Name = "AttractionColumn";
-            this.AttractionColumn.Width = 125;
             // 
             // TypeComboBox
             // 
             this.TypeComboBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(187)))), ((int)(((byte)(187)))));
             this.TypeComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.TypeComboBox.Font = new System.Drawing.Font("Open Sans Light", 9F);
-            this.TypeComboBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(26)))), ((int)(((byte)(46)))));
+            this.TypeComboBox.ForeColor = System.Drawing.Color.Black;
             this.TypeComboBox.FormattingEnabled = true;
             this.TypeComboBox.Location = new System.Drawing.Point(84, 12);
             this.TypeComboBox.Name = "TypeComboBox";
-            this.TypeComboBox.Size = new System.Drawing.Size(393, 30);
+            this.TypeComboBox.Size = new System.Drawing.Size(393, 25);
             this.TypeComboBox.TabIndex = 10;
             // 
             // ReservationTimeLabel
@@ -279,7 +280,7 @@
             this.ReservationTimeLabel.Font = new System.Drawing.Font("Open Sans", 10F);
             this.ReservationTimeLabel.Location = new System.Drawing.Point(8, 333);
             this.ReservationTimeLabel.Name = "ReservationTimeLabel";
-            this.ReservationTimeLabel.Size = new System.Drawing.Size(205, 24);
+            this.ReservationTimeLabel.Size = new System.Drawing.Size(178, 20);
             this.ReservationTimeLabel.TabIndex = 9;
             this.ReservationTimeLabel.Text = "Reservation Time (Night):";
             // 
@@ -289,7 +290,7 @@
             this.HostRulesLabel.Font = new System.Drawing.Font("Open Sans", 10F);
             this.HostRulesLabel.Location = new System.Drawing.Point(3, 250);
             this.HostRulesLabel.Name = "HostRulesLabel";
-            this.HostRulesLabel.Size = new System.Drawing.Size(97, 24);
+            this.HostRulesLabel.Size = new System.Drawing.Size(84, 20);
             this.HostRulesLabel.TabIndex = 8;
             this.HostRulesLabel.Text = "Host Rules:";
             // 
@@ -299,7 +300,7 @@
             this.DescriptionLabel.Font = new System.Drawing.Font("Open Sans", 10F);
             this.DescriptionLabel.Location = new System.Drawing.Point(3, 188);
             this.DescriptionLabel.Name = "DescriptionLabel";
-            this.DescriptionLabel.Size = new System.Drawing.Size(103, 24);
+            this.DescriptionLabel.Size = new System.Drawing.Size(90, 20);
             this.DescriptionLabel.TabIndex = 7;
             this.DescriptionLabel.Text = "Description:";
             // 
@@ -309,7 +310,7 @@
             this.ApproximateAddressLabel.Font = new System.Drawing.Font("Open Sans", 10F);
             this.ApproximateAddressLabel.Location = new System.Drawing.Point(6, 91);
             this.ApproximateAddressLabel.Name = "ApproximateAddressLabel";
-            this.ApproximateAddressLabel.Size = new System.Drawing.Size(184, 24);
+            this.ApproximateAddressLabel.Size = new System.Drawing.Size(158, 20);
             this.ApproximateAddressLabel.TabIndex = 6;
             this.ApproximateAddressLabel.Text = "Approximate Address:";
             // 
@@ -319,7 +320,7 @@
             this.BathroomLabel.Font = new System.Drawing.Font("Open Sans", 10F);
             this.BathroomLabel.Location = new System.Drawing.Point(635, 57);
             this.BathroomLabel.Name = "BathroomLabel";
-            this.BathroomLabel.Size = new System.Drawing.Size(183, 24);
+            this.BathroomLabel.Size = new System.Drawing.Size(156, 20);
             this.BathroomLabel.TabIndex = 5;
             this.BathroomLabel.Text = "Number of Bathroom:";
             // 
@@ -329,7 +330,7 @@
             this.BedLabel.Font = new System.Drawing.Font("Open Sans", 10F);
             this.BedLabel.Location = new System.Drawing.Point(161, 53);
             this.BedLabel.Name = "BedLabel";
-            this.BedLabel.Size = new System.Drawing.Size(143, 24);
+            this.BedLabel.Size = new System.Drawing.Size(123, 20);
             this.BedLabel.TabIndex = 3;
             this.BedLabel.Text = "Number of Beds:";
             // 
@@ -338,7 +339,6 @@
             this.AreaColumn.HeaderText = "Area";
             this.AreaColumn.MinimumWidth = 6;
             this.AreaColumn.Name = "AreaColumn";
-            this.AreaColumn.Width = 125;
             // 
             // BedroomLabel
             // 
@@ -346,7 +346,7 @@
             this.BedroomLabel.Font = new System.Drawing.Font("Open Sans", 10F);
             this.BedroomLabel.Location = new System.Drawing.Point(377, 53);
             this.BedroomLabel.Name = "BedroomLabel";
-            this.BedroomLabel.Size = new System.Drawing.Size(186, 24);
+            this.BedroomLabel.Size = new System.Drawing.Size(158, 20);
             this.BedroomLabel.TabIndex = 4;
             this.BedroomLabel.Text = "Number of Bedrooms:";
             // 
@@ -356,7 +356,7 @@
             this.BodyLabel.Font = new System.Drawing.Font("Open Sans SemiBold", 9F);
             this.BodyLabel.Location = new System.Drawing.Point(13, 11);
             this.BodyLabel.Name = "BodyLabel";
-            this.BodyLabel.Size = new System.Drawing.Size(636, 22);
+            this.BodyLabel.Size = new System.Drawing.Size(505, 17);
             this.BodyLabel.TabIndex = 7;
             this.BodyLabel.Text = "Specify the distance from each close by attraction and the time it takes to get t" +
     "o them:";
@@ -367,12 +367,13 @@
             this.CapacityLabel.Font = new System.Drawing.Font("Open Sans", 10F);
             this.CapacityLabel.Location = new System.Drawing.Point(8, 53);
             this.CapacityLabel.Name = "CapacityLabel";
-            this.CapacityLabel.Size = new System.Drawing.Size(80, 24);
+            this.CapacityLabel.Size = new System.Drawing.Size(70, 20);
             this.CapacityLabel.TabIndex = 2;
             this.CapacityLabel.Text = "Capacity:";
             // 
             // DistanceDataGridView
             // 
+            this.DistanceDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.DistanceDataGridView.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(187)))), ((int)(((byte)(187)))));
             this.DistanceDataGridView.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -407,6 +408,8 @@
             this.DistanceDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.DistanceDataGridView.Size = new System.Drawing.Size(860, 357);
             this.DistanceDataGridView.TabIndex = 23;
+            this.DistanceDataGridView.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.DistanceDataGridView_CellEndEdit);
+            this.DistanceDataGridView.RowsAdded += new System.Windows.Forms.DataGridViewRowsAddedEventHandler(this.DistanceDataGridView_RowsAdded);
             // 
             // dataGridViewTextBoxColumn1
             // 
@@ -414,16 +417,15 @@
             this.dataGridViewTextBoxColumn1.MinimumWidth = 6;
             this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
             this.dataGridViewTextBoxColumn1.Visible = false;
-            this.dataGridViewTextBoxColumn1.Width = 125;
             // 
             // DistanceToAttractionPage
             // 
             this.DistanceToAttractionPage.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(187)))), ((int)(((byte)(187)))));
             this.DistanceToAttractionPage.Controls.Add(this.DistanceDataGridView);
             this.DistanceToAttractionPage.Controls.Add(this.BodyLabel);
-            this.DistanceToAttractionPage.Location = new System.Drawing.Point(4, 31);
+            this.DistanceToAttractionPage.Location = new System.Drawing.Point(4, 26);
             this.DistanceToAttractionPage.Name = "DistanceToAttractionPage";
-            this.DistanceToAttractionPage.Size = new System.Drawing.Size(880, 391);
+            this.DistanceToAttractionPage.Size = new System.Drawing.Size(880, 396);
             this.DistanceToAttractionPage.TabIndex = 2;
             this.DistanceToAttractionPage.Text = "Distance to Attraction";
             // 
@@ -433,82 +435,19 @@
             this.ChooesAmenitiesLabel.Font = new System.Drawing.Font("Open Sans", 12F);
             this.ChooesAmenitiesLabel.Location = new System.Drawing.Point(6, 12);
             this.ChooesAmenitiesLabel.Name = "ChooesAmenitiesLabel";
-            this.ChooesAmenitiesLabel.Size = new System.Drawing.Size(273, 28);
+            this.ChooesAmenitiesLabel.Size = new System.Drawing.Size(221, 23);
             this.ChooesAmenitiesLabel.TabIndex = 0;
             this.ChooesAmenitiesLabel.Text = "Choose Available Amenities:";
-            // 
-            // TColumn
-            // 
-            this.TColumn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.TColumn.HeaderText = "";
-            this.TColumn.MinimumWidth = 6;
-            this.TColumn.Name = "TColumn";
-            this.TColumn.ReadOnly = true;
-            this.TColumn.Width = 125;
-            // 
-            // AmenityColumn
-            // 
-            this.AmenityColumn.HeaderText = "Amenity";
-            this.AmenityColumn.MinimumWidth = 6;
-            this.AmenityColumn.Name = "AmenityColumn";
-            this.AmenityColumn.ReadOnly = true;
-            this.AmenityColumn.Width = 250;
-            // 
-            // IDColumn
-            // 
-            this.IDColumn.HeaderText = "ID";
-            this.IDColumn.MinimumWidth = 6;
-            this.IDColumn.Name = "IDColumn";
-            this.IDColumn.ReadOnly = true;
-            this.IDColumn.Visible = false;
-            this.IDColumn.Width = 125;
-            // 
-            // AmenitiesDataGridView
-            // 
-            this.AmenitiesDataGridView.AllowUserToAddRows = false;
-            this.AmenitiesDataGridView.AllowUserToDeleteRows = false;
-            this.AmenitiesDataGridView.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(187)))), ((int)(((byte)(187)))));
-            this.AmenitiesDataGridView.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(187)))), ((int)(((byte)(187)))));
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Open Sans SemiBold", 9F);
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(26)))), ((int)(((byte)(46)))));
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(187)))), ((int)(((byte)(187)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(26)))), ((int)(((byte)(46)))));
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.AmenitiesDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
-            this.AmenitiesDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.AmenitiesDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.IDColumn,
-            this.AmenityColumn,
-            this.TColumn});
-            this.AmenitiesDataGridView.EnableHeadersVisualStyles = false;
-            this.AmenitiesDataGridView.GridColor = System.Drawing.Color.Black;
-            this.AmenitiesDataGridView.Location = new System.Drawing.Point(11, 43);
-            this.AmenitiesDataGridView.Name = "AmenitiesDataGridView";
-            this.AmenitiesDataGridView.ReadOnly = true;
-            this.AmenitiesDataGridView.RowHeadersVisible = false;
-            this.AmenitiesDataGridView.RowHeadersWidth = 62;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(187)))), ((int)(((byte)(187)))));
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Open Sans", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(85)))), ((int)(((byte)(85)))), ((int)(((byte)(85)))));
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(26)))), ((int)(((byte)(46)))));
-            this.AmenitiesDataGridView.RowsDefaultCellStyle = dataGridViewCellStyle4;
-            this.AmenitiesDataGridView.RowTemplate.Height = 27;
-            this.AmenitiesDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.AmenitiesDataGridView.Size = new System.Drawing.Size(379, 342);
-            this.AmenitiesDataGridView.TabIndex = 3;
             // 
             // AmenitiesPage
             // 
             this.AmenitiesPage.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(187)))), ((int)(((byte)(187)))));
             this.AmenitiesPage.Controls.Add(this.AmenitiesDataGridView);
             this.AmenitiesPage.Controls.Add(this.ChooesAmenitiesLabel);
-            this.AmenitiesPage.Location = new System.Drawing.Point(4, 31);
+            this.AmenitiesPage.Location = new System.Drawing.Point(4, 26);
             this.AmenitiesPage.Name = "AmenitiesPage";
             this.AmenitiesPage.Padding = new System.Windows.Forms.Padding(3);
-            this.AmenitiesPage.Size = new System.Drawing.Size(880, 391);
+            this.AmenitiesPage.Size = new System.Drawing.Size(880, 396);
             this.AmenitiesPage.TabIndex = 1;
             this.AmenitiesPage.Text = "Amenities";
             // 
@@ -518,7 +457,7 @@
             this.TitleLabel.Font = new System.Drawing.Font("Open Sans", 10F);
             this.TitleLabel.Location = new System.Drawing.Point(483, 12);
             this.TitleLabel.Name = "TitleLabel";
-            this.TitleLabel.Size = new System.Drawing.Size(47, 24);
+            this.TitleLabel.Size = new System.Drawing.Size(42, 20);
             this.TitleLabel.TabIndex = 1;
             this.TitleLabel.Text = "Title:";
             // 
@@ -528,7 +467,7 @@
             this.TypeLabel.Font = new System.Drawing.Font("Open Sans", 10F);
             this.TypeLabel.Location = new System.Drawing.Point(25, 12);
             this.TypeLabel.Name = "TypeLabel";
-            this.TypeLabel.Size = new System.Drawing.Size(52, 24);
+            this.TypeLabel.Size = new System.Drawing.Size(45, 20);
             this.TypeLabel.TabIndex = 0;
             this.TypeLabel.Text = "Type:";
             // 
@@ -560,10 +499,10 @@
             this.ListingDetailsPage.Controls.Add(this.CapacityLabel);
             this.ListingDetailsPage.Controls.Add(this.TitleLabel);
             this.ListingDetailsPage.Controls.Add(this.TypeLabel);
-            this.ListingDetailsPage.Location = new System.Drawing.Point(4, 31);
+            this.ListingDetailsPage.Location = new System.Drawing.Point(4, 26);
             this.ListingDetailsPage.Name = "ListingDetailsPage";
             this.ListingDetailsPage.Padding = new System.Windows.Forms.Padding(3);
-            this.ListingDetailsPage.Size = new System.Drawing.Size(880, 391);
+            this.ListingDetailsPage.Size = new System.Drawing.Size(880, 396);
             this.ListingDetailsPage.TabIndex = 0;
             this.ListingDetailsPage.Text = "Listing Details";
             // 
@@ -610,9 +549,69 @@
             this.NextBtn.UseVisualStyleBackColor = false;
             this.NextBtn.Click += new System.EventHandler(this.NextBtn_Click);
             // 
+            // AmenitiesDataGridView
+            // 
+            this.AmenitiesDataGridView.AllowUserToAddRows = false;
+            this.AmenitiesDataGridView.AllowUserToDeleteRows = false;
+            this.AmenitiesDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.AmenitiesDataGridView.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(187)))), ((int)(((byte)(187)))));
+            this.AmenitiesDataGridView.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(187)))), ((int)(((byte)(187)))));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Open Sans SemiBold", 9F);
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(26)))), ((int)(((byte)(46)))));
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(187)))), ((int)(((byte)(187)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(26)))), ((int)(((byte)(46)))));
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.AmenitiesDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            this.AmenitiesDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.AmenitiesDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Column1,
+            this.Column2,
+            this.Column3});
+            this.AmenitiesDataGridView.EnableHeadersVisualStyles = false;
+            this.AmenitiesDataGridView.GridColor = System.Drawing.Color.Black;
+            this.AmenitiesDataGridView.Location = new System.Drawing.Point(10, 38);
+            this.AmenitiesDataGridView.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.AmenitiesDataGridView.MultiSelect = false;
+            this.AmenitiesDataGridView.Name = "AmenitiesDataGridView";
+            this.AmenitiesDataGridView.RowHeadersVisible = false;
+            this.AmenitiesDataGridView.RowHeadersWidth = 51;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(187)))), ((int)(((byte)(187)))));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(85)))), ((int)(((byte)(85)))), ((int)(((byte)(85)))));
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(26)))), ((int)(((byte)(46)))));
+            this.AmenitiesDataGridView.RowsDefaultCellStyle = dataGridViewCellStyle4;
+            this.AmenitiesDataGridView.RowTemplate.Height = 27;
+            this.AmenitiesDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.AmenitiesDataGridView.Size = new System.Drawing.Size(461, 303);
+            this.AmenitiesDataGridView.TabIndex = 8;
+            // 
+            // Column1
+            // 
+            this.Column1.HeaderText = "ID";
+            this.Column1.MinimumWidth = 6;
+            this.Column1.Name = "Column1";
+            this.Column1.Visible = false;
+            // 
+            // Column2
+            // 
+            this.Column2.HeaderText = "Amenity";
+            this.Column2.MinimumWidth = 6;
+            this.Column2.Name = "Column2";
+            this.Column2.ReadOnly = true;
+            // 
+            // Column3
+            // 
+            this.Column3.HeaderText = "";
+            this.Column3.MinimumWidth = 6;
+            this.Column3.Name = "Column3";
+            this.Column3.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.Column3.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            // 
             // AddOrEditListing
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(187)))), ((int)(((byte)(187)))));
             this.Controls.Add(this.ListingTabControl);
@@ -631,12 +630,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.DistanceDataGridView)).EndInit();
             this.DistanceToAttractionPage.ResumeLayout(false);
             this.DistanceToAttractionPage.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.AmenitiesDataGridView)).EndInit();
             this.AmenitiesPage.ResumeLayout(false);
             this.AmenitiesPage.PerformLayout();
             this.ListingDetailsPage.ResumeLayout(false);
             this.ListingDetailsPage.PerformLayout();
             this.ListingTabControl.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.AmenitiesDataGridView)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -675,10 +674,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.TabPage DistanceToAttractionPage;
         private System.Windows.Forms.Label ChooesAmenitiesLabel;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn TColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn AmenityColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn IDColumn;
-        private System.Windows.Forms.DataGridView AmenitiesDataGridView;
         private System.Windows.Forms.TabPage AmenitiesPage;
         private System.Windows.Forms.Label TitleLabel;
         private System.Windows.Forms.Label TypeLabel;
@@ -686,5 +681,9 @@
         private System.Windows.Forms.TabControl ListingTabControl;
         private System.Windows.Forms.Button CloseBtn;
         private System.Windows.Forms.Button NextBtn;
+        private System.Windows.Forms.DataGridView AmenitiesDataGridView;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn Column3;
     }
 }

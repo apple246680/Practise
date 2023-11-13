@@ -6,6 +6,7 @@ using System.Data.Entity.Migrations;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -22,7 +23,7 @@ namespace Session1
             beforeIndex = 0;
             Text = ItemID.HasValue ? $"Seoul Stay - Edit Listing" : $"Seoul Stay - Add Listing";
         }
-
+        bool adding=false;  
         private void AddOrEditListing_Load(object sender, EventArgs e)
         {
             var entities = new Session1Entities();
@@ -69,6 +70,7 @@ namespace Session1
                 }
                 AmenitiesDataGridView.Rows.Add(t.ID, t.Name, check);
             });
+            adding=true;
         }
 
         private void NextBtn_Click(object sender, EventArgs e)
@@ -164,15 +166,35 @@ namespace Session1
                         });
                     }
                 }
+                DistanceDataGridView.AllowUserToAddRows = false;
                 foreach (DataGridViewRow row in DistanceDataGridView.Rows)
                 {
                     int? onFoot = null;
                     int? bycar = null;
-                    if (row.Cells[4].Value.ToString() != "")
+                    if (row.Cells[0].Value==null)
+                    {
+                        var bb = ((string)row.Cells[1].Value).Trim();
+                        var cc = entities.Attractions.Any(x => x.Name.Trim() == bb);
+                        if (cc)
+                        {
+                            row.Cells[0].Value = entities.Attractions.Single(x => x.Name == bb).ID;
+                        }
+                        else
+                        {
+                            MessageBox.Show("No Found Attraction");
+                            return;
+                        }
+                    }
+                    if (row.Cells[2].Value.ToString() == "")
+                    {
+                        MessageBox.Show("Area cant not blank");
+                        return;
+                    }
+                    if (row.Cells[4].Value != null&& row.Cells[4].Value.ToString() != "")
                     {
                         onFoot = Convert.ToInt32(row.Cells[4].Value);
                     }
-                    if (row.Cells[5].Value.ToString() != "")
+                    if (row.Cells[5].Value != null && row.Cells[5].Value.ToString() != "")
                     {
                         bycar = Convert.ToInt32(row.Cells[5].Value);
                     }
@@ -242,6 +264,26 @@ namespace Session1
                 }
             }
             beforeIndex = ListingTabControl.SelectedIndex;
+        }
+
+        private void DistanceDataGridView_RowsAdded(object sender, DataGridViewRowsAddedEventArgs e)
+        {
+            
+        }
+
+        private void DistanceDataGridView_CellEndEdit(object sender, DataGridViewCellEventArgs e)
+        {
+            if (adding)
+            {
+                var entities = new Session1Entities();
+                var value = DistanceDataGridView.Rows[e.RowIndex - 1];
+                var aa = (string)value.Cells[1].Value;
+                var match = entities.Attractions.SingleOrDefault(x => x.Name == aa);
+                if (match != null)
+                {
+                    DistanceDataGridView.Rows[e.RowIndex].Cells[2].Value = match.Name;
+                }
+            }
         }
     }
 }

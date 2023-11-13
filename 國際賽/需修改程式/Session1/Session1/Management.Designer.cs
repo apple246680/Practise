@@ -34,11 +34,6 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.CountLabel = new System.Windows.Forms.Label();
             this.ExitBtn = new System.Windows.Forms.Button();
-            this.TColumn = new System.Windows.Forms.DataGridViewLinkColumn();
-            this.Type1Column = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Arae1Column = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Capacity1Column = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Title1Column = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.LououtBtn = new System.Windows.Forms.Button();
             this.AddListingBtn = new System.Windows.Forms.Button();
             this.SearchTextbox = new System.Windows.Forms.TextBox();
@@ -53,6 +48,12 @@
             this.ManagerPage = new System.Windows.Forms.TabPage();
             this.ManagementTabControl = new System.Windows.Forms.TabControl();
             this.LogoPicturebox = new System.Windows.Forms.PictureBox();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Title1Column = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Capacity1Column = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Arae1Column = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Type1Column = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TColumn = new System.Windows.Forms.DataGridViewLinkColumn();
             ((System.ComponentModel.ISupportInitialize)(this.ManagerDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.TravelerDataGridView)).BeginInit();
             this.TravelerPage.SuspendLayout();
@@ -69,7 +70,7 @@
             this.CountLabel.ForeColor = System.Drawing.Color.Black;
             this.CountLabel.Location = new System.Drawing.Point(93, 503);
             this.CountLabel.Name = "CountLabel";
-            this.CountLabel.Size = new System.Drawing.Size(114, 22);
+            this.CountLabel.Size = new System.Drawing.Size(90, 17);
             this.CountLabel.TabIndex = 17;
             this.CountLabel.Text = "0 items found.";
             // 
@@ -87,50 +88,6 @@
             this.ExitBtn.Text = "Exit";
             this.ExitBtn.UseVisualStyleBackColor = false;
             this.ExitBtn.Click += new System.EventHandler(this.ExitBtn_Click);
-            // 
-            // TColumn
-            // 
-            this.TColumn.ActiveLinkColor = System.Drawing.Color.Black;
-            this.TColumn.HeaderText = "";
-            this.TColumn.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(26)))), ((int)(((byte)(46)))));
-            this.TColumn.MinimumWidth = 6;
-            this.TColumn.Name = "TColumn";
-            this.TColumn.ReadOnly = true;
-            this.TColumn.Text = "Edit Details";
-            this.TColumn.VisitedLinkColor = System.Drawing.Color.Black;
-            this.TColumn.Width = 125;
-            // 
-            // Type1Column
-            // 
-            this.Type1Column.HeaderText = "Type";
-            this.Type1Column.MinimumWidth = 6;
-            this.Type1Column.Name = "Type1Column";
-            this.Type1Column.ReadOnly = true;
-            this.Type1Column.Width = 125;
-            // 
-            // Arae1Column
-            // 
-            this.Arae1Column.HeaderText = "Area";
-            this.Arae1Column.MinimumWidth = 6;
-            this.Arae1Column.Name = "Arae1Column";
-            this.Arae1Column.ReadOnly = true;
-            this.Arae1Column.Width = 125;
-            // 
-            // Capacity1Column
-            // 
-            this.Capacity1Column.HeaderText = "Capacity";
-            this.Capacity1Column.MinimumWidth = 6;
-            this.Capacity1Column.Name = "Capacity1Column";
-            this.Capacity1Column.ReadOnly = true;
-            this.Capacity1Column.Width = 125;
-            // 
-            // Title1Column
-            // 
-            this.Title1Column.HeaderText = "Title";
-            this.Title1Column.MinimumWidth = 6;
-            this.Title1Column.Name = "Title1Column";
-            this.Title1Column.ReadOnly = true;
-            this.Title1Column.Width = 125;
             // 
             // LououtBtn
             // 
@@ -172,7 +129,7 @@
             this.SearchTextbox.ForeColor = System.Drawing.Color.Black;
             this.SearchTextbox.Location = new System.Drawing.Point(72, 6);
             this.SearchTextbox.Name = "SearchTextbox";
-            this.SearchTextbox.Size = new System.Drawing.Size(559, 28);
+            this.SearchTextbox.Size = new System.Drawing.Size(559, 24);
             this.SearchTextbox.TabIndex = 0;
             this.SearchTextbox.Text = "Search destination or Listing Title or Attaction";
             this.SearchTextbox.MouseClick += new System.Windows.Forms.MouseEventHandler(this.SearchTextbox_MouseClick);
@@ -183,6 +140,7 @@
             // 
             this.ManagerDataGridView.AllowUserToAddRows = false;
             this.ManagerDataGridView.AllowUserToDeleteRows = false;
+            this.ManagerDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.ManagerDataGridView.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(187)))), ((int)(((byte)(187)))));
             this.ManagerDataGridView.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -195,6 +153,7 @@
             this.ManagerDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.ManagerDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.ManagerDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Column1,
             this.Title1Column,
             this.Capacity1Column,
             this.Arae1Column,
@@ -224,7 +183,6 @@
             this.TypeColumn.MinimumWidth = 6;
             this.TypeColumn.Name = "TypeColumn";
             this.TypeColumn.ReadOnly = true;
-            this.TypeColumn.Width = 125;
             // 
             // AreaColumn
             // 
@@ -232,7 +190,6 @@
             this.AreaColumn.MinimumWidth = 6;
             this.AreaColumn.Name = "AreaColumn";
             this.AreaColumn.ReadOnly = true;
-            this.AreaColumn.Width = 125;
             // 
             // CapacityColumn
             // 
@@ -240,7 +197,6 @@
             this.CapacityColumn.MinimumWidth = 6;
             this.CapacityColumn.Name = "CapacityColumn";
             this.CapacityColumn.ReadOnly = true;
-            this.CapacityColumn.Width = 125;
             // 
             // TitleColumn
             // 
@@ -248,12 +204,12 @@
             this.TitleColumn.MinimumWidth = 6;
             this.TitleColumn.Name = "TitleColumn";
             this.TitleColumn.ReadOnly = true;
-            this.TitleColumn.Width = 125;
             // 
             // TravelerDataGridView
             // 
             this.TravelerDataGridView.AllowUserToAddRows = false;
             this.TravelerDataGridView.AllowUserToDeleteRows = false;
+            this.TravelerDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.TravelerDataGridView.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(187)))), ((int)(((byte)(187)))));
             this.TravelerDataGridView.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -295,10 +251,10 @@
             this.TravelerPage.Controls.Add(this.SearchPicturebox);
             this.TravelerPage.Controls.Add(this.SearchTextbox);
             this.TravelerPage.Font = new System.Drawing.Font("Open Sans SemiBold", 9F);
-            this.TravelerPage.Location = new System.Drawing.Point(4, 31);
+            this.TravelerPage.Location = new System.Drawing.Point(4, 26);
             this.TravelerPage.Name = "TravelerPage";
             this.TravelerPage.Padding = new System.Windows.Forms.Padding(3);
-            this.TravelerPage.Size = new System.Drawing.Size(768, 265);
+            this.TravelerPage.Size = new System.Drawing.Size(768, 270);
             this.TravelerPage.TabIndex = 0;
             this.TravelerPage.Text = "I\'m Traveler";
             // 
@@ -320,10 +276,10 @@
             this.ManagerPage.Controls.Add(this.AddListingBtn);
             this.ManagerPage.Controls.Add(this.ManagerDataGridView);
             this.ManagerPage.Font = new System.Drawing.Font("Open Sans SemiBold", 9F);
-            this.ManagerPage.Location = new System.Drawing.Point(4, 31);
+            this.ManagerPage.Location = new System.Drawing.Point(4, 26);
             this.ManagerPage.Name = "ManagerPage";
             this.ManagerPage.Padding = new System.Windows.Forms.Padding(3);
-            this.ManagerPage.Size = new System.Drawing.Size(768, 265);
+            this.ManagerPage.Size = new System.Drawing.Size(768, 270);
             this.ManagerPage.TabIndex = 1;
             this.ManagerPage.Text = "I\'m Owner/Manager";
             // 
@@ -349,9 +305,55 @@
             this.LogoPicturebox.TabIndex = 13;
             this.LogoPicturebox.TabStop = false;
             // 
+            // Column1
+            // 
+            this.Column1.HeaderText = "ID";
+            this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
+            this.Column1.Visible = false;
+            // 
+            // Title1Column
+            // 
+            this.Title1Column.HeaderText = "Title";
+            this.Title1Column.MinimumWidth = 6;
+            this.Title1Column.Name = "Title1Column";
+            this.Title1Column.ReadOnly = true;
+            // 
+            // Capacity1Column
+            // 
+            this.Capacity1Column.HeaderText = "Capacity";
+            this.Capacity1Column.MinimumWidth = 6;
+            this.Capacity1Column.Name = "Capacity1Column";
+            this.Capacity1Column.ReadOnly = true;
+            // 
+            // Arae1Column
+            // 
+            this.Arae1Column.HeaderText = "Area";
+            this.Arae1Column.MinimumWidth = 6;
+            this.Arae1Column.Name = "Arae1Column";
+            this.Arae1Column.ReadOnly = true;
+            // 
+            // Type1Column
+            // 
+            this.Type1Column.HeaderText = "Type";
+            this.Type1Column.MinimumWidth = 6;
+            this.Type1Column.Name = "Type1Column";
+            this.Type1Column.ReadOnly = true;
+            // 
+            // TColumn
+            // 
+            this.TColumn.ActiveLinkColor = System.Drawing.Color.Black;
+            this.TColumn.HeaderText = "";
+            this.TColumn.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(26)))), ((int)(((byte)(46)))));
+            this.TColumn.MinimumWidth = 6;
+            this.TColumn.Name = "TColumn";
+            this.TColumn.ReadOnly = true;
+            this.TColumn.Text = "Edit Details";
+            this.TColumn.VisitedLinkColor = System.Drawing.Color.Black;
+            // 
             // Management
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(187)))), ((int)(((byte)(187)))));
             this.Controls.Add(this.CountLabel);
@@ -381,11 +383,6 @@
         private System.Windows.Forms.Label CountLabel;
         private System.Windows.Forms.Button ExitBtn;
         private System.Windows.Forms.PictureBox LogoPicturebox;
-        private System.Windows.Forms.DataGridViewLinkColumn TColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Type1Column;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Arae1Column;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Capacity1Column;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Title1Column;
         private System.Windows.Forms.Button LououtBtn;
         private System.Windows.Forms.Button AddListingBtn;
         private System.Windows.Forms.TextBox SearchTextbox;
@@ -399,5 +396,11 @@
         private System.Windows.Forms.TabPage TravelerPage;
         private System.Windows.Forms.TabPage ManagerPage;
         private System.Windows.Forms.TabControl ManagementTabControl;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Title1Column;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Capacity1Column;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Arae1Column;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Type1Column;
+        private System.Windows.Forms.DataGridViewLinkColumn TColumn;
     }
 }
