@@ -173,11 +173,10 @@ namespace Session1
                     int? bycar = null;
                     if (row.Cells[0].Value==null)
                     {
-                        var bb = ((string)row.Cells[1].Value).Trim();
-                        var cc = entities.Attractions.Any(x => x.Name.Trim() == bb);
-                        if (cc)
+                        var value = ((string)row.Cells[1].Value).Trim();
+                        if (entities.Attractions.Any(x => x.Name.Trim() == value))
                         {
-                            row.Cells[0].Value = entities.Attractions.Single(x => x.Name == bb).ID;
+                            row.Cells[0].Value = entities.Attractions.Single(x => x.Name == value).ID;
                         }
                         else
                         {
@@ -266,22 +265,15 @@ namespace Session1
             beforeIndex = ListingTabControl.SelectedIndex;
         }
 
-        private void DistanceDataGridView_RowsAdded(object sender, DataGridViewRowsAddedEventArgs e)
-        {
-            
-        }
-
         private void DistanceDataGridView_CellEndEdit(object sender, DataGridViewCellEventArgs e)
         {
             if (adding)
             {
-                var entities = new Session1Entities();
-                var value = DistanceDataGridView.Rows[e.RowIndex - 1];
-                var aa = (string)value.Cells[1].Value;
-                var match = entities.Attractions.SingleOrDefault(x => x.Name == aa);
+                var value = (string)DistanceDataGridView.Rows[e.RowIndex].Cells[1].Value;
+                var match = new Session1Entities().Attractions.SingleOrDefault(x => x.Name == value);
                 if (match != null)
                 {
-                    DistanceDataGridView.Rows[e.RowIndex].Cells[2].Value = match.Name;
+                    DistanceDataGridView.Rows[e.RowIndex].Cells[2].Value = match.Area.Name;
                 }
             }
         }

@@ -66,16 +66,16 @@
             this.DistanceToAttractionPage = new System.Windows.Forms.TabPage();
             this.ChooesAmenitiesLabel = new System.Windows.Forms.Label();
             this.AmenitiesPage = new System.Windows.Forms.TabPage();
+            this.AmenitiesDataGridView = new System.Windows.Forms.DataGridView();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.TitleLabel = new System.Windows.Forms.Label();
             this.TypeLabel = new System.Windows.Forms.Label();
             this.ListingDetailsPage = new System.Windows.Forms.TabPage();
             this.ListingTabControl = new System.Windows.Forms.TabControl();
             this.CloseBtn = new System.Windows.Forms.Button();
             this.NextBtn = new System.Windows.Forms.Button();
-            this.AmenitiesDataGridView = new System.Windows.Forms.DataGridView();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.MaxNum)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.MinNum)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BathroomNum)).BeginInit();
@@ -85,9 +85,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.DistanceDataGridView)).BeginInit();
             this.DistanceToAttractionPage.SuspendLayout();
             this.AmenitiesPage.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.AmenitiesDataGridView)).BeginInit();
             this.ListingDetailsPage.SuspendLayout();
             this.ListingTabControl.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.AmenitiesDataGridView)).BeginInit();
             this.SuspendLayout();
             // 
             // TitleTextBox
@@ -409,7 +409,6 @@
             this.DistanceDataGridView.Size = new System.Drawing.Size(860, 357);
             this.DistanceDataGridView.TabIndex = 23;
             this.DistanceDataGridView.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.DistanceDataGridView_CellEndEdit);
-            this.DistanceDataGridView.RowsAdded += new System.Windows.Forms.DataGridViewRowsAddedEventHandler(this.DistanceDataGridView_RowsAdded);
             // 
             // dataGridViewTextBoxColumn1
             // 
@@ -450,6 +449,66 @@
             this.AmenitiesPage.Size = new System.Drawing.Size(880, 396);
             this.AmenitiesPage.TabIndex = 1;
             this.AmenitiesPage.Text = "Amenities";
+            // 
+            // AmenitiesDataGridView
+            // 
+            this.AmenitiesDataGridView.AllowUserToAddRows = false;
+            this.AmenitiesDataGridView.AllowUserToDeleteRows = false;
+            this.AmenitiesDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.AmenitiesDataGridView.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(187)))), ((int)(((byte)(187)))));
+            this.AmenitiesDataGridView.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(187)))), ((int)(((byte)(187)))));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Open Sans SemiBold", 9F);
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(26)))), ((int)(((byte)(46)))));
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(187)))), ((int)(((byte)(187)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(26)))), ((int)(((byte)(46)))));
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.AmenitiesDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            this.AmenitiesDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.AmenitiesDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Column1,
+            this.Column2,
+            this.Column3});
+            this.AmenitiesDataGridView.EnableHeadersVisualStyles = false;
+            this.AmenitiesDataGridView.GridColor = System.Drawing.Color.Black;
+            this.AmenitiesDataGridView.Location = new System.Drawing.Point(10, 38);
+            this.AmenitiesDataGridView.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.AmenitiesDataGridView.MultiSelect = false;
+            this.AmenitiesDataGridView.Name = "AmenitiesDataGridView";
+            this.AmenitiesDataGridView.RowHeadersVisible = false;
+            this.AmenitiesDataGridView.RowHeadersWidth = 51;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(187)))), ((int)(((byte)(187)))));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(85)))), ((int)(((byte)(85)))), ((int)(((byte)(85)))));
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(26)))), ((int)(((byte)(46)))));
+            this.AmenitiesDataGridView.RowsDefaultCellStyle = dataGridViewCellStyle4;
+            this.AmenitiesDataGridView.RowTemplate.Height = 27;
+            this.AmenitiesDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.AmenitiesDataGridView.Size = new System.Drawing.Size(461, 303);
+            this.AmenitiesDataGridView.TabIndex = 8;
+            // 
+            // Column1
+            // 
+            this.Column1.HeaderText = "ID";
+            this.Column1.MinimumWidth = 6;
+            this.Column1.Name = "Column1";
+            this.Column1.Visible = false;
+            // 
+            // Column2
+            // 
+            this.Column2.HeaderText = "Amenity";
+            this.Column2.MinimumWidth = 6;
+            this.Column2.Name = "Column2";
+            this.Column2.ReadOnly = true;
+            // 
+            // Column3
+            // 
+            this.Column3.HeaderText = "";
+            this.Column3.MinimumWidth = 6;
+            this.Column3.Name = "Column3";
+            this.Column3.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.Column3.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             // 
             // TitleLabel
             // 
@@ -549,66 +608,6 @@
             this.NextBtn.UseVisualStyleBackColor = false;
             this.NextBtn.Click += new System.EventHandler(this.NextBtn_Click);
             // 
-            // AmenitiesDataGridView
-            // 
-            this.AmenitiesDataGridView.AllowUserToAddRows = false;
-            this.AmenitiesDataGridView.AllowUserToDeleteRows = false;
-            this.AmenitiesDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.AmenitiesDataGridView.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(187)))), ((int)(((byte)(187)))));
-            this.AmenitiesDataGridView.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(187)))), ((int)(((byte)(187)))));
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Open Sans SemiBold", 9F);
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(26)))), ((int)(((byte)(46)))));
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(187)))), ((int)(((byte)(187)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(26)))), ((int)(((byte)(46)))));
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.AmenitiesDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
-            this.AmenitiesDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.AmenitiesDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Column1,
-            this.Column2,
-            this.Column3});
-            this.AmenitiesDataGridView.EnableHeadersVisualStyles = false;
-            this.AmenitiesDataGridView.GridColor = System.Drawing.Color.Black;
-            this.AmenitiesDataGridView.Location = new System.Drawing.Point(10, 38);
-            this.AmenitiesDataGridView.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.AmenitiesDataGridView.MultiSelect = false;
-            this.AmenitiesDataGridView.Name = "AmenitiesDataGridView";
-            this.AmenitiesDataGridView.RowHeadersVisible = false;
-            this.AmenitiesDataGridView.RowHeadersWidth = 51;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(187)))), ((int)(((byte)(187)))));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(85)))), ((int)(((byte)(85)))), ((int)(((byte)(85)))));
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(26)))), ((int)(((byte)(46)))));
-            this.AmenitiesDataGridView.RowsDefaultCellStyle = dataGridViewCellStyle4;
-            this.AmenitiesDataGridView.RowTemplate.Height = 27;
-            this.AmenitiesDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.AmenitiesDataGridView.Size = new System.Drawing.Size(461, 303);
-            this.AmenitiesDataGridView.TabIndex = 8;
-            // 
-            // Column1
-            // 
-            this.Column1.HeaderText = "ID";
-            this.Column1.MinimumWidth = 6;
-            this.Column1.Name = "Column1";
-            this.Column1.Visible = false;
-            // 
-            // Column2
-            // 
-            this.Column2.HeaderText = "Amenity";
-            this.Column2.MinimumWidth = 6;
-            this.Column2.Name = "Column2";
-            this.Column2.ReadOnly = true;
-            // 
-            // Column3
-            // 
-            this.Column3.HeaderText = "";
-            this.Column3.MinimumWidth = 6;
-            this.Column3.Name = "Column3";
-            this.Column3.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.Column3.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            // 
             // AddOrEditListing
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 15F);
@@ -632,10 +631,10 @@
             this.DistanceToAttractionPage.PerformLayout();
             this.AmenitiesPage.ResumeLayout(false);
             this.AmenitiesPage.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.AmenitiesDataGridView)).EndInit();
             this.ListingDetailsPage.ResumeLayout(false);
             this.ListingDetailsPage.PerformLayout();
             this.ListingTabControl.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.AmenitiesDataGridView)).EndInit();
             this.ResumeLayout(false);
 
         }
