@@ -426,11 +426,11 @@ namespace Session3
         /// </summary>
         private void AmenityComboBox_MouseClick(object sender, MouseEventArgs e)
         {
-            List<Amenities> aa = new List<Amenities>();
-            aa = new Session3Entities().Amenities.ToList();
+            List<Amenities> amenitiesss = new List<Amenities>();
+            amenitiesss = new Session3Entities().Amenities.ToList();
             if (AmenityComboBox1.Text == "")
             {
-                var amenities = (aa.Select(x => new { x.ID, x.Name }).ToList());
+                var amenities = (amenitiesss.Select(x => new { x.ID, x.Name }).ToList());
                 amenities.Insert(0, new { ID = (long)-1, Name = "" });
                 AmenityComboBox1.DataSource = new List<object>(amenities);
                 return;
@@ -441,11 +441,11 @@ namespace Session3
                 bb.Add(cc.Text);
             }
             bb = bb.Where(x => x != "").ToList();
-            var result = aa.Select(x => x.Name).Except(bb).ToList();
+            var result = amenitiesss.Select(x => x.Name).Except(bb).ToList();
             List<Amenities> dd = new List<Amenities>();
             foreach (var item in result)
             {
-                dd.Add(aa.First(x => x.Name == item));
+                dd.Add(amenitiesss.First(x => x.Name == item));
             }
             var amenitiess = (dd.Select(x => new { x.ID, x.Name }).ToList());
             amenitiess.Insert(0, new { ID = (long)-1, Name = "" });
