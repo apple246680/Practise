@@ -45,7 +45,7 @@ namespace Session3
                 if (items.Count > 0)
                 {
                     throw new Exception($"No property or listing should have availabilities before 19/02/2017." +
-                        $"{Environment.NewLine}Error Data : {String.Join(Environment.NewLine, items.Select(t => $"Item ID: {t.ID}"))}");
+                        $"\r\tError Data : {String.Join(Environment.NewLine, items.Select(t => $"Item ID: {t.ID}"))}");
                 }
             }
         }
