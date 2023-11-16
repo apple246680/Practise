@@ -13,21 +13,15 @@ namespace Session1
         public static long? userID { get; set; }
         public static void BackLogin()
         {
+            var login = new Login(){Dock = DockStyle.Fill};
             MainForm.Controls.Clear();
-            var login = new Login()
-            {
-                Dock = DockStyle.Fill
-            };
             MainForm.Controls.Add(login);
-            login.Show();
         }
         public static void ShowManagement()
         {
             var management = new Management() { Dock = DockStyle.Fill };
             MainForm.Controls.Clear();
             MainForm.Controls.Add(management);
-            management.Show();
-
         }
         public static User register(string username, string fullname, string password, DateTime bitthday, int familycount, bool gender)
         {

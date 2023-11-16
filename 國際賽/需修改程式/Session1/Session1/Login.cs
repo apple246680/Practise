@@ -22,7 +22,6 @@ namespace Session1
             Global.MainForm.Controls.Clear();
             var createAccount = new CreateAccount() { Dock = DockStyle.Fill };
             Global.MainForm.Controls.Add(createAccount);
-            createAccount.Show();
         }
 
         private void ExitBtn_Click(object sender, EventArgs e)

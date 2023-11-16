@@ -87,7 +87,6 @@ namespace Session1
             var form = new AddOrEditListing((long)ManagerDataGridView.Rows[e.RowIndex].Cells[0].Value) { Dock=DockStyle.Fill};
             Global.MainForm.Controls.Clear();
             Global.MainForm.Controls.Add(form);
-            form.Show();
         }
 
         private void AddListingBtn_Click(object sender, EventArgs e)
@@ -95,7 +94,6 @@ namespace Session1
             var addOrEditListinig = new AddOrEditListing(null) { Dock=DockStyle.Fill};
             Global.MainForm.Controls.Clear();
             Global.MainForm.Controls.Add(addOrEditListinig);
-            addOrEditListinig.Show();
         }
     }
 }
