@@ -13,21 +13,30 @@ namespace Session1
 {
     public partial class Management : UserControl
     {
+        /// <summary>
+        /// InitializeComponent Management Form
+        /// </summary>
         public Management()
         {
             InitializeComponent();
         }
-
+        /// <summary>
+        /// init SearchTextbox
+        /// </summary>
         private void SearchTextBox_Enter(object sender, EventArgs e)
         {
             SearchTextBox.Text = SearchTextBox.Text== "Search destination or Listing TItle or Attraction" ? "" : SearchTextBox.Text;
         }
-
+        /// <summary>
+        /// init SearchTextbox
+        /// </summary>
         private void SearchTextBox_Leave(object sender, EventArgs e)
         {
             SearchTextBox.Text = SearchTextBox.Text == "" ? "Search destination or Listing TItle or Attraction" : SearchTextBox.Text;
         }
-
+        /// <summary>
+        /// Keyword query
+        /// </summary>
         private void SearchTextBox_TextChanged(object sender, EventArgs e)
         {
             if (SearchTextBox.Text!= "Search destination or Listing TItle or Attraction")
@@ -42,7 +51,9 @@ namespace Session1
                 TravelerDataGridView.DataSource= filter;
             }
         }
-
+        /// <summary>
+        /// add OwnerDataGridView data
+        /// </summary>
         private void Management_Load(object sender, EventArgs e)
         {
             OwnerDataGridView.Rows.Clear();
@@ -52,12 +63,16 @@ namespace Session1
             });
 
         }
-
+        /// <summary>
+        /// Exit the Application
+        /// </summary>
         private void ExitBtn_Click(object sender, EventArgs e)
         {
             Application.Exit();
         }
-
+        /// <summary>
+        /// Logout
+        /// </summary>
         private void LogoutButton_Click(object sender, EventArgs e)
         {
             Properties.Settings.Default.KeepLogin = "";
@@ -75,7 +90,9 @@ namespace Session1
             entities.SaveChanges();
             Global.ShowLoginForm();
         }
-
+        /// <summary>
+        /// Add a new item
+        /// </summary>
         private void AddListBtn_Click(object sender, EventArgs e)
         {
             var listing=new Listing(null) {Dock=DockStyle.Fill};
@@ -83,7 +100,9 @@ namespace Session1
             Global.MainForm.Controls.Clear();
             Global.MainForm.Controls.Add(listing);
         }
-
+        /// <summary>
+        /// Edit item
+        /// </summary>
         private void OwnerDataGridView_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.ColumnIndex != 5 && e.RowIndex != -1)

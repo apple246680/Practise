@@ -13,26 +13,38 @@ namespace Session1
 {
     public partial class Login : UserControl
     {
+        /// <summary>
+        /// InitializeComponent Login Form
+        /// </summary>
         public Login()
         {
             InitializeComponent();
         }
-
+        /// <summary>
+        /// Exit the Application
+        /// </summary>
         private void ExitButton_Click(object sender, EventArgs e)
         {
             Application.Exit();
         }
-
+        /// <summary>
+        /// Show Password or Hide Password
+        /// </summary>
         private void ShowPassword_CheckedChanged(object sender, EventArgs e)
         {
             PasswordTextbox.UseSystemPasswordChar = !ShowPassword.Checked;
         }
+        /// <summary>
+        /// Judge Have KeepLogin Account
+        /// </summary>
         private void Login_Load(object sender, EventArgs e)
         {
             Global.userID = Properties.Settings.Default.KeepLogin == ""?0:long.Parse(Properties.Settings.Default.KeepLogin);
             LoginButton_Click(null, null);
         }
-
+        /// <summary>
+        /// Login
+        /// </summary>
         private void LoginButton_Click(object sender, EventArgs e)
         {
             if (Global.userID!=0)
@@ -142,7 +154,9 @@ namespace Session1
                 MessageBox.Show("Successful");
             }
         }
-
+        /// <summary>
+        /// Show Create Account Form
+        /// </summary>
         private void CreateLabel_Click(object sender, EventArgs e)
         {
             var createAccount=new CreateAccount() {Dock=DockStyle.Fill};

@@ -14,22 +14,32 @@ namespace Session1
 {
     public partial class CreateAccount : UserControl
     {
+
+        /// <summary>
+        /// InitializeComponent Create Accunt Form
+        /// </summary>
         public CreateAccount()
         {
             InitializeComponent();
         }
-
+        /// <summary>
+        /// Show Login Form
+        /// </summary>
         private void ReturnLoginFormBtn_Click(object sender, EventArgs e)
         {
             Global.ShowLoginForm();
         }
-
+        /// <summary>
+        /// Watch Terms
+        /// </summary>
         private void TermsLabel_Click(object sender, EventArgs e)
         {
             new Terms().ShowDialog();
             AgreeTermsCheckbox.Enabled = true;
         }
-
+        /// <summary>
+        /// Register Form
+        /// </summary>
         private void RegisterBtn_Click(object sender, EventArgs e)
         {
             var entities = new Session1Entities();

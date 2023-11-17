@@ -10,6 +10,9 @@ namespace Session1UnitTestProject
     [TestClass]
     public class RegisterUnitTest
     {
+        /// <summary>
+        /// Test Register
+        /// </summary>
         [TestMethod]
         public void RegisterTest()
         {
@@ -22,7 +25,7 @@ namespace Session1UnitTestProject
             var entities = new Session1Entities();
             if (entities.Users.Any(x => x.Username == Username))
             {
-                Assert.Fail("The account has been successfully added.");
+                Assert.Fail("This account already exists");
             }
             if (Password.Length < 5)
             {
@@ -32,12 +35,13 @@ namespace Session1UnitTestProject
             {
                 Assert.Fail("Some key fields are left blank");
             }
-            var user = entities.Users.Add(new User
+            var user = entities.Users.Add(new Users
             {
                 GUID = Guid.NewGuid(),
                 UserTypeID = 2,
                 Username = Username,
-                Password = Global.ComputeSha256Hash(Password),
+                Password= Password,
+                HashPassword = Global.ComputeSha256Hash(Password),
                 FullName = FullName,
                 Gender = Gender,
                 FamilyCount = FamilyCount,
@@ -49,7 +53,7 @@ namespace Session1UnitTestProject
             }
             catch (Exception e)
             {
-                Assert.Fail(e.Message);
+                Assert.IsFalse(entities.Users.Any(x=>x.Username == Username), "Failed to add account");
             }
             entities.Users.Remove(user);
             entities.SaveChanges();

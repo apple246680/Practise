@@ -12,6 +12,9 @@ namespace Session1
     {
         public static Main MainForm { get; set; }
         public static long? userID { get; set; }
+        /// <summary>
+        /// Register Account
+        /// </summary>
         public static Users Register(string Username,string FullName,DateTime Birthday,string Password,bool Gender,int FamilyCount)
         {
             if (Password.Length<5)
@@ -38,6 +41,9 @@ namespace Session1
             entities.SaveChanges();
             return user;
         }
+        /// <summary>
+        /// Show Login Form
+        /// </summary>
         public static void ShowLoginForm()
         {
             var login = new Login() { Dock = DockStyle.Fill };
@@ -45,6 +51,9 @@ namespace Session1
             MainForm.Controls.Clear();
             MainForm.Controls.Add(login);
         }
+        /// <summary>
+        /// Show Management Form
+        /// </summary>
         public static void ShowManagementForm()
         {
             var management = new Management() { Dock = DockStyle.Fill };
@@ -52,6 +61,9 @@ namespace Session1
             MainForm.Controls.Clear();
             MainForm.Controls.Add(management);
         }
+        /// <summary>
+        /// Sha256 hash password
+        /// </summary>
         public static string ComputeSha256Hash(string rawData)
         {
             using (SHA256 sha256Hash = SHA256.Create())

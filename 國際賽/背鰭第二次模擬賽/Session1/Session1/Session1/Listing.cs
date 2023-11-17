@@ -17,6 +17,9 @@ namespace Session1
     {
         long? ItemID;
         int beforeIndex = 0;
+        /// <summary>
+        /// InitializeComponent Listing Form
+        /// </summary>
         public Listing(long? itemID)
         {
             InitializeComponent();
@@ -33,6 +36,9 @@ namespace Session1
             }
             init();
         }
+        /// <summary>
+        /// init Listing Form
+        /// </summary>
         public void init()
         {
             var entities = new Session1Entities();
@@ -66,7 +72,9 @@ namespace Session1
                 }
             }
         }
-
+        /// <summary>
+        /// Go to Next page
+        /// </summary>
         private void NextBtn_Click(object sender, EventArgs e)
         {
             if (tabControl.SelectedIndex != 1)
@@ -93,7 +101,9 @@ namespace Session1
                 tabControl.SelectedIndex++;
             }
         }
-
+        /// <summary>
+        /// Close and save data
+        /// </summary>
         private void CloseBtn_Click(object sender, EventArgs e)
         {
             if (CloseBtn.Text == "Cancel")
@@ -159,6 +169,9 @@ namespace Session1
                 MessageBox.Show("Successful");
             }
         }
+        /// <summary>
+        /// tabControl go to next page
+        /// </summary>
         private void tabControl_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (CloseBtn.Text == "Finish"
