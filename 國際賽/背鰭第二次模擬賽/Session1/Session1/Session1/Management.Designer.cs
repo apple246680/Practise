@@ -28,10 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tabControl = new System.Windows.Forms.TabControl();
             this.TravelertabPage = new System.Windows.Forms.TabPage();
             this.TravelerDataGridView = new System.Windows.Forms.DataGridView();
@@ -39,16 +39,20 @@
             this.SearchTextBox = new System.Windows.Forms.TextBox();
             this.ManagertabPage = new System.Windows.Forms.TabPage();
             this.OwnerDataGridView = new System.Windows.Forms.DataGridView();
-            this.AddListBtn = new System.Windows.Forms.Button();
-            this.LogoutButton = new System.Windows.Forms.Button();
-            this.ExitBtn = new System.Windows.Forms.Button();
-            this.LogoPictureBox = new System.Windows.Forms.PictureBox();
             this.Column = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TitleColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CapacityColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.AreaColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TypeColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TColumn = new System.Windows.Forms.DataGridViewLinkColumn();
+            this.AddListBtn = new System.Windows.Forms.Button();
+            this.LogoutButton = new System.Windows.Forms.Button();
+            this.ExitBtn = new System.Windows.Forms.Button();
+            this.LogoPictureBox = new System.Windows.Forms.PictureBox();
+            this.TitleColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CapacityColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.AreaColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TypeColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabControl.SuspendLayout();
             this.TravelertabPage.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.TravelerDataGridView)).BeginInit();
@@ -62,10 +66,10 @@
             // 
             this.tabControl.Controls.Add(this.TravelertabPage);
             this.tabControl.Controls.Add(this.ManagertabPage);
-            this.tabControl.Location = new System.Drawing.Point(0, 140);
+            this.tabControl.Location = new System.Drawing.Point(19, 151);
             this.tabControl.Name = "tabControl";
             this.tabControl.SelectedIndex = 0;
-            this.tabControl.Size = new System.Drawing.Size(1000, 480);
+            this.tabControl.Size = new System.Drawing.Size(956, 469);
             this.tabControl.TabIndex = 0;
             // 
             // TravelertabPage
@@ -74,10 +78,10 @@
             this.TravelertabPage.Controls.Add(this.TravelerDataGridView);
             this.TravelertabPage.Controls.Add(this.SearchIcoPictureBox);
             this.TravelertabPage.Controls.Add(this.SearchTextBox);
-            this.TravelertabPage.Location = new System.Drawing.Point(4, 24);
+            this.TravelertabPage.Location = new System.Drawing.Point(4, 29);
             this.TravelertabPage.Name = "TravelertabPage";
             this.TravelertabPage.Padding = new System.Windows.Forms.Padding(3);
-            this.TravelertabPage.Size = new System.Drawing.Size(992, 452);
+            this.TravelertabPage.Size = new System.Drawing.Size(992, 447);
             this.TravelertabPage.TabIndex = 0;
             this.TravelertabPage.Text = "I\'m Traveler";
             // 
@@ -87,25 +91,31 @@
             this.TravelerDataGridView.AllowUserToDeleteRows = false;
             this.TravelerDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.TravelerDataGridView.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(187)))), ((int)(((byte)(187)))));
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(187)))), ((int)(((byte)(187)))));
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Open Sans Light", 8.25F);
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(187)))), ((int)(((byte)(187)))));
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.TravelerDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(187)))), ((int)(((byte)(187)))));
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Open Sans Light", 8.25F);
+            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(187)))), ((int)(((byte)(187)))));
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.TravelerDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
             this.TravelerDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.TravelerDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.TitleColumn1,
+            this.CapacityColumn1,
+            this.AreaColumn1,
+            this.TypeColumn1});
             this.TravelerDataGridView.EnableHeadersVisualStyles = false;
             this.TravelerDataGridView.Location = new System.Drawing.Point(84, 69);
             this.TravelerDataGridView.Name = "TravelerDataGridView";
             this.TravelerDataGridView.ReadOnly = true;
             this.TravelerDataGridView.RowHeadersVisible = false;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(187)))), ((int)(((byte)(187)))));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(26)))), ((int)(((byte)(46)))));
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black;
-            this.TravelerDataGridView.RowsDefaultCellStyle = dataGridViewCellStyle2;
+            this.TravelerDataGridView.RowHeadersWidth = 51;
+            dataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(187)))), ((int)(((byte)(187)))));
+            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(26)))), ((int)(((byte)(46)))));
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.Black;
+            this.TravelerDataGridView.RowsDefaultCellStyle = dataGridViewCellStyle8;
             this.TravelerDataGridView.Size = new System.Drawing.Size(780, 369);
             this.TravelerDataGridView.TabIndex = 2;
             // 
@@ -126,7 +136,7 @@
             this.SearchTextBox.ForeColor = System.Drawing.Color.Black;
             this.SearchTextBox.Location = new System.Drawing.Point(155, 31);
             this.SearchTextBox.Name = "SearchTextBox";
-            this.SearchTextBox.Size = new System.Drawing.Size(521, 26);
+            this.SearchTextBox.Size = new System.Drawing.Size(521, 30);
             this.SearchTextBox.TabIndex = 0;
             this.SearchTextBox.Text = "Search destination or Listing TItle or Attraction";
             this.SearchTextBox.TextChanged += new System.EventHandler(this.SearchTextBox_TextChanged);
@@ -138,10 +148,10 @@
             this.ManagertabPage.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(187)))), ((int)(((byte)(187)))));
             this.ManagertabPage.Controls.Add(this.OwnerDataGridView);
             this.ManagertabPage.Controls.Add(this.AddListBtn);
-            this.ManagertabPage.Location = new System.Drawing.Point(4, 24);
+            this.ManagertabPage.Location = new System.Drawing.Point(4, 29);
             this.ManagertabPage.Name = "ManagertabPage";
             this.ManagertabPage.Padding = new System.Windows.Forms.Padding(3);
-            this.ManagertabPage.Size = new System.Drawing.Size(992, 452);
+            this.ManagertabPage.Size = new System.Drawing.Size(948, 436);
             this.ManagertabPage.TabIndex = 1;
             this.ManagertabPage.Text = "I\'m Owner/Manager";
             // 
@@ -151,14 +161,14 @@
             this.OwnerDataGridView.AllowUserToDeleteRows = false;
             this.OwnerDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.OwnerDataGridView.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(187)))), ((int)(((byte)(187)))));
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(187)))), ((int)(((byte)(187)))));
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Open Sans Light", 8.25F);
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(187)))), ((int)(((byte)(187)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.OwnerDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(187)))), ((int)(((byte)(187)))));
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Open Sans Light", 8.25F);
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(187)))), ((int)(((byte)(187)))));
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.OwnerDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.OwnerDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.OwnerDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column,
@@ -172,14 +182,64 @@
             this.OwnerDataGridView.Name = "OwnerDataGridView";
             this.OwnerDataGridView.ReadOnly = true;
             this.OwnerDataGridView.RowHeadersVisible = false;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(187)))), ((int)(((byte)(187)))));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(26)))), ((int)(((byte)(46)))));
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.Black;
-            this.OwnerDataGridView.RowsDefaultCellStyle = dataGridViewCellStyle4;
+            this.OwnerDataGridView.RowHeadersWidth = 51;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(187)))), ((int)(((byte)(187)))));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(26)))), ((int)(((byte)(46)))));
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.Black;
+            this.OwnerDataGridView.RowsDefaultCellStyle = dataGridViewCellStyle6;
             this.OwnerDataGridView.Size = new System.Drawing.Size(870, 359);
             this.OwnerDataGridView.TabIndex = 3;
             this.OwnerDataGridView.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.OwnerDataGridView_CellClick);
+            // 
+            // Column
+            // 
+            this.Column.HeaderText = "ID";
+            this.Column.MinimumWidth = 6;
+            this.Column.Name = "Column";
+            this.Column.ReadOnly = true;
+            this.Column.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.Column.Visible = false;
+            // 
+            // TitleColumn
+            // 
+            this.TitleColumn.HeaderText = "Title";
+            this.TitleColumn.MinimumWidth = 6;
+            this.TitleColumn.Name = "TitleColumn";
+            this.TitleColumn.ReadOnly = true;
+            // 
+            // CapacityColumn2
+            // 
+            this.CapacityColumn2.HeaderText = "Capacity";
+            this.CapacityColumn2.MinimumWidth = 6;
+            this.CapacityColumn2.Name = "CapacityColumn2";
+            this.CapacityColumn2.ReadOnly = true;
+            // 
+            // AreaColumn
+            // 
+            this.AreaColumn.HeaderText = "Area";
+            this.AreaColumn.MinimumWidth = 6;
+            this.AreaColumn.Name = "AreaColumn";
+            this.AreaColumn.ReadOnly = true;
+            // 
+            // TypeColumn
+            // 
+            this.TypeColumn.HeaderText = "Type";
+            this.TypeColumn.MinimumWidth = 6;
+            this.TypeColumn.Name = "TypeColumn";
+            this.TypeColumn.ReadOnly = true;
+            // 
+            // TColumn
+            // 
+            this.TColumn.ActiveLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
+            this.TColumn.HeaderText = "";
+            this.TColumn.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
+            this.TColumn.MinimumWidth = 6;
+            this.TColumn.Name = "TColumn";
+            this.TColumn.ReadOnly = true;
+            this.TColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.TColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.TColumn.VisitedLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
             // 
             // AddListBtn
             // 
@@ -188,7 +248,7 @@
             this.AddListBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.AddListBtn.Location = new System.Drawing.Point(38, 6);
             this.AddListBtn.Name = "AddListBtn";
-            this.AddListBtn.Size = new System.Drawing.Size(107, 44);
+            this.AddListBtn.Size = new System.Drawing.Size(129, 44);
             this.AddListBtn.TabIndex = 1;
             this.AddListBtn.Text = "Add Listing";
             this.AddListBtn.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -200,7 +260,7 @@
             this.LogoutButton.Font = new System.Drawing.Font("Open Sans SemiBold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LogoutButton.Location = new System.Drawing.Point(840, 111);
             this.LogoutButton.Name = "LogoutButton";
-            this.LogoutButton.Size = new System.Drawing.Size(75, 23);
+            this.LogoutButton.Size = new System.Drawing.Size(75, 34);
             this.LogoutButton.TabIndex = 1;
             this.LogoutButton.Text = "Log out";
             this.LogoutButton.UseVisualStyleBackColor = true;
@@ -211,7 +271,7 @@
             this.ExitBtn.Font = new System.Drawing.Font("Open Sans SemiBold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ExitBtn.Location = new System.Drawing.Point(921, 111);
             this.ExitBtn.Name = "ExitBtn";
-            this.ExitBtn.Size = new System.Drawing.Size(75, 23);
+            this.ExitBtn.Size = new System.Drawing.Size(75, 34);
             this.ExitBtn.TabIndex = 2;
             this.ExitBtn.Text = "Exit";
             this.ExitBtn.UseVisualStyleBackColor = true;
@@ -227,52 +287,37 @@
             this.LogoPictureBox.TabIndex = 3;
             this.LogoPictureBox.TabStop = false;
             // 
-            // Column
+            // TitleColumn1
             // 
-            this.Column.HeaderText = "ID";
-            this.Column.Name = "Column";
-            this.Column.ReadOnly = true;
-            this.Column.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.Column.Visible = false;
+            this.TitleColumn1.HeaderText = "Title";
+            this.TitleColumn1.MinimumWidth = 6;
+            this.TitleColumn1.Name = "TitleColumn1";
+            this.TitleColumn1.ReadOnly = true;
             // 
-            // TitleColumn
+            // CapacityColumn1
             // 
-            this.TitleColumn.HeaderText = "Title";
-            this.TitleColumn.Name = "TitleColumn";
-            this.TitleColumn.ReadOnly = true;
+            this.CapacityColumn1.HeaderText = "Capacity";
+            this.CapacityColumn1.MinimumWidth = 6;
+            this.CapacityColumn1.Name = "CapacityColumn1";
+            this.CapacityColumn1.ReadOnly = true;
             // 
-            // CapacityColumn2
+            // AreaColumn1
             // 
-            this.CapacityColumn2.HeaderText = "Capacity";
-            this.CapacityColumn2.Name = "CapacityColumn2";
-            this.CapacityColumn2.ReadOnly = true;
+            this.AreaColumn1.HeaderText = "Area";
+            this.AreaColumn1.MinimumWidth = 6;
+            this.AreaColumn1.Name = "AreaColumn1";
+            this.AreaColumn1.ReadOnly = true;
             // 
-            // AreaColumn
+            // TypeColumn1
             // 
-            this.AreaColumn.HeaderText = "Area";
-            this.AreaColumn.Name = "AreaColumn";
-            this.AreaColumn.ReadOnly = true;
-            // 
-            // TypeColumn
-            // 
-            this.TypeColumn.HeaderText = "Type";
-            this.TypeColumn.Name = "TypeColumn";
-            this.TypeColumn.ReadOnly = true;
-            // 
-            // TColumn
-            // 
-            this.TColumn.ActiveLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
-            this.TColumn.HeaderText = "";
-            this.TColumn.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
-            this.TColumn.Name = "TColumn";
-            this.TColumn.ReadOnly = true;
-            this.TColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.TColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.TColumn.VisitedLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
+            this.TypeColumn1.HeaderText = "Type";
+            this.TypeColumn1.MinimumWidth = 6;
+            this.TypeColumn1.Name = "TypeColumn1";
+            this.TypeColumn1.ReadOnly = true;
             // 
             // Management
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(187)))), ((int)(((byte)(187)))));
             this.Controls.Add(this.LogoPictureBox);
@@ -314,5 +359,9 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn AreaColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn TypeColumn;
         private System.Windows.Forms.DataGridViewLinkColumn TColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TitleColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CapacityColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn AreaColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TypeColumn1;
     }
 }

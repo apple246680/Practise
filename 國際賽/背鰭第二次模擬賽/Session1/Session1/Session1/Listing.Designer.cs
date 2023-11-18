@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tabControl = new System.Windows.Forms.TabControl();
             this.ListingDetailsTabPage = new System.Windows.Forms.TabPage();
             this.MaximumNumericUpDown = new System.Windows.Forms.NumericUpDown();
@@ -58,12 +58,13 @@
             this.TitleLabel = new System.Windows.Forms.Label();
             this.TypeLabel = new System.Windows.Forms.Label();
             this.AmenitiesTabPage = new System.Windows.Forms.TabPage();
-            this.NextBtn = new System.Windows.Forms.Button();
-            this.CloseBtn = new System.Windows.Forms.Button();
             this.AmenitiesDataGridView = new System.Windows.Forms.DataGridView();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.NextBtn = new System.Windows.Forms.Button();
+            this.CloseBtn = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
             this.tabControl.SuspendLayout();
             this.ListingDetailsTabPage.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.MaximumNumericUpDown)).BeginInit();
@@ -83,7 +84,7 @@
             this.tabControl.Location = new System.Drawing.Point(3, 3);
             this.tabControl.Name = "tabControl";
             this.tabControl.SelectedIndex = 0;
-            this.tabControl.Size = new System.Drawing.Size(950, 610);
+            this.tabControl.Size = new System.Drawing.Size(950, 571);
             this.tabControl.TabIndex = 0;
             this.tabControl.SelectedIndexChanged += new System.EventHandler(this.tabControl_SelectedIndexChanged);
             // 
@@ -118,13 +119,13 @@
             this.ListingDetailsTabPage.Location = new System.Drawing.Point(4, 29);
             this.ListingDetailsTabPage.Name = "ListingDetailsTabPage";
             this.ListingDetailsTabPage.Padding = new System.Windows.Forms.Padding(3);
-            this.ListingDetailsTabPage.Size = new System.Drawing.Size(942, 577);
+            this.ListingDetailsTabPage.Size = new System.Drawing.Size(942, 538);
             this.ListingDetailsTabPage.TabIndex = 0;
             this.ListingDetailsTabPage.Text = "Listing Details";
             // 
             // MaximumNumericUpDown
             // 
-            this.MaximumNumericUpDown.Location = new System.Drawing.Point(525, 552);
+            this.MaximumNumericUpDown.Location = new System.Drawing.Point(526, 505);
             this.MaximumNumericUpDown.Maximum = new decimal(new int[] {
             10000,
             0,
@@ -146,7 +147,7 @@
             // 
             // MinimumNumericUpDown
             // 
-            this.MinimumNumericUpDown.Location = new System.Drawing.Point(278, 551);
+            this.MinimumNumericUpDown.Location = new System.Drawing.Point(279, 504);
             this.MinimumNumericUpDown.Maximum = new decimal(new int[] {
             10000,
             0,
@@ -168,7 +169,7 @@
             // 
             // HostRulesTextBox
             // 
-            this.HostRulesTextBox.Location = new System.Drawing.Point(160, 456);
+            this.HostRulesTextBox.Location = new System.Drawing.Point(161, 426);
             this.HostRulesTextBox.Multiline = true;
             this.HostRulesTextBox.Name = "HostRulesTextBox";
             this.HostRulesTextBox.Size = new System.Drawing.Size(767, 76);
@@ -176,7 +177,7 @@
             // 
             // DescriptionTextBox
             // 
-            this.DescriptionTextBox.Location = new System.Drawing.Point(160, 374);
+            this.DescriptionTextBox.Location = new System.Drawing.Point(161, 344);
             this.DescriptionTextBox.Multiline = true;
             this.DescriptionTextBox.Name = "DescriptionTextBox";
             this.DescriptionTextBox.Size = new System.Drawing.Size(767, 76);
@@ -184,7 +185,7 @@
             // 
             // ExactAddressTextbox
             // 
-            this.ExactAddressTextbox.Location = new System.Drawing.Point(160, 238);
+            this.ExactAddressTextbox.Location = new System.Drawing.Point(161, 208);
             this.ExactAddressTextbox.Multiline = true;
             this.ExactAddressTextbox.Name = "ExactAddressTextbox";
             this.ExactAddressTextbox.Size = new System.Drawing.Size(767, 130);
@@ -192,7 +193,7 @@
             // 
             // ApproximateAddressTextBox
             // 
-            this.ApproximateAddressTextBox.Location = new System.Drawing.Point(160, 103);
+            this.ApproximateAddressTextBox.Location = new System.Drawing.Point(161, 73);
             this.ApproximateAddressTextBox.Multiline = true;
             this.ApproximateAddressTextBox.Name = "ApproximateAddressTextBox";
             this.ApproximateAddressTextBox.Size = new System.Drawing.Size(767, 130);
@@ -200,14 +201,14 @@
             // 
             // BathroomNumericUpDown
             // 
-            this.BathroomNumericUpDown.Location = new System.Drawing.Point(842, 81);
+            this.BathroomNumericUpDown.Location = new System.Drawing.Point(866, 46);
             this.BathroomNumericUpDown.Minimum = new decimal(new int[] {
             1,
             0,
             0,
             0});
             this.BathroomNumericUpDown.Name = "BathroomNumericUpDown";
-            this.BathroomNumericUpDown.Size = new System.Drawing.Size(85, 26);
+            this.BathroomNumericUpDown.Size = new System.Drawing.Size(62, 26);
             this.BathroomNumericUpDown.TabIndex = 18;
             this.BathroomNumericUpDown.Value = new decimal(new int[] {
             1,
@@ -217,14 +218,14 @@
             // 
             // BedroomNumericUpDown
             // 
-            this.BedroomNumericUpDown.Location = new System.Drawing.Point(581, 76);
+            this.BedroomNumericUpDown.Location = new System.Drawing.Point(612, 46);
             this.BedroomNumericUpDown.Minimum = new decimal(new int[] {
             1,
             0,
             0,
             0});
             this.BedroomNumericUpDown.Name = "BedroomNumericUpDown";
-            this.BedroomNumericUpDown.Size = new System.Drawing.Size(120, 26);
+            this.BedroomNumericUpDown.Size = new System.Drawing.Size(90, 26);
             this.BedroomNumericUpDown.TabIndex = 17;
             this.BedroomNumericUpDown.Value = new decimal(new int[] {
             1,
@@ -234,14 +235,14 @@
             // 
             // BedNumericUpDown
             // 
-            this.BedNumericUpDown.Location = new System.Drawing.Point(317, 75);
+            this.BedNumericUpDown.Location = new System.Drawing.Point(334, 44);
             this.BedNumericUpDown.Minimum = new decimal(new int[] {
             1,
             0,
             0,
             0});
             this.BedNumericUpDown.Name = "BedNumericUpDown";
-            this.BedNumericUpDown.Size = new System.Drawing.Size(120, 26);
+            this.BedNumericUpDown.Size = new System.Drawing.Size(104, 26);
             this.BedNumericUpDown.TabIndex = 16;
             this.BedNumericUpDown.Value = new decimal(new int[] {
             1,
@@ -251,7 +252,7 @@
             // 
             // CapacityNumericUpDown
             // 
-            this.CapacityNumericUpDown.Location = new System.Drawing.Point(83, 75);
+            this.CapacityNumericUpDown.Location = new System.Drawing.Point(84, 45);
             this.CapacityNumericUpDown.Minimum = new decimal(new int[] {
             1,
             0,
@@ -268,7 +269,7 @@
             // 
             // TitleTextBox
             // 
-            this.TitleTextBox.Location = new System.Drawing.Point(474, 49);
+            this.TitleTextBox.Location = new System.Drawing.Point(475, 19);
             this.TitleTextBox.Name = "TitleTextBox";
             this.TitleTextBox.Size = new System.Drawing.Size(229, 26);
             this.TitleTextBox.TabIndex = 14;
@@ -279,7 +280,7 @@
             this.TypeComboBox.DisplayMember = "Name";
             this.TypeComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.TypeComboBox.FormattingEnabled = true;
-            this.TypeComboBox.Location = new System.Drawing.Point(64, 49);
+            this.TypeComboBox.Location = new System.Drawing.Point(65, 19);
             this.TypeComboBox.Name = "TypeComboBox";
             this.TypeComboBox.Size = new System.Drawing.Size(193, 28);
             this.TypeComboBox.TabIndex = 13;
@@ -289,7 +290,7 @@
             // 
             this.MaximumLabel.AutoSize = true;
             this.MaximumLabel.Font = new System.Drawing.Font("Open Sans Light", 9F);
-            this.MaximumLabel.Location = new System.Drawing.Point(454, 552);
+            this.MaximumLabel.Location = new System.Drawing.Point(444, 504);
             this.MaximumLabel.Name = "MaximumLabel";
             this.MaximumLabel.Size = new System.Drawing.Size(80, 22);
             this.MaximumLabel.TabIndex = 12;
@@ -299,7 +300,7 @@
             // 
             this.MinimumLabel.AutoSize = true;
             this.MinimumLabel.Font = new System.Drawing.Font("Open Sans Light", 9F);
-            this.MinimumLabel.Location = new System.Drawing.Point(209, 552);
+            this.MinimumLabel.Location = new System.Drawing.Point(196, 504);
             this.MinimumLabel.Name = "MinimumLabel";
             this.MinimumLabel.Size = new System.Drawing.Size(77, 22);
             this.MinimumLabel.TabIndex = 11;
@@ -309,7 +310,7 @@
             // 
             this.ReservationTimeLabel.AutoSize = true;
             this.ReservationTimeLabel.Font = new System.Drawing.Font("Open Sans Light", 9F);
-            this.ReservationTimeLabel.Location = new System.Drawing.Point(21, 552);
+            this.ReservationTimeLabel.Location = new System.Drawing.Point(7, 504);
             this.ReservationTimeLabel.Name = "ReservationTimeLabel";
             this.ReservationTimeLabel.Size = new System.Drawing.Size(180, 22);
             this.ReservationTimeLabel.TabIndex = 10;
@@ -319,7 +320,7 @@
             // 
             this.HostRulesLabel.AutoSize = true;
             this.HostRulesLabel.Font = new System.Drawing.Font("Open Sans Light", 9F);
-            this.HostRulesLabel.Location = new System.Drawing.Point(21, 459);
+            this.HostRulesLabel.Location = new System.Drawing.Point(8, 426);
             this.HostRulesLabel.Name = "HostRulesLabel";
             this.HostRulesLabel.Size = new System.Drawing.Size(86, 22);
             this.HostRulesLabel.TabIndex = 9;
@@ -329,7 +330,7 @@
             // 
             this.DescriptionLabel.AutoSize = true;
             this.DescriptionLabel.Font = new System.Drawing.Font("Open Sans Light", 9F);
-            this.DescriptionLabel.Location = new System.Drawing.Point(21, 379);
+            this.DescriptionLabel.Location = new System.Drawing.Point(3, 344);
             this.DescriptionLabel.Name = "DescriptionLabel";
             this.DescriptionLabel.Size = new System.Drawing.Size(91, 22);
             this.DescriptionLabel.TabIndex = 8;
@@ -339,7 +340,7 @@
             // 
             this.ExactAddressLabel.AutoSize = true;
             this.ExactAddressLabel.Font = new System.Drawing.Font("Open Sans Light", 9F);
-            this.ExactAddressLabel.Location = new System.Drawing.Point(25, 240);
+            this.ExactAddressLabel.Location = new System.Drawing.Point(8, 208);
             this.ExactAddressLabel.Name = "ExactAddressLabel";
             this.ExactAddressLabel.Size = new System.Drawing.Size(108, 22);
             this.ExactAddressLabel.TabIndex = 7;
@@ -349,7 +350,7 @@
             // 
             this.ApproximateAddressLabel.AutoSize = true;
             this.ApproximateAddressLabel.Font = new System.Drawing.Font("Open Sans Light", 9F);
-            this.ApproximateAddressLabel.Location = new System.Drawing.Point(25, 103);
+            this.ApproximateAddressLabel.Location = new System.Drawing.Point(7, 73);
             this.ApproximateAddressLabel.Name = "ApproximateAddressLabel";
             this.ApproximateAddressLabel.Size = new System.Drawing.Size(159, 22);
             this.ApproximateAddressLabel.TabIndex = 6;
@@ -359,7 +360,7 @@
             // 
             this.BathroomLabel.AutoSize = true;
             this.BathroomLabel.Font = new System.Drawing.Font("Open Sans Light", 9F);
-            this.BathroomLabel.Location = new System.Drawing.Point(707, 81);
+            this.BathroomLabel.Location = new System.Drawing.Point(708, 51);
             this.BathroomLabel.Name = "BathroomLabel";
             this.BathroomLabel.Size = new System.Drawing.Size(160, 22);
             this.BathroomLabel.TabIndex = 5;
@@ -369,7 +370,7 @@
             // 
             this.BedroomsLabel.AutoSize = true;
             this.BedroomsLabel.Font = new System.Drawing.Font("Open Sans Light", 9F);
-            this.BedroomsLabel.Location = new System.Drawing.Point(443, 76);
+            this.BedroomsLabel.Location = new System.Drawing.Point(444, 47);
             this.BedroomsLabel.Name = "BedroomsLabel";
             this.BedroomsLabel.Size = new System.Drawing.Size(162, 22);
             this.BedroomsLabel.TabIndex = 4;
@@ -379,7 +380,7 @@
             // 
             this.BedLabel.AutoSize = true;
             this.BedLabel.Font = new System.Drawing.Font("Open Sans Light", 9F);
-            this.BedLabel.Location = new System.Drawing.Point(209, 76);
+            this.BedLabel.Location = new System.Drawing.Point(210, 46);
             this.BedLabel.Name = "BedLabel";
             this.BedLabel.Size = new System.Drawing.Size(125, 22);
             this.BedLabel.TabIndex = 3;
@@ -389,7 +390,7 @@
             // 
             this.CapacityLabel.AutoSize = true;
             this.CapacityLabel.Font = new System.Drawing.Font("Open Sans Light", 9F);
-            this.CapacityLabel.Location = new System.Drawing.Point(21, 75);
+            this.CapacityLabel.Location = new System.Drawing.Point(8, 45);
             this.CapacityLabel.Name = "CapacityLabel";
             this.CapacityLabel.Size = new System.Drawing.Size(70, 22);
             this.CapacityLabel.TabIndex = 2;
@@ -399,7 +400,7 @@
             // 
             this.TitleLabel.AutoSize = true;
             this.TitleLabel.Font = new System.Drawing.Font("Open Sans Light", 9F);
-            this.TitleLabel.Location = new System.Drawing.Point(412, 49);
+            this.TitleLabel.Location = new System.Drawing.Point(413, 19);
             this.TitleLabel.Name = "TitleLabel";
             this.TitleLabel.Size = new System.Drawing.Size(41, 22);
             this.TitleLabel.TabIndex = 1;
@@ -409,7 +410,7 @@
             // 
             this.TypeLabel.AutoSize = true;
             this.TypeLabel.Font = new System.Drawing.Font("Open Sans Light", 9F);
-            this.TypeLabel.Location = new System.Drawing.Point(21, 49);
+            this.TypeLabel.Location = new System.Drawing.Point(8, 21);
             this.TypeLabel.Name = "TypeLabel";
             this.TypeLabel.Size = new System.Drawing.Size(46, 22);
             this.TypeLabel.TabIndex = 0;
@@ -418,6 +419,7 @@
             // AmenitiesTabPage
             // 
             this.AmenitiesTabPage.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(187)))), ((int)(((byte)(187)))));
+            this.AmenitiesTabPage.Controls.Add(this.label1);
             this.AmenitiesTabPage.Controls.Add(this.AmenitiesDataGridView);
             this.AmenitiesTabPage.Location = new System.Drawing.Point(4, 29);
             this.AmenitiesTabPage.Name = "AmenitiesTabPage";
@@ -426,28 +428,6 @@
             this.AmenitiesTabPage.TabIndex = 1;
             this.AmenitiesTabPage.Text = "Amenities";
             // 
-            // NextBtn
-            // 
-            this.NextBtn.Font = new System.Drawing.Font("Open Sans SemiBold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.NextBtn.Location = new System.Drawing.Point(778, 619);
-            this.NextBtn.Name = "NextBtn";
-            this.NextBtn.Size = new System.Drawing.Size(75, 23);
-            this.NextBtn.TabIndex = 1;
-            this.NextBtn.Text = "Next";
-            this.NextBtn.UseVisualStyleBackColor = true;
-            this.NextBtn.Click += new System.EventHandler(this.NextBtn_Click);
-            // 
-            // CloseBtn
-            // 
-            this.CloseBtn.Font = new System.Drawing.Font("Open Sans SemiBold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CloseBtn.Location = new System.Drawing.Point(859, 619);
-            this.CloseBtn.Name = "CloseBtn";
-            this.CloseBtn.Size = new System.Drawing.Size(90, 23);
-            this.CloseBtn.TabIndex = 2;
-            this.CloseBtn.Text = "Close/Finish";
-            this.CloseBtn.UseVisualStyleBackColor = true;
-            this.CloseBtn.Click += new System.EventHandler(this.CloseBtn_Click);
-            // 
             // AmenitiesDataGridView
             // 
             this.AmenitiesDataGridView.AllowUserToAddRows = false;
@@ -455,14 +435,14 @@
             this.AmenitiesDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.AmenitiesDataGridView.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(187)))), ((int)(((byte)(187)))));
             this.AmenitiesDataGridView.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(187)))), ((int)(((byte)(187)))));
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Open Sans Light", 8.25F);
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(187)))), ((int)(((byte)(187)))));
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.AmenitiesDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(187)))), ((int)(((byte)(187)))));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Open Sans Light", 8.25F);
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(187)))), ((int)(((byte)(187)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.AmenitiesDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.AmenitiesDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.AmenitiesDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column1,
@@ -470,17 +450,17 @@
             this.Column3});
             this.AmenitiesDataGridView.EnableHeadersVisualStyles = false;
             this.AmenitiesDataGridView.GridColor = System.Drawing.Color.Black;
-            this.AmenitiesDataGridView.Location = new System.Drawing.Point(5, 6);
+            this.AmenitiesDataGridView.Location = new System.Drawing.Point(5, 44);
             this.AmenitiesDataGridView.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.AmenitiesDataGridView.MultiSelect = false;
             this.AmenitiesDataGridView.Name = "AmenitiesDataGridView";
             this.AmenitiesDataGridView.RowHeadersVisible = false;
             this.AmenitiesDataGridView.RowHeadersWidth = 51;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(187)))), ((int)(((byte)(187)))));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(26)))), ((int)(((byte)(46)))));
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black;
-            this.AmenitiesDataGridView.RowsDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(187)))), ((int)(((byte)(187)))));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(26)))), ((int)(((byte)(46)))));
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.Black;
+            this.AmenitiesDataGridView.RowsDefaultCellStyle = dataGridViewCellStyle4;
             this.AmenitiesDataGridView.RowTemplate.Height = 27;
             this.AmenitiesDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.AmenitiesDataGridView.Size = new System.Drawing.Size(932, 303);
@@ -508,6 +488,37 @@
             this.Column3.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.Column3.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             // 
+            // NextBtn
+            // 
+            this.NextBtn.Font = new System.Drawing.Font("Open Sans SemiBold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.NextBtn.Location = new System.Drawing.Point(773, 580);
+            this.NextBtn.Name = "NextBtn";
+            this.NextBtn.Size = new System.Drawing.Size(75, 29);
+            this.NextBtn.TabIndex = 1;
+            this.NextBtn.Text = "Next";
+            this.NextBtn.UseVisualStyleBackColor = true;
+            this.NextBtn.Click += new System.EventHandler(this.NextBtn_Click);
+            // 
+            // CloseBtn
+            // 
+            this.CloseBtn.Font = new System.Drawing.Font("Open Sans SemiBold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CloseBtn.Location = new System.Drawing.Point(859, 580);
+            this.CloseBtn.Name = "CloseBtn";
+            this.CloseBtn.Size = new System.Drawing.Size(90, 29);
+            this.CloseBtn.TabIndex = 2;
+            this.CloseBtn.Text = "Close/Finish";
+            this.CloseBtn.UseVisualStyleBackColor = true;
+            this.CloseBtn.Click += new System.EventHandler(this.CloseBtn_Click);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(6, 21);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(188, 20);
+            this.label1.TabIndex = 10;
+            this.label1.Text = "Choose Available Amenitties:";
+            // 
             // Listing
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
@@ -529,6 +540,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.BedNumericUpDown)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.CapacityNumericUpDown)).EndInit();
             this.AmenitiesTabPage.ResumeLayout(false);
+            this.AmenitiesTabPage.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.AmenitiesDataGridView)).EndInit();
             this.ResumeLayout(false);
 
@@ -570,5 +582,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
         private System.Windows.Forms.DataGridViewCheckBoxColumn Column3;
+        private System.Windows.Forms.Label label1;
     }
 }

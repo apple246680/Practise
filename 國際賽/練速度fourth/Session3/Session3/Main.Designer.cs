@@ -704,6 +704,7 @@
             this.SimpleSearchBtn.Text = "Search properties...";
             this.SimpleSearchBtn.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.SimpleSearchBtn.UseVisualStyleBackColor = false;
+            this.SimpleSearchBtn.Click += new System.EventHandler(this.SimpleSearchBtn_Click);
             // 
             // AdvanedFormBtn
             // 

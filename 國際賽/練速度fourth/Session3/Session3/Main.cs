@@ -98,5 +98,10 @@ namespace Session3
             TypeComboBox.SelectedIndex = 0;
             amenityComboBoxList.ForEach(x=>x.SelectedIndex=0);
         }
+
+        private void SimpleSearchBtn_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

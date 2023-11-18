@@ -19,6 +19,7 @@ namespace Session1
         public Management()
         {
             InitializeComponent();
+            OwnerDataGridView.Columns[5].SortMode=DataGridViewColumnSortMode.NotSortable;
         }
         /// <summary>
         /// init SearchTextbox
@@ -39,16 +40,21 @@ namespace Session1
         /// </summary>
         private void SearchTextBox_TextChanged(object sender, EventArgs e)
         {
-            if (SearchTextBox.Text!= "Search destination or Listing TItle or Attraction")
+            TravelerDataGridView.Rows.Clear();
+            foreach (DataGridViewColumn item in TravelerDataGridView.Columns)
             {
-                var filter=new Session1Entities().Items.Where(x => x.Title == SearchTextBox.Text || x.Areas.Name == SearchTextBox.Text || x.ItemAttractions.Any(y => y.Attractions.Name == SearchTextBox.Text && y.Distance < 1)).Select(x => new
+                item.SortMode = DataGridViewColumnSortMode.NotSortable;
+            }
+            foreach (DataGridViewColumn item in TravelerDataGridView.Columns)
+            {
+                item.SortMode = DataGridViewColumnSortMode.Automatic;
+            }
+            if (SearchTextBox.Text!= "Search destination or Listing TItle or Attraction"&&!string.IsNullOrWhiteSpace(SearchTextBox.Text))
+            {
+                new Session1Entities().Items.Where(x => x.Title.Contains(SearchTextBox.Text) || x.Areas.Name.Contains(SearchTextBox.Text) || x.ItemAttractions.Any(y => y.Attractions.Name.Contains(SearchTextBox.Text) && y.Distance < 1)).ToList().ForEach(x => 
                 {
-                    x.Title,
-                    x.Capacity,
-                    Area=x.Areas.Name,
-                    Type=x.ItemTypes.Name
-                }).ToList();
-                TravelerDataGridView.DataSource= filter;
+                    TravelerDataGridView.Rows.Add(x.Title,x.Capacity,x.Areas.Name,x.ItemTypes.Name);
+                });
             }
         }
         /// <summary>
@@ -105,9 +111,17 @@ namespace Session1
         /// </summary>
         private void OwnerDataGridView_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.ColumnIndex != 5 && e.RowIndex != -1)
+            if (e.ColumnIndex != 5 && e.RowIndex <0)
                 return;
-            var id = (long)OwnerDataGridView.Rows[e.RowIndex].Cells[0].Value;
+            long id;
+            try
+            {
+                id = (long)OwnerDataGridView.Rows[e.RowIndex].Cells[0].Value;
+            }
+            catch
+            {
+                return;
+            }
             var listing = new Listing(id) { Dock = DockStyle.Fill };
             Global.MainForm.Text = "Seoul Stay - Edit Listing";
             Global.MainForm.Controls.Clear();

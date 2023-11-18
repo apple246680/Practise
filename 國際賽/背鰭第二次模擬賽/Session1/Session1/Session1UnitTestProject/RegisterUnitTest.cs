@@ -2,62 +2,110 @@
 using System;
 using Session1;
 using System.Linq;
-using System.Security.Cryptography;
-using System.Text;
-
 namespace Session1UnitTestProject
 {
     [TestClass]
     public class RegisterUnitTest
     {
-        /// <summary>
-        /// Test Register
-        /// </summary>
         [TestMethod]
-        public void RegisterTest()
+        [DataRow("app", "12345", "12345", true, 0)]
+        public void AccountBeenSuccessfullyAddedTest(string Username, string Password, string FullName, bool? Gender, int? Family)
         {
-            string Username = "aaa";
-            string Password = "12345";
-            string FullName = "132";
-            bool Gender=true;
-            int FamilyCount = 0;
-            DateTime Birthday = DateTime.Now;
             var entities = new Session1Entities();
-            if (entities.Users.Any(x => x.Username == Username))
+            if (entities.Users.Any(x => x.Username == Username)|| Password.Length < 5|| Username == "" || Password == "" || FullName == "" || !Gender.HasValue || !Family.HasValue)
             {
-                Assert.Fail("This account already exists");
-            }
-            if (Password.Length < 5)
-            {
-                Assert.Fail("Password length does not meet the requirements.");
-            }
-            if (string.IsNullOrWhiteSpace(Username)||string.IsNullOrWhiteSpace(Password)|| string.IsNullOrWhiteSpace(FullName))
-            {
-                Assert.Fail("Some key fields are left blank");
+                return;
             }
             var user = entities.Users.Add(new Users
             {
                 GUID = Guid.NewGuid(),
-                UserTypeID = 2,
                 Username = Username,
-                Password= Password,
-                HashPassword = Global.ComputeSha256Hash(Password),
+                Password = Password,
+                BirthDate = DateTime.Now,
                 FullName = FullName,
-                Gender = Gender,
-                FamilyCount = FamilyCount,
-                BirthDate = Birthday.Date,
+                FamilyCount = Family.Value,
+                Gender = Gender.Value,
+                UserTypeID = 2,
+                HashPassword=Global.ComputeSha256Hash(Password)
             });
-            try
-            {
-                entities.SaveChanges();
-            }
-            catch (Exception e)
-            {
-                Assert.IsFalse(entities.Users.Any(x=>x.Username == Username), "Failed to add account");
-            }
+            entities.SaveChanges();
             entities.Users.Remove(user);
             entities.SaveChanges();
         }
-        
+        [TestMethod]
+        [DataRow("sirvard", "9090", "Nerses Sirvard", false, 5)]
+        public void AccountAlreadyExists(string Username, string Password, string FullName, bool? Gender, int? Family)
+        {
+            var entities = new Session1Entities();
+            if (entities.Users.Any(x => x.Username == Username) || Password.Length < 5 || Username == "" || Password == "" || FullName == "" || !Gender.HasValue || !Family.HasValue)
+            {
+                return;
+            }
+            var user = entities.Users.Add(new Users
+            {
+                GUID = Guid.NewGuid(),
+                Username = Username,
+                Password = Password,
+                BirthDate = DateTime.Now,
+                FullName = FullName,
+                FamilyCount = Family.Value,
+                Gender = Gender.Value,
+                UserTypeID = 2,
+                HashPassword = Global.ComputeSha256Hash(Password)
+            });
+            entities.SaveChanges();
+            entities.Users.Remove(user);
+            entities.SaveChanges();
+        }
+        [TestMethod]
+        [DataRow("app", "9090", "Nerses", false, 5)]
+        public void PasswordLengthNotNeetRequirements(string Username, string Password, string FullName, bool? Gender, int? Family)
+        {
+            var entities = new Session1Entities();
+            if (entities.Users.Any(x => x.Username == Username) || Password.Length < 5 || Username == "" || Password == "" || FullName == "" || !Gender.HasValue || !Family.HasValue)
+            {
+                return;
+            }
+            var user = entities.Users.Add(new Users
+            {
+                GUID = Guid.NewGuid(),
+                Username = Username,
+                Password = Password,
+                BirthDate = DateTime.Now,
+                FullName = FullName,
+                FamilyCount = Family.Value,
+                Gender = Gender.Value,
+                UserTypeID = 2,
+                HashPassword = Global.ComputeSha256Hash(Password)
+            });
+            entities.SaveChanges();
+            entities.Users.Remove(user);
+            entities.SaveChanges();
+        }
+        [TestMethod]
+        [DataRow("app", "90901", "", null, 5)]
+        public void SomeKeyFieldsLeftBlank(string Username, string Password, string FullName, bool? Gender, int? Family)
+        {
+            var entities = new Session1Entities();
+            if (entities.Users.Any(x => x.Username == Username) || Password.Length < 5 || Username == "" || Password == "" || FullName == "" || !Gender.HasValue || !Family.HasValue)
+            {
+                return;
+            }
+            var user = entities.Users.Add(new Users
+            {
+                GUID = Guid.NewGuid(),
+                Username = Username,
+                Password = Password,
+                BirthDate = DateTime.Now,
+                FullName = FullName,
+                FamilyCount = Family.Value,
+                Gender = Gender.Value,
+                UserTypeID = 2,
+                HashPassword = Global.ComputeSha256Hash(Password)
+            });
+            entities.SaveChanges();
+            entities.Users.Remove(user);
+            entities.SaveChanges();
+        }
     }
 }
