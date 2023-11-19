@@ -16,11 +16,13 @@ namespace Session2
         public static int? People {  get; set; }
         public static void ShowSimpleSearch()
         {
+            main.Text = "Seoul Stay - Search Properties or Listings";
             main.Controls.Clear();
             main.Controls.Add(new SimpleSearch { Dock = DockStyle.Fill });
         }
         public static void ShowAdvancedSearch()
         {
+            main.Text = "Seoul Stay - Search Properties or Listings(Advanced)";
             main.Controls.Clear();
             main.Controls.Add(new AdvancedSearch {Dock=DockStyle.Fill});
         }

@@ -37,7 +37,7 @@ namespace Session2
 
         private void AdvanedBtn_Click(object sender, EventArgs e)
         {
-            Global.FromDate = FromDateTimePicker.Value;
+            Global.FromDate = FromDateTimePicker.Value.Date;
             Global.Night = (int)NightsNumber.Value;
             Global.People = (int)PeopleNumber.Value;
             Global.ShowAdvancedSearch();
@@ -100,6 +100,7 @@ namespace Session2
 
         private void SearchBtn_Click(object sender, EventArgs e)
         {
+            Global.main.Text = "Seoul Stay - Search Results";
             var entities = new Session2Entities();
             var Night = (int)NightsNumber.Value;
             var People = (int)PeopleNumber.Value;

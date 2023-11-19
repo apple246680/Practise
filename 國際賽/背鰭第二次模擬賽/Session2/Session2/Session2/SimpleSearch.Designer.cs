@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SimpleSearch));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.PeopleLabel = new System.Windows.Forms.Label();
             this.NightLabel = new System.Windows.Forms.Label();
             this.ForLabel = new System.Windows.Forms.Label();
@@ -40,12 +40,12 @@
             this.SearchTextBox = new System.Windows.Forms.TextBox();
             this.ListBoxHint = new System.Windows.Forms.ListBox();
             this.TopGroupBox = new System.Windows.Forms.GroupBox();
-            this.CountLabel = new System.Windows.Forms.Label();
-            this.ExportBtn = new System.Windows.Forms.Button();
-            this.AdvanedBtn = new System.Windows.Forms.Button();
-            this.SearchBtn = new System.Windows.Forms.Button();
             this.SearchFilterPanel = new System.Windows.Forms.Panel();
             this.FromLabel = new System.Windows.Forms.Label();
+            this.AdvanedBtn = new System.Windows.Forms.Button();
+            this.SearchBtn = new System.Windows.Forms.Button();
+            this.CountLabel = new System.Windows.Forms.Label();
+            this.ExportBtn = new System.Windows.Forms.Button();
             this.ResultsPanel = new System.Windows.Forms.Panel();
             this.ResultGroupBox = new System.Windows.Forms.GroupBox();
             this.ResultLabel = new System.Windows.Forms.Label();
@@ -69,7 +69,7 @@
             this.PeopleLabel.AutoSize = true;
             this.PeopleLabel.Location = new System.Drawing.Point(560, 5);
             this.PeopleLabel.Name = "PeopleLabel";
-            this.PeopleLabel.Size = new System.Drawing.Size(46, 17);
+            this.PeopleLabel.Size = new System.Drawing.Size(56, 22);
             this.PeopleLabel.TabIndex = 4;
             this.PeopleLabel.Text = "people";
             // 
@@ -78,7 +78,7 @@
             this.NightLabel.AutoSize = true;
             this.NightLabel.Location = new System.Drawing.Point(362, 5);
             this.NightLabel.Name = "NightLabel";
-            this.NightLabel.Size = new System.Drawing.Size(64, 17);
+            this.NightLabel.Size = new System.Drawing.Size(81, 22);
             this.NightLabel.TabIndex = 4;
             this.NightLabel.Text = "nights and";
             // 
@@ -87,7 +87,7 @@
             this.ForLabel.AutoSize = true;
             this.ForLabel.Location = new System.Drawing.Point(204, 5);
             this.ForLabel.Name = "ForLabel";
-            this.ForLabel.Size = new System.Drawing.Size(24, 17);
+            this.ForLabel.Size = new System.Drawing.Size(30, 22);
             this.ForLabel.TabIndex = 4;
             this.ForLabel.Text = "for";
             // 
@@ -105,7 +105,7 @@
             0,
             0});
             this.PeopleNumber.Name = "PeopleNumber";
-            this.PeopleNumber.Size = new System.Drawing.Size(92, 24);
+            this.PeopleNumber.Size = new System.Drawing.Size(92, 28);
             this.PeopleNumber.TabIndex = 3;
             this.PeopleNumber.Value = new decimal(new int[] {
             1,
@@ -127,7 +127,7 @@
             0,
             0});
             this.NightsNumber.Name = "NightsNumber";
-            this.NightsNumber.Size = new System.Drawing.Size(92, 24);
+            this.NightsNumber.Size = new System.Drawing.Size(92, 28);
             this.NightsNumber.TabIndex = 3;
             this.NightsNumber.Value = new decimal(new int[] {
             1,
@@ -141,14 +141,14 @@
             this.FromDateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.FromDateTimePicker.Location = new System.Drawing.Point(68, 1);
             this.FromDateTimePicker.Name = "FromDateTimePicker";
-            this.FromDateTimePicker.Size = new System.Drawing.Size(115, 24);
+            this.FromDateTimePicker.Size = new System.Drawing.Size(115, 28);
             this.FromDateTimePicker.TabIndex = 2;
             // 
             // SearchTextBox
             // 
             this.SearchTextBox.Location = new System.Drawing.Point(51, 31);
             this.SearchTextBox.Name = "SearchTextBox";
-            this.SearchTextBox.Size = new System.Drawing.Size(774, 24);
+            this.SearchTextBox.Size = new System.Drawing.Size(774, 28);
             this.SearchTextBox.TabIndex = 0;
             this.SearchTextBox.Text = "Enter area name, attraction, property title, property type, amenities ...";
             this.SearchTextBox.TextChanged += new System.EventHandler(this.SearchTextBox_TextChanged);
@@ -159,11 +159,11 @@
             // 
             this.ListBoxHint.DisplayMember = "Name";
             this.ListBoxHint.FormattingEnabled = true;
-            this.ListBoxHint.ItemHeight = 17;
+            this.ListBoxHint.ItemHeight = 22;
             this.ListBoxHint.Location = new System.Drawing.Point(51, 61);
             this.ListBoxHint.Name = "ListBoxHint";
             this.ListBoxHint.ScrollAlwaysVisible = true;
-            this.ListBoxHint.Size = new System.Drawing.Size(774, 106);
+            this.ListBoxHint.Size = new System.Drawing.Size(774, 92);
             this.ListBoxHint.TabIndex = 10;
             this.ListBoxHint.ValueMember = "ID";
             this.ListBoxHint.Visible = false;
@@ -182,61 +182,6 @@
             this.TopGroupBox.TabIndex = 2;
             this.TopGroupBox.TabStop = false;
             this.TopGroupBox.Text = "Simple search";
-            // 
-            // CountLabel
-            // 
-            this.CountLabel.AutoSize = true;
-            this.CountLabel.Font = new System.Drawing.Font("Open Sans Light", 12F);
-            this.CountLabel.Location = new System.Drawing.Point(12, 437);
-            this.CountLabel.Name = "CountLabel";
-            this.CountLabel.Size = new System.Drawing.Size(143, 23);
-            this.CountLabel.TabIndex = 4;
-            this.CountLabel.Text = "Displaying  options";
-            // 
-            // ExportBtn
-            // 
-            this.ExportBtn.BackColor = System.Drawing.Color.White;
-            this.ExportBtn.Font = new System.Drawing.Font("Open Sans SemiBold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ExportBtn.Image = global::Session2.Properties.Resources.Screenshot_2023_11_19_160855;
-            this.ExportBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.ExportBtn.Location = new System.Drawing.Point(938, 381);
-            this.ExportBtn.Name = "ExportBtn";
-            this.ExportBtn.Size = new System.Drawing.Size(196, 49);
-            this.ExportBtn.TabIndex = 8;
-            this.ExportBtn.Text = "Export Report";
-            this.ExportBtn.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.ExportBtn.UseVisualStyleBackColor = false;
-            this.ExportBtn.Click += new System.EventHandler(this.ExportBtn_Click);
-            // 
-            // AdvanedBtn
-            // 
-            this.AdvanedBtn.BackColor = System.Drawing.Color.White;
-            this.AdvanedBtn.Font = new System.Drawing.Font("Open Sans SemiBold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.AdvanedBtn.Image = global::Session2.Properties.Resources.Screenshot_2023_11_19_160115;
-            this.AdvanedBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.AdvanedBtn.Location = new System.Drawing.Point(928, 92);
-            this.AdvanedBtn.Name = "AdvanedBtn";
-            this.AdvanedBtn.Size = new System.Drawing.Size(196, 42);
-            this.AdvanedBtn.TabIndex = 7;
-            this.AdvanedBtn.Text = "Advanced Search";
-            this.AdvanedBtn.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.AdvanedBtn.UseVisualStyleBackColor = false;
-            this.AdvanedBtn.Click += new System.EventHandler(this.AdvanedBtn_Click);
-            // 
-            // SearchBtn
-            // 
-            this.SearchBtn.BackColor = System.Drawing.Color.White;
-            this.SearchBtn.Font = new System.Drawing.Font("Open Sans SemiBold", 10.8F, System.Drawing.FontStyle.Bold);
-            this.SearchBtn.Image = ((System.Drawing.Image)(resources.GetObject("SearchBtn.Image")));
-            this.SearchBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.SearchBtn.Location = new System.Drawing.Point(928, 31);
-            this.SearchBtn.Name = "SearchBtn";
-            this.SearchBtn.Size = new System.Drawing.Size(196, 42);
-            this.SearchBtn.TabIndex = 5;
-            this.SearchBtn.Text = "Search properties...";
-            this.SearchBtn.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.SearchBtn.UseVisualStyleBackColor = false;
-            this.SearchBtn.Click += new System.EventHandler(this.SearchBtn_Click);
             // 
             // SearchFilterPanel
             // 
@@ -257,9 +202,64 @@
             this.FromLabel.AutoSize = true;
             this.FromLabel.Location = new System.Drawing.Point(7, 5);
             this.FromLabel.Name = "FromLabel";
-            this.FromLabel.Size = new System.Drawing.Size(40, 17);
+            this.FromLabel.Size = new System.Drawing.Size(50, 22);
             this.FromLabel.TabIndex = 1;
             this.FromLabel.Text = "From:";
+            // 
+            // AdvanedBtn
+            // 
+            this.AdvanedBtn.BackColor = System.Drawing.Color.White;
+            this.AdvanedBtn.Font = new System.Drawing.Font("Open Sans SemiBold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.AdvanedBtn.Image = global::Session2.Properties.Resources.Screenshot_2023_11_19_160115;
+            this.AdvanedBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.AdvanedBtn.Location = new System.Drawing.Point(908, 92);
+            this.AdvanedBtn.Name = "AdvanedBtn";
+            this.AdvanedBtn.Size = new System.Drawing.Size(216, 42);
+            this.AdvanedBtn.TabIndex = 7;
+            this.AdvanedBtn.Text = "Advanced Search";
+            this.AdvanedBtn.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.AdvanedBtn.UseVisualStyleBackColor = false;
+            this.AdvanedBtn.Click += new System.EventHandler(this.AdvanedBtn_Click);
+            // 
+            // SearchBtn
+            // 
+            this.SearchBtn.BackColor = System.Drawing.Color.White;
+            this.SearchBtn.Font = new System.Drawing.Font("Open Sans SemiBold", 10.8F, System.Drawing.FontStyle.Bold);
+            this.SearchBtn.Image = ((System.Drawing.Image)(resources.GetObject("SearchBtn.Image")));
+            this.SearchBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.SearchBtn.Location = new System.Drawing.Point(908, 31);
+            this.SearchBtn.Name = "SearchBtn";
+            this.SearchBtn.Size = new System.Drawing.Size(216, 42);
+            this.SearchBtn.TabIndex = 5;
+            this.SearchBtn.Text = "Search properties...";
+            this.SearchBtn.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.SearchBtn.UseVisualStyleBackColor = false;
+            this.SearchBtn.Click += new System.EventHandler(this.SearchBtn_Click);
+            // 
+            // CountLabel
+            // 
+            this.CountLabel.AutoSize = true;
+            this.CountLabel.Font = new System.Drawing.Font("Open Sans Light", 12F);
+            this.CountLabel.Location = new System.Drawing.Point(12, 437);
+            this.CountLabel.Name = "CountLabel";
+            this.CountLabel.Size = new System.Drawing.Size(183, 28);
+            this.CountLabel.TabIndex = 4;
+            this.CountLabel.Text = "Displaying  options";
+            // 
+            // ExportBtn
+            // 
+            this.ExportBtn.BackColor = System.Drawing.Color.White;
+            this.ExportBtn.Font = new System.Drawing.Font("Open Sans SemiBold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ExportBtn.Image = global::Session2.Properties.Resources.Screenshot_2023_11_19_160855;
+            this.ExportBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.ExportBtn.Location = new System.Drawing.Point(938, 381);
+            this.ExportBtn.Name = "ExportBtn";
+            this.ExportBtn.Size = new System.Drawing.Size(196, 49);
+            this.ExportBtn.TabIndex = 8;
+            this.ExportBtn.Text = "Export Report";
+            this.ExportBtn.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.ExportBtn.UseVisualStyleBackColor = false;
+            this.ExportBtn.Click += new System.EventHandler(this.ExportBtn_Click);
             // 
             // ResultsPanel
             // 
@@ -288,7 +288,7 @@
             this.ResultLabel.AutoSize = true;
             this.ResultLabel.Location = new System.Drawing.Point(55, 343);
             this.ResultLabel.Name = "ResultLabel";
-            this.ResultLabel.Size = new System.Drawing.Size(0, 17);
+            this.ResultLabel.Size = new System.Drawing.Size(0, 22);
             this.ResultLabel.TabIndex = 11;
             // 
             // ResultDataGridView
@@ -299,14 +299,14 @@
             this.ResultDataGridView.AllowUserToResizeRows = false;
             this.ResultDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.ResultDataGridView.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(187)))), ((int)(((byte)(187)))));
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(187)))), ((int)(((byte)(187)))));
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Open Sans Light", 9F);
-            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(187)))), ((int)(((byte)(187)))));
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.ResultDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(187)))), ((int)(((byte)(187)))));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Open Sans Light", 9F);
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(187)))), ((int)(((byte)(187)))));
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.ResultDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.ResultDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.ResultDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.PropertyColumn,
@@ -321,11 +321,11 @@
             this.ResultDataGridView.ReadOnly = true;
             this.ResultDataGridView.RowHeadersVisible = false;
             this.ResultDataGridView.RowHeadersWidth = 51;
-            dataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(187)))), ((int)(((byte)(187)))));
-            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(26)))), ((int)(((byte)(46)))));
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.Black;
-            this.ResultDataGridView.RowsDefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(187)))), ((int)(((byte)(187)))));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(26)))), ((int)(((byte)(46)))));
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black;
+            this.ResultDataGridView.RowsDefaultCellStyle = dataGridViewCellStyle2;
             this.ResultDataGridView.RowTemplate.Height = 27;
             this.ResultDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
             this.ResultDataGridView.Size = new System.Drawing.Size(1108, 330);
@@ -368,7 +368,7 @@
             // 
             // SimpleSearch
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 22F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(187)))), ((int)(((byte)(187)))));
             this.Controls.Add(this.ResultsPanel);
