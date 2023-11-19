@@ -15,6 +15,7 @@ namespace Session2
         public Main()
         {
             InitializeComponent();
+            Global.main = this;
             Global.ShowSimpleSearch();
         }
     }

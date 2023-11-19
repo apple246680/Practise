@@ -117,22 +117,32 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <metadata name="Column5.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="SearchBtn.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAAXhJREFUWEfF
+        l4FNAzEMRTtCR2AERmEENoARugmMwAawAWwAG5QNwA8RFH052E6juyd96ZSLncT2uekh4Mp0Z3o2vZq+
+        fsUzY7xjznJw+mBqC0Zi7tG0hBvT2eQt9J+wwfYibk2e84rwMQW79xx+mO5N16YGz4zxzrMpR4Kce2Fn
+        kQjmqB2+SsX5aFIn/YkjmKv2+EzBTtU4c3LFi0QqCmpIXmfRmkgd5MVUNhqgh3kyhfQdDlVyr2gt4Duk
+        N0CXUvZXNggo+3sz9QYrU4DvkN2LUI3eTbNg2/tKHWb3RgS7tmJgp58mdcKNJ4I5aoev9Okbo59j8soi
+        fUR4Zkxz3jSTwh9WXEia6IKVNP5BJLx0RMLmJGPT1zTy5xXmSMxtOdfGhjK15IJT8klD6R3zzBjvtNgI
+        uxdBbs6bMaol/kssu75HeI0JUZzlT3SWUR1RnFNfyAz6Y9drk02Qc+/LQKkb0wrI+ai3bAbh1sVT94WV
+        sImWDlv8cPwGwvk6OeWRIPYAAAAASUVORK5CYII=
+</value>
+  </data>
+  <metadata name="PropertyColumn.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
-  <metadata name="Column3.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+  <metadata name="AreaColumn.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
-  <metadata name="Column2.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+  <metadata name="AverageScoreColumn.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
-  <metadata name="Column1.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+  <metadata name="TotalCompletedReservationsColumn.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
-  <metadata name="Column4.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="Column4.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+  <metadata name="AmountPayableColumn.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
 </root>

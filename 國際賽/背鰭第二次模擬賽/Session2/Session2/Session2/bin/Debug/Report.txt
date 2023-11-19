@@ -1,0 +1,10 @@
+Property|Area|Average Score|Total completed reservations|Amount payable
+Superior Cozy Home J|Seocho-gu||1|1100.00
+Lee Jae 2|Dongdaemun-gu||0|1100.00
+Hongdae Min House 2|Seocho-gu||0|1100.00
+Lovely House|Dobong-gu||0|1100.00
+HONGDAE HELEN'S HOUSE|Seocho-gu||0|1100.00
+Residence Unicorn|Gangbuk-gu||1|1100.00
+Eve Hongdae|Gangbuk-gu||1|1100.00
+Hongdae Residence Seocho-gu with Free Wifi  |Seocho-gu|3.15|2|1590.00
+Hongdae Residence-2|Seocho-gu|3.47|3|2400.00

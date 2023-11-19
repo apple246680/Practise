@@ -44,9 +44,6 @@ namespace Session1
             foreach (DataGridViewColumn item in TravelerDataGridView.Columns)
             {
                 item.SortMode = DataGridViewColumnSortMode.NotSortable;
-            }
-            foreach (DataGridViewColumn item in TravelerDataGridView.Columns)
-            {
                 item.SortMode = DataGridViewColumnSortMode.Automatic;
             }
             if (SearchTextBox.Text!= "Search destination or Listing TItle or Attraction"&&!string.IsNullOrWhiteSpace(SearchTextBox.Text))
