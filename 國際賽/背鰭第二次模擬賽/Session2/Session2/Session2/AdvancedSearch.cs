@@ -121,7 +121,7 @@ namespace Session2
                 MessageBox.Show("From date can't over to date.");
                 return;
             }
-            if ((!string.IsNullOrEmpty(StartPrice.Text)) && (!string.IsNullOrEmpty(MaxPrice.Text)))
+            if ((!string.IsNullOrWhiteSpace(StartPrice.Text)) && (!string.IsNullOrWhiteSpace(MaxPrice.Text)))
             {
                 if (StartPrice.Value > MaxPrice.Value)
                 {
@@ -130,16 +130,16 @@ namespace Session2
                 }
             }
             var items = entities.Items.ToList();
-            if (!string.IsNullOrEmpty(AreaComboBox.Text))
+            if (!string.IsNullOrWhiteSpace(AreaComboBox.Text))
             {
                 var id = (long)AreaComboBox.SelectedValue;
                 items = items.Where(x => x.AreaID == id).ToList();
             }
-            if (!string.IsNullOrEmpty(AttractionComboBox.Text))
+            if (!string.IsNullOrWhiteSpace(AttractionComboBox.Text))
             {
                 items = items.Where(x => x.ItemAttractions.Any(y => y.AttractionID == (long)AttractionComboBox.SelectedValue)).ToList();
             }
-            if (!string.IsNullOrEmpty(TitleComboBox.Text))
+            if (!string.IsNullOrWhiteSpace(TitleComboBox.Text))
             {
                 if (TitleComboBox.DropDownStyle == ComboBoxStyle.DropDown)
                 {
@@ -150,7 +150,7 @@ namespace Session2
                     items = items.Where(x => x.ID == (long)TitleComboBox.SelectedValue).ToList();
                 }
             }
-            if (!string.IsNullOrEmpty(TypeComboBox.Text))
+            if (!string.IsNullOrWhiteSpace(TypeComboBox.Text))
             {
                 items = items.Where(x => x.ItemTypeID == (long)TypeComboBox.SelectedValue).ToList();
             }
@@ -180,7 +180,7 @@ namespace Session2
                             Amount += item.ItemPrices.Where(y => y.Date <= x.Date.AddDays(i).Date).OrderBy(y => y.Date).Last().Price;
                         }
                     }
-                    if ((!String.IsNullOrEmpty(StartPrice.Text) && StartPrice.Value > Amount) || (!String.IsNullOrEmpty(MaxPrice.Text) && MaxPrice.Value < Amount))
+                    if ((!String.IsNullOrWhiteSpace(StartPrice.Text) && StartPrice.Value > Amount) || (!String.IsNullOrWhiteSpace(MaxPrice.Text) && MaxPrice.Value < Amount))
                     {
                         continue;
                     }
