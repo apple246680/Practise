@@ -186,7 +186,7 @@ namespace Session2
                     ResultsDataGridView.Rows.Add(item.Title, item.Area.Name, score, totalconpate, Amount + "$", x.Date.ToString("dd/MM/yyyy"));
                 }
             }
-            CountLabel.Text = $"Displaying {ResultsDataGridView.Rows.Count} options from {(ResultsDataGridView.Rows.Count != 0 ? items.GroupBy(x => x.Title).Count() : 0)} properties";
+            CountLabel.Text = $"Displaying {ResultsDataGridView.Rows.Count} options from {ResultsDataGridView.Rows.Cast<DataGridViewRow>().GroupBy(x => x.Cells[0].Value.ToString()).Count()} properties";
             ResultsPanel.Visible = true;
         }
     }
