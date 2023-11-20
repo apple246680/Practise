@@ -80,7 +80,7 @@ namespace Session2
                 }
                 SearchText = SearchText.ToLower();
                 var area = entities.Areas.ToList().Where(x => x.Name.ToLower().Contains(SearchText)).Select(x => new { ID = x.Name, Name = $"{x.Name}\tArea" }).ToList();
-                var attraction = entities.Attractions.ToList().Where(x => x.Name.Contains(SearchText)).Select(x => new { ID = x.Name, Name = $"{x.Name}\tAttractions" }).ToList();
+                var attraction = entities.Attractions.ToList().Where(x => x.Name.ToLower().Contains(SearchText)).Select(x => new { ID = x.Name, Name = $"{x.Name}\tAttractions" }).ToList();
                 area.AddRange(attraction);
                 var Title = entities.Items.ToList().Where(x => x.Title.ToLower().Contains(SearchText)).Select(x => new { ID = x.Title, Name = $"{x.Title}\tListing" }).ToList();
                 area.AddRange(Title);
@@ -127,7 +127,7 @@ namespace Session2
             }
             if (!string.IsNullOrWhiteSpace(SearchTextBox.Text) && SearchTextBox.Text != "Enter area name, attraction, property title, property type, amenities ...")
             {
-                items = items.Where(x => x.Area.Name.Trim() == SearchText || x.Title == SearchText || x.ItemType.Name == SearchText || x.ItemAmenities.Any(y => y.Amenity.Name == SearchText)).ToList();
+                items = items.Where(x => x.Area.Name.Trim() == SearchText || x.Title == SearchText || x.ItemType.Name == SearchText || x.ItemAmenities.Any(y => y.Amenity.Name == SearchText)||x.ItemAttractions.Any(y=>y.Attraction.Name==SearchText)).ToList();
             }
             ResultDataGridView.Rows.Clear();
             foreach (var item in items.OrderBy(x=>x.Title))

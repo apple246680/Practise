@@ -66,7 +66,6 @@ namespace Session2
         private void ClearBtn_Click(object sender, EventArgs e)
         {
             AreaComboBox.SelectedIndex = 0;
-            AttractionComboBox.SelectedIndex = 0;
             TitleComboBox.Text = "";
             FromDate.Value = FromDate.MinDate;
             ToDate.MinDate = FromDate.MinDate;

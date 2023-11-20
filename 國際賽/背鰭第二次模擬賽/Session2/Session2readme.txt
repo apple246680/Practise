@@ -1,86 +1,161 @@
-Simple search
-time from set 10/11/2023  1night 1people 
-can see Lee Jae		Dobong-gu		1	100.00$
-time from set 18/11/2023 1night 1people 
+I think the price content in itemprice will change based on time.
+
+Simple Search
+
+From Date set 30/11/2023,1 night,1people
+can see:
+Eve Hongdae					Gangbuk-gu		1	100.00$
+HONGDAE HELEN'S HOUSE				Seocho-gu		0	100.00$
+Hongdae Min House 2				Seocho-gu		0	100.00$
+Hongdae Residence Seocho-gu with Free Wifi  	Seocho-gu	3.15	2	140.00$
+Hongdae Residence-2				Seocho-gu	3.47	3	290.00$
+Lee Jae						Dobong-gu		1	100.00$
+Lee Jae 2					Dongdaemun-gu		0	100.00$
+Lovely House					Dobong-gu		0	100.00$
+Residence Unicorn				Gangbuk-gu		1	100.00$
+Superior Cozy Home J				Seocho-gu		0	100.00$
+
+From Date set 30/11/2023,1 night,1people,(Area)search:Seocho-gu
+can see:
+HONGDAE HELEN'S HOUSE	Seocho-gu		0	100.00$
+Hongdae Min House 2	Seocho-gu		0	100.00$
+Hongdae Residence Seocho-gu with Free Wifi  	Seocho-gu	3.15	2	140.00$
+Hongdae Residence-2	Seocho-gu	3.47	3	290.00$
+Superior Cozy Home J	Seocho-gu		0	100.00$
+
+From Date set 30/11/2023,1 night,1people,(Property Title)search:Hongdae Residence-2
+can see:
+Hongdae Residence-2	Seocho-gu	3.47	3	290.00$
+
+From Date set 30/11/2023,1 night,1people,(Property Type)search:House
+can see:
+Hongdae Residence Seocho-gu with Free Wifi  	Seocho-gu	3.15	2	140.00$
+Lovely House					Dobong-gu		0	100.00$
+
+From Date set 30/11/2023,1 night,1people,(Amenity)search:Free Wifi
+can see:
+Hongdae Min House 2	Seocho-gu		0	100.00$
+Residence Unicorn	Gangbuk-gu		1	100.00$
+
+From Date set 30/11/2023,1 night,1people,(Attraction)search:Samsung Town
+can see:
+HONGDAE HELEN'S HOUSE	Seocho-gu		0	100.00$
+Superior Cozy Home J	Seocho-gu		0	100.00$
+
+From Date set 28/11/2023,1 night,1people
+can see:
+Eve Hongdae					Gangbuk-gu		1	100.00$
+HONGDAE HELEN'S HOUSE				Seocho-gu		0	100.00$
+Hongdae Min House 2				Seocho-gu		0	100.00$
 Hongdae Residence Seocho-gu with Free Wifi  	Seocho-gu	3.15	2	145.00$
+Hongdae Residence-2				Seocho-gu	3.47	3	270.00$
+Lee Jae						Dobong-gu		1	100.00$
+Lee Jae 2					Dongdaemun-gu		0	100.00$
+Lovely House					Dobong-gu		0	100.00$
+Residence Unicorn				Gangbuk-gu		1	100.00$
+Superior Cozy Home J				Seocho-gu		0	100.00$
 
-time from set 18/11/2023 2night 1people 
+From Date set 28/11/2023,5 night,1people
 can see:
+Eve Hongdae					Gangbuk-gu		1	500.00$
+HONGDAE HELEN'S HOUSE				Seocho-gu		0	500.00$
+Hongdae Min House 2				Seocho-gu		0	500.00$
+Hongdae Residence Seocho-gu with Free Wifi  	Seocho-gu	3.15	2	710.00$
+Hongdae Residence-2				Seocho-gu	3.47	3	1430.00$
+Lee Jae						Dobong-gu		1	500.00$
+Lee Jae 2					Dongdaemun-gu		0	500.00$
+Lovely House					Dobong-gu		0	500.00$
+Residence Unicorn				Gangbuk-gu		1	500.00$
+Superior Cozy Home J				Seocho-gu		0	500.00$
+
+From Date set 25/11/2023,1 night,1people
+can see:
+Eve Hongdae					Gangbuk-gu		1	100.00$
+HONGDAE HELEN'S HOUSE				Seocho-gu		0	100.00$
+Hongdae Min House 2				Seocho-gu		0	100.00$
 Hongdae Residence Seocho-gu with Free Wifi  	Seocho-gu	3.15	2	145.00$
-Hongdae Residence-2				Seocho-gu	3.47	3	200.00$
+Hongdae Residence-2				Seocho-gu	3.47	3	190.00$
+Lee Jae						Dobong-gu		1	100.00$
+Lee Jae 2					Dongdaemun-gu		0	100.00$
+Lovely House					Dobong-gu		0	100.00$
+Residence Unicorn				Gangbuk-gu		1	100.00$
+Superior Cozy Home J				Seocho-gu		0	100.00$
 
-time from set 18/11/2023 2night 10people
+From Date set 25/11/2023,10 night,1people
+Eve Hongdae					Gangbuk-gu		1	1000.00$
+HONGDAE HELEN'S HOUSE				Seocho-gu		0	1000.00$
+Hongdae Min House 2				Seocho-gu		0	1000.00$
+Hongdae Residence Seocho-gu with Free Wifi  	Seocho-gu	3.15	2	1425.00$
+Hongdae Residence-2				Seocho-gu	3.47	3	2580.00$
+Lee Jae						Dobong-gu		1	1000.00$
+Lee Jae 2					Dongdaemun-gu		0	1000.00$
+Lovely House					Dobong-gu		0	1000.00$
+Residence Unicorn				Gangbuk-gu		1	1000.00$
+Superior Cozy Home J				Seocho-gu		0	1000.00$
+
+From Date set 25/11/2023,10 night,7people
+Hongdae Residence-2	Seocho-gu	3.47	3	2580.00$
+Residence Unicorn	Gangbuk-gu		1	1000.00$
+
+
+
+
+Advanced Search
+
+From Date Set 25/11/2023,To Date Set 30/12/2023,1night,1people
 can see:
-Hongdae Residence-2	Seocho-gu	3.47	3	200.00$
-
-time from set 18/11/2023 2night 10people SearchTextbox inser Seocho-gu
-can see:
-Hongdae Residence-2	Seocho-gu	3.47	3	200.00$
-
-time from set 18/11/2023 2night 10people SearchTextbox insert Superior Cozy Home J
-can see: not found
-
-Advanced search
-
-time from set 07/11/2023 to set 30/11/2023 night set 1 people set 1
-can see:
-Lee Jae	Dobong-gu		1	100.00$	11/11/2023
-Lee Jae 2	Dongdaemun-gu		0	100.00$	12/11/2023
-Hongdae Min House 2	Seocho-gu		0	100.00$	13/11/2023
-Lovely House	Dobong-gu		0	100.00$	14/11/2023
-HONGDAE HELEN'S HOUSE	Seocho-gu		0	100.00$	15/11/2023
-Residence Unicorn	Gangbuk-gu		1	100.00$	16/11/2023
-Eve Hongdae	Gangbuk-gu		1	100.00$	17/11/2023
-Hongdae Residence Seocho-gu with Free Wifi  	Seocho-gu	3.2	2	140.00$	18/11/2023
-Hongdae Residence Seocho-gu with Free Wifi  	Seocho-gu	3.2	2	145.00$	19/11/2023
 Hongdae Residence Seocho-gu with Free Wifi  	Seocho-gu	3.2	2	140.00$	30/11/2023
-Hongdae Residence-2	Seocho-gu	3.5	3	200.00$	20/11/2023
-Hongdae Residence-2	Seocho-gu	3.5	3	210.00$	21/11/2023
-Hongdae Residence-2	Seocho-gu	3.5	3	190.00$	22/11/2023
-Hongdae Residence-2	Seocho-gu	3.5	3	190.00$	23/11/2023
-Hongdae Residence-2	Seocho-gu	3.5	3	190.00$	24/11/2023
-Hongdae Residence-2	Seocho-gu	3.5	3	190.00$	25/11/2023
-Hongdae Residence-2	Seocho-gu	3.5	3	190.00$	26/11/2023
-Hongdae Residence-2	Seocho-gu	3.5	3	190.00$	27/11/2023
+Hongdae Residence-2				Seocho-gu	3.5	3	190.00$	25/11/2023
+Hongdae Residence-2				Seocho-gu	3.5	3	190.00$	26/11/2023
+Hongdae Residence-2				Seocho-gu	3.5	3	190.00$	27/11/2023
+Hongdae Residence-2				Seocho-gu	3.5	3	270.00$	28/11/2023
+Hongdae Residence-2				Seocho-gu	3.5	3	290.00$	29/11/2023
+
+From Date Set 25/11/2023,To Date Set 30/12/2023,1night,1people,starting price set 200.00
+can see:
 Hongdae Residence-2	Seocho-gu	3.5	3	270.00$	28/11/2023
 Hongdae Residence-2	Seocho-gu	3.5	3	290.00$	29/11/2023
 
-time from set 07/11/2023 to set 30/11/2023 night set 1 people set 1 Area set Dobong-gu
+From Date Set 25/11/2023,To Date Set 30/12/2023,1night,1people,starting price set 200.00,maximum price set 280
 can see:
-Lee Jae	Dobong-gu		1	100.00$	11/11/2023
-Lovely House	Dobong-gu		0	100.00$	14/11/2023
-
-time from set 07/11/2023 to set 30/11/2023 night set 1 people set 1 Attraction set Gyeongdong Market
-can see:
-Lee Jae 2	Dongdaemun-gu		0	100.00$	12/11/2023
-Lovely House	Dobong-gu		0	100.00$	14/11/2023
-
-time from set 07/11/2023 to set 30/11/2023 night set 1 people set 1 Property Title set Hongdae Residence-2
-can see:
-Hongdae Residence-2	Seocho-gu	3.5	3	200.00$	20/11/2023
-Hongdae Residence-2	Seocho-gu	3.5	3	210.00$	21/11/2023
-Hongdae Residence-2	Seocho-gu	3.5	3	190.00$	22/11/2023
-Hongdae Residence-2	Seocho-gu	3.5	3	190.00$	23/11/2023
-Hongdae Residence-2	Seocho-gu	3.5	3	190.00$	24/11/2023
-Hongdae Residence-2	Seocho-gu	3.5	3	190.00$	25/11/2023
-Hongdae Residence-2	Seocho-gu	3.5	3	190.00$	26/11/2023
-Hongdae Residence-2	Seocho-gu	3.5	3	190.00$	27/11/2023
 Hongdae Residence-2	Seocho-gu	3.5	3	270.00$	28/11/2023
-Hongdae Residence-2	Seocho-gu	3.5	3	290.00$	29/11/2023
 
-time from set 07/11/2023 to set 30/11/2023 night set 1 people set 1 Start price set 200 Maximum price set 300
+From Date Set 25/11/2023,To Date Set 30/12/2023,1night,1people,starting price set 200.00,maximum price set 280,Property type set Boutique hotel
 can see:
-Hongdae Residence-2	Seocho-gu	3.5	3	200.00$	20/11/2023
-Hongdae Residence-2	Seocho-gu	3.5	3	210.00$	21/11/2023
 Hongdae Residence-2	Seocho-gu	3.5	3	270.00$	28/11/2023
-Hongdae Residence-2	Eeocho-gu	3.5	3	290.00$	29/11/2023
 
-time from set 07/11/2023 to set 30/11/2023 night set 1 people set 1 Property type set Apartment
+From Date Set 25/11/2023,To Date Set 30/12/2023,1night,1people,starting price set 200.00,maximum price set 280,Property type set Boutique hotel,
+Property Title set Hongdae Residence-2
 can see:
-Lee Jae 2	Dongdaemun-gu		0	100.00$	12/11/2023
-Residence Unicorn	Gangbuk-gu		1	100.00$	16/11/2023
-Eve Hongdae	Gangbuk-gu		1	100.00$	17/11/2023
+Hongdae Residence-2	Seocho-gu	3.5	3	270.00$	28/11/2023
 
-time from set 07/11/2023 to set 30/11/2023 night set 1 people set 1 Amenity set Room Service and Free Wifi and Breakfast
+From Date Set 25/11/2023,To Date Set 30/12/2023,1night,1people,starting price set 200.00,maximum price set 280,Property type set Boutique hotel,
+Property Title set Hongdae Residence-2,Attraction set Saetmaeul Park
 can see:
-Lovely House	Dobong-gu		0	100.00$	14/11/2023
+Hongdae Residence-2	Seocho-gu	3.5	3	270.00$	28/11/2023
+
+From Date Set 25/11/2023,To Date Set 30/11/2023,1night,1people
+can see:
+Hongdae Residence Seocho-gu with Free Wifi  	Seocho-gu	3.2	2	140.00$	30/11/2023
+Hongdae Residence-2				Seocho-gu	3.5	3	190.00$	25/11/2023
+Hongdae Residence-2				Seocho-gu	3.5	3	190.00$	26/11/2023
+Hongdae Residence-2				Seocho-gu	3.5	3	190.00$	27/11/2023
+Hongdae Residence-2				Seocho-gu	3.5	3	270.00$	28/11/2023
+Hongdae Residence-2				Seocho-gu	3.5	3	290.00$	29/11/2023
+
+From Date Set 25/11/2023,To Date Set 30/11/2023,4night,1people
+can see:
+Hongdae Residence Seocho-gu with Free Wifi  	Seocho-gu	3.2	2	560.00$		30/11/2023
+Hongdae Residence-2				Seocho-gu	3.5	3	840.00$		25/11/2023
+Hongdae Residence-2				Seocho-gu	3.5	3	940.00$		26/11/2023
+Hongdae Residence-2				Seocho-gu	3.5	3	1040.00$	27/11/2023
+Hongdae Residence-2				Seocho-gu	3.5	3	1140.00$	28/11/2023
+Hongdae Residence-2				Seocho-gu	3.5	3	1160.00$	29/11/2023
+
+From Date Set 25/11/2023,To Date Set 30/11/2023,4night,10people
+can see:
+Hongdae Residence-2				Seocho-gu	3.5	3	840.00$		25/11/2023
+Hongdae Residence-2				Seocho-gu	3.5	3	940.00$		26/11/2023
+Hongdae Residence-2				Seocho-gu	3.5	3	1040.00$	27/11/2023
+Hongdae Residence-2				Seocho-gu	3.5	3	1140.00$	28/11/2023
+Hongdae Residence-2				Seocho-gu	3.5	3	1160.00$	29/11/2023
