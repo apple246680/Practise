@@ -70,7 +70,7 @@
             this.InformationGroupBox.Controls.Add(this.FullNameLabel);
             this.InformationGroupBox.Controls.Add(this.UsernameLabel);
             this.InformationGroupBox.Font = new System.Drawing.Font("Open Sans SemiBold", 10F, System.Drawing.FontStyle.Bold);
-            this.InformationGroupBox.Location = new System.Drawing.Point(110, 128);
+            this.InformationGroupBox.Location = new System.Drawing.Point(91, 86);
             this.InformationGroupBox.Name = "InformationGroupBox";
             this.InformationGroupBox.Size = new System.Drawing.Size(798, 319);
             this.InformationGroupBox.TabIndex = 0;
@@ -83,7 +83,7 @@
             this.TermsLabel.Font = new System.Drawing.Font("Open Sans", 9.75F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TermsLabel.Location = new System.Drawing.Point(442, 275);
             this.TermsLabel.Name = "TermsLabel";
-            this.TermsLabel.Size = new System.Drawing.Size(221, 24);
+            this.TermsLabel.Size = new System.Drawing.Size(171, 19);
             this.TermsLabel.TabIndex = 15;
             this.TermsLabel.Text = "View Terms and Conditions";
             this.TermsLabel.Click += new System.EventHandler(this.TermsLabel_Click);
@@ -95,7 +95,7 @@
             this.AgreeTermsCheckbox.Font = new System.Drawing.Font("Open Sans", 10F);
             this.AgreeTermsCheckbox.Location = new System.Drawing.Point(64, 275);
             this.AgreeTermsCheckbox.Name = "AgreeTermsCheckbox";
-            this.AgreeTermsCheckbox.Size = new System.Drawing.Size(310, 28);
+            this.AgreeTermsCheckbox.Size = new System.Drawing.Size(269, 24);
             this.AgreeTermsCheckbox.TabIndex = 14;
             this.AgreeTermsCheckbox.Text = "I agree to the Terms and Conditions";
             this.AgreeTermsCheckbox.UseVisualStyleBackColor = true;
@@ -106,7 +106,7 @@
             this.FemaleRadioButton.Font = new System.Drawing.Font("Open Sans", 10F);
             this.FemaleRadioButton.Location = new System.Drawing.Point(474, 88);
             this.FemaleRadioButton.Name = "FemaleRadioButton";
-            this.FemaleRadioButton.Size = new System.Drawing.Size(89, 28);
+            this.FemaleRadioButton.Size = new System.Drawing.Size(75, 24);
             this.FemaleRadioButton.TabIndex = 13;
             this.FemaleRadioButton.Text = "Female";
             this.FemaleRadioButton.UseVisualStyleBackColor = true;
@@ -118,7 +118,7 @@
             this.MaleRadioButton.Font = new System.Drawing.Font("Open Sans", 10F);
             this.MaleRadioButton.Location = new System.Drawing.Point(385, 88);
             this.MaleRadioButton.Name = "MaleRadioButton";
-            this.MaleRadioButton.Size = new System.Drawing.Size(69, 28);
+            this.MaleRadioButton.Size = new System.Drawing.Size(60, 24);
             this.MaleRadioButton.TabIndex = 12;
             this.MaleRadioButton.TabStop = true;
             this.MaleRadioButton.Text = "Male";
@@ -129,7 +129,7 @@
             this.FamilyNumericUpDown.Font = new System.Drawing.Font("Open Sans", 10F);
             this.FamilyNumericUpDown.Location = new System.Drawing.Point(564, 124);
             this.FamilyNumericUpDown.Name = "FamilyNumericUpDown";
-            this.FamilyNumericUpDown.Size = new System.Drawing.Size(95, 30);
+            this.FamilyNumericUpDown.Size = new System.Drawing.Size(95, 26);
             this.FamilyNumericUpDown.TabIndex = 11;
             // 
             // RetypeTextBox
@@ -137,7 +137,7 @@
             this.RetypeTextBox.Font = new System.Drawing.Font("Open Sans", 10F);
             this.RetypeTextBox.Location = new System.Drawing.Point(474, 182);
             this.RetypeTextBox.Name = "RetypeTextBox";
-            this.RetypeTextBox.Size = new System.Drawing.Size(168, 30);
+            this.RetypeTextBox.Size = new System.Drawing.Size(168, 26);
             this.RetypeTextBox.TabIndex = 10;
             this.RetypeTextBox.UseSystemPasswordChar = true;
             // 
@@ -146,7 +146,7 @@
             this.PasswordTextBox.Font = new System.Drawing.Font("Open Sans", 10F);
             this.PasswordTextBox.Location = new System.Drawing.Point(149, 185);
             this.PasswordTextBox.Name = "PasswordTextBox";
-            this.PasswordTextBox.Size = new System.Drawing.Size(168, 30);
+            this.PasswordTextBox.Size = new System.Drawing.Size(168, 26);
             this.PasswordTextBox.TabIndex = 9;
             this.PasswordTextBox.UseSystemPasswordChar = true;
             // 
@@ -157,7 +157,7 @@
             this.BirthdayDateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.BirthdayDateTimePicker.Location = new System.Drawing.Point(149, 153);
             this.BirthdayDateTimePicker.Name = "BirthdayDateTimePicker";
-            this.BirthdayDateTimePicker.Size = new System.Drawing.Size(168, 30);
+            this.BirthdayDateTimePicker.Size = new System.Drawing.Size(168, 26);
             this.BirthdayDateTimePicker.TabIndex = 8;
             // 
             // FullNameTextBox
@@ -165,7 +165,7 @@
             this.FullNameTextBox.Font = new System.Drawing.Font("Open Sans", 10F);
             this.FullNameTextBox.Location = new System.Drawing.Point(149, 120);
             this.FullNameTextBox.Name = "FullNameTextBox";
-            this.FullNameTextBox.Size = new System.Drawing.Size(168, 30);
+            this.FullNameTextBox.Size = new System.Drawing.Size(168, 26);
             this.FullNameTextBox.TabIndex = 7;
             // 
             // UsernameTextBox
@@ -173,7 +173,7 @@
             this.UsernameTextBox.Font = new System.Drawing.Font("Open Sans", 10F);
             this.UsernameTextBox.Location = new System.Drawing.Point(149, 85);
             this.UsernameTextBox.Name = "UsernameTextBox";
-            this.UsernameTextBox.Size = new System.Drawing.Size(168, 30);
+            this.UsernameTextBox.Size = new System.Drawing.Size(168, 26);
             this.UsernameTextBox.TabIndex = 6;
             // 
             // RetypePasswordLabel
@@ -182,7 +182,7 @@
             this.RetypePasswordLabel.Font = new System.Drawing.Font("Open Sans", 10F);
             this.RetypePasswordLabel.Location = new System.Drawing.Point(323, 188);
             this.RetypePasswordLabel.Name = "RetypePasswordLabel";
-            this.RetypePasswordLabel.Size = new System.Drawing.Size(148, 24);
+            this.RetypePasswordLabel.Size = new System.Drawing.Size(127, 20);
             this.RetypePasswordLabel.TabIndex = 5;
             this.RetypePasswordLabel.Text = "Retype Password:";
             // 
@@ -192,7 +192,7 @@
             this.FamilyLabel.Font = new System.Drawing.Font("Open Sans", 10F);
             this.FamilyLabel.Location = new System.Drawing.Point(323, 126);
             this.FamilyLabel.Name = "FamilyLabel";
-            this.FamilyLabel.Size = new System.Drawing.Size(235, 24);
+            this.FamilyLabel.Size = new System.Drawing.Size(201, 20);
             this.FamilyLabel.TabIndex = 4;
             this.FamilyLabel.Text = "Number of Family Members:";
             // 
@@ -202,7 +202,7 @@
             this.PasswordLabel.Font = new System.Drawing.Font("Open Sans", 10F);
             this.PasswordLabel.Location = new System.Drawing.Point(60, 185);
             this.PasswordLabel.Name = "PasswordLabel";
-            this.PasswordLabel.Size = new System.Drawing.Size(89, 24);
+            this.PasswordLabel.Size = new System.Drawing.Size(77, 20);
             this.PasswordLabel.TabIndex = 3;
             this.PasswordLabel.Text = "Password:";
             // 
@@ -212,7 +212,7 @@
             this.BirthdayLabel.Font = new System.Drawing.Font("Open Sans", 10F);
             this.BirthdayLabel.Location = new System.Drawing.Point(60, 159);
             this.BirthdayLabel.Name = "BirthdayLabel";
-            this.BirthdayLabel.Size = new System.Drawing.Size(80, 24);
+            this.BirthdayLabel.Size = new System.Drawing.Size(70, 20);
             this.BirthdayLabel.TabIndex = 2;
             this.BirthdayLabel.Text = "Birthday:";
             // 
@@ -222,7 +222,7 @@
             this.FullNameLabel.Font = new System.Drawing.Font("Open Sans", 10F);
             this.FullNameLabel.Location = new System.Drawing.Point(60, 126);
             this.FullNameLabel.Name = "FullNameLabel";
-            this.FullNameLabel.Size = new System.Drawing.Size(93, 24);
+            this.FullNameLabel.Size = new System.Drawing.Size(81, 20);
             this.FullNameLabel.TabIndex = 1;
             this.FullNameLabel.Text = "Full Name:";
             // 
@@ -232,14 +232,14 @@
             this.UsernameLabel.Font = new System.Drawing.Font("Open Sans", 10F);
             this.UsernameLabel.Location = new System.Drawing.Point(60, 86);
             this.UsernameLabel.Name = "UsernameLabel";
-            this.UsernameLabel.Size = new System.Drawing.Size(96, 24);
+            this.UsernameLabel.Size = new System.Drawing.Size(82, 20);
             this.UsernameLabel.TabIndex = 0;
             this.UsernameLabel.Text = "Username:";
             // 
             // RegisterBtn
             // 
             this.RegisterBtn.Font = new System.Drawing.Font("Open Sans SemiBold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.RegisterBtn.Location = new System.Drawing.Point(518, 453);
+            this.RegisterBtn.Location = new System.Drawing.Point(499, 411);
             this.RegisterBtn.Name = "RegisterBtn";
             this.RegisterBtn.Size = new System.Drawing.Size(169, 29);
             this.RegisterBtn.TabIndex = 1;
@@ -250,7 +250,7 @@
             // ReturnLoginFormBtn
             // 
             this.ReturnLoginFormBtn.Font = new System.Drawing.Font("Open Sans SemiBold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ReturnLoginFormBtn.Location = new System.Drawing.Point(693, 453);
+            this.ReturnLoginFormBtn.Location = new System.Drawing.Point(674, 411);
             this.ReturnLoginFormBtn.Name = "ReturnLoginFormBtn";
             this.ReturnLoginFormBtn.Size = new System.Drawing.Size(125, 29);
             this.ReturnLoginFormBtn.TabIndex = 2;
@@ -260,7 +260,7 @@
             // 
             // CreateAccount
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(187)))), ((int)(((byte)(187)))));
             this.Controls.Add(this.ReturnLoginFormBtn);

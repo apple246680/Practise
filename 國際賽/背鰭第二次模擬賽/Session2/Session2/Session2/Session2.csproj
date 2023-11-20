@@ -198,6 +198,8 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\Screenshot 2023-11-20 154641.png" />
+    <None Include="Resources\Screenshot 2023-11-20 154843.png" />
     <Content Include="Session2Model.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>Session2Model.Context.cs</LastGenOutput>

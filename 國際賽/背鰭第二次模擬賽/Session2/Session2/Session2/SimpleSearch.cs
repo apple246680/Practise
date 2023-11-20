@@ -1,20 +1,19 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Drawing.Printing;
 using System.IO;
 using System.Linq;
-using System.Reflection;
 using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Session2
 {
     public partial class SimpleSearch : UserControl
     {
+        /// <summary>
+        /// InitializeComponent Simple Search Form
+        /// </summary>
         public SimpleSearch()
         {
             InitializeComponent();
@@ -34,7 +33,9 @@ namespace Session2
                 PeopleNumber.Value = Global.People.Value;
             }
         }
-
+        /// <summary>
+        /// Show Advanced Search Form
+        /// </summary>
         private void AdvanedBtn_Click(object sender, EventArgs e)
         {
             Global.FromDate = FromDateTimePicker.Value.Date;
@@ -42,7 +43,9 @@ namespace Session2
             Global.People = (int)PeopleNumber.Value;
             Global.ShowAdvancedSearch();
         }
-
+        /// <summary>
+        /// Initialize SearchBox
+        /// </summary>
         private void SearchTextBox_Leave(object sender, EventArgs e)
         {
             if (SearchTextBox.Text == "")
@@ -50,7 +53,9 @@ namespace Session2
                 SearchTextBox.Text = "Enter area name, attraction, property title, property type, amenities ...";
             }
         }
-
+        /// <summary>
+        /// Initialize SearchBox
+        /// </summary>
         private void SearchTextBox_Enter(object sender, EventArgs e)
         {
             if (SearchTextBox.Text == "Enter area name, attraction, property title, property type, amenities ...")
@@ -58,6 +63,9 @@ namespace Session2
                 SearchTextBox.Text = "";
             }
         }
+        /// <summary>
+        /// Autosuggest
+        /// </summary>
         private void SearchTextBox_TextChanged(object sender, EventArgs e)
         {
             ListBoxHint.Visible = false;
@@ -86,7 +94,9 @@ namespace Session2
                 ListBoxHint.Visible = true;
             }
         }
-
+        /// <summary>
+        /// Use Autosuggest select text to searchBox
+        /// </summary>
         private void ListBoxHint_Click(object sender, EventArgs e)
         {
             if (ListBoxHint.SelectedIndex == -1)
@@ -97,7 +107,9 @@ namespace Session2
             SearchFilterPanel.Visible = true;
             SearchTextBox.Text = (string)ListBoxHint.SelectedValue;
         }
-
+        /// <summary>
+        /// Using FIlter to Search Item data
+        /// </summary>
         private void SearchBtn_Click(object sender, EventArgs e)
         {
             Global.main.Text = "Seoul Stay - Search Results";
@@ -107,18 +119,18 @@ namespace Session2
             var From = FromDateTimePicker.Value;
             var SearchText = SearchTextBox.Text;
             var To = From.AddDays(Night - 1);
-            var items = entities.Items.Where(x => x.ItemPrices.Any(y => /*y.Date >= From &&*/ y.Date <= To) && x.Capacity >= People).ToList();
-            if (!string.IsNullOrWhiteSpace(SearchTextBox.Text) && SearchTextBox.Text != "Enter area name, attraction, property title, property type, amenities ...")
-            {
-                items = items.Where(x => x.Area.Name.Trim() == SearchText || x.Title == SearchText || x.ItemType.Name == SearchText || x.ItemAmenities.Any(y => y.Amenity.Name == SearchText)).ToList();
-            }
+            var items = entities.Items.Where(x => x.ItemPrices.Any(y =>  y.Date <= To) && x.Capacity >= People).ToList();
             foreach (DataGridViewColumn Column in ResultDataGridView.Columns)
             {
                 Column.SortMode = DataGridViewColumnSortMode.NotSortable;
                 Column.SortMode = DataGridViewColumnSortMode.Automatic;
             }
+            if (!string.IsNullOrWhiteSpace(SearchTextBox.Text) && SearchTextBox.Text != "Enter area name, attraction, property title, property type, amenities ...")
+            {
+                items = items.Where(x => x.Area.Name.Trim() == SearchText || x.Title == SearchText || x.ItemType.Name == SearchText || x.ItemAmenities.Any(y => y.Amenity.Name == SearchText)).ToList();
+            }
             ResultDataGridView.Rows.Clear();
-            foreach (var item in items)
+            foreach (var item in items.OrderBy(x=>x.Title))
             {
                 var Score = item.ItemScores.Any() ? item.ItemScores.Average(x => x.Value).ToString("0.00") : "";
                 var TotalComplate = item.ItemPrices.Count(x => x.BookingDetails.Any(y => !y.isRefund));
@@ -139,7 +151,9 @@ namespace Session2
             CountLabel.Text = $"Displaying {ResultDataGridView.RowCount} options";
             ResultsPanel.Visible = true;
         }
-
+        /// <summary>
+        /// Export search data
+        /// </summary>
         private void ExportBtn_Click(object sender, EventArgs e)
         {
             StringBuilder csvContent = new StringBuilder();
@@ -183,6 +197,9 @@ namespace Session2
                 pd.Print();
             }
         }
+        /// <summary>
+        /// Export Pdf
+        /// </summary>
         public static void PrintPage(object sender, PrintPageEventArgs ev)
         {
             var text = File.ReadAllLines($@"{Application.StartupPath}/Report.txt");

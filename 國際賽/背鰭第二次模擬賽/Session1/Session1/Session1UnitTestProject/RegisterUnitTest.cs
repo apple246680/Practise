@@ -7,6 +7,9 @@ namespace Session1UnitTestProject
     [TestClass]
     public class RegisterUnitTest
     {
+        /// <summary>
+        /// Test Account can Register?
+        /// </summary>
         [TestMethod]
         [DataRow("app", "12345", "12345", true, 0)]
         public void AccountBeenSuccessfullyAddedTest(string Username, string Password, string FullName, bool? Gender, int? Family)
@@ -32,6 +35,9 @@ namespace Session1UnitTestProject
             entities.Users.Remove(user);
             entities.SaveChanges();
         }
+        /// <summary>
+        /// Test Account is already Exisits
+        /// </summary>
         [TestMethod]
         [DataRow("sirvard", "9090", "Nerses Sirvard", false, 5)]
         public void AccountAlreadyExists(string Username, string Password, string FullName, bool? Gender, int? Family)
@@ -57,6 +63,9 @@ namespace Session1UnitTestProject
             entities.Users.Remove(user);
             entities.SaveChanges();
         }
+        /// <summary>
+        /// Test password length is less than 5
+        /// </summary>
         [TestMethod]
         [DataRow("app", "9090", "Nerses", false, 5)]
         public void PasswordLengthNotNeetRequirements(string Username, string Password, string FullName, bool? Gender, int? Family)
@@ -82,6 +91,9 @@ namespace Session1UnitTestProject
             entities.Users.Remove(user);
             entities.SaveChanges();
         }
+        /// <summary>
+        /// Test whether the input value is blank
+        /// </summary>
         [TestMethod]
         [DataRow("app", "90901", "", null, 5)]
         public void SomeKeyFieldsLeftBlank(string Username, string Password, string FullName, bool? Gender, int? Family)

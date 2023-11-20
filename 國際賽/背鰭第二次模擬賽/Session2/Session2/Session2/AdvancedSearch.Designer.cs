@@ -28,16 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.SearchBtn = new System.Windows.Forms.Button();
-            this.ClearBtn = new System.Windows.Forms.Button();
-            this.SimpleSearchBtn = new System.Windows.Forms.Button();
-            this.AmenityComboBox3 = new System.Windows.Forms.ComboBox();
-            this.Amenity3Label = new System.Windows.Forms.Label();
-            this.AmenityComboBox2 = new System.Windows.Forms.ComboBox();
-            this.Amenity2Label = new System.Windows.Forms.Label();
-            this.AmenityComboBox1 = new System.Windows.Forms.ComboBox();
-            this.Amenity1Label = new System.Windows.Forms.Label();
             this.TypeComboBox = new System.Windows.Forms.ComboBox();
             this.TypeLabel = new System.Windows.Forms.Label();
             this.MaxPrice = new System.Windows.Forms.NumericUpDown();
@@ -70,6 +62,9 @@
             this.TotalCompletedReservationsColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.AmountPayableColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CheckInColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SearchBtn = new System.Windows.Forms.Button();
+            this.ClearBtn = new System.Windows.Forms.Button();
+            this.SimpleSearchBtn = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.MaxPrice)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PeopleNum)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.StartPrice)).BeginInit();
@@ -80,171 +75,81 @@
             ((System.ComponentModel.ISupportInitialize)(this.ResultsDataGridView)).BeginInit();
             this.SuspendLayout();
             // 
-            // SearchBtn
-            // 
-            this.SearchBtn.Font = new System.Drawing.Font("Open Sans SemiBold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.SearchBtn.Location = new System.Drawing.Point(791, 241);
-            this.SearchBtn.Name = "SearchBtn";
-            this.SearchBtn.Size = new System.Drawing.Size(220, 38);
-            this.SearchBtn.TabIndex = 29;
-            this.SearchBtn.Text = "Search properties...";
-            this.SearchBtn.UseVisualStyleBackColor = true;
-            this.SearchBtn.Click += new System.EventHandler(this.SearchBtn_Click);
-            // 
-            // ClearBtn
-            // 
-            this.ClearBtn.Font = new System.Drawing.Font("Open Sans SemiBold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ClearBtn.Location = new System.Drawing.Point(623, 241);
-            this.ClearBtn.Name = "ClearBtn";
-            this.ClearBtn.Size = new System.Drawing.Size(162, 38);
-            this.ClearBtn.TabIndex = 28;
-            this.ClearBtn.Text = "Clear form";
-            this.ClearBtn.UseVisualStyleBackColor = true;
-            this.ClearBtn.Click += new System.EventHandler(this.ClearBtn_Click);
-            // 
-            // SimpleSearchBtn
-            // 
-            this.SimpleSearchBtn.Font = new System.Drawing.Font("Open Sans SemiBold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.SimpleSearchBtn.Location = new System.Drawing.Point(455, 241);
-            this.SimpleSearchBtn.Name = "SimpleSearchBtn";
-            this.SimpleSearchBtn.Size = new System.Drawing.Size(162, 38);
-            this.SimpleSearchBtn.TabIndex = 27;
-            this.SimpleSearchBtn.Text = "Simple Search";
-            this.SimpleSearchBtn.UseVisualStyleBackColor = true;
-            this.SimpleSearchBtn.Click += new System.EventHandler(this.SimpleSearchBtn_Click);
-            // 
-            // AmenityComboBox3
-            // 
-            this.AmenityComboBox3.DisplayMember = "Name";
-            this.AmenityComboBox3.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.AmenityComboBox3.FormattingEnabled = true;
-            this.AmenityComboBox3.Location = new System.Drawing.Point(895, 202);
-            this.AmenityComboBox3.Name = "AmenityComboBox3";
-            this.AmenityComboBox3.Size = new System.Drawing.Size(253, 30);
-            this.AmenityComboBox3.TabIndex = 26;
-            this.AmenityComboBox3.Tag = "3";
-            this.AmenityComboBox3.ValueMember = "ID";
-            this.AmenityComboBox3.SelectedIndexChanged += new System.EventHandler(this.AmenityComboBox_SelectedIndexChanged);
-            this.AmenityComboBox3.MouseClick += new System.Windows.Forms.MouseEventHandler(this.AmenityComboBox_MouseClick);
-            // 
-            // Amenity3Label
-            // 
-            this.Amenity3Label.AutoSize = true;
-            this.Amenity3Label.Location = new System.Drawing.Point(800, 205);
-            this.Amenity3Label.Name = "Amenity3Label";
-            this.Amenity3Label.Size = new System.Drawing.Size(68, 22);
-            this.Amenity3Label.TabIndex = 25;
-            this.Amenity3Label.Text = "Amenity:";
-            // 
-            // AmenityComboBox2
-            // 
-            this.AmenityComboBox2.DisplayMember = "Name";
-            this.AmenityComboBox2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.AmenityComboBox2.FormattingEnabled = true;
-            this.AmenityComboBox2.Location = new System.Drawing.Point(532, 199);
-            this.AmenityComboBox2.Name = "AmenityComboBox2";
-            this.AmenityComboBox2.Size = new System.Drawing.Size(253, 30);
-            this.AmenityComboBox2.TabIndex = 24;
-            this.AmenityComboBox2.Tag = "2";
-            this.AmenityComboBox2.ValueMember = "ID";
-            this.AmenityComboBox2.SelectedIndexChanged += new System.EventHandler(this.AmenityComboBox_SelectedIndexChanged);
-            this.AmenityComboBox2.MouseClick += new System.Windows.Forms.MouseEventHandler(this.AmenityComboBox_MouseClick);
-            // 
-            // Amenity2Label
-            // 
-            this.Amenity2Label.AutoSize = true;
-            this.Amenity2Label.Location = new System.Drawing.Point(437, 202);
-            this.Amenity2Label.Name = "Amenity2Label";
-            this.Amenity2Label.Size = new System.Drawing.Size(68, 22);
-            this.Amenity2Label.TabIndex = 23;
-            this.Amenity2Label.Text = "Amenity:";
-            // 
-            // AmenityComboBox1
-            // 
-            this.AmenityComboBox1.DisplayMember = "Name";
-            this.AmenityComboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.AmenityComboBox1.FormattingEnabled = true;
-            this.AmenityComboBox1.Location = new System.Drawing.Point(159, 199);
-            this.AmenityComboBox1.Name = "AmenityComboBox1";
-            this.AmenityComboBox1.Size = new System.Drawing.Size(253, 30);
-            this.AmenityComboBox1.TabIndex = 22;
-            this.AmenityComboBox1.Tag = "1";
-            this.AmenityComboBox1.ValueMember = "ID";
-            this.AmenityComboBox1.SelectedIndexChanged += new System.EventHandler(this.AmenityComboBox_SelectedIndexChanged);
-            this.AmenityComboBox1.MouseClick += new System.Windows.Forms.MouseEventHandler(this.AmenityComboBox_MouseClick);
-            // 
-            // Amenity1Label
-            // 
-            this.Amenity1Label.AutoSize = true;
-            this.Amenity1Label.Location = new System.Drawing.Point(64, 202);
-            this.Amenity1Label.Name = "Amenity1Label";
-            this.Amenity1Label.Size = new System.Drawing.Size(68, 22);
-            this.Amenity1Label.TabIndex = 21;
-            this.Amenity1Label.Text = "Amenity:";
-            // 
             // TypeComboBox
             // 
+            this.TypeComboBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(187)))), ((int)(((byte)(187)))));
             this.TypeComboBox.DisplayMember = "Name";
             this.TypeComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.TypeComboBox.ForeColor = System.Drawing.Color.Black;
             this.TypeComboBox.FormattingEnabled = true;
-            this.TypeComboBox.Location = new System.Drawing.Point(758, 151);
+            this.TypeComboBox.Location = new System.Drawing.Point(820, 140);
             this.TypeComboBox.Name = "TypeComboBox";
-            this.TypeComboBox.Size = new System.Drawing.Size(253, 30);
+            this.TypeComboBox.Size = new System.Drawing.Size(283, 25);
             this.TypeComboBox.TabIndex = 20;
             this.TypeComboBox.ValueMember = "ID";
             // 
             // TypeLabel
             // 
             this.TypeLabel.AutoSize = true;
-            this.TypeLabel.Location = new System.Drawing.Point(623, 151);
+            this.TypeLabel.ForeColor = System.Drawing.Color.Black;
+            this.TypeLabel.Location = new System.Drawing.Point(718, 147);
             this.TypeLabel.Name = "TypeLabel";
-            this.TypeLabel.Size = new System.Drawing.Size(109, 22);
+            this.TypeLabel.Size = new System.Drawing.Size(88, 17);
             this.TypeLabel.TabIndex = 19;
             this.TypeLabel.Text = "Property Type:";
             // 
             // MaxPrice
             // 
+            this.MaxPrice.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(187)))), ((int)(((byte)(187)))));
+            this.MaxPrice.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.MaxPrice.DecimalPlaces = 2;
-            this.MaxPrice.Location = new System.Drawing.Point(497, 145);
+            this.MaxPrice.ForeColor = System.Drawing.Color.Black;
+            this.MaxPrice.Location = new System.Drawing.Point(501, 140);
             this.MaxPrice.Maximum = new decimal(new int[] {
             10000,
             0,
             0,
             0});
             this.MaxPrice.Name = "MaxPrice";
-            this.MaxPrice.Size = new System.Drawing.Size(120, 28);
+            this.MaxPrice.Size = new System.Drawing.Size(120, 24);
             this.MaxPrice.TabIndex = 18;
             // 
             // MaxPriceLabel
             // 
             this.MaxPriceLabel.AutoSize = true;
-            this.MaxPriceLabel.Location = new System.Drawing.Point(357, 145);
+            this.MaxPriceLabel.ForeColor = System.Drawing.Color.Black;
+            this.MaxPriceLabel.Location = new System.Drawing.Point(361, 144);
             this.MaxPriceLabel.Name = "MaxPriceLabel";
-            this.MaxPriceLabel.Size = new System.Drawing.Size(117, 22);
+            this.MaxPriceLabel.Size = new System.Drawing.Size(96, 17);
             this.MaxPriceLabel.TabIndex = 17;
             this.MaxPriceLabel.Text = "Maximum price:";
             // 
             // StartPriceLabel
             // 
             this.StartPriceLabel.AutoSize = true;
-            this.StartPriceLabel.Location = new System.Drawing.Point(87, 143);
+            this.StartPriceLabel.ForeColor = System.Drawing.Color.Black;
+            this.StartPriceLabel.Location = new System.Drawing.Point(53, 144);
             this.StartPriceLabel.Name = "StartPriceLabel";
-            this.StartPriceLabel.Size = new System.Drawing.Size(103, 22);
+            this.StartPriceLabel.Size = new System.Drawing.Size(84, 17);
             this.StartPriceLabel.TabIndex = 15;
             this.StartPriceLabel.Text = "Starting price:";
             // 
             // PeopleLabel
             // 
             this.PeopleLabel.AutoSize = true;
-            this.PeopleLabel.Location = new System.Drawing.Point(1097, 102);
+            this.PeopleLabel.ForeColor = System.Drawing.Color.Black;
+            this.PeopleLabel.Location = new System.Drawing.Point(1057, 90);
             this.PeopleLabel.Name = "PeopleLabel";
-            this.PeopleLabel.Size = new System.Drawing.Size(56, 22);
+            this.PeopleLabel.Size = new System.Drawing.Size(46, 17);
             this.PeopleLabel.TabIndex = 14;
             this.PeopleLabel.Text = "people";
             // 
             // PeopleNum
             // 
-            this.PeopleNum.Location = new System.Drawing.Point(960, 96);
+            this.PeopleNum.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(187)))), ((int)(((byte)(187)))));
+            this.PeopleNum.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.PeopleNum.ForeColor = System.Drawing.Color.Black;
+            this.PeopleNum.Location = new System.Drawing.Point(913, 86);
             this.PeopleNum.Maximum = new decimal(new int[] {
             10000,
             0,
@@ -256,7 +161,7 @@
             0,
             0});
             this.PeopleNum.Name = "PeopleNum";
-            this.PeopleNum.Size = new System.Drawing.Size(120, 28);
+            this.PeopleNum.Size = new System.Drawing.Size(129, 24);
             this.PeopleNum.TabIndex = 13;
             this.PeopleNum.Value = new decimal(new int[] {
             1,
@@ -266,31 +171,38 @@
             // 
             // StartPrice
             // 
+            this.StartPrice.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(187)))), ((int)(((byte)(187)))));
+            this.StartPrice.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.StartPrice.DecimalPlaces = 2;
-            this.StartPrice.Location = new System.Drawing.Point(215, 143);
+            this.StartPrice.ForeColor = System.Drawing.Color.Black;
+            this.StartPrice.Location = new System.Drawing.Point(192, 140);
             this.StartPrice.Maximum = new decimal(new int[] {
             10000,
             0,
             0,
             0});
             this.StartPrice.Name = "StartPrice";
-            this.StartPrice.Size = new System.Drawing.Size(120, 28);
+            this.StartPrice.Size = new System.Drawing.Size(120, 24);
             this.StartPrice.TabIndex = 16;
             // 
             // NightLabel
             // 
             this.NightLabel.AutoSize = true;
-            this.NightLabel.Location = new System.Drawing.Point(861, 101);
+            this.NightLabel.ForeColor = System.Drawing.Color.Black;
+            this.NightLabel.Location = new System.Drawing.Point(833, 90);
             this.NightLabel.Name = "NightLabel";
-            this.NightLabel.Size = new System.Drawing.Size(74, 22);
+            this.NightLabel.Size = new System.Drawing.Size(58, 17);
             this.NightLabel.TabIndex = 12;
             this.NightLabel.Text = "night and";
             // 
             // NightNum
             // 
-            this.NightNum.Location = new System.Drawing.Point(724, 95);
+            this.NightNum.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(187)))), ((int)(((byte)(187)))));
+            this.NightNum.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.NightNum.ForeColor = System.Drawing.Color.Black;
+            this.NightNum.Location = new System.Drawing.Point(689, 86);
             this.NightNum.Maximum = new decimal(new int[] {
-            15,
+            14,
             0,
             0,
             0});
@@ -300,7 +212,7 @@
             0,
             0});
             this.NightNum.Name = "NightNum";
-            this.NightNum.Size = new System.Drawing.Size(120, 28);
+            this.NightNum.Size = new System.Drawing.Size(138, 24);
             this.NightNum.TabIndex = 11;
             this.NightNum.Value = new decimal(new int[] {
             1,
@@ -311,85 +223,99 @@
             // ForLabel
             // 
             this.ForLabel.AutoSize = true;
-            this.ForLabel.Location = new System.Drawing.Point(676, 96);
+            this.ForLabel.ForeColor = System.Drawing.Color.Black;
+            this.ForLabel.Location = new System.Drawing.Point(642, 90);
             this.ForLabel.Name = "ForLabel";
-            this.ForLabel.Size = new System.Drawing.Size(30, 22);
+            this.ForLabel.Size = new System.Drawing.Size(24, 17);
             this.ForLabel.TabIndex = 10;
             this.ForLabel.Text = "for";
             // 
             // ToDate
             // 
+            this.ToDate.CalendarForeColor = System.Drawing.Color.Black;
+            this.ToDate.CalendarMonthBackground = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(187)))), ((int)(((byte)(187)))));
+            this.ToDate.CalendarTitleBackColor = System.Drawing.Color.Black;
+            this.ToDate.CalendarTitleForeColor = System.Drawing.Color.Black;
+            this.ToDate.CalendarTrailingForeColor = System.Drawing.Color.Black;
             this.ToDate.CustomFormat = "dd/MM/yyyy";
             this.ToDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.ToDate.Location = new System.Drawing.Point(432, 90);
+            this.ToDate.Location = new System.Drawing.Point(406, 86);
             this.ToDate.Name = "ToDate";
-            this.ToDate.Size = new System.Drawing.Size(200, 28);
+            this.ToDate.Size = new System.Drawing.Size(200, 24);
             this.ToDate.TabIndex = 9;
             // 
             // ToLabel
             // 
             this.ToLabel.AutoSize = true;
-            this.ToLabel.Location = new System.Drawing.Point(357, 90);
+            this.ToLabel.ForeColor = System.Drawing.Color.Black;
+            this.ToLabel.Location = new System.Drawing.Point(331, 90);
             this.ToLabel.Name = "ToLabel";
-            this.ToLabel.Size = new System.Drawing.Size(31, 22);
+            this.ToLabel.Size = new System.Drawing.Size(24, 17);
             this.ToLabel.TabIndex = 8;
             this.ToLabel.Text = "To:";
             // 
             // FromLabel
             // 
             this.FromLabel.AutoSize = true;
-            this.FromLabel.Location = new System.Drawing.Point(60, 85);
+            this.FromLabel.ForeColor = System.Drawing.Color.Black;
+            this.FromLabel.Location = new System.Drawing.Point(49, 90);
             this.FromLabel.Name = "FromLabel";
-            this.FromLabel.Size = new System.Drawing.Size(50, 22);
+            this.FromLabel.Size = new System.Drawing.Size(40, 17);
             this.FromLabel.TabIndex = 6;
             this.FromLabel.Text = "From:";
             // 
             // TitleComboBox
             // 
+            this.TitleComboBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(187)))), ((int)(((byte)(187)))));
+            this.TitleComboBox.ForeColor = System.Drawing.Color.Black;
             this.TitleComboBox.FormattingEnabled = true;
-            this.TitleComboBox.Location = new System.Drawing.Point(909, 42);
+            this.TitleComboBox.Location = new System.Drawing.Point(850, 41);
             this.TitleComboBox.Name = "TitleComboBox";
-            this.TitleComboBox.Size = new System.Drawing.Size(253, 30);
+            this.TitleComboBox.Size = new System.Drawing.Size(253, 25);
             this.TitleComboBox.TabIndex = 5;
             // 
             // TitleLabel
             // 
             this.TitleLabel.AutoSize = true;
-            this.TitleLabel.Location = new System.Drawing.Point(780, 45);
+            this.TitleLabel.ForeColor = System.Drawing.Color.Black;
+            this.TitleLabel.Location = new System.Drawing.Point(759, 45);
             this.TitleLabel.Name = "TitleLabel";
-            this.TitleLabel.Size = new System.Drawing.Size(104, 22);
+            this.TitleLabel.Size = new System.Drawing.Size(85, 17);
             this.TitleLabel.TabIndex = 4;
             this.TitleLabel.Text = "Property Title:";
             // 
             // AttractionComboBox
             // 
+            this.AttractionComboBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(187)))), ((int)(((byte)(187)))));
             this.AttractionComboBox.DisplayMember = "Name";
-            this.AttractionComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.AttractionComboBox.ForeColor = System.Drawing.Color.Black;
             this.AttractionComboBox.FormattingEnabled = true;
-            this.AttractionComboBox.Location = new System.Drawing.Point(519, 39);
+            this.AttractionComboBox.Location = new System.Drawing.Point(458, 41);
             this.AttractionComboBox.Name = "AttractionComboBox";
-            this.AttractionComboBox.Size = new System.Drawing.Size(253, 30);
+            this.AttractionComboBox.Size = new System.Drawing.Size(253, 25);
             this.AttractionComboBox.TabIndex = 3;
             this.AttractionComboBox.ValueMember = "ID";
-            this.AttractionComboBox.SelectedIndexChanged += new System.EventHandler(this.AttractionComboBox_SelectedIndexChanged);
             // 
             // AttractionLabel
             // 
             this.AttractionLabel.AutoSize = true;
-            this.AttractionLabel.Location = new System.Drawing.Point(422, 42);
+            this.AttractionLabel.ForeColor = System.Drawing.Color.Black;
+            this.AttractionLabel.Location = new System.Drawing.Point(388, 44);
             this.AttractionLabel.Name = "AttractionLabel";
-            this.AttractionLabel.Size = new System.Drawing.Size(80, 22);
+            this.AttractionLabel.Size = new System.Drawing.Size(64, 17);
             this.AttractionLabel.TabIndex = 2;
             this.AttractionLabel.Text = "Attraction:";
             // 
             // AreaComboBox
             // 
+            this.AreaComboBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(187)))), ((int)(((byte)(187)))));
             this.AreaComboBox.DisplayMember = "Name";
             this.AreaComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.AreaComboBox.ForeColor = System.Drawing.Color.Black;
             this.AreaComboBox.FormattingEnabled = true;
-            this.AreaComboBox.Location = new System.Drawing.Point(145, 38);
+            this.AreaComboBox.Location = new System.Drawing.Point(102, 41);
             this.AreaComboBox.Name = "AreaComboBox";
-            this.AreaComboBox.Size = new System.Drawing.Size(253, 30);
+            this.AreaComboBox.Size = new System.Drawing.Size(253, 25);
             this.AreaComboBox.TabIndex = 1;
             this.AreaComboBox.ValueMember = "ID";
             this.AreaComboBox.SelectedIndexChanged += new System.EventHandler(this.AreaComboBox_SelectedIndexChanged);
@@ -397,19 +323,25 @@
             // AreaLabel
             // 
             this.AreaLabel.AutoSize = true;
-            this.AreaLabel.Location = new System.Drawing.Point(68, 40);
+            this.AreaLabel.ForeColor = System.Drawing.Color.Black;
+            this.AreaLabel.Location = new System.Drawing.Point(49, 45);
             this.AreaLabel.Name = "AreaLabel";
-            this.AreaLabel.Size = new System.Drawing.Size(45, 22);
+            this.AreaLabel.Size = new System.Drawing.Size(36, 17);
             this.AreaLabel.TabIndex = 0;
             this.AreaLabel.Text = "Area:";
             // 
             // FromDate
             // 
+            this.FromDate.CalendarForeColor = System.Drawing.Color.Black;
+            this.FromDate.CalendarMonthBackground = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(187)))), ((int)(((byte)(187)))));
+            this.FromDate.CalendarTitleBackColor = System.Drawing.Color.Black;
+            this.FromDate.CalendarTitleForeColor = System.Drawing.Color.Black;
+            this.FromDate.CalendarTrailingForeColor = System.Drawing.Color.Black;
             this.FromDate.CustomFormat = "dd/MM/yyyy";
             this.FromDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.FromDate.Location = new System.Drawing.Point(135, 85);
+            this.FromDate.Location = new System.Drawing.Point(102, 86);
             this.FromDate.Name = "FromDate";
-            this.FromDate.Size = new System.Drawing.Size(200, 28);
+            this.FromDate.Size = new System.Drawing.Size(200, 24);
             this.FromDate.TabIndex = 7;
             this.FromDate.ValueChanged += new System.EventHandler(this.FromDate_ValueChanged);
             // 
@@ -418,12 +350,6 @@
             this.AdvancedSearchGroupBox.Controls.Add(this.SearchBtn);
             this.AdvancedSearchGroupBox.Controls.Add(this.ClearBtn);
             this.AdvancedSearchGroupBox.Controls.Add(this.SimpleSearchBtn);
-            this.AdvancedSearchGroupBox.Controls.Add(this.AmenityComboBox3);
-            this.AdvancedSearchGroupBox.Controls.Add(this.Amenity3Label);
-            this.AdvancedSearchGroupBox.Controls.Add(this.AmenityComboBox2);
-            this.AdvancedSearchGroupBox.Controls.Add(this.Amenity2Label);
-            this.AdvancedSearchGroupBox.Controls.Add(this.AmenityComboBox1);
-            this.AdvancedSearchGroupBox.Controls.Add(this.Amenity1Label);
             this.AdvancedSearchGroupBox.Controls.Add(this.TypeComboBox);
             this.AdvancedSearchGroupBox.Controls.Add(this.TypeLabel);
             this.AdvancedSearchGroupBox.Controls.Add(this.MaxPrice);
@@ -447,7 +373,7 @@
             this.AdvancedSearchGroupBox.Controls.Add(this.AreaLabel);
             this.AdvancedSearchGroupBox.Location = new System.Drawing.Point(20, 15);
             this.AdvancedSearchGroupBox.Name = "AdvancedSearchGroupBox";
-            this.AdvancedSearchGroupBox.Size = new System.Drawing.Size(1208, 285);
+            this.AdvancedSearchGroupBox.Size = new System.Drawing.Size(1208, 235);
             this.AdvancedSearchGroupBox.TabIndex = 2;
             this.AdvancedSearchGroupBox.TabStop = false;
             this.AdvancedSearchGroupBox.Text = "Advanced Search";
@@ -456,18 +382,19 @@
             // 
             this.ResultsPanel.Controls.Add(this.CountLabel);
             this.ResultsPanel.Controls.Add(this.SearchResultsGroupBox);
-            this.ResultsPanel.Location = new System.Drawing.Point(20, 307);
+            this.ResultsPanel.ForeColor = System.Drawing.Color.Black;
+            this.ResultsPanel.Location = new System.Drawing.Point(20, 256);
             this.ResultsPanel.Name = "ResultsPanel";
-            this.ResultsPanel.Size = new System.Drawing.Size(1208, 390);
+            this.ResultsPanel.Size = new System.Drawing.Size(1208, 441);
             this.ResultsPanel.TabIndex = 3;
             // 
             // CountLabel
             // 
             this.CountLabel.AutoSize = true;
             this.CountLabel.Font = new System.Drawing.Font("Open Sans Light", 12F);
-            this.CountLabel.Location = new System.Drawing.Point(10, 352);
+            this.CountLabel.Location = new System.Drawing.Point(11, 409);
             this.CountLabel.Name = "CountLabel";
-            this.CountLabel.Size = new System.Drawing.Size(54, 28);
+            this.CountLabel.Size = new System.Drawing.Size(43, 23);
             this.CountLabel.TabIndex = 39;
             this.CountLabel.Text = "here";
             // 
@@ -476,7 +403,7 @@
             this.SearchResultsGroupBox.Controls.Add(this.ResultsDataGridView);
             this.SearchResultsGroupBox.Location = new System.Drawing.Point(9, 10);
             this.SearchResultsGroupBox.Name = "SearchResultsGroupBox";
-            this.SearchResultsGroupBox.Size = new System.Drawing.Size(1196, 339);
+            this.SearchResultsGroupBox.Size = new System.Drawing.Size(1196, 396);
             this.SearchResultsGroupBox.TabIndex = 38;
             this.SearchResultsGroupBox.TabStop = false;
             this.SearchResultsGroupBox.Text = "Search results";
@@ -485,16 +412,18 @@
             // 
             this.ResultsDataGridView.AllowUserToAddRows = false;
             this.ResultsDataGridView.AllowUserToDeleteRows = false;
+            this.ResultsDataGridView.AllowUserToResizeColumns = false;
+            this.ResultsDataGridView.AllowUserToResizeRows = false;
             this.ResultsDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.ResultsDataGridView.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(187)))), ((int)(((byte)(187)))));
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(187)))), ((int)(((byte)(187)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Open Sans Light", 9F);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(26)))), ((int)(((byte)(46)))));
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.ResultsDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(187)))), ((int)(((byte)(187)))));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Open Sans Light", 9F);
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(187)))), ((int)(((byte)(187)))));
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.ResultsDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.ResultsDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.ResultsDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.PropertyColumn,
@@ -510,7 +439,12 @@
             this.ResultsDataGridView.ReadOnly = true;
             this.ResultsDataGridView.RowHeadersVisible = false;
             this.ResultsDataGridView.RowHeadersWidth = 51;
-            this.ResultsDataGridView.Size = new System.Drawing.Size(1184, 309);
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(187)))), ((int)(((byte)(187)))));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(26)))), ((int)(((byte)(46)))));
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black;
+            this.ResultsDataGridView.RowsDefaultCellStyle = dataGridViewCellStyle2;
+            this.ResultsDataGridView.Size = new System.Drawing.Size(1184, 366);
             this.ResultsDataGridView.TabIndex = 0;
             // 
             // PropertyColumn
@@ -555,9 +489,51 @@
             this.CheckInColumn.Name = "CheckInColumn";
             this.CheckInColumn.ReadOnly = true;
             // 
+            // SearchBtn
+            // 
+            this.SearchBtn.Font = new System.Drawing.Font("Open Sans SemiBold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.SearchBtn.Image = global::Session2.Properties.Resources._135_search;
+            this.SearchBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.SearchBtn.Location = new System.Drawing.Point(791, 182);
+            this.SearchBtn.Name = "SearchBtn";
+            this.SearchBtn.Size = new System.Drawing.Size(173, 47);
+            this.SearchBtn.TabIndex = 29;
+            this.SearchBtn.Text = "Search properties...";
+            this.SearchBtn.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.SearchBtn.UseVisualStyleBackColor = true;
+            this.SearchBtn.Click += new System.EventHandler(this.SearchBtn_Click);
+            // 
+            // ClearBtn
+            // 
+            this.ClearBtn.Font = new System.Drawing.Font("Open Sans SemiBold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ClearBtn.Image = global::Session2.Properties.Resources.Screenshot_2023_11_20_154843;
+            this.ClearBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.ClearBtn.Location = new System.Drawing.Point(612, 182);
+            this.ClearBtn.Name = "ClearBtn";
+            this.ClearBtn.Size = new System.Drawing.Size(173, 47);
+            this.ClearBtn.TabIndex = 28;
+            this.ClearBtn.Text = "Clear form";
+            this.ClearBtn.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.ClearBtn.UseVisualStyleBackColor = true;
+            this.ClearBtn.Click += new System.EventHandler(this.ClearBtn_Click);
+            // 
+            // SimpleSearchBtn
+            // 
+            this.SimpleSearchBtn.Font = new System.Drawing.Font("Open Sans SemiBold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.SimpleSearchBtn.Image = global::Session2.Properties.Resources.Screenshot_2023_11_20_154641;
+            this.SimpleSearchBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.SimpleSearchBtn.Location = new System.Drawing.Point(433, 182);
+            this.SimpleSearchBtn.Name = "SimpleSearchBtn";
+            this.SimpleSearchBtn.Size = new System.Drawing.Size(173, 47);
+            this.SimpleSearchBtn.TabIndex = 27;
+            this.SimpleSearchBtn.Text = "Simple Search";
+            this.SimpleSearchBtn.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.SimpleSearchBtn.UseVisualStyleBackColor = true;
+            this.SimpleSearchBtn.Click += new System.EventHandler(this.SimpleSearchBtn_Click);
+            // 
             // AdvancedSearch
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 22F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(187)))), ((int)(((byte)(187)))));
             this.Controls.Add(this.ResultsPanel);
@@ -584,12 +560,6 @@
         private System.Windows.Forms.Button SearchBtn;
         private System.Windows.Forms.Button ClearBtn;
         private System.Windows.Forms.Button SimpleSearchBtn;
-        private System.Windows.Forms.ComboBox AmenityComboBox3;
-        private System.Windows.Forms.Label Amenity3Label;
-        private System.Windows.Forms.ComboBox AmenityComboBox2;
-        private System.Windows.Forms.Label Amenity2Label;
-        private System.Windows.Forms.ComboBox AmenityComboBox1;
-        private System.Windows.Forms.Label Amenity1Label;
         private System.Windows.Forms.ComboBox TypeComboBox;
         private System.Windows.Forms.Label TypeLabel;
         private System.Windows.Forms.NumericUpDown MaxPrice;
