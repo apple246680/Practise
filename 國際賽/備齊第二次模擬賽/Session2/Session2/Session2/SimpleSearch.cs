@@ -89,6 +89,11 @@ namespace Session2
                 var amenities = entities.Amenities.ToList().Where(x => x.Name.ToLower().Contains(SearchText)).Select(x => new { ID = x.Name, Name = $"{x.Name}\tAmenities" }).ToList();
                 area.AddRange(amenities);
                 SearchFilterPanel.Visible = false;
+                if (area.Count==0)
+                {
+                    SearchFilterPanel.Visible = true;
+                    return;
+                }
                 ListBoxHint.DataSource = area;
                 ListBoxHint.SelectedIndex = -1;
                 ListBoxHint.Visible = true;
@@ -146,7 +151,7 @@ namespace Session2
                         Amount+=item.ItemPrices.Where(x => x.Date < From.AddDays(i).Date).OrderBy(x => x.Date).Last().Price;
                     }
                 }
-                ResultDataGridView.Rows.Add(item.Title, item.Area.Name, Score, TotalComplate, Amount+"$");
+                ResultDataGridView.Rows.Add(item.Title, item.Area.Name, Score==""?"No found score data":Score, TotalComplate, Amount+"$");
             }
             CountLabel.Text = $"Displaying {ResultDataGridView.RowCount} options";
             ResultsPanel.Visible = true;

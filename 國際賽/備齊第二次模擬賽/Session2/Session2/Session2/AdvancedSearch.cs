@@ -183,7 +183,7 @@ namespace Session2
                     {
                         continue;
                     }
-                    ResultsDataGridView.Rows.Add(item.Title, item.Area.Name, score, totalconpate, Amount + "$", x.Date.ToString("dd/MM/yyyy"));
+                    ResultsDataGridView.Rows.Add(item.Title, item.Area.Name, score == "" ? "No found score data" : score, totalconpate, Amount + "$", x.Date.ToString("dd/MM/yyyy"));
                 }
             }
             CountLabel.Text = $"Displaying {ResultsDataGridView.Rows.Count} options from {ResultsDataGridView.Rows.Cast<DataGridViewRow>().GroupBy(x => x.Cells[0].Value.ToString()).Count()} properties";
