@@ -49,3 +49,5 @@ C:\Users\pengy\Desktop\Practise\國際賽\備齊第二次模擬賽\Session2\Sess
 C:\Users\pengy\Desktop\Practise\國際賽\備齊第二次模擬賽\Session2\Session2\Session2\obj\Debug\Session2.csproj.CopyComplete
 C:\Users\pengy\Desktop\Practise\國際賽\備齊第二次模擬賽\Session2\Session2\Session2\obj\Debug\Session2.exe
 C:\Users\pengy\Desktop\Practise\國際賽\備齊第二次模擬賽\Session2\Session2\Session2\obj\Debug\Session2.pdb
+C:\Users\pengy\Desktop\Practise\國際賽\備齊第二次模擬賽\Session2\Session2\Session2\bin\Debug\DocumentFormat.OpenXml.dll
+C:\Users\pengy\Desktop\Practise\國際賽\備齊第二次模擬賽\Session2\Session2\Session2\bin\Debug\DocumentFormat.OpenXml.xml

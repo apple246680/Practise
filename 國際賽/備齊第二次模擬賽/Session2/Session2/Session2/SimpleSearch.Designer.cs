@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SimpleSearch));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.PeopleLabel = new System.Windows.Forms.Label();
             this.NightLabel = new System.Windows.Forms.Label();
             this.ForLabel = new System.Windows.Forms.Label();
@@ -42,6 +42,8 @@
             this.TopGroupBox = new System.Windows.Forms.GroupBox();
             this.SearchFilterPanel = new System.Windows.Forms.Panel();
             this.FromLabel = new System.Windows.Forms.Label();
+            this.AdvanedBtn = new System.Windows.Forms.Button();
+            this.SearchBtn = new System.Windows.Forms.Button();
             this.CountLabel = new System.Windows.Forms.Label();
             this.ResultsPanel = new System.Windows.Forms.Panel();
             this.ResultGroupBox = new System.Windows.Forms.GroupBox();
@@ -53,8 +55,6 @@
             this.TotalCompletedReservationsColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.AmountPayableColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ExportBtn = new System.Windows.Forms.Button();
-            this.AdvanedBtn = new System.Windows.Forms.Button();
-            this.SearchBtn = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.PeopleNumber)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.NightsNumber)).BeginInit();
             this.TopGroupBox.SuspendLayout();
@@ -220,6 +220,36 @@
             this.FromLabel.TabIndex = 1;
             this.FromLabel.Text = "From:";
             // 
+            // AdvanedBtn
+            // 
+            this.AdvanedBtn.BackColor = System.Drawing.Color.White;
+            this.AdvanedBtn.Font = new System.Drawing.Font("Open Sans SemiBold", 10.8F);
+            this.AdvanedBtn.Image = global::Session2.Properties.Resources.Screenshot_2023_11_19_160115;
+            this.AdvanedBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.AdvanedBtn.Location = new System.Drawing.Point(908, 92);
+            this.AdvanedBtn.Name = "AdvanedBtn";
+            this.AdvanedBtn.Size = new System.Drawing.Size(216, 42);
+            this.AdvanedBtn.TabIndex = 7;
+            this.AdvanedBtn.Text = "Advanced Search";
+            this.AdvanedBtn.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.AdvanedBtn.UseVisualStyleBackColor = false;
+            this.AdvanedBtn.Click += new System.EventHandler(this.AdvanedBtn_Click);
+            // 
+            // SearchBtn
+            // 
+            this.SearchBtn.BackColor = System.Drawing.Color.White;
+            this.SearchBtn.Font = new System.Drawing.Font("Open Sans SemiBold", 10.8F);
+            this.SearchBtn.Image = ((System.Drawing.Image)(resources.GetObject("SearchBtn.Image")));
+            this.SearchBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.SearchBtn.Location = new System.Drawing.Point(908, 31);
+            this.SearchBtn.Name = "SearchBtn";
+            this.SearchBtn.Size = new System.Drawing.Size(216, 42);
+            this.SearchBtn.TabIndex = 5;
+            this.SearchBtn.Text = "Search properties...";
+            this.SearchBtn.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.SearchBtn.UseVisualStyleBackColor = false;
+            this.SearchBtn.Click += new System.EventHandler(this.SearchBtn_Click);
+            // 
             // CountLabel
             // 
             this.CountLabel.AutoSize = true;
@@ -268,14 +298,14 @@
             this.ResultDataGridView.AllowUserToResizeRows = false;
             this.ResultDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.ResultDataGridView.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(187)))), ((int)(((byte)(187)))));
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(187)))), ((int)(((byte)(187)))));
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Open Sans Light", 9F);
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(187)))), ((int)(((byte)(187)))));
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.ResultDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(187)))), ((int)(((byte)(187)))));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Open Sans Light", 9F);
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(187)))), ((int)(((byte)(187)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.ResultDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.ResultDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.ResultDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.PropertyColumn,
@@ -291,11 +321,11 @@
             this.ResultDataGridView.ReadOnly = true;
             this.ResultDataGridView.RowHeadersVisible = false;
             this.ResultDataGridView.RowHeadersWidth = 51;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(187)))), ((int)(((byte)(187)))));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(26)))), ((int)(((byte)(46)))));
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black;
-            this.ResultDataGridView.RowsDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(187)))), ((int)(((byte)(187)))));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(26)))), ((int)(((byte)(46)))));
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.Black;
+            this.ResultDataGridView.RowsDefaultCellStyle = dataGridViewCellStyle4;
             this.ResultDataGridView.RowTemplate.Height = 27;
             this.ResultDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
             this.ResultDataGridView.Size = new System.Drawing.Size(1108, 330);
@@ -350,36 +380,6 @@
             this.ExportBtn.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.ExportBtn.UseVisualStyleBackColor = false;
             this.ExportBtn.Click += new System.EventHandler(this.ExportBtn_Click);
-            // 
-            // AdvanedBtn
-            // 
-            this.AdvanedBtn.BackColor = System.Drawing.Color.White;
-            this.AdvanedBtn.Font = new System.Drawing.Font("Open Sans SemiBold", 10.8F);
-            this.AdvanedBtn.Image = global::Session2.Properties.Resources.Screenshot_2023_11_19_160115;
-            this.AdvanedBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.AdvanedBtn.Location = new System.Drawing.Point(908, 92);
-            this.AdvanedBtn.Name = "AdvanedBtn";
-            this.AdvanedBtn.Size = new System.Drawing.Size(216, 42);
-            this.AdvanedBtn.TabIndex = 7;
-            this.AdvanedBtn.Text = "Advanced Search";
-            this.AdvanedBtn.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.AdvanedBtn.UseVisualStyleBackColor = false;
-            this.AdvanedBtn.Click += new System.EventHandler(this.AdvanedBtn_Click);
-            // 
-            // SearchBtn
-            // 
-            this.SearchBtn.BackColor = System.Drawing.Color.White;
-            this.SearchBtn.Font = new System.Drawing.Font("Open Sans SemiBold", 10.8F);
-            this.SearchBtn.Image = ((System.Drawing.Image)(resources.GetObject("SearchBtn.Image")));
-            this.SearchBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.SearchBtn.Location = new System.Drawing.Point(908, 31);
-            this.SearchBtn.Name = "SearchBtn";
-            this.SearchBtn.Size = new System.Drawing.Size(216, 42);
-            this.SearchBtn.TabIndex = 5;
-            this.SearchBtn.Text = "Search properties...";
-            this.SearchBtn.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.SearchBtn.UseVisualStyleBackColor = false;
-            this.SearchBtn.Click += new System.EventHandler(this.SearchBtn_Click);
             // 
             // SimpleSearch
             // 
