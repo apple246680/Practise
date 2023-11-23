@@ -6,7 +6,6 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
-
 namespace Session2
 {
     public partial class SimpleSearch : UserControl
