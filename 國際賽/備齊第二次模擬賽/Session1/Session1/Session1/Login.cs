@@ -47,7 +47,7 @@ namespace Session1
         /// </summary>
         private void LoginButton_Click(object sender, EventArgs e)
         {
-            if (Global.userID!=0)
+                if (Global.userID!=0)
             {
                 Global.ShowManagementForm();
                 return;
